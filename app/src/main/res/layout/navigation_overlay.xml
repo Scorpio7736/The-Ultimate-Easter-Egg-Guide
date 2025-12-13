@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#CCCCCC"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="Navigation Bar"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+    <View
+        android:id="@+id/navigation_bar"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/nav_home_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/text_primary"
+        app:layout_constraintTop_toTopOf="@id/navigation_bar"
+        app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
+        app:layout_constraintStart_toStartOf="@id/navigation_bar"
+        app:layout_constraintEnd_toStartOf="@+id/nav_settings_button" />
+
+    <ImageButton
+        android:id="@+id/nav_settings_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@android:drawable/ic_menu_preferences"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/text_primary"
+        app:layout_constraintTop_toTopOf="@id/navigation_bar"
+        app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
+        app:layout_constraintStart_toEndOf="@id/nav_home_button"
+        app:layout_constraintEnd_toStartOf="@+id/nav_template_button" />
+
+    <ImageButton
+        android:id="@+id/nav_template_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/text_primary"
+        app:layout_constraintTop_toTopOf="@id/navigation_bar"
+        app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
+        app:layout_constraintStart_toEndOf="@id/nav_settings_button"
+        app:layout_constraintEnd_toEndOf="@id/navigation_bar" />
 
 </merge>
