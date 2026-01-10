@@ -20,13 +20,14 @@
         android:id="@+id/nav_home_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@android:drawable/ic_menu_myplaces"
         android:background="?attr/selectableItemBackgroundBorderless"
-        app:tint="@color/text_primary"
-        app:layout_constraintTop_toTopOf="@id/navigation_bar"
+        android:onClick="onHomeButtonClick"
+        android:src="@android:drawable/ic_menu_myplaces"
         app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
+        app:layout_constraintEnd_toStartOf="@+id/nav_settings_button"
         app:layout_constraintStart_toStartOf="@id/navigation_bar"
-        app:layout_constraintEnd_toStartOf="@+id/nav_settings_button" />
+        app:layout_constraintTop_toTopOf="@id/navigation_bar"
+        app:tint="@color/text_primary" />
 
     <ImageButton
         android:id="@+id/nav_settings_button"
@@ -38,6 +39,19 @@
         app:layout_constraintTop_toTopOf="@id/navigation_bar"
         app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
         app:layout_constraintStart_toEndOf="@id/nav_home_button"
+        app:layout_constraintEnd_toStartOf="@+id/nav_maps_button" />
+
+    <ImageButton
+        android:id="@+id/nav_maps_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="onMapsButtonClick"
+        android:src="@android:drawable/ic_menu_mapmode"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/text_primary"
+        app:layout_constraintTop_toTopOf="@id/navigation_bar"
+        app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
+        app:layout_constraintStart_toEndOf="@id/nav_settings_button"
         app:layout_constraintEnd_toStartOf="@+id/nav_template_button" />
 
     <ImageButton
@@ -49,7 +63,7 @@
         app:tint="@color/text_primary"
         app:layout_constraintTop_toTopOf="@id/navigation_bar"
         app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
-        app:layout_constraintStart_toEndOf="@id/nav_settings_button"
+        app:layout_constraintStart_toEndOf="@id/nav_maps_button"
         app:layout_constraintEnd_toEndOf="@id/navigation_bar" />
 
 </merge>

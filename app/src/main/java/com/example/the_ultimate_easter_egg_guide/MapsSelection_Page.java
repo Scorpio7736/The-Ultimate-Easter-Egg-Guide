@@ -6,15 +6,13 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.splashscreen.SplashScreen;
 
-public class Home_PAGE extends AppCompatActivity {
+public class MapsSelection_Page extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SplashScreen.installSplashScreen(this);
-        setContentView(R.layout.home_page);
+        setContentView(R.layout.maps_selection_page);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -23,7 +21,7 @@ public class Home_PAGE extends AppCompatActivity {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home_PAGE.this, Settings_PAGE.class);
+                Intent intent = new Intent(MapsSelection_Page.this, Settings_PAGE.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
@@ -31,12 +29,12 @@ public class Home_PAGE extends AppCompatActivity {
     }
 
     public void onHomeButtonClick(View view) {
-        // Already on the home page, no action needed
+        Intent intent = new Intent(this, Home_PAGE.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
 
     public void onMapsButtonClick(View view) {
-        Intent intent = new Intent(this, MapsSelection_Page.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(intent);
+        // Already on this page
     }
 }
