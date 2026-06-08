@@ -1,7 +1,19 @@
 package com.example.the_ultimate_easter_egg_guide;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public enum MapNames
 {
+    // --------------------------------- Test MAPS ---------------------------------
+
+     Test_TestingMap1(games.Test, "Testing Map 1"),
+    Test_TestingMap2(games.Test, "Testing Map 2"),
+    Test_TestingMap3(games.Test, "Testing Map 3"),
+    Test_TestingMap4(games.Test, "Testing Map 4"),
+
     // --------------------------------- WORLD AT WAR MAPS ---------------------------------
     WAW_Nacht_Der_Untoten(games.World_At_War, "Nacht der Untoten"),
     WAW_Shi_No_Numa(games.World_At_War, "Shi No Numa"),
@@ -51,6 +63,11 @@ public enum MapNames
     BOIV_Ancient_Evil(games.Black_Ops_IV, "Ancient Evil"),
     BOIV_Alpha_Omega(games.Black_Ops_IV, "Alpha Omega"),
     BOIV_Tag_Der_Toten(games.Black_Ops_IV, "Tag der toten"),
+    BOIV_Blood_Of_The_Dead(games.Black_Ops_IV, "Blood of the Dead"),
+    BOIV_Classified(games.Black_Ops_IV, "Classified"),
+    BOIV_Voyage_Of_Dispair(games.Black_Ops_IV, "Voyage of Dispair"),
+    BOIV_IX(games.Black_Ops_IV, "IX"),
+
 
     // --------------------------------- Black Ops Cold War MAPS ---------------------------------
 
@@ -62,6 +79,7 @@ public enum MapNames
     // --------------------------------- Black Ops VI MAPS ---------------------------------
     // --------------------------------- Black Ops VII MAPS ---------------------------------
 
+
     public final games gameName;
     public final String mapName;
 
@@ -70,4 +88,91 @@ public enum MapNames
         this.gameName = game;
         this.mapName = mapName;
     }
+
+
+    // --------------------------------- Game Map Lists ---------------------------------
+    public static final ArrayList<MapNames> Test_Maps = new ArrayList<>(List.of(
+            Test_TestingMap1,
+            Test_TestingMap2,
+            Test_TestingMap3,
+            Test_TestingMap4
+    ));
+
+
+    public static final ArrayList<MapNames> WAW_Maps = new ArrayList<>(List.of(
+            WAW_Nacht_Der_Untoten,
+            WAW_Shi_No_Numa,
+            WAW_Verruckt,
+            WAW_Der_Riese
+    ));
+
+    public static final ArrayList<MapNames> BOI_Maps = new ArrayList<>(List.of(
+            BOI_Kino_Der_Toten,
+            BOI_Five,
+            BOI_Ascension,
+            BOI_Call_Of_The_Dead,
+            BOI_Shangri_La,
+            BOI_Moon
+    ));
+
+    public static final ArrayList<MapNames> BOII_Maps = new ArrayList<>(List.of(
+            BOII_Farm,
+            BOII_Bus_Depot,
+            BOII_Nuketown,
+            BOII_Die_Rise,
+            BOII_Mob_Of_The_Dead,
+            BOII_Buried,
+            BOII_Origins
+    ));
+
+    public static final ArrayList<MapNames> BOIII_Maps = new ArrayList<>(List.of(
+            BOIII_Shadows_Of_Evil,
+            BOIII_The_Giant,
+            BOIII_Der_Eisendrache,
+            BOIII_Zetsubou_No_Shima,
+            BOIII_Gorod_Krovi,
+            BOIII_Revelations,
+            BOIII_Nacht_Der_Untoten,
+            BOIII_Verruckt,
+            BOIII_Shi_No_Numa,
+            BOIII_Kino_Der_Toten,
+            BOIII_Ascension,
+            BOIII_Shangri_La,
+            BOIII_Moon,
+            BOIII_Origins
+    ));
+
+    public static final ArrayList<MapNames> BOIV_Maps = new ArrayList<>(List.of(
+            BOIv_Dead_Of_The_Night,
+            BOIV_Ancient_Evil,
+            BOIV_Alpha_Omega,
+            BOIV_Tag_Der_Toten,
+            BOIV_Blood_Of_The_Dead,
+            BOIV_Classified,
+            BOIV_Voyage_Of_Dispair,
+            BOIV_IX
+    ));
+
+    public static final ArrayList<MapNames> BOCW_Maps = new ArrayList<>(List.of(
+            BOCW_Die_Maschine,
+            BOCW_Firebase_Z,
+            BOCW_Mauer_Der_Toten,
+            BOCW_Forsaken
+    ));
+
+    // --------------------------------- All MAPS ---------------------------------
+
+    public static final List<MapNames> All_Maps = Stream.of(
+                Test_Maps,
+                WAW_Maps,
+                BOI_Maps,
+                BOII_Maps,
+                BOIII_Maps,
+                BOIV_Maps,
+                BOCW_Maps
+        )
+        .flatMap(List::stream)
+        .collect(Collectors.toList()
+    );
+
 }
