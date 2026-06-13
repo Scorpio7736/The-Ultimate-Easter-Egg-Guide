@@ -21,6 +21,7 @@ public class MapsSelection_Page extends AppCompatActivity {
 
     private boolean isGridView = true;
     private GridView mapsGridView;
+    private List<MapNames> currentMaps = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +47,8 @@ public class MapsSelection_Page extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 games selectedGame = games.values()[position];
-                List<MapNames> mapsForGame = MapNames.getMapsForGame(selectedGame);
-                MapAdapter mapAdapter = new MapAdapter(MapsSelection_Page.this, mapsForGame);
-                mapsGridView.setAdapter(mapAdapter);
+                currentMaps = MapNames.getMapsForGame(selectedGame);
+                updateGridView();
             }
 
             @Override
@@ -69,6 +69,7 @@ public class MapsSelection_Page extends AppCompatActivity {
                     toggleButton.setImageResource(R.drawable.ic_view_module);
                     Toast.makeText(MapsSelection_Page.this, "Switched to List View", Toast.LENGTH_SHORT).show();
                 }
+                updateGridView();
             }
         });
 
@@ -81,6 +82,16 @@ public class MapsSelection_Page extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void updateGridView() {
+        if (isGridView) {
+            mapsGridView.setNumColumns(2);
+        } else {
+            mapsGridView.setNumColumns(1);
+        }
+        MapAdapter mapAdapter = new MapAdapter(this, currentMaps, isGridView);
+        mapsGridView.setAdapter(mapAdapter);
     }
 
     public void onHomeButtonClick(View view) {

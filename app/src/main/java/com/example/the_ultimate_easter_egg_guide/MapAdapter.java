@@ -11,12 +11,14 @@ import java.util.List;
 
 public class MapAdapter extends BaseAdapter {
 
-    private Context context;
-    private List<MapNames> mapList;
+    private final Context context;
+    private final List<MapNames> mapList;
+    private final boolean isGridView;
 
-    public MapAdapter(Context context, List<MapNames> mapList) {
+    public MapAdapter(Context context, List<MapNames> mapList, boolean isGridView) {
         this.context = context;
         this.mapList = mapList;
+        this.isGridView = isGridView;
     }
 
     @Override
@@ -36,9 +38,12 @@ public class MapAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.map_item_grid, parent, false);
-        }
+        // Since the layout changes completely between grid and list, 
+        // it's safer to always inflate the correct layout if the view type doesn't match.
+        // For simplicity in this implementation, we will reinflate.
+        
+        int layoutId = isGridView ? R.layout.map_item_grid : R.layout.map_item_list;
+        convertView = LayoutInflater.from(context).inflate(layoutId, parent, false);
 
         MapNames currentMap = (MapNames) getItem(position);
 
@@ -46,8 +51,6 @@ public class MapAdapter extends BaseAdapter {
         if (mapNameText != null) {
             mapNameText.setText(currentMap.mapName);
         }
-
-        // Image handling (map_cover_image) would go here once images are available
 
         return convertView;
     }
