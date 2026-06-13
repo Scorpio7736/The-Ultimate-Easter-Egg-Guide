@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,46 +9,42 @@
     android:focusable="true"
     android:foreground="@drawable/ripple_rounded_blue">
 
-    <View
-        android:id="@+id/map_cell_background"
+    <FrameLayout
+        android:id="@+id/map_cell_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/mapcell_grid"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/map_name_text"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:text="Map Name Here"
-        android:textColor="@color/text_primary"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/nazi_zombies_font"
-        app:layout_constraintEnd_toEndOf="@id/map_cell_background"
-        app:layout_constraintStart_toStartOf="@id/map_cell_background"
-        app:layout_constraintTop_toTopOf="@id/map_cell_background" />
+        <ImageView
+            android:id="@+id/map_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/app_icon" />
 
-    <ImageView
-        android:id="@+id/map_cover_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:padding="8dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/app_icon"
-        app:layout_constraintBottom_toBottomOf="@id/map_cell_background"
-        app:layout_constraintEnd_toEndOf="@id/map_cell_background"
-        app:layout_constraintStart_toStartOf="@id/map_cell_background"
-        app:layout_constraintTop_toBottomOf="@id/map_name_text" />
+        <TextView
+            android:id="@+id/map_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="top"
+            android:background="@drawable/map_name_bar_background"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Map Name Here"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nazi_zombies_font" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

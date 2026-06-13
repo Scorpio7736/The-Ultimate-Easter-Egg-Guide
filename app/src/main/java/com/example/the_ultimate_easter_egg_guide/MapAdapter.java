@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -50,6 +51,11 @@ public class MapAdapter extends BaseAdapter {
         TextView mapNameText = convertView.findViewById(R.id.map_name_text);
         if (mapNameText != null) {
             mapNameText.setText(currentMap.mapName);
+        }
+
+        ImageView mapCoverImage = convertView.findViewById(R.id.map_cover_image);
+        if (mapCoverImage != null) {
+            mapCoverImage.setImageResource(currentMap.mapCover);
         }
 
         return convertView;
