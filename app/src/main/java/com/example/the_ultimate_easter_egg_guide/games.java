@@ -11,8 +11,8 @@ public enum games {
     Black_Ops_III("Black Ops 3"),
     Black_Ops_IV("Black Ops 4"),
     Black_Ops_Cold_War("Black Ops Cold War"),
-    Black_Ops_VI("Black Ops 5"),
-    Black_Ops_VII("Black Ops 6");
+    Black_Ops_VI("Black Ops 6"),
+    Black_Ops_VII("Black Ops 7");
 
     public final String gameName;
 

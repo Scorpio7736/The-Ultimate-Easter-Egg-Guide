@@ -1,17 +1,26 @@
 package com.example.the_ultimate_easter_egg_guide;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import java.util.ArrayList;
-import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MapsSelection_Page extends AppCompatActivity {
+
+    private boolean isGridView = true;
+    private GridView mapsGridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +30,47 @@ public class MapsSelection_Page extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+        mapsGridView = findViewById(R.id.maps_grid_view);
+
         Spinner spinner = findViewById(R.id.myDropdown);
         List<String> gameNames = new ArrayList<>();
-        for (games game : games.gamesList) {
+        for (games game : games.values()) {
             gameNames.add(game.gameName);
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, gameNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                games selectedGame = games.values()[position];
+                List<MapNames> mapsForGame = MapNames.getMapsForGame(selectedGame);
+                MapAdapter mapAdapter = new MapAdapter(MapsSelection_Page.this, mapsForGame);
+                mapsGridView.setAdapter(mapAdapter);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
+            }
+        });
+
+        FloatingActionButton toggleButton = findViewById(R.id.view_toggle_button);
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isGridView = !isGridView;
+                if (isGridView) {
+                    toggleButton.setImageResource(R.drawable.ic_view_list);
+                    Toast.makeText(MapsSelection_Page.this, "Switched to Grid View", Toast.LENGTH_SHORT).show();
+                } else {
+                    toggleButton.setImageResource(R.drawable.ic_view_module);
+                    Toast.makeText(MapsSelection_Page.this, "Switched to List View", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         ImageButton settingsButton = findViewById(R.id.nav_settings_button);
         settingsButton.setOnClickListener(new View.OnClickListener() {
@@ -47,8 +88,6 @@ public class MapsSelection_Page extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
     }
-
-
 
     public void onMapsButtonClick(View view) {
         // Already on this page

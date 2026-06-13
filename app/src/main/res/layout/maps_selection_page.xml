@@ -8,8 +8,6 @@
     android:fitsSystemWindows="true"
     tools:context=".MapsSelection_Page">
 
-    <include layout="@layout/navigation_overlay" />
-
     <LinearLayout
         android:id="@+id/selection_container"
         android:layout_width="0dp"
@@ -44,5 +42,37 @@
 
     </LinearLayout>
 
+    <GridView
+        android:id="@+id/maps_grid_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:numColumns="2"
+        android:verticalSpacing="8dp"
+        android:horizontalSpacing="8dp"
+        android:stretchMode="columnWidth"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selection_container" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/view_toggle_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="100dp"
+        android:contentDescription="Toggle View"
+        android:src="@drawable/ic_view_list"
+        app:backgroundTint="@color/primary_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+    <include layout="@layout/navigation_overlay" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
