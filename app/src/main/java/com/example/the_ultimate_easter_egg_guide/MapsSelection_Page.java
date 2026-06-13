@@ -64,10 +64,8 @@ public class MapsSelection_Page extends AppCompatActivity {
                 isGridView = !isGridView;
                 if (isGridView) {
                     toggleButton.setImageResource(R.drawable.ic_view_list);
-                    Toast.makeText(MapsSelection_Page.this, "Switched to Grid View", Toast.LENGTH_SHORT).show();
                 } else {
                     toggleButton.setImageResource(R.drawable.ic_view_module);
-                    Toast.makeText(MapsSelection_Page.this, "Switched to List View", Toast.LENGTH_SHORT).show();
                 }
                 updateGridView();
             }
