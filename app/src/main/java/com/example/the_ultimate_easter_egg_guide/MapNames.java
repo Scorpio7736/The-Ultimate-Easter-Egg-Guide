@@ -9,10 +9,10 @@ public enum MapNames
 {
     // --------------------------------- Test MAPS ---------------------------------
 
-    Test_TestingMap1(games.Test, "Testing Map 1", R.drawable.ascension_bkg),
-    Test_TestingMap2(games.Test, "Testing Map 2", R.drawable.division9_bkg),
-    Test_TestingMap3(games.Test, "Testing Map 3", R.drawable.general_bkg),
-    Test_TestingMap4(games.Test, "Testing Map 4", R.drawable.group935_bkg),
+    //Test_TestingMap1(games.Test, "Testing Map 1", R.drawable.ascension_bkg),
+    //Test_TestingMap2(games.Test, "Testing Map 2", R.drawable.division9_bkg),
+    //Test_TestingMap3(games.Test, "Testing Map 3", R.drawable.general_bkg),
+    //Test_TestingMap4(games.Test, "Testing Map 4", R.drawable.group935_bkg),
 
     // --------------------------------- WORLD AT WAR MAPS ---------------------------------
     WAW_Nacht_Der_Untoten(games.World_At_War, "Nacht der Untoten", R.drawable.nacht_waw),
@@ -116,12 +116,12 @@ public enum MapNames
 
 
     // --------------------------------- Game Map Lists ---------------------------------
-    public static final List<MapNames> Test_Maps = List.of(
-            Test_TestingMap1,
-            Test_TestingMap2,
-            Test_TestingMap3,
-            Test_TestingMap4
-    );
+    //public static final List<MapNames> Test_Maps = List.of(
+      //      Test_TestingMap1,
+        //    Test_TestingMap2,
+          //  Test_TestingMap3,
+            //Test_TestingMap4
+    //);
 
 
     public static final List<MapNames> WAW_Maps = List.of(
@@ -204,7 +204,7 @@ public enum MapNames
     // --------------------------------- All MAPS ---------------------------------
 
     public static final List<MapNames> All_Maps = Stream.of(
-                Test_Maps,
+                //Test_Maps,
                 WAW_Maps,
                 BOI_Maps,
                 BOII_Maps,

@@ -38,7 +38,7 @@
         android:background="@drawable/rounded_rectangle"
         android:gravity="center"
         android:padding="16dp"
-        android:fontFamily="@font/nazi_zombies_font"
+        android:fontFamily="@font/nz_font"
         android:text="The Ultimate Easter Egg Guide"
         android:textColor="@color/accent_gold"
         android:textSize="24sp"

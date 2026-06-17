@@ -26,6 +26,7 @@ public class MapsSelection_Page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        PageTransitionManager.setupTransitions(this);
         setContentView(R.layout.maps_selection_page);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -64,8 +65,10 @@ public class MapsSelection_Page extends AppCompatActivity {
                 isGridView = !isGridView;
                 if (isGridView) {
                     toggleButton.setImageResource(R.drawable.ic_view_list);
+                    Toast.makeText(MapsSelection_Page.this, "Switched to Grid View", Toast.LENGTH_SHORT).show();
                 } else {
                     toggleButton.setImageResource(R.drawable.ic_view_module);
+                    Toast.makeText(MapsSelection_Page.this, "Switched to List View", Toast.LENGTH_SHORT).show();
                 }
                 updateGridView();
             }
@@ -75,9 +78,7 @@ public class MapsSelection_Page extends AppCompatActivity {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MapsSelection_Page.this, Settings_PAGE.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
+                PageTransitionManager.startActivityWithFade(MapsSelection_Page.this, Settings_PAGE.class);
             }
         });
     }
@@ -93,9 +94,7 @@ public class MapsSelection_Page extends AppCompatActivity {
     }
 
     public void onHomeButtonClick(View view) {
-        Intent intent = new Intent(this, Home_PAGE.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(intent);
+        PageTransitionManager.startActivityWithFade(this, Home_PAGE.class);
     }
 
     public void onMapsButtonClick(View view) {

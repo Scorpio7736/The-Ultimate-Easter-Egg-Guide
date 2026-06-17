@@ -41,7 +41,7 @@
         android:textColor="@color/text_primary"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:fontFamily="@font/nazi_zombies_font"
+        android:fontFamily="@font/nz_font"
         app:layout_constraintBottom_toBottomOf="@id/map_cell_background"
         app:layout_constraintEnd_toEndOf="@id/map_cell_background"
         app:layout_constraintStart_toEndOf="@id/map_cover_image"

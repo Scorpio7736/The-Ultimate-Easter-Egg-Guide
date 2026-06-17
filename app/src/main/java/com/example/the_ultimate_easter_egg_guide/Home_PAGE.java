@@ -13,6 +13,7 @@ public class Home_PAGE extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        PageTransitionManager.setupTransitions(this);
         SplashScreen.installSplashScreen(this);
         setContentView(R.layout.home_page);
         if (getSupportActionBar() != null) {
@@ -23,9 +24,7 @@ public class Home_PAGE extends AppCompatActivity {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Home_PAGE.this, Settings_PAGE.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
+                PageTransitionManager.startActivityWithFade(Home_PAGE.this, Settings_PAGE.class);
             }
         });
     }
@@ -35,8 +34,6 @@ public class Home_PAGE extends AppCompatActivity {
     }
 
     public void onMapsButtonClick(View view) {
-        Intent intent = new Intent(this, MapsSelection_Page.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(intent);
+        PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
     }
 }

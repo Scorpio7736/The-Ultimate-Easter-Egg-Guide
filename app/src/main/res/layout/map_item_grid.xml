@@ -43,7 +43,7 @@
             android:textColor="@color/text_primary"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:fontFamily="@font/nazi_zombies_font" />
+            android:fontFamily="@font/nz_font" />
 
     </FrameLayout>
 

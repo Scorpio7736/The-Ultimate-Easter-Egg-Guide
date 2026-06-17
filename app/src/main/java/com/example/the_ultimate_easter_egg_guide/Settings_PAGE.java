@@ -16,6 +16,7 @@ public class Settings_PAGE extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        PageTransitionManager.setupTransitions(this);
         setContentView(R.layout.settings_page);
         if (getSupportActionBar() != null)
         {
@@ -55,14 +56,10 @@ public class Settings_PAGE extends AppCompatActivity
     }
 
     public void onHomeButtonClick(View view) {
-        Intent intent = new Intent(this, Home_PAGE.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(intent);
+        PageTransitionManager.startActivityWithFade(this, Home_PAGE.class);
     }
 
     public void onMapsButtonClick(View view) {
-        Intent intent = new Intent(this, MapsSelection_Page.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(intent);
+        PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
     }
 }

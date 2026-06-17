@@ -11,59 +11,89 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_rectangle"
+        android:background="@drawable/ic_blood_puddle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/nav_home_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:onClick="onHomeButtonClick"
-        android:src="@android:drawable/ic_menu_myplaces"
-        app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
-        app:layout_constraintEnd_toStartOf="@+id/nav_settings_button"
-        app:layout_constraintStart_toStartOf="@id/navigation_bar"
-        app:layout_constraintTop_toTopOf="@id/navigation_bar"
-        app:tint="@color/text_primary" />
-
-    <ImageButton
-        android:id="@+id/nav_settings_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@android:drawable/ic_menu_preferences"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        app:tint="@color/text_primary"
-        app:layout_constraintTop_toTopOf="@id/navigation_bar"
-        app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
-        app:layout_constraintStart_toEndOf="@id/nav_home_button"
-        app:layout_constraintEnd_toStartOf="@+id/nav_maps_button" />
 
     <ImageButton
         android:id="@+id/nav_maps_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:onClick="onMapsButtonClick"
-        android:src="@android:drawable/ic_menu_mapmode"
+        android:src="@drawable/ic_map_perk"
         android:background="?attr/selectableItemBackgroundBorderless"
-        app:tint="@color/text_primary"
+        android:scaleType="fitCenter"
+        android:padding="8dp"
+        app:tint="@null"
         app:layout_constraintTop_toTopOf="@id/navigation_bar"
         app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
-        app:layout_constraintStart_toEndOf="@id/nav_settings_button"
-        app:layout_constraintEnd_toStartOf="@+id/nav_template_button" />
+        app:layout_constraintStart_toStartOf="@id/navigation_bar"
+        app:layout_constraintEnd_toStartOf="@+id/nav_blank_button_1"
+        app:layout_constraintHorizontal_chainStyle="spread" />
 
     <ImageButton
-        android:id="@+id/nav_template_button"
+        android:id="@+id/nav_blank_button_1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@android:drawable/ic_menu_gallery"
         android:background="?attr/selectableItemBackgroundBorderless"
-        app:tint="@color/text_primary"
+        android:src="@drawable/ic_juggernog_badge"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:padding="8dp"
+        android:contentDescription="Juggernog"
+        app:tint="@null"
         app:layout_constraintTop_toTopOf="@id/navigation_bar"
         app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
         app:layout_constraintStart_toEndOf="@id/nav_maps_button"
+        app:layout_constraintEnd_toStartOf="@+id/nav_home_button" />
+
+    <ImageButton
+        android:id="@+id/nav_home_button"
+        android:layout_width="121dp"
+        android:layout_height="117dp"
+        android:adjustViewBounds="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:onClick="onHomeButtonClick"
+        android:padding="6dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_home_badge"
+        app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
+        app:layout_constraintEnd_toStartOf="@+id/nav_blank_button_2"
+        app:layout_constraintStart_toEndOf="@id/nav_blank_button_1"
+        app:layout_constraintTop_toTopOf="@id/navigation_bar"
+        app:tint="@null" />
+
+    <ImageButton
+        android:id="@+id/nav_blank_button_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_doubletap_badge"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:padding="8dp"
+        android:contentDescription="Double Tap"
+        app:tint="@null"
+        app:layout_constraintTop_toTopOf="@id/navigation_bar"
+        app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
+        app:layout_constraintStart_toEndOf="@id/nav_home_button"
+        app:layout_constraintEnd_toStartOf="@+id/nav_settings_button" />
+
+    <ImageButton
+        android:id="@+id/nav_settings_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_settings_green_badge"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:padding="8dp"
+        android:contentDescription="Settings"
+        app:tint="@null"
+        app:layout_constraintTop_toTopOf="@id/navigation_bar"
+        app:layout_constraintBottom_toBottomOf="@id/navigation_bar"
+        app:layout_constraintStart_toEndOf="@id/nav_blank_button_2"
         app:layout_constraintEnd_toEndOf="@id/navigation_bar" />
 
 </merge>

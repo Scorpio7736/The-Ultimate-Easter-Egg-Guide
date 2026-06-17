@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum games {
-    Test("Test"),
+    //Test("Test"),
     World_At_War("World at War"),
     Black_Ops_I("Black Ops 1"),
     Black_Ops_II("Black Ops 2"),
