@@ -38,6 +38,10 @@ public class PageTransitionManager {
 
     public static void startActivityWithFade(Activity currentActivity, Class<?> targetClass) {
         Intent intent = new Intent(currentActivity, targetClass);
+        startActivityWithFade(currentActivity, intent);
+    }
+
+    public static void startActivityWithFade(Activity currentActivity, Intent intent) {
         // Remove the NO_ANIMATION flag to allow transitions
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         

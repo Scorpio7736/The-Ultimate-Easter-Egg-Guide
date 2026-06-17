@@ -33,6 +33,15 @@ public class MapsSelection_Page extends AppCompatActivity {
         }
 
         mapsGridView = findViewById(R.id.maps_grid_view);
+        mapsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MapNames clickedMap = currentMaps.get(position);
+                Intent intent = new Intent(MapsSelection_Page.this, MapDisplay_Page.class);
+                intent.putExtra("MAP_NAME", clickedMap.mapName);
+                PageTransitionManager.startActivityWithFade(MapsSelection_Page.this, intent);
+            }
+        });
 
         Spinner spinner = findViewById(R.id.myDropdown);
         List<String> gameNames = new ArrayList<>();

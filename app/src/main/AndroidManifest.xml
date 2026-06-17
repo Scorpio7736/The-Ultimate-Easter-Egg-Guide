@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".Settings_PAGE" />
         <activity android:name=".MapsSelection_Page" />
+        <activity android:name=".MapDisplay_Page" />
     </application>
 
 </manifest>
