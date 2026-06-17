@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8,2 L100,2 Q106,2 106,8 L106,71 L54,106 L2,71 L2,8 Q2,2 8,2 Z" />
+
+    <path
+        android:fillColor="#FFA000"
+        android:pathData="M8,4 L100,4 Q104,4 104,8 L104,70 L54,103 L4,70 L4,8 Q4,4 8,4 Z" />
+
+    <path
+        android:fillColor="#B94800"
+        android:pathData="M13,11 L95,11 L95,67 L54,94 L13,67 Z" />
+
+    <path
+        android:fillColor="#FFA500"
+        android:pathData="M45,18 L52,38 L66,18 L62,42 L79,33 L69,50 L92,52 L70,58 L88,78 L65,66 L60,89 L52,68 L35,86 L40,62 L17,67 L35,51 L26,20 L48,38 Z" />
+
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:rotation="-28">
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M18,50 L55,50 Q58,50 58,53 L58,58 Q58,61 55,61 L18,61 Q15,61 15,58 L15,53 Q15,50 18,50 Z" />
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M9,51 L18,51 L18,60 L9,60 Q6,60 6,57 L6,54 Q6,51 9,51 Z" />
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M44,47 L56,47 L62,53 L56,64 L44,64 L50,58 L50,53 Z" />
+    </group>
+
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:rotation="-50">
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M62,29 L94,29 Q97,29 97,32 L97,37 Q97,40 94,40 L62,40 Q59,40 59,37 L59,32 Q59,29 62,29 Z" />
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M91,30 L100,30 L100,39 L91,39 Z" />
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M58,31 L65,31 L65,38 L58,38 Q56,38 56,36 L56,33 Q56,31 58,31 Z" />
+    </group>
+
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:rotation="-64">
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M49,70 L84,70 Q87,70 87,73 L87,78 Q87,81 84,81 L49,81 Q46,81 46,78 L46,73 Q46,70 49,70 Z" />
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M42,71 L49,71 L49,80 L42,80 Q39,80 39,77 L39,74 Q39,71 42,71 Z" />
+
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M75,67 L87,67 L93,73 L87,84 L75,84 L81,78 L81,73 Z" />
+    </group>
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.12"
+        android:pathData="M9,4 L59,4 C39,12 26,26 18,48 C14,58 10,68 5,75 L4,70 L4,8 Q4,4 9,4 Z" />
+</vector>
