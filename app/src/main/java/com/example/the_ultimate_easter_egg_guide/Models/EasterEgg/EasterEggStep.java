@@ -1,5 +1,6 @@
 package com.example.the_ultimate_easter_egg_guide.Models.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.ImageID;
+import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -43,6 +44,14 @@ public class EasterEggStep
     public EasterEggStep addImage(int resId) {
         java.util.Hashtable<Integer, ImageID> dict = new java.util.Hashtable<>();
         dict.put(0, new ImageID(resId));
+        this.images.add(dict);
+        this.hasImages = true;
+        return this;
+    }
+
+    public EasterEggStep addImage() {
+        java.util.Hashtable<Integer, ImageID> dict = new java.util.Hashtable<>();
+        dict.put(0, new ImageID(R.drawable.app_icon));
         this.images.add(dict);
         this.hasImages = true;
         return this;

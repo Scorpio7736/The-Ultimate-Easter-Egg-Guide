@@ -4,7 +4,10 @@ import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEggStep;
 import com.example.the_ultimate_easter_egg_guide.R;
 
-public class TestMap1EasterEggs
+import java.util.Arrays;
+import java.util.List;
+
+public class TestMap1_EasterEggs
 {
     public static final EasterEgg TestEggQuest1 = new EasterEgg("Main Quest Egg TEST")
         .addStep(new EasterEggStep("Activate the Power")
@@ -52,4 +55,17 @@ public class TestMap1EasterEggs
             .addSubStep(new EasterEggStep("Find Jar from image below")
                 .addImage(R.drawable.general_bkg)))
         .addStep(new EasterEggStep("Enter the Portal"));
+
+    //==============================================================================================
+    public static final List<EasterEgg> TestMap1_mainQuests = Arrays.asList(
+            TestEggQuest1,
+            TestEggQuest2
+    );
+    public static final List<EasterEgg> TestMap1_sideQuests = Arrays.asList(
+            TestEggSideQuest1,
+            TestEggSideQuest2
+    );
+    public static final List<EasterEgg> TestMap1_Buildables = Arrays.asList(
+            TestEggBuildable1
+    );
 }

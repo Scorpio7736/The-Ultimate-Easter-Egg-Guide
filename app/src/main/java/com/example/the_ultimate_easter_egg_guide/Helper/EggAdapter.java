@@ -78,7 +78,7 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
             if (depth == 0) {
                 prefix = "Step " + (i + 1) + ":   ";
             } else {
-                char letter = (char) ('a' + i);
+                char letter = (char) ('A' + i);
                 prefix = letter + ":   ";
             }
             

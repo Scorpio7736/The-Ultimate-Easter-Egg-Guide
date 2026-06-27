@@ -1,5 +1,8 @@
 package com.example.the_ultimate_easter_egg_guide.MapData;
 
+import com.example.the_ultimate_easter_egg_guide.MapData.Test.TEST_EggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.MapData.WAW.WAW_EggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapEggData;
 import com.example.the_ultimate_easter_egg_guide.Models.MapType;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.R;
@@ -14,15 +17,16 @@ public enum Maps
     // --------------------------------- Test MAPS ---------------------------------
 
     Test_TestingMap4(games.Test, "Testing Map 4", "This", R.drawable.app_icon, MapType.NOT_SET),
-    Test_TestingMap1(games.Test, "Testing Map 1", "Is", R.drawable.app_icon, MapType.NOT_SET, MapsEggHandler.TestEgg1),
+    Test_TestingMap1(games.Test, "Testing Map 1", "Is", R.drawable.app_icon, MapType.NOT_SET, TEST_EggWarehouse.TestMap1),
     Test_TestingMap2(games.Test, "Testing Map 2", "A", R.drawable.app_icon, MapType.NOT_SET),
     Test_TestingMap3(games.Test, "Testing Map 3", "Test", R.drawable.app_icon , MapType.NOT_SET),
 
     // --------------------------------- WORLD AT WAR MAPS ---------------------------------
-    WAW_Nacht_Der_Untoten(games.World_At_War, "Nacht der Untoten", "An abandoned bunker sits isolated in the fog after a failed mission. With limited weapons, tight rooms, and nowhere to truly run, survivors must hold out against the first waves of the undead.", R.drawable.nacht_waw, MapType.Group_935),
-    WAW_Shi_No_Numa(games.World_At_War, "Shi No Numa", "Deep in a swampy Japanese research site, strange experiments have unleashed the undead. Survivors must move through muddy huts, fend off Hellhounds, and uncover the dark secrets hidden in the jungle.", R.drawable.shinonuma_waw, MapType.Division_9),
-    WAW_Verruckt(games.World_At_War, "Verruckt", "Inside a ruined German asylum, the undead horror grows more intense. Split starting rooms, deadly corridors, traps, and the first Perk-a-Colas make survival more chaotic and dangerous.", R.drawable.verruckt_waw, MapType.Group_935),
-    WAW_Der_Riese(games.World_At_War, "Der Riese", "At a secret Group 935 weapons facility, teleporters, Pack-a-Punch, and dangerous experiments reveal the true scale of the zombie outbreak. This map expands the story and introduces some of the most important mechanics in Zombies history.", R.drawable.derreise_waw, MapType.Group_935),
+
+    WAW_Nacht_Der_Untoten(games.World_At_War, "Nacht der Untoten", "An abandoned bunker sits isolated in the fog after a failed mission. With limited weapons, tight rooms, and nowhere to truly run, survivors must hold out against the first waves of the undead.", R.drawable.nacht_waw, MapType.Group_935, WAW_EggWarehouse.Nacht),
+    WAW_Shi_No_Numa(games.World_At_War, "Shi No Numa", "Deep in a swampy Japanese research site, strange experiments have unleashed the undead. Survivors must move through muddy huts, fend off Hellhounds, and uncover the dark secrets hidden in the jungle.", R.drawable.shinonuma_waw, MapType.Division_9, WAW_EggWarehouse.ShiNoNuma),
+    WAW_Verruckt(games.World_At_War, "Verruckt", "Inside a ruined German asylum, the undead horror grows more intense. Split starting rooms, deadly corridors, traps, and the first Perk-a-Colas make survival more chaotic and dangerous.", R.drawable.verruckt_waw, MapType.Group_935, WAW_EggWarehouse.Verruckt),
+    WAW_Der_Riese(games.World_At_War, "Der Riese", "At a secret Group 935 weapons facility, teleporters, Pack-a-Punch, and dangerous experiments reveal the true scale of the zombie outbreak. This map expands the story and introduces some of the most important mechanics in Zombies history.", R.drawable.derreise_waw, MapType.Group_935, WAW_EggWarehouse.DerReise),
 
     // --------------------------------- Black Ops I MAPS ---------------------------------
 
@@ -108,16 +112,16 @@ public enum Maps
     public final int mapCover;
     public final MapType mapType;
     public final String mapDescription;
-    public final MapsEggHandler eggHandler;
+    public final MapEggData eggData;
 
-    Maps(games game, String mapName, String mapDescription, int mapCover, MapType mapType, MapsEggHandler eggHandler)
+    Maps(games game, String mapName, String mapDescription, int mapCover, MapType mapType, MapEggData eggData)
     {
         this.gameName = game;
         this.mapName = mapName;
         this.mapDescription = mapDescription;
         this.mapCover = mapCover;
         this.mapType = mapType;
-        this.eggHandler = eggHandler;
+        this.eggData = eggData;
     }
 
     Maps(games game, String mapName, String mapDescription, int mapCover, MapType mapType)
@@ -128,7 +132,7 @@ public enum Maps
         this.mapDescription = mapDescription;
         this.mapCover = mapCover;
         this.mapType = mapType;
-        this.eggHandler = null;
+        this.eggData = null;
     }
 
     public static List<Maps> getMapsForGame(games game) {

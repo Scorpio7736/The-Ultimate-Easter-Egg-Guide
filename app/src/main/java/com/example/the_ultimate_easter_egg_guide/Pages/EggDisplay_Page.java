@@ -53,19 +53,19 @@ public class EggDisplay_Page extends AppCompatActivity implements EggAdapter.OnE
                 backgroundImage.setImageResource(getBackgroundForMapType(selectedMap.mapType));
 
                 // Load eggs based on category
-                if (selectedMap.eggHandler != null) {
+                if (selectedMap.eggData != null) {
                     switch (category) {
                         case "MAIN_QUEST":
                             categoryTitle.setText("Main Quests");
-                            eggsToShow = selectedMap.eggHandler.mainQuests;
+                            eggsToShow = selectedMap.eggData.mainQuests;
                             break;
                         case "SIDE_QUESTS":
                             categoryTitle.setText("Side Quests");
-                            eggsToShow = selectedMap.eggHandler.sideQuests;
+                            eggsToShow = selectedMap.eggData.sideQuests;
                             break;
                         case "BUILDABLES":
                             categoryTitle.setText("Buildables");
-                            eggsToShow = selectedMap.eggHandler.Buildables;
+                            eggsToShow = selectedMap.eggData.Buildables;
                             break;
                     }
                 }

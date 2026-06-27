@@ -58,10 +58,10 @@ public class MapDisplay_Page extends AppCompatActivity {
                 backgroundImage.setImageResource(backgroundResId);
 
                 // Set Egg Counts
-                if (selectedMap.eggHandler != null) {
-                    mainQuestCount.setText(String.valueOf(selectedMap.eggHandler.mainQuests.size()));
-                    sideQuestCount.setText(String.valueOf(selectedMap.eggHandler.sideQuests.size()));
-                    buildablesCount.setText(String.valueOf(selectedMap.eggHandler.Buildables.size()));
+                if (selectedMap.eggData != null) {
+                    mainQuestCount.setText(String.valueOf(selectedMap.eggData.mainQuests.size()));
+                    sideQuestCount.setText(String.valueOf(selectedMap.eggData.sideQuests.size()));
+                    buildablesCount.setText(String.valueOf(selectedMap.eggData.Buildables.size()));
                 } else {
                     mainQuestCount.setText("0");
                     sideQuestCount.setText("0");
@@ -83,7 +83,7 @@ public class MapDisplay_Page extends AppCompatActivity {
 
         // Option click listeners
         findViewById(R.id.option_main_quest).setOnClickListener(v -> {
-            if (selectedMap != null && selectedMap.eggHandler != null) {
+            if (selectedMap != null && selectedMap.eggData != null) {
                 android.content.Intent intent = new android.content.Intent(this, EggDisplay_Page.class);
                 intent.putExtra("MAP_ID", selectedMap.name());
                 intent.putExtra("CATEGORY", "MAIN_QUEST");
@@ -94,7 +94,7 @@ public class MapDisplay_Page extends AppCompatActivity {
         });
 
         findViewById(R.id.option_side_quests).setOnClickListener(v -> {
-            if (selectedMap != null && selectedMap.eggHandler != null) {
+            if (selectedMap != null && selectedMap.eggData != null) {
                 android.content.Intent intent = new android.content.Intent(this, EggDisplay_Page.class);
                 intent.putExtra("MAP_ID", selectedMap.name());
                 intent.putExtra("CATEGORY", "SIDE_QUESTS");
@@ -105,7 +105,7 @@ public class MapDisplay_Page extends AppCompatActivity {
         });
 
         findViewById(R.id.option_buildables).setOnClickListener(v -> {
-            if (selectedMap != null && selectedMap.eggHandler != null) {
+            if (selectedMap != null && selectedMap.eggData != null) {
                 android.content.Intent intent = new android.content.Intent(this, EggDisplay_Page.class);
                 intent.putExtra("MAP_ID", selectedMap.name());
                 intent.putExtra("CATEGORY", "BUILDABLES");
