@@ -1,7 +1,6 @@
 package com.example.the_ultimate_easter_egg_guide.MapData;
 
 import com.example.the_ultimate_easter_egg_guide.Models.MapType;
-import com.example.the_ultimate_easter_egg_guide.Models.MapsEggHandler;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.R;
 

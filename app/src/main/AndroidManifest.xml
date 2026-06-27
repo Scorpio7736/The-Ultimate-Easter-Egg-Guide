@@ -24,6 +24,7 @@
         <activity android:name=".Pages.Settings_PAGE" />
         <activity android:name=".Pages.MapsSelection_Page" />
         <activity android:name=".Pages.MapDisplay_Page" />
+        <activity android:name=".Pages.EggDisplay_Page" />
     </application>
 
 </manifest>

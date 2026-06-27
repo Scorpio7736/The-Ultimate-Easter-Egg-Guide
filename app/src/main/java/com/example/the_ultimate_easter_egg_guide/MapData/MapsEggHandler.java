@@ -1,7 +1,7 @@
-package com.example.the_ultimate_easter_egg_guide.Models;
+package com.example.the_ultimate_easter_egg_guide.MapData;
 
-import com.example.the_ultimate_easter_egg_guide.EasterEgg.EasterEgg;
-import com.example.the_ultimate_easter_egg_guide.MapData.TestMapEggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEgg;
+import com.example.the_ultimate_easter_egg_guide.MapData.Test.TestMapEggWarehouse;
 
 import java.util.ArrayList;
 import java.util.List;

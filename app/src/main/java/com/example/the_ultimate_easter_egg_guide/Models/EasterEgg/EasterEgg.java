@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide.EasterEgg;
+package com.example.the_ultimate_easter_egg_guide.Models.EasterEgg;
 
 import java.util.ArrayList;
 import java.util.List;

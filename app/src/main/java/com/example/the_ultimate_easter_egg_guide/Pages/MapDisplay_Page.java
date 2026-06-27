@@ -83,23 +83,40 @@ public class MapDisplay_Page extends AppCompatActivity {
 
         // Option click listeners
         findViewById(R.id.option_main_quest).setOnClickListener(v -> {
-            Toast.makeText(this, "Opening Main Quest for " + selectedMap.mapName, Toast.LENGTH_SHORT).show();
-            // TODO: Start Main Quest Activity
+            if (selectedMap != null && selectedMap.eggHandler != null) {
+                android.content.Intent intent = new android.content.Intent(this, EggDisplay_Page.class);
+                intent.putExtra("MAP_ID", selectedMap.name());
+                intent.putExtra("CATEGORY", "MAIN_QUEST");
+                PageTransitionManager.startActivityWithFade(this, intent);
+            } else {
+                Toast.makeText(this, "No Main Quests available", Toast.LENGTH_SHORT).show();
+            }
         });
 
         findViewById(R.id.option_side_quests).setOnClickListener(v -> {
-            Toast.makeText(this, "Opening Side Quests for " + selectedMap.mapName, Toast.LENGTH_SHORT).show();
-            // TODO: Start Side Quests Activity
+            if (selectedMap != null && selectedMap.eggHandler != null) {
+                android.content.Intent intent = new android.content.Intent(this, EggDisplay_Page.class);
+                intent.putExtra("MAP_ID", selectedMap.name());
+                intent.putExtra("CATEGORY", "SIDE_QUESTS");
+                PageTransitionManager.startActivityWithFade(this, intent);
+            } else {
+                Toast.makeText(this, "No Side Quests available", Toast.LENGTH_SHORT).show();
+            }
         });
 
         findViewById(R.id.option_buildables).setOnClickListener(v -> {
-            Toast.makeText(this, "Opening Buildables for " + selectedMap.mapName, Toast.LENGTH_SHORT).show();
-            // TODO: Start Buildables Activity
+            if (selectedMap != null && selectedMap.eggHandler != null) {
+                android.content.Intent intent = new android.content.Intent(this, EggDisplay_Page.class);
+                intent.putExtra("MAP_ID", selectedMap.name());
+                intent.putExtra("CATEGORY", "BUILDABLES");
+                PageTransitionManager.startActivityWithFade(this, intent);
+            } else {
+                Toast.makeText(this, "No Buildables available", Toast.LENGTH_SHORT).show();
+            }
         });
 
         findViewById(R.id.option_storyline).setOnClickListener(v -> {
-            Toast.makeText(this, "Opening Storyline for " + selectedMap.mapName, Toast.LENGTH_SHORT).show();
-            // TODO: Start Storyline Activity
+            Toast.makeText(this, "Storyline coming soon!", Toast.LENGTH_SHORT).show();
         });
     }
 
