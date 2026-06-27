@@ -9,10 +9,10 @@ public enum Maps
 {
     // --------------------------------- Test MAPS ---------------------------------
 
-    Test_TestingMap4(games.Test, "Testing Map 4", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    Test_TestingMap1(games.Test, "Testing Map 1", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, MapsEggHandler.TestEgg1),
-    Test_TestingMap2(games.Test, "Testing Map 2", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    Test_TestingMap3(games.Test, "Testing Map 3", "INSERT HERE", R.drawable.app_icon , MapType.NOT_SET),
+    Test_TestingMap4(games.Test, "Testing Map 4", "This", R.drawable.app_icon, MapType.NOT_SET),
+    Test_TestingMap1(games.Test, "Testing Map 1", "Is", R.drawable.app_icon, MapType.NOT_SET, MapsEggHandler.TestEgg1),
+    Test_TestingMap2(games.Test, "Testing Map 2", "A", R.drawable.app_icon, MapType.NOT_SET),
+    Test_TestingMap3(games.Test, "Testing Map 3", "Test", R.drawable.app_icon , MapType.NOT_SET),
 
     // --------------------------------- WORLD AT WAR MAPS ---------------------------------
     WAW_Nacht_Der_Untoten(games.World_At_War, "Nacht der Untoten", "INSERT HERE", R.drawable.nacht_waw, MapType.Group_935),

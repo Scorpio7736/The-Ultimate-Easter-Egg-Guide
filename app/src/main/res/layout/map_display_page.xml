@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="16dp"
-                android:fontFamily="serif"
+                android:fontFamily="@font/nz_font"
                 android:shadowColor="#000000"
                 android:shadowDx="2"
                 android:shadowDy="2"
@@ -97,6 +97,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:fontFamily="@font/nz_font"
                         android:text="Description"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp"
@@ -136,34 +137,42 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/option_main_quest"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardBackgroundColor="#CC8B0000"
-                    app:cardCornerRadius="12dp">
+                    app:cardBackgroundColor="#CC000000"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="@color/divider_dark"
+                    app:strokeWidth="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_favorite_border"
-                            app:tint="#FFFFFF" />
-
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:background="@drawable/map_name_bar_background"
+                            android:fontFamily="@font/nz_font"
+                            android:gravity="center"
                             android:text="Main Quest"
                             android:textColor="#FFFFFF"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/main_quest_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/nz_font"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#ff0000"
+                            android:textSize="24sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -171,34 +180,42 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/option_side_quests"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardBackgroundColor="#CC2E7D32"
-                    app:cardCornerRadius="12dp">
+                    app:cardBackgroundColor="#CC000000"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="@color/divider_dark"
+                    app:strokeWidth="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_view_module"
-                            app:tint="#FFFFFF" />
-
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:background="@drawable/map_name_bar_background"
+                            android:fontFamily="@font/nz_font"
+                            android:gravity="center"
                             android:text="Side Quests"
                             android:textColor="#FFFFFF"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/side_quest_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/nz_font"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#ff0000"
+                            android:textSize="24sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -206,34 +223,42 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/option_buildables"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardBackgroundColor="#CC1565C0"
-                    app:cardCornerRadius="12dp">
+                    app:cardBackgroundColor="#CC000000"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="@color/divider_dark"
+                    app:strokeWidth="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_settings_green_badge"
-                            app:tint="#FFFFFF" />
-
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:background="@drawable/map_name_bar_background"
+                            android:fontFamily="@font/nz_font"
+                            android:gravity="center"
                             android:text="Buildables"
                             android:textColor="#FFFFFF"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/buildables_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/nz_font"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#ff0000"
+                            android:textSize="24sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -241,34 +266,40 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/option_storyline"
                     android:layout_width="0dp"
-                    android:layout_height="120dp"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:cardBackgroundColor="#CC6A1B9A"
-                    app:cardCornerRadius="12dp">
+                    app:cardBackgroundColor="#CC000000"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="@color/divider_dark"
+                    app:strokeWidth="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/ic_blood_puddle"
-                            app:tint="#FFFFFF" />
-
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:background="@drawable/map_name_bar_background"
+                            android:fontFamily="@font/nz_font"
+                            android:gravity="center"
                             android:text="Storyline"
                             android:textColor="#FFFFFF"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/storyline_icon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="12dp"
+                            android:src="@drawable/ic_view_list"
+                            app:tint="#ff0000" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 

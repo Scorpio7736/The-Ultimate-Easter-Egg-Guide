@@ -28,6 +28,10 @@ public class MapDisplay_Page extends AppCompatActivity {
         TextView mapDescription = findViewById(R.id.map_description);
         MaterialCardView descriptionHeader = findViewById(R.id.description_header);
         ImageView descriptionArrow = findViewById(R.id.description_arrow);
+        
+        TextView mainQuestCount = findViewById(R.id.main_quest_count);
+        TextView sideQuestCount = findViewById(R.id.side_quest_count);
+        TextView buildablesCount = findViewById(R.id.buildables_count);
 
         // Receive data from Intent
         if (getIntent().hasExtra("MAP_ID")) {
@@ -47,6 +51,17 @@ public class MapDisplay_Page extends AppCompatActivity {
                 // Change background based on MapType
                 int backgroundResId = getBackgroundForMapType(selectedMap.mapType);
                 backgroundImage.setImageResource(backgroundResId);
+
+                // Set Egg Counts
+                if (selectedMap.eggHandler != null) {
+                    mainQuestCount.setText(String.valueOf(selectedMap.eggHandler.mainQuests.size()));
+                    sideQuestCount.setText(String.valueOf(selectedMap.eggHandler.sideQuests.size()));
+                    buildablesCount.setText(String.valueOf(selectedMap.eggHandler.Buildables.size()));
+                } else {
+                    mainQuestCount.setText("0");
+                    sideQuestCount.setText("0");
+                    buildablesCount.setText("0");
+                }
             }
         }
 
