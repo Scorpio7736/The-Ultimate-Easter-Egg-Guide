@@ -1,7 +1,7 @@
 package com.example.the_ultimate_easter_egg_guide;
 import java.util.ArrayList;
+import java.util.Dictionary;
 import java.util.List;
-import java.util.Map;
 
 
 public class EasterEggStep
@@ -10,10 +10,15 @@ public class EasterEggStep
     public List<EasterEggStep> subSteps = new ArrayList<EasterEggStep>();
     public boolean hasImages = false;
 
-    public List<Map<Integer, ImageID>> images = new ArrayList<Map<Integer, ImageID>>();
+    public List<Dictionary<Integer, ImageID>> images = new ArrayList<>();
 
 
-    public EasterEggStep(String stepName, List<EasterEggStep> subSteps, boolean hasImages, List<Map<Integer, ImageID>> images)
+    public EasterEggStep(String stepName)
+    {
+        this.stepName = stepName;
+    }
+
+    public EasterEggStep(String stepName, List<EasterEggStep> subSteps, boolean hasImages, List<Dictionary<Integer, ImageID>> images)
     {
         this.stepName = stepName;
         this.subSteps = subSteps;
@@ -26,6 +31,19 @@ public class EasterEggStep
         this.stepName = stepName;
         this.subSteps = subSteps;
         this.hasImages = hasImages;
+    }
+
+    public EasterEggStep addSubStep(EasterEggStep step) {
+        this.subSteps.add(step);
+        return this;
+    }
+
+    public EasterEggStep addImage(int resId) {
+        java.util.Hashtable<Integer, ImageID> dict = new java.util.Hashtable<>();
+        dict.put(0, new ImageID(resId));
+        this.images.add(dict);
+        this.hasImages = true;
+        return this;
     }
 
     public int GetImageOnStep(int stepNumber)

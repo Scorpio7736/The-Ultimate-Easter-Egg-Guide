@@ -13,10 +13,10 @@ import java.util.List;
 public class MapAdapter extends BaseAdapter {
 
     private final Context context;
-    private final List<MapNames> mapList;
+    private final List<Maps> mapList;
     private final boolean isGridView;
 
-    public MapAdapter(Context context, List<MapNames> mapList, boolean isGridView) {
+    public MapAdapter(Context context, List<Maps> mapList, boolean isGridView) {
         this.context = context;
         this.mapList = mapList;
         this.isGridView = isGridView;
@@ -46,7 +46,7 @@ public class MapAdapter extends BaseAdapter {
         int layoutId = isGridView ? R.layout.map_item_grid : R.layout.map_item_list;
         convertView = LayoutInflater.from(context).inflate(layoutId, parent, false);
 
-        MapNames currentMap = (MapNames) getItem(position);
+        Maps currentMap = (Maps) getItem(position);
 
         TextView mapNameText = convertView.findViewById(R.id.map_name_text);
         if (mapNameText != null) {

@@ -3,9 +3,14 @@ package com.example.the_ultimate_easter_egg_guide;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.card.MaterialCardView;
 
 public class MapDisplay_Page extends AppCompatActivity {
+
+    private Maps selectedMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,29 +23,64 @@ public class MapDisplay_Page extends AppCompatActivity {
         }
 
         ImageView backgroundImage = findViewById(R.id.background_image);
+        TextView mapTitle = findViewById(R.id.map_title);
+        ImageView mapCoverImage = findViewById(R.id.map_cover_image);
+        TextView mapDescription = findViewById(R.id.map_description);
+        MaterialCardView descriptionHeader = findViewById(R.id.description_header);
+        ImageView descriptionArrow = findViewById(R.id.description_arrow);
 
-        // Receive data from Intent if needed
-        if (getIntent().hasExtra("MAP_NAME")) {
-            String mapName = getIntent().getStringExtra("MAP_NAME");
-            
-            // Find the MapNames enum entry to get the MapType
-            MapNames selectedMap = findMapByName(mapName);
+        // Receive data from Intent
+        if (getIntent().hasExtra("MAP_ID")) {
+            String mapId = getIntent().getStringExtra("MAP_ID");
+            try {
+                selectedMap = Maps.valueOf(mapId);
+            } catch (Exception e) {
+                selectedMap = null;
+            }
 
             if (selectedMap != null) {
+                // Set text and images
+                mapTitle.setText(selectedMap.mapName);
+                mapCoverImage.setImageResource(selectedMap.mapCover);
+                mapDescription.setText(selectedMap.mapDescription);
+
                 // Change background based on MapType
                 int backgroundResId = getBackgroundForMapType(selectedMap.mapType);
                 backgroundImage.setImageResource(backgroundResId);
             }
         }
-    }
 
-    private MapNames findMapByName(String name) {
-        for (MapNames map : MapNames.values()) {
-            if (map.mapName.equalsIgnoreCase(name)) {
-                return map;
+        // Toggle description dropdown
+        descriptionHeader.setOnClickListener(v -> {
+            if (mapDescription.getVisibility() == View.VISIBLE) {
+                mapDescription.setVisibility(View.GONE);
+                descriptionArrow.setRotation(0);
+            } else {
+                mapDescription.setVisibility(View.VISIBLE);
+                descriptionArrow.setRotation(180);
             }
-        }
-        return null;
+        });
+
+        // Option click listeners
+        findViewById(R.id.option_main_quest).setOnClickListener(v -> {
+            Toast.makeText(this, "Opening Main Quest for " + selectedMap.mapName, Toast.LENGTH_SHORT).show();
+            // TODO: Start Main Quest Activity
+        });
+
+        findViewById(R.id.option_side_quests).setOnClickListener(v -> {
+            Toast.makeText(this, "Opening Side Quests for " + selectedMap.mapName, Toast.LENGTH_SHORT).show();
+            // TODO: Start Side Quests Activity
+        });
+
+        findViewById(R.id.option_buildables).setOnClickListener(v -> {
+            Toast.makeText(this, "Opening Buildables for " + selectedMap.mapName, Toast.LENGTH_SHORT).show();
+            // TODO: Start Buildables Activity
+        });
+
+        findViewById(R.id.option_storyline).setOnClickListener(v -> {
+            Toast.makeText(this, "Opening Storyline for " + selectedMap.mapName, Toast.LENGTH_SHORT).show();
+            // TODO: Start Storyline Activity
+        });
     }
 
     private int getBackgroundForMapType(MapType mapType) {
@@ -69,6 +109,8 @@ public class MapDisplay_Page extends AppCompatActivity {
                 return R.drawable.agartha_bkg;
             case Group_935_Lunar:
                 return R.drawable.lunargroup935_bkg;
+            case Morge_City:
+                return R.drawable.city_bkg;
             default:
                 return R.drawable.general_bkg;
         }

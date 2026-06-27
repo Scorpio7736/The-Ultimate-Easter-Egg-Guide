@@ -21,7 +21,7 @@ public class MapsSelection_Page extends AppCompatActivity {
 
     private boolean isGridView = true;
     private GridView mapsGridView;
-    private List<MapNames> currentMaps = new ArrayList<>();
+    private List<Maps> currentMaps = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +36,9 @@ public class MapsSelection_Page extends AppCompatActivity {
         mapsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MapNames clickedMap = currentMaps.get(position);
+                Maps clickedMap = currentMaps.get(position);
                 Intent intent = new Intent(MapsSelection_Page.this, MapDisplay_Page.class);
-                intent.putExtra("MAP_NAME", clickedMap.mapName);
+                intent.putExtra("MAP_ID", clickedMap.name());
                 PageTransitionManager.startActivityWithFade(MapsSelection_Page.this, intent);
             }
         });
@@ -57,7 +57,7 @@ public class MapsSelection_Page extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 games selectedGame = games.values()[position];
-                currentMaps = MapNames.getMapsForGame(selectedGame);
+                currentMaps = Maps.getMapsForGame(selectedGame);
                 updateGridView();
             }
 
