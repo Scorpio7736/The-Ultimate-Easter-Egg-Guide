@@ -3,6 +3,7 @@ package com.example.the_ultimate_easter_egg_guide;
 public enum MapType
 {
     Group_935,
+    Group_935_Lunar,
     Division_9,
     Ascension_Group,
     Broken_Arrow,

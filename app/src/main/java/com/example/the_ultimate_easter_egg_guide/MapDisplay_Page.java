@@ -65,6 +65,10 @@ public class MapDisplay_Page extends AppCompatActivity {
                 return R.drawable.purgatory_bkg;
             case Crazy_Place:
                 return R.drawable.crazy_place_bkg;
+            case Agartha:
+                return R.drawable.agartha_bkg;
+            case Group_935_Lunar:
+                return R.drawable.lunargroup935_bkg;
             default:
                 return R.drawable.general_bkg;
         }

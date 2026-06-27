@@ -27,7 +27,7 @@ public enum MapNames
     BOI_Ascension(games.Black_Ops_I, "Ascension", R.drawable.ascension_boi, MapType.Ascension_Group),
     BOI_Call_Of_The_Dead(games.Black_Ops_I, "Call of the Dead", R.drawable.cotd_boi, MapType.Group_935),
     BOI_Shangri_La(games.Black_Ops_I, "Shangri La", R.drawable.shangrila_boi, MapType.Jungle),
-    BOI_Moon(games.Black_Ops_I, "Moon", R.drawable.moon_boi, MapType.Group_935),
+    BOI_Moon(games.Black_Ops_I, "Moon", R.drawable.moon_boi, MapType.Group_935_Lunar),
 
     // --------------------------------- Black Ops II MAPS ---------------------------------
 
@@ -53,7 +53,7 @@ public enum MapNames
     BOIII_Kino_Der_Toten(games.Black_Ops_III, "Kino der Toten", R.drawable.kinodertoten_boiii, MapType.Group_935),
     BOIII_Ascension(games.Black_Ops_III, "Ascension", R.drawable.ascension_boiii, MapType.Ascension_Group),
     BOIII_Shangri_La(games.Black_Ops_III, "Shangri La", R.drawable.shangrila_boiii, MapType.Jungle),
-    BOIII_Moon(games.Black_Ops_III, "Moon", R.drawable.moon_boiii, MapType.Group_935),
+    BOIII_Moon(games.Black_Ops_III, "Moon", R.drawable.moon_boiii, MapType.Group_935_Lunar),
     BOIII_Origins(games.Black_Ops_III, "Origins", R.drawable.origins_boii, MapType.Crazy_Place),
 
 
