@@ -1,6 +1,5 @@
-package com.example.the_ultimate_easter_egg_guide;
+package com.example.the_ultimate_easter_egg_guide.Pages;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -8,6 +7,9 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
+import com.example.the_ultimate_easter_egg_guide.R;
 
 public class Settings_PAGE extends AppCompatActivity
 {

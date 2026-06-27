@@ -1,12 +1,14 @@
-package com.example.the_ultimate_easter_egg_guide;
+package com.example.the_ultimate_easter_egg_guide.Pages;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+
+import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
+import com.example.the_ultimate_easter_egg_guide.R;
 
 public class Home_PAGE extends AppCompatActivity {
 

@@ -1,4 +1,9 @@
-package com.example.the_ultimate_easter_egg_guide;
+package com.example.the_ultimate_easter_egg_guide.MapData;
+
+import com.example.the_ultimate_easter_egg_guide.Models.MapType;
+import com.example.the_ultimate_easter_egg_guide.Models.MapsEggHandler;
+import com.example.the_ultimate_easter_egg_guide.Models.games;
+import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +20,10 @@ public enum Maps
     Test_TestingMap3(games.Test, "Testing Map 3", "Test", R.drawable.app_icon , MapType.NOT_SET),
 
     // --------------------------------- WORLD AT WAR MAPS ---------------------------------
-    WAW_Nacht_Der_Untoten(games.World_At_War, "Nacht der Untoten", "INSERT HERE", R.drawable.nacht_waw, MapType.Group_935),
-    WAW_Shi_No_Numa(games.World_At_War, "Shi No Numa", "INSERT HERE", R.drawable.shinonuma_waw, MapType.Division_9),
-    WAW_Verruckt(games.World_At_War, "Verruckt", "INSERT HERE", R.drawable.verruckt_waw, MapType.Group_935),
-    WAW_Der_Riese(games.World_At_War, "Der Riese", "INSERT HERE", R.drawable.derreise_waw, MapType.Group_935),
+    WAW_Nacht_Der_Untoten(games.World_At_War, "Nacht der Untoten", "An abandoned bunker sits isolated in the fog after a failed mission. With limited weapons, tight rooms, and nowhere to truly run, survivors must hold out against the first waves of the undead.", R.drawable.nacht_waw, MapType.Group_935),
+    WAW_Shi_No_Numa(games.World_At_War, "Shi No Numa", "Deep in a swampy Japanese research site, strange experiments have unleashed the undead. Survivors must move through muddy huts, fend off Hellhounds, and uncover the dark secrets hidden in the jungle.", R.drawable.shinonuma_waw, MapType.Division_9),
+    WAW_Verruckt(games.World_At_War, "Verruckt", "Inside a ruined German asylum, the undead horror grows more intense. Split starting rooms, deadly corridors, traps, and the first Perk-a-Colas make survival more chaotic and dangerous.", R.drawable.verruckt_waw, MapType.Group_935),
+    WAW_Der_Riese(games.World_At_War, "Der Riese", "At a secret Group 935 weapons facility, teleporters, Pack-a-Punch, and dangerous experiments reveal the true scale of the zombie outbreak. This map expands the story and introduces some of the most important mechanics in Zombies history.", R.drawable.derreise_waw, MapType.Group_935),
 
     // --------------------------------- Black Ops I MAPS ---------------------------------
 
@@ -31,6 +36,7 @@ public enum Maps
 
     // --------------------------------- Black Ops II MAPS ---------------------------------
 
+    BOII_Town(games.Black_Ops_II, "Town", "INSERT HERE", R.drawable.town_boii, MapType.Broken_Earth),
     BOII_Farm(games.Black_Ops_II, "Farm", "INSERT HERE", R.drawable.farm_boii, MapType.Broken_Earth),
     BOII_Bus_Depot(games.Black_Ops_II, "Bus Depot", "INSERT HERE", R.drawable.busdepot_boii, MapType.Broken_Earth),
     BOII_Nuketown(games.Black_Ops_II, "Nuketown", "INSERT HERE", R.drawable.nuketown_boii, MapType.Broken_Arrow),
@@ -134,6 +140,12 @@ public enum Maps
             }
         }
         return maps;
+    }
+
+    public static Maps GetRandomMap()
+    {
+        int randomIndex = (int) (Math.random() * Maps.All_Maps.size());
+        return Maps.All_Maps.get(randomIndex);
     }
 
 

@@ -1,10 +1,12 @@
-package com.example.the_ultimate_easter_egg_guide;
+package com.example.the_ultimate_easter_egg_guide.Pages;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.the_ultimate_easter_egg_guide.R;
 
 public class Template_PAGE extends AppCompatActivity {
 

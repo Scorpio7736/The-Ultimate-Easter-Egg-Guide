@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide;
+package com.example.the_ultimate_easter_egg_guide.Helper;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
+import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.List;
 

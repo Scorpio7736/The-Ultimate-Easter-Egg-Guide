@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.The_Ultimate_Easter_Egg_Guide">
         <activity
-            android:name=".Home_PAGE"
+            android:name=".Pages.Home_PAGE"
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
@@ -21,9 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Settings_PAGE" />
-        <activity android:name=".MapsSelection_Page" />
-        <activity android:name=".MapDisplay_Page" />
+        <activity android:name=".Pages.Settings_PAGE" />
+        <activity android:name=".Pages.MapsSelection_Page" />
+        <activity android:name=".Pages.MapDisplay_Page" />
     </application>
 
 </manifest>

@@ -1,4 +1,6 @@
-package com.example.the_ultimate_easter_egg_guide;
+package com.example.the_ultimate_easter_egg_guide.MapData;
+
+import com.example.the_ultimate_easter_egg_guide.EasterEgg.EasterEgg;
 
 import java.util.Arrays;
 import java.util.List;

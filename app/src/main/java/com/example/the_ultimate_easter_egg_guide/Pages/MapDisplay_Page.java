@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide;
+package com.example.the_ultimate_easter_egg_guide.Pages;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.the_ultimate_easter_egg_guide.Models.MapType;
+import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
+import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
+import com.example.the_ultimate_easter_egg_guide.R;
 import com.google.android.material.card.MaterialCardView;
 
 public class MapDisplay_Page extends AppCompatActivity {
