@@ -23,7 +23,7 @@ public enum Maps
 
     // --------------------------------- WORLD AT WAR MAPS ---------------------------------
 
-    WAW_Nacht_Der_Untoten(games.World_At_War, "Nacht der Untoten", "An abandoned bunker sits isolated in the fog after a failed mission. With limited weapons, tight rooms, and nowhere to truly run, survivors must hold out against the first waves of the undead.", R.drawable.nacht_waw, MapType.Group_935, WAW_EggWarehouse.Nacht),
+    WAW_Nacht_Der_Untoten(games.World_At_War, "Nacht der Untoten", "An abandoned bunker sits isolated in the fog after a failed mission. With limited weapons, tight rooms, and nowhere to truly run, survivors must hold out against the first waves of the undead.", R.drawable.nacht_waw, MapType.Group_935, WAW_EggWarehouse.Nacht, R.raw.nacht_trailer),
     WAW_Shi_No_Numa(games.World_At_War, "Shi No Numa", "Deep in a swampy Japanese research site, strange experiments have unleashed the undead. Survivors must move through muddy huts, fend off Hellhounds, and uncover the dark secrets hidden in the jungle.", R.drawable.shinonuma_waw, MapType.Division_9, WAW_EggWarehouse.ShiNoNuma),
     WAW_Verruckt(games.World_At_War, "Verruckt", "Inside a ruined German asylum, the undead horror grows more intense. Split starting rooms, deadly corridors, traps, and the first Perk-a-Colas make survival more chaotic and dangerous.", R.drawable.verruckt_waw, MapType.Group_935, WAW_EggWarehouse.Verruckt),
     WAW_Der_Riese(games.World_At_War, "Der Riese", "At a secret Group 935 weapons facility, teleporters, Pack-a-Punch, and dangerous experiments reveal the true scale of the zombie outbreak. This map expands the story and introduces some of the most important mechanics in Zombies history.", R.drawable.derreise_waw, MapType.Group_935, WAW_EggWarehouse.DerReise),
@@ -113,6 +113,18 @@ public enum Maps
     public final MapType mapType;
     public final String mapDescription;
     public final MapEggData eggData;
+    public final int mapTrailer;
+
+    Maps(games game, String mapName, String mapDescription, int mapCover, MapType mapType, MapEggData eggData, int mapTrailer)
+    {
+        this.gameName = game;
+        this.mapName = mapName;
+        this.mapDescription = mapDescription;
+        this.mapCover = mapCover;
+        this.mapType = mapType;
+        this.eggData = eggData;
+        this.mapTrailer = mapTrailer;
+    }
 
     Maps(games game, String mapName, String mapDescription, int mapCover, MapType mapType, MapEggData eggData)
     {
@@ -122,6 +134,7 @@ public enum Maps
         this.mapCover = mapCover;
         this.mapType = mapType;
         this.eggData = eggData;
+        this.mapTrailer = -1;
     }
 
     Maps(games game, String mapName, String mapDescription, int mapCover, MapType mapType)
@@ -133,6 +146,7 @@ public enum Maps
         this.mapCover = mapCover;
         this.mapType = mapType;
         this.eggData = null;
+        this.mapTrailer = -1;
     }
 
     public static List<Maps> getMapsForGame(games game) {

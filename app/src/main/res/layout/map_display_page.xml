@@ -64,17 +64,31 @@
             <!-- Map Cover Image -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="220dp"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="8dp">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:strokeColor="#44FFFFFF"
+                app:strokeWidth="1dp">
 
-                <ImageView
-                    android:id="@+id/map_cover_image"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/app_icon" />
+                    android:layout_height="match_parent">
+
+                    <VideoView
+                        android:id="@+id/map_trailer_video"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:visibility="invisible" />
+
+                    <ImageView
+                        android:id="@+id/map_cover_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/app_icon" />
+                </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Map Description Dropdown Header -->

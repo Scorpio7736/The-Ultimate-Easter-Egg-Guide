@@ -1,10 +1,13 @@
 package com.example.the_ultimate_easter_egg_guide.Pages;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.the_ultimate_easter_egg_guide.Models.MapType;
@@ -16,6 +19,8 @@ import com.google.android.material.card.MaterialCardView;
 public class MapDisplay_Page extends AppCompatActivity {
 
     private Maps selectedMap;
+    private final Handler trailerHandler = new Handler();
+    private Runnable trailerRunnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,7 @@ public class MapDisplay_Page extends AppCompatActivity {
         ImageView backgroundImage = findViewById(R.id.background_image);
         TextView mapTitle = findViewById(R.id.map_title);
         ImageView mapCoverImage = findViewById(R.id.map_cover_image);
+        VideoView mapTrailerVideo = findViewById(R.id.map_trailer_video);
         TextView mapDescription = findViewById(R.id.map_description);
         MaterialCardView descriptionHeader = findViewById(R.id.description_header);
         ImageView descriptionArrow = findViewById(R.id.description_arrow);
@@ -66,6 +72,11 @@ public class MapDisplay_Page extends AppCompatActivity {
                     mainQuestCount.setText("0");
                     sideQuestCount.setText("0");
                     buildablesCount.setText("0");
+                }
+
+                // Handle Trailer Delay
+                if (selectedMap.mapTrailer != -1) {
+                    setupTrailer(mapCoverImage, mapTrailerVideo);
                 }
             }
         }
@@ -118,6 +129,90 @@ public class MapDisplay_Page extends AppCompatActivity {
         findViewById(R.id.option_storyline).setOnClickListener(v -> {
             Toast.makeText(this, "Storyline coming soon!", Toast.LENGTH_SHORT).show();
         });
+    }
+
+    private void setupTrailer(ImageView mapCoverImage, VideoView mapTrailerVideo) {
+        String path = "android.resource://" + getPackageName() + "/" + selectedMap.mapTrailer;
+        mapTrailerVideo.setVideoURI(Uri.parse(path));
+        mapTrailerVideo.setZOrderMediaOverlay(true);
+        
+        mapTrailerVideo.setOnPreparedListener(mp -> {
+            mp.setLooping(false); // Disable looping to detect completion
+            mp.setVolume(0f, 0f); // Keep it muted
+
+            // Scaling logic to "center crop" the video so it fills the slot
+            float videoWidth = mp.getVideoWidth();
+            float videoHeight = mp.getVideoHeight();
+            float videoAspectRatio = videoWidth / videoHeight;
+
+            float viewWidth = mapTrailerVideo.getWidth();
+            float viewHeight = mapTrailerVideo.getHeight();
+            float viewAspectRatio = viewWidth / viewHeight;
+
+            if (videoAspectRatio > viewAspectRatio) {
+                // Video is wider than the view - scale width
+                mapTrailerVideo.setScaleX(videoAspectRatio / viewAspectRatio);
+            } else {
+                // Video is taller than the view - scale height
+                mapTrailerVideo.setScaleY(viewAspectRatio / videoAspectRatio);
+            }
+        });
+
+        mapTrailerVideo.setOnCompletionListener(mp -> {
+            if (!isFinishing() && !isDestroyed()) {
+                // Video ended, fade back to cover image
+                mapCoverImage.setVisibility(View.VISIBLE);
+                mapCoverImage.animate()
+                    .alpha(1f)
+                    .setDuration(1000)
+                    .start();
+                
+                mapTrailerVideo.animate()
+                    .alpha(0f)
+                    .setDuration(1000)
+                    .withEndAction(() -> {
+                        mapTrailerVideo.setVisibility(View.INVISIBLE);
+                        mapTrailerVideo.setAlpha(1f); // Reset alpha for next play
+                    })
+                    .start();
+
+                // Wait 10 seconds before playing again
+                trailerHandler.postDelayed(trailerRunnable, 10000);
+            }
+        });
+
+        trailerRunnable = () -> {
+            if (!isFinishing() && !isDestroyed()) {
+                mapTrailerVideo.setVisibility(View.VISIBLE);
+                mapTrailerVideo.start();
+                
+                mapCoverImage.animate()
+                    .alpha(0f)
+                    .setDuration(1000)
+                    .withEndAction(() -> mapCoverImage.setVisibility(View.GONE))
+                    .start();
+            }
+        };
+
+        // Initial 5 second delay for the first play
+        trailerHandler.postDelayed(trailerRunnable, 5000);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        VideoView mapTrailerVideo = findViewById(R.id.map_trailer_video);
+        if (mapTrailerVideo.isPlaying()) {
+            mapTrailerVideo.pause();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (trailerHandler != null && trailerRunnable != null) {
+            trailerHandler.removeCallbacks(trailerRunnable);
+        }
     }
 
     private int getBackgroundForMapType(MapType mapType) {
