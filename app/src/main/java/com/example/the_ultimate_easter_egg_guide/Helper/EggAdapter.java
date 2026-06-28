@@ -103,6 +103,7 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
                         imageView.setAdjustViewBounds(true);
                         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
                         imageView.setImageResource(imgId.GetImageID());
+                        imageView.setOnClickListener(v -> showFullScreenImage(container.getContext(), imgId.GetImageID()));
                         imagesContainer.addView(imageView);
                     }
                 }
@@ -121,6 +122,22 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
 
             container.addView(stepView);
         }
+    }
+
+    private void showFullScreenImage(android.content.Context context, int resId) {
+        android.app.Dialog dialog = new android.app.Dialog(context, R.style.FullScreenDialog);
+        dialog.setContentView(R.layout.dialog_full_image);
+
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        }
+
+        ImageView fullImageView = dialog.findViewById(R.id.full_image_view);
+        fullImageView.setImageResource(resId);
+
+        dialog.findViewById(R.id.close_full_image).setOnClickListener(v -> dialog.dismiss());
+
+        dialog.show();
     }
 
     @Override
