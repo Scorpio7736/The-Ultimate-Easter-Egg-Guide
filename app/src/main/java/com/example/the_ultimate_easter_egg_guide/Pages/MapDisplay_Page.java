@@ -1,9 +1,11 @@
 package com.example.the_ultimate_easter_egg_guide.Pages;
 
+import android.app.Dialog;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +37,7 @@ public class MapDisplay_Page extends AppCompatActivity {
         ImageView backgroundImage = findViewById(R.id.background_image);
         TextView mapTitle = findViewById(R.id.map_title);
         ImageView mapCoverImage = findViewById(R.id.map_cover_image);
-        VideoView mapTrailerVideo = findViewById(R.id.map_trailer_video);
+        MaterialCardView mapCoverCard = findViewById(R.id.map_cover_card);
         TextView mapDescription = findViewById(R.id.map_description);
         MaterialCardView descriptionHeader = findViewById(R.id.description_header);
         ImageView descriptionArrow = findViewById(R.id.description_arrow);
@@ -76,7 +78,7 @@ public class MapDisplay_Page extends AppCompatActivity {
 
                 // Handle Trailer Delay
                 if (selectedMap.mapTrailer != -1) {
-                    setupTrailer(mapCoverImage, mapTrailerVideo);
+                    mapCoverCard.setOnClickListener(v -> showVideoPopup());
                 }
             }
         }
@@ -129,6 +131,42 @@ public class MapDisplay_Page extends AppCompatActivity {
         findViewById(R.id.option_storyline).setOnClickListener(v -> {
             Toast.makeText(this, "Storyline coming soon!", Toast.LENGTH_SHORT).show();
         });
+    }
+
+    private void showVideoPopup() {
+        if (selectedMap == null || selectedMap.mapTrailer == -1) return;
+
+        VideoView mapTrailerVideo = findViewById(R.id.map_trailer_video);
+        boolean wasPlaying = mapTrailerVideo.isPlaying();
+        if (wasPlaying) {
+            mapTrailerVideo.pause();
+        }
+
+        Dialog dialog = new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+        dialog.setContentView(R.layout.dialog_video_player);
+
+        VideoView popupVideoView = dialog.findViewById(R.id.dialog_video_view);
+        ImageButton closeButton = dialog.findViewById(R.id.close_button);
+
+        String path = "android.resource://" + getPackageName() + "/" + selectedMap.mapTrailer;
+        popupVideoView.setVideoURI(Uri.parse(path));
+
+        popupVideoView.setOnPreparedListener(mp -> {
+            mp.setLooping(false);
+            mp.setVolume(1.0f, 1.0f); // Play with sound
+            popupVideoView.start();
+        });
+
+        dialog.setOnDismissListener(d -> {
+            if (wasPlaying && !isFinishing() && !isDestroyed()) {
+                mapTrailerVideo.start();
+            }
+        });
+
+        popupVideoView.setOnCompletionListener(mp -> dialog.dismiss());
+        closeButton.setOnClickListener(v -> dialog.dismiss());
+
+        dialog.show();
     }
 
     private void setupTrailer(ImageView mapCoverImage, VideoView mapTrailerVideo) {
@@ -199,11 +237,39 @@ public class MapDisplay_Page extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if (selectedMap != null && selectedMap.mapTrailer != -1) {
+            resetTrailerUI();
+            setupTrailer(findViewById(R.id.map_cover_image), findViewById(R.id.map_trailer_video));
+        }
+    }
+
+    private void resetTrailerUI() {
+        ImageView mapCoverImage = findViewById(R.id.map_cover_image);
+        VideoView mapTrailerVideo = findViewById(R.id.map_trailer_video);
+        
+        trailerHandler.removeCallbacks(trailerRunnable);
+        
+        mapCoverImage.animate().cancel();
+        mapCoverImage.setVisibility(View.VISIBLE);
+        mapCoverImage.setAlpha(1f);
+        
+        mapTrailerVideo.animate().cancel();
+        mapTrailerVideo.setVisibility(View.INVISIBLE);
+        mapTrailerVideo.setAlpha(1f);
+        mapTrailerVideo.stopPlayback();
+    }
+
+    @Override
     protected void onPause() {
         super.onPause();
         VideoView mapTrailerVideo = findViewById(R.id.map_trailer_video);
-        if (mapTrailerVideo.isPlaying()) {
+        if (mapTrailerVideo != null && mapTrailerVideo.isPlaying()) {
             mapTrailerVideo.pause();
+        }
+        if (trailerHandler != null && trailerRunnable != null) {
+            trailerHandler.removeCallbacks(trailerRunnable);
         }
     }
 
