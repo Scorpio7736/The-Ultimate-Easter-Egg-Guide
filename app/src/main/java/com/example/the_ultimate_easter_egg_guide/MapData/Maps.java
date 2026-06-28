@@ -1,5 +1,12 @@
 package com.example.the_ultimate_easter_egg_guide.MapData;
 
+import com.example.the_ultimate_easter_egg_guide.MapData.BOI.BOI_EggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.MapData.BOII.BOII_EggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.MapData.BOIII.BOIII_EggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.MapData.BOIV.BOIV_EggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.MapData.BOCW.BOCW_EggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.MapData.BOVI.BOVI_EggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.MapData.BOVII.BOVII_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.MapData.Test.TEST_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.MapData.WAW.WAW_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapEggData;
@@ -30,77 +37,77 @@ public enum Maps
 
     // --------------------------------- Black Ops I MAPS ---------------------------------
 
-    BOI_Kino_Der_Toten(games.Black_Ops_I, "Kino der Toten", "INSERT HERE", R.drawable.kinodertoten_boi, MapType.Group_935),
-    BOI_Five(games.Black_Ops_I, "Five", "INSERT HERE", R.drawable.five_boi, MapType.US_Government),
-    BOI_Ascension(games.Black_Ops_I, "Ascension", "INSERT HERE", R.drawable.ascension_boi, MapType.Ascension_Group),
-    BOI_Call_Of_The_Dead(games.Black_Ops_I, "Call of the Dead", "INSERT HERE", R.drawable.cotd_boi, MapType.Group_935),
-    BOI_Shangri_La(games.Black_Ops_I, "Shangri La", "INSERT HERE", R.drawable.shangrila_boi, MapType.Jungle),
-    BOI_Moon(games.Black_Ops_I, "Moon", "INSERT HERE", R.drawable.moon_boi, MapType.Group_935_Lunar),
+    BOI_Kino_Der_Toten(games.Black_Ops_I, "Kino der Toten", "INSERT HERE", R.drawable.kinodertoten_boi, MapType.Group_935, BOI_EggWarehouse.KinoDerToten),
+    BOI_Five(games.Black_Ops_I, "Five", "INSERT HERE", R.drawable.five_boi, MapType.US_Government, BOI_EggWarehouse.Five),
+    BOI_Ascension(games.Black_Ops_I, "Ascension", "INSERT HERE", R.drawable.ascension_boi, MapType.Ascension_Group, BOI_EggWarehouse.Ascension),
+    BOI_Call_Of_The_Dead(games.Black_Ops_I, "Call of the Dead", "INSERT HERE", R.drawable.cotd_boi, MapType.Group_935, BOI_EggWarehouse.CallOfTheDead),
+    BOI_Shangri_La(games.Black_Ops_I, "Shangri La", "INSERT HERE", R.drawable.shangrila_boi, MapType.Jungle, BOI_EggWarehouse.ShangriLa),
+    BOI_Moon(games.Black_Ops_I, "Moon", "INSERT HERE", R.drawable.moon_boi, MapType.Group_935_Lunar, BOI_EggWarehouse.Moon),
 
     // --------------------------------- Black Ops II MAPS ---------------------------------
 
-    BOII_Town(games.Black_Ops_II, "Town", "INSERT HERE", R.drawable.town_boii, MapType.Broken_Earth),
-    BOII_Farm(games.Black_Ops_II, "Farm", "INSERT HERE", R.drawable.farm_boii, MapType.Broken_Earth),
-    BOII_Bus_Depot(games.Black_Ops_II, "Bus Depot", "INSERT HERE", R.drawable.busdepot_boii, MapType.Broken_Earth),
-    BOII_Nuketown(games.Black_Ops_II, "Nuketown", "INSERT HERE", R.drawable.nuketown_boii, MapType.Broken_Arrow),
-    BOII_Die_Rise(games.Black_Ops_II, "Die Rise", "INSERT HERE", R.drawable.dierise_boii, MapType.Broken_Earth),
-    BOII_Mob_Of_The_Dead(games.Black_Ops_II, "Mob of the Dead", "INSERT HERE", R.drawable.motd_boii, MapType.Purgatory),
-    BOII_Buried(games.Black_Ops_II, "Buried", "INSERT HERE", R.drawable.buried_boii, MapType.Broken_Earth),
-    BOII_Origins(games.Black_Ops_II, "Origins", "INSERT HERE", R.drawable.origins_boii, MapType.Crazy_Place),
+    BOII_Town(games.Black_Ops_II, "Town", "INSERT HERE", R.drawable.town_boii, MapType.Broken_Earth, BOII_EggWarehouse.Town),
+    BOII_Farm(games.Black_Ops_II, "Farm", "INSERT HERE", R.drawable.farm_boii, MapType.Broken_Earth, BOII_EggWarehouse.Farm),
+    BOII_Bus_Depot(games.Black_Ops_II, "Bus Depot", "INSERT HERE", R.drawable.busdepot_boii, MapType.Broken_Earth, BOII_EggWarehouse.BusDepot),
+    BOII_Nuketown(games.Black_Ops_II, "Nuketown", "INSERT HERE", R.drawable.nuketown_boii, MapType.Broken_Arrow, BOII_EggWarehouse.Nuketown),
+    BOII_Die_Rise(games.Black_Ops_II, "Die Rise", "INSERT HERE", R.drawable.dierise_boii, MapType.Broken_Earth, BOII_EggWarehouse.DieRise),
+    BOII_Mob_Of_The_Dead(games.Black_Ops_II, "Mob of the Dead", "INSERT HERE", R.drawable.motd_boii, MapType.Purgatory, BOII_EggWarehouse.MobOfTheDead),
+    BOII_Buried(games.Black_Ops_II, "Buried", "INSERT HERE", R.drawable.buried_boii, MapType.Broken_Earth, BOII_EggWarehouse.Buried),
+    BOII_Origins(games.Black_Ops_II, "Origins", "INSERT HERE", R.drawable.origins_boii, MapType.Crazy_Place, BOII_EggWarehouse.Origins),
 
     // --------------------------------- Black Ops III MAPS ---------------------------------
 
-    BOIII_Shadows_Of_Evil(games.Black_Ops_III, "Shadows of Evil", "INSERT HERE", R.drawable.soe_boiii, MapType.Morge_City),
-    BOIII_The_Giant(games.Black_Ops_III, "The Giant", "INSERT HERE", R.drawable.thegiant_boiii, MapType.Group_935),
-    BOIII_Der_Eisendrache(games.Black_Ops_III, "Der Eisendrache", "INSERT HERE", R.drawable.de_boiii, MapType.Group_935),
-    BOIII_Zetsubou_No_Shima(games.Black_Ops_III, "Zetsubou No Shima", "INSERT HERE", R.drawable.zetsubounoshima_boiii, MapType.Division_9),
-    BOIII_Gorod_Krovi(games.Black_Ops_III, "Gorod Krovi", "INSERT HERE", R.drawable.gorodkrovi_boiii, MapType.Stalingrad),
-    BOIII_Revelations(games.Black_Ops_III, "Revelations", "INSERT HERE", R.drawable.revelations_boiii, MapType.Agartha),
-    BOIII_Nacht_Der_Untoten(games.Black_Ops_III, "Nacht der Untoten", "INSERT HERE", R.drawable.nacht_boiii, MapType.Group_935),
-    BOIII_Verruckt(games.Black_Ops_III, "Verruckt", "INSERT HERE", R.drawable.verruckt, MapType.Group_935),
-    BOIII_Shi_No_Numa(games.Black_Ops_III, "Shi No Numa", "INSERT HERE", R.drawable.shinonuma_boiii, MapType.Division_9),
-    BOIII_Kino_Der_Toten(games.Black_Ops_III, "Kino der Toten", "INSERT HERE", R.drawable.kinodertoten_boiii, MapType.Group_935),
-    BOIII_Ascension(games.Black_Ops_III, "Ascension", "INSERT HERE", R.drawable.ascension_boiii, MapType.Ascension_Group),
-    BOIII_Shangri_La(games.Black_Ops_III, "Shangri La", "INSERT HERE", R.drawable.shangrila_boiii, MapType.Jungle),
-    BOIII_Moon(games.Black_Ops_III, "Moon", "INSERT HERE", R.drawable.moon_boiii, MapType.Group_935_Lunar),
-    BOIII_Origins(games.Black_Ops_III, "Origins", "INSERT HERE", R.drawable.origins_boii, MapType.Crazy_Place),
+    BOIII_Shadows_Of_Evil(games.Black_Ops_III, "Shadows of Evil", "INSERT HERE", R.drawable.soe_boiii, MapType.Morge_City, BOIII_EggWarehouse.ShadowsOfEvil),
+    BOIII_The_Giant(games.Black_Ops_III, "The Giant", "INSERT HERE", R.drawable.thegiant_boiii, MapType.Group_935, BOIII_EggWarehouse.TheGiant),
+    BOIII_Der_Eisendrache(games.Black_Ops_III, "Der Eisendrache", "INSERT HERE", R.drawable.de_boiii, MapType.Group_935, BOIII_EggWarehouse.DerEisendrache),
+    BOIII_Zetsubou_No_Shima(games.Black_Ops_III, "Zetsubou No Shima", "INSERT HERE", R.drawable.zetsubounoshima_boiii, MapType.Division_9, BOIII_EggWarehouse.ZetsubouNoShima),
+    BOIII_Gorod_Krovi(games.Black_Ops_III, "Gorod Krovi", "INSERT HERE", R.drawable.gorodkrovi_boiii, MapType.Stalingrad, BOIII_EggWarehouse.GorodKrovi),
+    BOIII_Revelations(games.Black_Ops_III, "Revelations", "INSERT HERE", R.drawable.revelations_boiii, MapType.Agartha, BOIII_EggWarehouse.Revelations),
+    BOIII_Nacht_Der_Untoten(games.Black_Ops_III, "Nacht der Untoten", "INSERT HERE", R.drawable.nacht_boiii, MapType.Group_935, BOIII_EggWarehouse.NachtDerUntoten),
+    BOIII_Verruckt(games.Black_Ops_III, "Verruckt", "INSERT HERE", R.drawable.verruckt, MapType.Group_935, BOIII_EggWarehouse.Verruckt),
+    BOIII_Shi_No_Numa(games.Black_Ops_III, "Shi No Numa", "INSERT HERE", R.drawable.shinonuma_boiii, MapType.Division_9, BOIII_EggWarehouse.ShiNoNuma),
+    BOIII_Kino_Der_Toten(games.Black_Ops_III, "Kino der Toten", "INSERT HERE", R.drawable.kinodertoten_boiii, MapType.Group_935, BOIII_EggWarehouse.KinoDerToten),
+    BOIII_Ascension(games.Black_Ops_III, "Ascension", "INSERT HERE", R.drawable.ascension_boiii, MapType.Ascension_Group, BOIII_EggWarehouse.Ascension),
+    BOIII_Shangri_La(games.Black_Ops_III, "Shangri La", "INSERT HERE", R.drawable.shangrila_boiii, MapType.Jungle, BOIII_EggWarehouse.ShangriLa),
+    BOIII_Moon(games.Black_Ops_III, "Moon", "INSERT HERE", R.drawable.moon_boiii, MapType.Group_935_Lunar, BOIII_EggWarehouse.Moon),
+    BOIII_Origins(games.Black_Ops_III, "Origins", "INSERT HERE", R.drawable.origins_boii, MapType.Crazy_Place, BOIII_EggWarehouse.Origins),
 
 
     // --------------------------------- Black Ops IV MAPS ---------------------------------
 
-    BOIV_Dead_Of_The_Night(games.Black_Ops_IV, "Dead of the Night", "INSERT HERE", R.drawable.dotn_boiiii, MapType.Chaos),
-    BOIV_Ancient_Evil(games.Black_Ops_IV, "Ancient Evil", "INSERT HERE", R.drawable.ancientevil_boiiii, MapType.Chaos),
-    BOIV_Alpha_Omega(games.Black_Ops_IV, "Alpha Omega", "INSERT HERE", R.drawable.alphaomega_boiiii, MapType.Broken_Arrow),
-    BOIV_Tag_Der_Toten(games.Black_Ops_IV, "Tag der Toten", "INSERT HERE", R.drawable.tagdertoten_boiiii, MapType.Group_935),
-    BOIV_Blood_Of_The_Dead(games.Black_Ops_IV, "Blood of the Dead", "INSERT HERE", R.drawable.botd_boiiii, MapType.Purgatory),
-    BOIV_Classified(games.Black_Ops_IV, "Classified", "INSERT HERE", R.drawable.classified_boiiii, MapType.US_Government),
-    BOIV_Voyage_Of_Despair(games.Black_Ops_IV, "Voyage of Despair", "INSERT HERE", R.drawable.voyageofdespair_boiiii, MapType.Chaos),
-    BOIV_IX(games.Black_Ops_IV, "IX", "INSERT HERE", R.drawable.ix_boiiii, MapType.Chaos),
+    BOIV_Dead_Of_The_Night(games.Black_Ops_IV, "Dead of the Night", "INSERT HERE", R.drawable.dotn_boiiii, MapType.Chaos, BOIV_EggWarehouse.DeadOfTheNight),
+    BOIV_Ancient_Evil(games.Black_Ops_IV, "Ancient Evil", "INSERT HERE", R.drawable.ancientevil_boiiii, MapType.Chaos, BOIV_EggWarehouse.AncientEvil),
+    BOIV_Alpha_Omega(games.Black_Ops_IV, "Alpha Omega", "INSERT HERE", R.drawable.alphaomega_boiiii, MapType.Broken_Arrow, BOIV_EggWarehouse.AlphaOmega),
+    BOIV_Tag_Der_Toten(games.Black_Ops_IV, "Tag der Toten", "INSERT HERE", R.drawable.tagdertoten_boiiii, MapType.Group_935, BOIV_EggWarehouse.TagDerToten),
+    BOIV_Blood_Of_The_Dead(games.Black_Ops_IV, "Blood of the Dead", "INSERT HERE", R.drawable.botd_boiiii, MapType.Purgatory, BOIV_EggWarehouse.BloodOfTheDead),
+    BOIV_Classified(games.Black_Ops_IV, "Classified", "INSERT HERE", R.drawable.classified_boiiii, MapType.US_Government, BOIV_EggWarehouse.Classified),
+    BOIV_Voyage_Of_Despair(games.Black_Ops_IV, "Voyage of Despair", "INSERT HERE", R.drawable.voyageofdespair_boiiii, MapType.Chaos, BOIV_EggWarehouse.VoyageOfDespair),
+    BOIV_IX(games.Black_Ops_IV, "IX", "INSERT HERE", R.drawable.ix_boiiii, MapType.Chaos, BOIV_EggWarehouse.IX),
 
 
     // --------------------------------- Black Ops Cold War MAPS ---------------------------------
 
-    BOCW_Die_Maschine(games.Black_Ops_Cold_War, "Die Maschine", "INSERT HERE", R.drawable.diemachine_bocw, MapType.NOT_SET),
-    BOCW_Firebase_Z(games.Black_Ops_Cold_War, "Firebase Z", "INSERT HERE", R.drawable.firebasez_bocw, MapType.NOT_SET),
-    BOCW_Mauer_Der_Toten(games.Black_Ops_Cold_War, "Mauer der Toten", "INSERT HERE", R.drawable.mauerdertoten_bocw, MapType.NOT_SET),
-    BOCW_Forsaken(games.Black_Ops_Cold_War, "Forsaken", "INSERT HERE", R.drawable.forsaken_bocw, MapType.NOT_SET),
+    BOCW_Die_Maschine(games.Black_Ops_Cold_War, "Die Maschine", "INSERT HERE", R.drawable.diemachine_bocw, MapType.NOT_SET, BOCW_EggWarehouse.DieMaschine),
+    BOCW_Firebase_Z(games.Black_Ops_Cold_War, "Firebase Z", "INSERT HERE", R.drawable.firebasez_bocw, MapType.NOT_SET, BOCW_EggWarehouse.FirebaseZ),
+    BOCW_Mauer_Der_Toten(games.Black_Ops_Cold_War, "Mauer der Toten", "INSERT HERE", R.drawable.mauerdertoten_bocw, MapType.NOT_SET, BOCW_EggWarehouse.MauerDerToten),
+    BOCW_Forsaken(games.Black_Ops_Cold_War, "Forsaken", "INSERT HERE", R.drawable.forsaken_bocw, MapType.NOT_SET, BOCW_EggWarehouse.Forsaken),
 
     // --------------------------------- Black Ops VI MAPS ---------------------------------
 
-    BOVI_Liberty_Falls(games.Black_Ops_VI, "Liberty Falls", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    BOVI_Terminus(games.Black_Ops_VI, "Terminus", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    BOVI_Citadelle_Des_Morts(games.Black_Ops_VI, "Citadelle des Morts", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    BOVI_Shattered_Veil(games.Black_Ops_VI, "Shattered Veil", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    BOVI_The_Tomb(games.Black_Ops_VI, "The Tomb", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    BOVI_Reckoning(games.Black_Ops_VI, "Reckoning", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
+    BOVI_Liberty_Falls(games.Black_Ops_VI, "Liberty Falls", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.LibertyFalls),
+    BOVI_Terminus(games.Black_Ops_VI, "Terminus", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.Terminus),
+    BOVI_Citadelle_Des_Morts(games.Black_Ops_VI, "Citadelle des Morts", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.CitadelleDesMorts),
+    BOVI_Shattered_Veil(games.Black_Ops_VI, "Shattered Veil", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.ShatteredVeil),
+    BOVI_The_Tomb(games.Black_Ops_VI, "The Tomb", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.TheTomb),
+    BOVI_Reckoning(games.Black_Ops_VI, "Reckoning", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.Reckoning),
 
 
     // --------------------------------- Black Ops VII MAPS ---------------------------------
 
-    BOVII_Ashes_Of_The_Damned(games.Black_Ops_VII, "Ashes of the Damned", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    BOVII_Astra_Malorum(games.Black_Ops_VII, "Astra Malorum", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    BOVII_Paradox_Junction(games.Black_Ops_VII, "Paradox Junction", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET),
-    BOVII_Totenreich(games.Black_Ops_VII, "Totenreich", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET);
+    BOVII_Ashes_Of_The_Damned(games.Black_Ops_VII, "Ashes of the Damned", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.AshesOfTheDamned),
+    BOVII_Astra_Malorum(games.Black_Ops_VII, "Astra Malorum", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.AstraMalorum),
+    BOVII_Paradox_Junction(games.Black_Ops_VII, "Paradox Junction", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.ParadoxJunction),
+    BOVII_Totenreich(games.Black_Ops_VII, "Totenreich", "INSERT HERE", R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.Totenreich);
 
 
 

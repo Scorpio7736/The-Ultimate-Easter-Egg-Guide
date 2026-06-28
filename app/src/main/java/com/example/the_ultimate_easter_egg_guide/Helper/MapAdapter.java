@@ -16,13 +16,18 @@ import java.util.List;
 public class MapAdapter extends BaseAdapter {
 
     private final Context context;
-    private final List<Maps> mapList;
+    private List<Maps> mapList;
     private final boolean isGridView;
 
     public MapAdapter(Context context, List<Maps> mapList, boolean isGridView) {
         this.context = context;
         this.mapList = mapList;
         this.isGridView = isGridView;
+    }
+
+    public void updateData(List<Maps> newList) {
+        this.mapList = newList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -42,25 +47,34 @@ public class MapAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Since the layout changes completely between grid and list, 
-        // it's safer to always inflate the correct layout if the view type doesn't match.
-        // For simplicity in this implementation, we will reinflate.
-        
+        ViewHolder holder;
         int layoutId = isGridView ? R.layout.map_item_grid : R.layout.map_item_list;
-        convertView = LayoutInflater.from(context).inflate(layoutId, parent, false);
+
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(layoutId, parent, false);
+            holder = new ViewHolder();
+            holder.mapNameText = convertView.findViewById(R.id.map_name_text);
+            holder.mapCoverImage = convertView.findViewById(R.id.map_cover_image);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
 
         Maps currentMap = (Maps) getItem(position);
 
-        TextView mapNameText = convertView.findViewById(R.id.map_name_text);
-        if (mapNameText != null) {
-            mapNameText.setText(currentMap.mapName);
+        if (holder.mapNameText != null) {
+            holder.mapNameText.setText(currentMap.mapName);
         }
 
-        ImageView mapCoverImage = convertView.findViewById(R.id.map_cover_image);
-        if (mapCoverImage != null) {
-            mapCoverImage.setImageResource(currentMap.mapCover);
+        if (holder.mapCoverImage != null) {
+            holder.mapCoverImage.setImageResource(currentMap.mapCover);
         }
 
         return convertView;
+    }
+
+    private static class ViewHolder {
+        TextView mapNameText;
+        ImageView mapCoverImage;
     }
 }

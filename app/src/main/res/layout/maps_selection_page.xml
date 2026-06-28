@@ -32,6 +32,7 @@
         android:paddingTop="180dp"
         android:paddingBottom="100dp"
         android:clipToPadding="false"
+        android:layoutAnimation="@anim/grid_layout_animation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
