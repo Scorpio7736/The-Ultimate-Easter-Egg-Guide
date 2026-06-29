@@ -6,14 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
@@ -22,16 +23,16 @@ import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MapsSelection_Page extends AppCompatActivity {
+public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.OnMapClickListener {
 
     private boolean isGridView = true;
-    private GridView mapsGridView;
-    private List<Maps> currentMaps = new ArrayList<>();
+    private RecyclerView mapsRecyclerView;
     private MapAdapter mapAdapter;
     private games currentSelectedGame;
     private final Map<games, MapAdapter> gridAdapters = new HashMap<>();
@@ -47,24 +48,7 @@ public class MapsSelection_Page extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        // Pre-cache all map lists, adapters, and backgrounds to eliminate lag during switching
-        for (games game : games.values()) {
-            List<Maps> maps = Maps.getMapsForGame(game);
-            gridAdapters.put(game, new MapAdapter(this, maps, true));
-            listAdapters.put(game, new MapAdapter(this, maps, false));
-            backgroundCache.put(game, ContextCompat.getDrawable(this, getBackgroundForGame(game)));
-        }
-
-        mapsGridView = findViewById(R.id.maps_grid_view);
-        mapsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Maps clickedMap = currentMaps.get(position);
-                Intent intent = new Intent(MapsSelection_Page.this, MapDisplay_Page.class);
-                intent.putExtra("MAP_ID", clickedMap.name());
-                PageTransitionManager.startActivityWithFade(MapsSelection_Page.this, intent);
-            }
-        });
+        mapsRecyclerView = findViewById(R.id.maps_recycler_view);
 
         Spinner spinner = findViewById(R.id.myDropdown);
         List<String> gameNames = new ArrayList<>();
@@ -134,41 +118,58 @@ public class MapsSelection_Page extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onMapClick(Maps map) {
+        Intent intent = new Intent(MapsSelection_Page.this, MapDisplay_Page.class);
+        intent.putExtra("MAP_ID", map.name());
+        PageTransitionManager.startActivityWithFade(MapsSelection_Page.this, intent);
+    }
+
     private void loadGameData(games selectedGame, boolean animate) {
         currentSelectedGame = selectedGame;
         ImageView backgroundImage = findViewById(R.id.background_image);
 
+        // Lazy load background drawable only when needed
+        if (!backgroundCache.containsKey(selectedGame)) {
+            backgroundCache.put(selectedGame, ContextCompat.getDrawable(this, getBackgroundForGame(selectedGame)));
+        }
+        Drawable background = backgroundCache.get(selectedGame);
+
         if (animate) {
             // Fade out current content
-            mapsGridView.animate().alpha(0f).setDuration(200).withLayer().withEndAction(() -> {
-                backgroundImage.setImageDrawable(backgroundCache.get(selectedGame));
+            mapsRecyclerView.animate().alpha(0f).setDuration(200).withLayer().withEndAction(() -> {
+                backgroundImage.setImageDrawable(background);
                 updateGridView();
                 // Fade back in
-                mapsGridView.animate().alpha(1f).setDuration(300).withLayer().start();
+                mapsRecyclerView.animate().alpha(1f).setDuration(300).withLayer().start();
             }).start();
         } else {
             // Instant load for startup
-            backgroundImage.setImageDrawable(backgroundCache.get(selectedGame));
+            backgroundImage.setImageDrawable(background);
             updateGridView();
         }
     }
 
     private void updateGridView() {
+        // Lazy load adapters only when the specific game is selected
         if (isGridView) {
-            mapsGridView.setNumColumns(2);
+            mapsRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+            if (!gridAdapters.containsKey(currentSelectedGame)) {
+                gridAdapters.put(currentSelectedGame, new MapAdapter(Maps.getMapsForGame(currentSelectedGame), true, this));
+            }
             mapAdapter = gridAdapters.get(currentSelectedGame);
         } else {
-            mapsGridView.setNumColumns(1);
+            mapsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+            if (!listAdapters.containsKey(currentSelectedGame)) {
+                listAdapters.put(currentSelectedGame, new MapAdapter(Maps.getMapsForGame(currentSelectedGame), false, this));
+            }
             mapAdapter = listAdapters.get(currentSelectedGame);
         }
         
-        mapsGridView.setAdapter(mapAdapter);
-        
-        // Update currentMaps for click listener
-        currentMaps = Maps.getMapsForGame(currentSelectedGame);
+        mapsRecyclerView.setAdapter(mapAdapter);
         
         // Trigger the layout animation to hide data swap popping
-        mapsGridView.scheduleLayoutAnimation();
+        mapsRecyclerView.scheduleLayoutAnimation();
     }
 
     private int getBackgroundForGame(games game) {

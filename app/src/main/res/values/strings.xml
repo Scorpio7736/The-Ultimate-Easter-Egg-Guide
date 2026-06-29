@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">The Ultimate Easter Egg Guide</string>
+
+    <!-- Map Descriptions -->
+    <string name="map_desc_placeholder">INSERT HERE</string>
+    <string name="map_desc_nacht">An abandoned bunker sits isolated in the fog after a failed mission. With limited weapons, tight rooms, and nowhere to truly run, survivors must hold out against the first waves of the undead.</string>
+    <string name="map_desc_shinonuma">Deep in a swampy Japanese research site, strange experiments have unleashed the undead. Survivors must move through muddy huts, fend off Hellhounds, and uncover the dark secrets hidden in the jungle.</string>
+    <string name="map_desc_verruckt">Inside a ruined German asylum, the undead horror grows more intense. Split starting rooms, deadly corridors, traps, and the first Perk-a-Colas make survival more chaotic and dangerous.</string>
+    <string name="map_desc_derreise">At a secret Group 935 weapons facility, teleporters, Pack-a-Punch, and dangerous experiments reveal the true scale of the zombie outbreak. This map expands the story and introduces some of the most important mechanics in Zombies history.</string>
+
 </resources>
