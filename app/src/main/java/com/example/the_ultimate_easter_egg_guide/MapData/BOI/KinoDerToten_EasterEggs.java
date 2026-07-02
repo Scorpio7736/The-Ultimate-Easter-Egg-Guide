@@ -55,7 +55,9 @@ public class KinoDerToten_EasterEggs
                     .addImage()
             )
     ;
-    public static final EasterEgg Radios = new EasterEgg("Radios");
+    public static final EasterEgg Radios = new EasterEgg("Radios")
+
+    ;
 
     public static final List<EasterEgg> KinoDerToten_sideQuests = Arrays.asList(
             Song_115,
