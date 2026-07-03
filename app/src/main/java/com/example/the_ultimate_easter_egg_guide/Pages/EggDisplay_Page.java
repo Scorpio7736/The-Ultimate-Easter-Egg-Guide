@@ -98,6 +98,7 @@ public class EggDisplay_Page extends AppCompatActivity implements EggAdapter.OnE
             case Agartha: return R.drawable.agartha_bkg;
             case Group_935_Lunar: return R.drawable.lunargroup935_bkg;
             case Morge_City: return R.drawable.city_bkg;
+            case Group_935_Winter: return R.drawable.group935winter_bkg;
             default: return R.drawable.general_bkg;
         }
     }

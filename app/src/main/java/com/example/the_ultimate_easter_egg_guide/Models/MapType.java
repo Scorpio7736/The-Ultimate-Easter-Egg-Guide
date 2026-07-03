@@ -4,6 +4,7 @@ public enum MapType
 {
     Group_935,
     Group_935_Lunar,
+    Group_935_Winter,
     Division_9,
     Ascension_Group,
     Broken_Arrow,

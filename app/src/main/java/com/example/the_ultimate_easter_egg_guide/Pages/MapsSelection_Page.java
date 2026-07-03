@@ -39,6 +39,11 @@ public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.
     private final Map<games, MapAdapter> listAdapters = new HashMap<>();
     private final Map<games, Drawable> backgroundCache = new HashMap<>();
 
+    // Configuration for game selection
+    private static final boolean DEV_MODE = false; // Set to true to ONLY show TEST game and maps
+    private static final games DEFAULT_GAME = DEV_MODE ? games.Test : games.World_At_War;
+    private static final List<games> EXCLUDED_GAMES = java.util.Arrays.asList(games.Test);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,25 +56,36 @@ public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.
         mapsRecyclerView = findViewById(R.id.maps_recycler_view);
 
         Spinner spinner = findViewById(R.id.myDropdown);
+        List<games> filteredGames = new ArrayList<>();
         List<String> gameNames = new ArrayList<>();
         for (games game : games.values()) {
-            gameNames.add(game.gameName);
+            if (DEV_MODE) {
+                if (game == games.Test) {
+                    filteredGames.add(game);
+                    gameNames.add(game.gameName);
+                }
+            } else {
+                if (!EXCLUDED_GAMES.contains(game)) {
+                    filteredGames.add(game);
+                    gameNames.add(game.gameName);
+                }
+            }
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, gameNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        // Find index of World at War as default, otherwise use 0
+        // Find index of default game, otherwise use 0
         int defaultPosition = 0;
-        for (int i = 0; i < games.values().length; i++) {
-            if (games.values()[i] == games.World_At_War) {
+        for (int i = 0; i < filteredGames.size(); i++) {
+            if (filteredGames.get(i) == DEFAULT_GAME) {
                 defaultPosition = i;
                 break;
             }
         }
         spinner.setSelection(defaultPosition);
-        currentSelectedGame = games.values()[defaultPosition];
+        currentSelectedGame = filteredGames.get(defaultPosition);
 
         // Initialize with selected game immediately
         loadGameData(currentSelectedGame, false);
@@ -83,7 +99,7 @@ public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.
                     isFirstSelection = false;
                     return; // Skip animation on first automated selection
                 }
-                currentSelectedGame = games.values()[position];
+                currentSelectedGame = filteredGames.get(position);
                 loadGameData(currentSelectedGame, true);
             }
 

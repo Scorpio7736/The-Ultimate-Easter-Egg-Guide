@@ -17,7 +17,7 @@ public class DerReise_EasterEggs
                     .addSubStep(new EasterEggStep("Walk to the left of the door where you find a barrier.")
                         .addImage(R.drawable.waw_barrier_flytrap)
                     )
-                    .addSubStep(new EasterEggStep("With a Pack-A-Punched weapon, aim and shoot through the metal fence at the control pannel seen in the image below.")
+                    .addSubStep(new EasterEggStep("With a Pack-A-Punched weapon, aim and shoot through the metal fence at the control panel seen in the image below.")
                         .addImage(R.drawable.waw_target_flytrap)
                     )
                     .addSubStep(new EasterEggStep("The fly trap is activated when you see glowing power ups flying in the air, as well as Samantha saying \"I want to play a game, Let's play Hide & Seek!\"")

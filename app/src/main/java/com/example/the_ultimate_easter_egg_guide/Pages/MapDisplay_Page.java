@@ -309,6 +309,8 @@ public class MapDisplay_Page extends AppCompatActivity {
                 return R.drawable.lunargroup935_bkg;
             case Morge_City:
                 return R.drawable.city_bkg;
+            case Group_935_Winter:
+                return R.drawable.group935winter_bkg;
             default:
                 return R.drawable.general_bkg;
         }

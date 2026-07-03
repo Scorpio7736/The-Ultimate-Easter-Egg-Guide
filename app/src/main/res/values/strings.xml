@@ -8,4 +8,20 @@
     <string name="map_desc_verruckt">Inside a ruined German asylum, the undead horror grows more intense. Split starting rooms, deadly corridors, traps, and the first Perk-a-Colas make survival more chaotic and dangerous.</string>
     <string name="map_desc_derreise">At a secret Group 935 weapons facility, teleporters, Pack-a-Punch, and dangerous experiments reveal the true scale of the zombie outbreak. This map expands the story and introduces some of the most important mechanics in Zombies history.</string>
 
+    <!-- BOIII Map Descriptions -->
+    <string name="map_desc_soe">Take to the streets of Morg City to combat the undead. embrace the curse to uncover its mysteries.</string>
+    <string name="map_desc_thegiant">Re-awaken The Giant. Return to the secret facility where it all began, and strike at the heart of the zombie scourge.</string>
+    <string name="map_desc_de">Band togeather by a fragile alliance, our heros pursue the scattered remnants of Group 935 to their mountain top fortress in the Austrian Alps...</string>
+    <string name="map_desc_znsh">On a remote Island in the Pacific, a mysterious facility hides the secrets behind Division 9\'s sinister experiments...</string>
+    <string name="map_desc_gorod">As their journey nears its end, our heros must battle ancient beasts in the war torn ruins of Stalingrad...</string>
+    <string name="map_desc_revelations">The time has come to join Doctor Monty in The House, where an ancient evil threatens the survival of our heroes\' immortal souls...</string>
+    <string name="map_desc_nacht_boiii">You drove them deep into the heart of the Reich. You thought they were dead. You were wrong.</string>
+    <string name="map_desc_verruckt_boiii">Electroshock therapy. Chemically engineered beverages. Hordes of undead Nazis. Find the power to unite and send them back to their graves!</string>
+    <string name="map_desc_shinonuma_boiii">Maggot ridden corpses. Bug infested swamp. Hundreds of undead Imperial Army. Choose your tactic and defend for your lives!</string>
+    <string name="map_desc_kino_boiii">Battle the undead in this theatrical installment of \"Zombies\". New twists and clues could uncover the final plan. It\'s show time!</string>
+    <string name="map_desc_ascension_boiii">The risen dead have overtaken a Soviet cosmodrome and all Hell has broken loose. The countdown to the zombie apocalypse has begun.</string>
+    <string name="map_desc_shangrila_boiii">A legendary shrine lost in an exotic jungle, where the undead lurk within a treacherous labyrinth of underground caverns, deadly traps and dark secrets.</string>
+    <string name="map_desc_moon_boiii">I believe that this nation should commit itself to achieving the goal, before this decade is out, of landing a man on the moon and returning him safely to the Earth. (JFK, 1961)</string>
+    <string name="map_desc_origins_boiii">Witness the origins of Group 935, as an ancient evil is unleashed upon the battlefields of World War 1.</string>
+
 </resources>

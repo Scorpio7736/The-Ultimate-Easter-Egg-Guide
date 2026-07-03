@@ -10,6 +10,7 @@ import com.example.the_ultimate_easter_egg_guide.MapData.BOVII.BOVII_EggWarehous
 import com.example.the_ultimate_easter_egg_guide.MapData.Test.TEST_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.MapData.WAW.WAW_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapEggData;
+import com.example.the_ultimate_easter_egg_guide.Models.ImageID;
 import com.example.the_ultimate_easter_egg_guide.Models.MapType;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.R;
@@ -23,10 +24,10 @@ public enum Maps
 {
     // --------------------------------- Test MAPS ---------------------------------
 
-    Test_TestingMap4(games.Test, "Testing Map 4", R.string.map_desc_placeholder, R.drawable.app_icon, MapType.NOT_SET),
-    Test_TestingMap1(games.Test, "Testing Map 1", R.string.map_desc_placeholder, R.drawable.app_icon, MapType.NOT_SET, TEST_EggWarehouse.TestMap1),
-    Test_TestingMap2(games.Test, "Testing Map 2", R.string.map_desc_placeholder, R.drawable.app_icon, MapType.NOT_SET),
-    Test_TestingMap3(games.Test, "Testing Map 3", R.string.map_desc_placeholder, R.drawable.app_icon , MapType.NOT_SET),
+    Test_TestingMap4(games.Test, "Testing Map 4", R.string.map_desc_placeholder, R.drawable.cursed_richtofen, MapType.NOT_SET),
+    Test_TestingMap1(games.Test, "Testing Map 1", R.string.map_desc_placeholder, R.drawable.cursed_richtofen, MapType.NOT_SET, TEST_EggWarehouse.TestMap1),
+    Test_TestingMap2(games.Test, "Testing Map 2", R.string.map_desc_placeholder, R.drawable.cursed_richtofen, MapType.NOT_SET),
+    Test_TestingMap3(games.Test, "Testing Map 3", R.string.map_desc_placeholder, R.drawable.cursed_richtofen , MapType.NOT_SET),
 
     // --------------------------------- WORLD AT WAR MAPS ---------------------------------
 
@@ -40,7 +41,7 @@ public enum Maps
     BOI_Kino_Der_Toten(games.Black_Ops_I, "Kino der Toten", R.string.map_desc_placeholder, R.drawable.kinodertoten_boi, MapType.Group_935, BOI_EggWarehouse.KinoDerToten, R.raw.kinodertoten_trailer),
     BOI_Five(games.Black_Ops_I, "Five", R.string.map_desc_placeholder, R.drawable.five_boi, MapType.US_Government, BOI_EggWarehouse.Five, R.raw.five_trailer),
     BOI_Ascension(games.Black_Ops_I, "Ascension", R.string.map_desc_placeholder, R.drawable.ascension_boi, MapType.Ascension_Group, BOI_EggWarehouse.Ascension, R.raw.ascension_trailer),
-    BOI_Call_Of_The_Dead(games.Black_Ops_I, "Call of the Dead", R.string.map_desc_placeholder, R.drawable.cotd_boi, MapType.Group_935, BOI_EggWarehouse.CallOfTheDead, R.raw.cotd_trailer),
+    BOI_Call_Of_The_Dead(games.Black_Ops_I, "Call of the Dead", R.string.map_desc_placeholder, R.drawable.cotd_boi, MapType.Group_935_Winter, BOI_EggWarehouse.CallOfTheDead, R.raw.cotd_trailer),
     BOI_Shangri_La(games.Black_Ops_I, "Shangri La", R.string.map_desc_placeholder, R.drawable.shangrila_boi, MapType.Jungle, BOI_EggWarehouse.ShangriLa, R.raw.shangrila_trailer),
     BOI_Moon(games.Black_Ops_I, "Moon", R.string.map_desc_placeholder, R.drawable.moon_boi, MapType.Group_935_Lunar, BOI_EggWarehouse.Moon, R.raw.moon_trailer),
 
@@ -57,20 +58,20 @@ public enum Maps
 
     // --------------------------------- Black Ops III MAPS ---------------------------------
 
-    BOIII_Shadows_Of_Evil(games.Black_Ops_III, "Shadows of Evil", R.string.map_desc_placeholder, R.drawable.soe_boiii, MapType.Morge_City, BOIII_EggWarehouse.ShadowsOfEvil),
-    BOIII_The_Giant(games.Black_Ops_III, "The Giant", R.string.map_desc_placeholder, R.drawable.thegiant_boiii, MapType.Group_935, BOIII_EggWarehouse.TheGiant),
-    BOIII_Der_Eisendrache(games.Black_Ops_III, "Der Eisendrache", R.string.map_desc_placeholder, R.drawable.de_boiii, MapType.Group_935, BOIII_EggWarehouse.DerEisendrache),
-    BOIII_Zetsubou_No_Shima(games.Black_Ops_III, "Zetsubou No Shima", R.string.map_desc_placeholder, R.drawable.zetsubounoshima_boiii, MapType.Division_9, BOIII_EggWarehouse.ZetsubouNoShima),
-    BOIII_Gorod_Krovi(games.Black_Ops_III, "Gorod Krovi", R.string.map_desc_placeholder, R.drawable.gorodkrovi_boiii, MapType.Stalingrad, BOIII_EggWarehouse.GorodKrovi),
-    BOIII_Revelations(games.Black_Ops_III, "Revelations", R.string.map_desc_placeholder, R.drawable.revelations_boiii, MapType.Agartha, BOIII_EggWarehouse.Revelations),
-    BOIII_Nacht_Der_Untoten(games.Black_Ops_III, "Nacht der Untoten", R.string.map_desc_placeholder, R.drawable.nacht_boiii, MapType.Group_935, BOIII_EggWarehouse.NachtDerUntoten),
-    BOIII_Verruckt(games.Black_Ops_III, "Verruckt", R.string.map_desc_placeholder, R.drawable.verruckt, MapType.Group_935, BOIII_EggWarehouse.Verruckt),
-    BOIII_Shi_No_Numa(games.Black_Ops_III, "Shi No Numa", R.string.map_desc_placeholder, R.drawable.shinonuma_boiii, MapType.Division_9, BOIII_EggWarehouse.ShiNoNuma),
-    BOIII_Kino_Der_Toten(games.Black_Ops_III, "Kino der Toten", R.string.map_desc_placeholder, R.drawable.kinodertoten_boiii, MapType.Group_935, BOIII_EggWarehouse.KinoDerToten),
-    BOIII_Ascension(games.Black_Ops_III, "Ascension", R.string.map_desc_placeholder, R.drawable.ascension_boiii, MapType.Ascension_Group, BOIII_EggWarehouse.Ascension),
-    BOIII_Shangri_La(games.Black_Ops_III, "Shangri La", R.string.map_desc_placeholder, R.drawable.shangrila_boiii, MapType.Jungle, BOIII_EggWarehouse.ShangriLa),
-    BOIII_Moon(games.Black_Ops_III, "Moon", R.string.map_desc_placeholder, R.drawable.moon_boiii, MapType.Group_935_Lunar, BOIII_EggWarehouse.Moon),
-    BOIII_Origins(games.Black_Ops_III, "Origins", R.string.map_desc_placeholder, R.drawable.origins_boii, MapType.Crazy_Place, BOIII_EggWarehouse.Origins),
+    BOIII_Shadows_Of_Evil(games.Black_Ops_III, "Shadows of Evil", R.string.map_desc_soe, R.drawable.soe_boiii, MapType.Morge_City, BOIII_EggWarehouse.ShadowsOfEvil),
+    BOIII_The_Giant(games.Black_Ops_III, "The Giant", R.string.map_desc_thegiant, R.drawable.thegiant_boiii, MapType.Group_935_Winter, BOIII_EggWarehouse.TheGiant),
+    BOIII_Der_Eisendrache(games.Black_Ops_III, "Der Eisendrache", R.string.map_desc_de, R.drawable.de_boiii, MapType.Group_935_Winter, BOIII_EggWarehouse.DerEisendrache),
+    BOIII_Zetsubou_No_Shima(games.Black_Ops_III, "Zetsubou No Shima", R.string.map_desc_znsh, R.drawable.zetsubounoshima_boiii, MapType.Division_9, BOIII_EggWarehouse.ZetsubouNoShima),
+    BOIII_Gorod_Krovi(games.Black_Ops_III, "Gorod Krovi", R.string.map_desc_gorod, R.drawable.gorodkrovi_boiii, MapType.Stalingrad, BOIII_EggWarehouse.GorodKrovi),
+    BOIII_Revelations(games.Black_Ops_III, "Revelations", R.string.map_desc_revelations, R.drawable.revelations_boiii, MapType.Agartha, BOIII_EggWarehouse.Revelations),
+    BOIII_Nacht_Der_Untoten(games.Black_Ops_III, "Nacht der Untoten", R.string.map_desc_nacht_boiii, R.drawable.nacht_boiii, MapType.Group_935, BOIII_EggWarehouse.NachtDerUntoten),
+    BOIII_Verruckt(games.Black_Ops_III, "Verruckt", R.string.map_desc_verruckt_boiii, R.drawable.verruckt, MapType.Group_935, BOIII_EggWarehouse.Verruckt),
+    BOIII_Shi_No_Numa(games.Black_Ops_III, "Shi No Numa", R.string.map_desc_shinonuma_boiii, R.drawable.shinonuma_boiii, MapType.Division_9, BOIII_EggWarehouse.ShiNoNuma),
+    BOIII_Kino_Der_Toten(games.Black_Ops_III, "Kino der Toten", R.string.map_desc_kino_boiii, R.drawable.kinodertoten_boiii, MapType.Group_935, BOIII_EggWarehouse.KinoDerToten),
+    BOIII_Ascension(games.Black_Ops_III, "Ascension", R.string.map_desc_ascension_boiii, R.drawable.ascension_boiii, MapType.Ascension_Group, BOIII_EggWarehouse.Ascension),
+    BOIII_Shangri_La(games.Black_Ops_III, "Shangri La", R.string.map_desc_shangrila_boiii, R.drawable.shangrila_boiii, MapType.Jungle, BOIII_EggWarehouse.ShangriLa),
+    BOIII_Moon(games.Black_Ops_III, "Moon", R.string.map_desc_moon_boiii, R.drawable.moon_boiii, MapType.Group_935_Lunar, BOIII_EggWarehouse.Moon),
+    BOIII_Origins(games.Black_Ops_III, "Origins", R.string.map_desc_origins_boiii, R.drawable.origins_boii, MapType.Crazy_Place, BOIII_EggWarehouse.Origins),
 
 
     // --------------------------------- Black Ops IV MAPS ---------------------------------
@@ -78,7 +79,7 @@ public enum Maps
     BOIV_Dead_Of_The_Night(games.Black_Ops_IV, "Dead of the Night", R.string.map_desc_placeholder, R.drawable.dotn_boiiii, MapType.Chaos, BOIV_EggWarehouse.DeadOfTheNight),
     BOIV_Ancient_Evil(games.Black_Ops_IV, "Ancient Evil", R.string.map_desc_placeholder, R.drawable.ancientevil_boiiii, MapType.Chaos, BOIV_EggWarehouse.AncientEvil),
     BOIV_Alpha_Omega(games.Black_Ops_IV, "Alpha Omega", R.string.map_desc_placeholder, R.drawable.alphaomega_boiiii, MapType.Broken_Arrow, BOIV_EggWarehouse.AlphaOmega),
-    BOIV_Tag_Der_Toten(games.Black_Ops_IV, "Tag der Toten", R.string.map_desc_placeholder, R.drawable.tagdertoten_boiiii, MapType.Group_935, BOIV_EggWarehouse.TagDerToten),
+    BOIV_Tag_Der_Toten(games.Black_Ops_IV, "Tag der Toten", R.string.map_desc_placeholder, R.drawable.tagdertoten_boiiii, MapType.Group_935_Winter, BOIV_EggWarehouse.TagDerToten),
     BOIV_Blood_Of_The_Dead(games.Black_Ops_IV, "Blood of the Dead", R.string.map_desc_placeholder, R.drawable.botd_boiiii, MapType.Purgatory, BOIV_EggWarehouse.BloodOfTheDead),
     BOIV_Classified(games.Black_Ops_IV, "Classified", R.string.map_desc_placeholder, R.drawable.classified_boiiii, MapType.US_Government, BOIV_EggWarehouse.Classified),
     BOIV_Voyage_Of_Despair(games.Black_Ops_IV, "Voyage of Despair", R.string.map_desc_placeholder, R.drawable.voyageofdespair_boiiii, MapType.Chaos, BOIV_EggWarehouse.VoyageOfDespair),
@@ -284,4 +285,23 @@ public enum Maps
         .flatMap(List::stream)
         .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
 
+    // --------------------------------- Game Map Image ID Lists ---------------------------------
+
+    private static List<ImageID> getImages(List<Maps> maps) {
+        return maps.stream()
+                .map(map -> new ImageID(map.mapCover))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
+    }
+
+    public static final List<ImageID> WAW_Images = getImages(WAW_Maps);
+    public static final List<ImageID> BOI_Images = getImages(BOI_Maps);
+    public static final List<ImageID> BOII_Images = getImages(BOII_Maps);
+    public static final List<ImageID> BOIII_Images = getImages(BOIII_Maps);
+    public static final List<ImageID> BOIV_Images = getImages(BOIV_Maps);
+    public static final List<ImageID> BOCW_Images = getImages(BOCW_Maps);
+    public static final List<ImageID> BOVI_Images = getImages(BOVI_Maps);
+    public static final List<ImageID> BOVII_Images = getImages(BOVII_Maps);
+    public static final List<ImageID> Test_Images = getImages(Test_Maps);
+
+    public static final List<ImageID> All_Images = getImages(All_Maps);
 }
