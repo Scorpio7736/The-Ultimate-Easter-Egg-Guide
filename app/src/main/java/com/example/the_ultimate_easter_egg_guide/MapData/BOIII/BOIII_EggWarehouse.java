@@ -4,8 +4,8 @@ import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapEggData;
 
 public class BOIII_EggWarehouse
 {
-    public static final MapEggData ShadowsOfEvil = new MapEggData(null, null, null);
-    public static final MapEggData TheGiant = new MapEggData(TheGiant_EasterEggs.DerReise_MainQuests, TheGiant_EasterEggs.DerReise_sideQuests, null);
+    public static final MapEggData ShadowsOfEvil = new MapEggData(SOE_EasterEggs.SOE_MainQuests, SOE_EasterEggs.SOE_SideQuests, SOE_EasterEggs.SOE_Buildables);
+    public static final MapEggData TheGiant = new MapEggData(TheGiant_EasterEggs.TheGiant_MainQuests, TheGiant_EasterEggs.TheGiant_SideQuests, null);
     public static final MapEggData DerEisendrache = new MapEggData(null, null, null);
     public static final MapEggData ZetsubouNoShima = new MapEggData(null, null, null);
     public static final MapEggData GorodKrovi = new MapEggData(null, null, null);

@@ -7,17 +7,18 @@ public class EasterEgg
 {
     public String easterEggName;
     public List<EasterEggStep> easterEggSteps = new ArrayList<>();
-
+    public EasterEggReward easterEggReward;
 
     public EasterEgg(String easterEggName)
     {
         this.easterEggName = easterEggName;
+        this.easterEggReward = null;
     }
 
-    public EasterEgg(String easterEggName, List<EasterEggStep> easterEggSteps)
+    public EasterEgg(String easterEggName, String easterEggReward)
     {
         this.easterEggName = easterEggName;
-        this.easterEggSteps = easterEggSteps;
+        this.easterEggReward = new EasterEggReward(easterEggReward);
     }
 
     public EasterEgg addStep(EasterEggStep step) {

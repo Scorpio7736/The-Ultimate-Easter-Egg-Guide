@@ -24,4 +24,8 @@
     <string name="map_desc_moon_boiii">I believe that this nation should commit itself to achieving the goal, before this decade is out, of landing a man on the moon and returning him safely to the Earth. (JFK, 1961)</string>
     <string name="map_desc_origins_boiii">Witness the origins of Group 935, as an ancient evil is unleashed upon the battlefields of World War 1.</string>
 
+    <!-- Easter Egg Rewards -->
+    <string name="reward_label">REWARD:</string>
+    <string name="reward_bragging_rights">Bragging rights</string>
+
 </resources>

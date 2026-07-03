@@ -47,15 +47,55 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Expandable Content -->
+    <!-- Expandable Dropdown Container -->
     <LinearLayout
-        android:id="@+id/steps_container"
+        android:id="@+id/dropdown_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="#99000000"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/bg_dropdown_container"
         android:orientation="vertical"
-        android:padding="8dp"
-        android:visibility="gone" />
+        android:paddingBottom="16dp"
+        android:visibility="gone">
 
+        <!-- Steps Content -->
+        <LinearLayout
+            android:id="@+id/steps_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp" />
+
+        <!-- Rewards Section -->
+        <LinearLayout
+            android:id="@+id/rewards_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_reward_section"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nz_font"
+                android:text="@string/reward_label"
+                android:textColor="#FFD700"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/reward_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/nz_font"
+                android:text="@string/reward_bragging_rights"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

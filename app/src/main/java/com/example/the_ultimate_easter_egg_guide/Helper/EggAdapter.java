@@ -46,11 +46,17 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
         holder.eggName.setText(egg.easterEggName);
 
         boolean isExpanded = position == expandedPosition;
-        holder.stepsContainer.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
+        holder.dropdownContainer.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
         holder.expandArrow.setRotation(isExpanded ? 180 : 0);
 
         if (isExpanded) {
             populateSteps(holder.stepsContainer, egg.easterEggSteps, 0);
+            
+            if (egg.easterEggReward != null && egg.easterEggReward.rewardDescription != null && !egg.easterEggReward.rewardDescription.isEmpty()) {
+                holder.rewardText.setText(egg.easterEggReward.rewardDescription);
+            } else {
+                holder.rewardText.setText(holder.itemView.getContext().getString(R.string.reward_bragging_rights));
+            }
         }
 
         holder.headerCard.setOnClickListener(v -> {
@@ -148,14 +154,18 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
     static class EggViewHolder extends RecyclerView.ViewHolder {
         TextView eggName;
         View headerCard;
+        LinearLayout dropdownContainer;
         LinearLayout stepsContainer;
+        TextView rewardText;
         ImageView expandArrow;
 
         public EggViewHolder(@NonNull View itemView) {
             super(itemView);
             eggName = itemView.findViewById(R.id.egg_name_text);
             headerCard = itemView.findViewById(R.id.egg_header_card);
+            dropdownContainer = itemView.findViewById(R.id.dropdown_container);
             stepsContainer = itemView.findViewById(R.id.steps_container);
+            rewardText = itemView.findViewById(R.id.reward_text);
             expandArrow = itemView.findViewById(R.id.expand_arrow);
         }
     }

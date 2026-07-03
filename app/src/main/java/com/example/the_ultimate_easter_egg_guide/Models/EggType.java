@@ -5,5 +5,7 @@ public enum EggType
     Music,
     MainQuest,
     SideQuest,
-    Buildable
+    Buildable,
+    Cipher,
+    Jumpscare
 }

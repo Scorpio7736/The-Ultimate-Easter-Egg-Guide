@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TheGiant_EasterEggs
 {
-    public static final EasterEgg FlyTrap = new EasterEgg("Fly Trap")
+    public static final EasterEgg FlyTrap = new EasterEgg("Fly Trap", "1,000xp")
             .addStep(new EasterEggStep("Turn on Fly Trap")
                     .addSubStep(new EasterEggStep("Purchase the door from spawn to Teleporter A")
                             .addImage()
@@ -116,11 +116,11 @@ public class TheGiant_EasterEggs
         )
     ;
 
-    public static final List<EasterEgg> DerReise_MainQuests = Arrays.asList(
+    public static final List<EasterEgg> TheGiant_MainQuests = Arrays.asList(
             FlyTrap
     );
 
-    public static final List<EasterEgg> DerReise_sideQuests = Arrays.asList(
+    public static final List<EasterEgg> TheGiant_SideQuests = Arrays.asList(
             BeautyOfAnnihilation,
             HiddenPerk,
             Icarus,
