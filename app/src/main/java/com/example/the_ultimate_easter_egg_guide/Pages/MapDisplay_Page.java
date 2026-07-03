@@ -131,6 +131,11 @@ public class MapDisplay_Page extends AppCompatActivity {
         findViewById(R.id.option_storyline).setOnClickListener(v -> {
             Toast.makeText(this, "Storyline coming soon!", Toast.LENGTH_SHORT).show();
         });
+
+        // Navigation bar settings button
+        findViewById(R.id.nav_settings_button).setOnClickListener(v -> {
+            PageTransitionManager.startActivityWithFade(this, Settings_PAGE.class);
+        });
     }
 
     private void showVideoPopup() {
