@@ -316,6 +316,8 @@ public class MapDisplay_Page extends AppCompatActivity {
                 return R.drawable.city_bkg;
             case Group_935_Winter:
                 return R.drawable.group935winter_bkg;
+            case Stalingrad:
+                return R.drawable.boiii_gorodkrovi_bkg_m;
             default:
                 return R.drawable.general_bkg;
         }

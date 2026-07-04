@@ -58,12 +58,12 @@ public enum Maps
 
     // --------------------------------- Black Ops III MAPS ---------------------------------
 
-    BOIII_Shadows_Of_Evil(games.Black_Ops_III, "Shadows of Evil", R.string.map_desc_soe, R.drawable.soe_boiii, MapType.Morge_City, BOIII_EggWarehouse.ShadowsOfEvil),
-    BOIII_The_Giant(games.Black_Ops_III, "The Giant", R.string.map_desc_thegiant, R.drawable.thegiant_boiii, MapType.Group_935_Winter, BOIII_EggWarehouse.TheGiant),
-    BOIII_Der_Eisendrache(games.Black_Ops_III, "Der Eisendrache", R.string.map_desc_de, R.drawable.de_boiii, MapType.Group_935_Winter, BOIII_EggWarehouse.DerEisendrache),
+    BOIII_Shadows_Of_Evil(games.Black_Ops_III, "Shadows of Evil", R.string.map_desc_soe, R.drawable.soe_boiii, MapType.Morge_City, BOIII_EggWarehouse.ShadowsOfEvil, R.raw.soe_trailer),
+    BOIII_The_Giant(games.Black_Ops_III, "The Giant", R.string.map_desc_thegiant, R.drawable.thegiant_boiii, MapType.Group_935_Winter, BOIII_EggWarehouse.TheGiant, R.raw.thegiant_trailer),
+    BOIII_Der_Eisendrache(games.Black_Ops_III, "Der Eisendrache", R.string.map_desc_de, R.drawable.de_boiii, MapType.Group_935_Winter, BOIII_EggWarehouse.DerEisendrache, R.raw.dereisendrache_trailer),
     BOIII_Zetsubou_No_Shima(games.Black_Ops_III, "Zetsubou No Shima", R.string.map_desc_znsh, R.drawable.zetsubounoshima_boiii, MapType.Division_9, BOIII_EggWarehouse.ZetsubouNoShima),
-    BOIII_Gorod_Krovi(games.Black_Ops_III, "Gorod Krovi", R.string.map_desc_gorod, R.drawable.gorodkrovi_boiii, MapType.Stalingrad, BOIII_EggWarehouse.GorodKrovi),
-    BOIII_Revelations(games.Black_Ops_III, "Revelations", R.string.map_desc_revelations, R.drawable.revelations_boiii, MapType.Agartha, BOIII_EggWarehouse.Revelations),
+    BOIII_Gorod_Krovi(games.Black_Ops_III, "Gorod Krovi", R.string.map_desc_gorod, R.drawable.gorodkrovi_boiii, MapType.Stalingrad, BOIII_EggWarehouse.GorodKrovi, R.raw.gorodkrovi_trailer),
+    BOIII_Revelations(games.Black_Ops_III, "Revelations", R.string.map_desc_revelations, R.drawable.revelations_boiii, MapType.Agartha, BOIII_EggWarehouse.Revelations, R.raw.revelations_trailer),
     BOIII_Nacht_Der_Untoten(games.Black_Ops_III, "Nacht der Untoten", R.string.map_desc_nacht_boiii, R.drawable.nacht_boiii, MapType.Group_935, BOIII_EggWarehouse.NachtDerUntoten),
     BOIII_Verruckt(games.Black_Ops_III, "Verruckt", R.string.map_desc_verruckt_boiii, R.drawable.verruckt, MapType.Group_935, BOIII_EggWarehouse.Verruckt),
     BOIII_Shi_No_Numa(games.Black_Ops_III, "Shi No Numa", R.string.map_desc_shinonuma_boiii, R.drawable.shinonuma_boiii, MapType.Division_9, BOIII_EggWarehouse.ShiNoNuma),
