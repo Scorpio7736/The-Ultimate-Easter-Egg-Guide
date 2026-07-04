@@ -4,6 +4,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapEggData;
 
 public class BOII_EggWarehouse
 {
+    public static final MapEggData Tranzit = new MapEggData(Tranzit_EasterEggs.Tranzit_MainQuests, Tranzit_EasterEggs.Tranzit_SideQuests, Tranzit_EasterEggs.Tranzit_Buildables);
     public static final MapEggData Town = new MapEggData(null, null, null);
     public static final MapEggData Farm = new MapEggData(null, null, null);
     public static final MapEggData BusDepot = new MapEggData(null, null, null);

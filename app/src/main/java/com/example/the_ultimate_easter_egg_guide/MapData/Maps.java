@@ -47,6 +47,7 @@ public enum Maps
 
     // --------------------------------- Black Ops II MAPS ---------------------------------
 
+    BOII_Tranzit(games.Black_Ops_II, "Tranzit",  R.string.map_desc_placeholder,R.drawable.tranzit_boii, MapType.Broken_Earth, BOII_EggWarehouse.Tranzit),
     BOII_Town(games.Black_Ops_II, "Town", R.string.map_desc_placeholder, R.drawable.town_boii, MapType.Broken_Earth, BOII_EggWarehouse.Town),
     BOII_Farm(games.Black_Ops_II, "Farm", R.string.map_desc_placeholder, R.drawable.farm_boii, MapType.Broken_Earth, BOII_EggWarehouse.Farm),
     BOII_Bus_Depot(games.Black_Ops_II, "Bus Depot", R.string.map_desc_placeholder, R.drawable.busdepot_boii, MapType.Broken_Earth, BOII_EggWarehouse.BusDepot),
@@ -209,7 +210,8 @@ public enum Maps
     );
 
     public static final List<Maps> BOII_Maps = List.of(
-            BOII_Town, // Added Town as it was in the enum but missing here
+            BOII_Tranzit,
+            BOII_Town,
             BOII_Farm,
             BOII_Bus_Depot,
             BOII_Nuketown,
