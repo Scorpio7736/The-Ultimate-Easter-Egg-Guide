@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEgg;
@@ -23,6 +24,8 @@ public class EggDisplay_Page extends AppCompatActivity implements EggAdapter.OnE
 
     private Maps selectedMap;
     private List<EasterEgg> eggsToShow = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private LinearLayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,7 @@ public class EggDisplay_Page extends AppCompatActivity implements EggAdapter.OnE
 
         ImageView backgroundImage = findViewById(R.id.background_image);
         TextView categoryTitle = findViewById(R.id.egg_category_title);
-        RecyclerView recyclerView = findViewById(R.id.eggs_recycler_view);
+        recyclerView = findViewById(R.id.eggs_recycler_view);
 
         if (getIntent().hasExtra("MAP_ID") && getIntent().hasExtra("CATEGORY")) {
             String mapId = getIntent().getStringExtra("MAP_ID");
@@ -73,14 +76,41 @@ public class EggDisplay_Page extends AppCompatActivity implements EggAdapter.OnE
         }
 
         // Setup RecyclerView
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
         EggAdapter adapter = new EggAdapter(eggsToShow, this);
         recyclerView.setAdapter(adapter);
     }
 
     @Override
-    public void onEggClick(EasterEgg egg) {
-        // Dropdown handled by Adapter
+    public void onEggClick(EasterEgg egg, int position, boolean isExpanding) {
+        if (isExpanding && layoutManager != null) {
+            recyclerView.postDelayed(() -> {
+                View itemView = layoutManager.findViewByPosition(position);
+                if (itemView != null) {
+                    // Check if the item's bottom is near or past the recycler view's bottom
+                    int itemBottom = itemView.getBottom();
+                    int rvHeight = recyclerView.getHeight();
+                    
+                    // If the item is in the bottom portion of the screen or cut off, scroll it to the top
+                    if (itemBottom > rvHeight * 0.75) {
+                        RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(this) {
+                            @Override
+                            protected int getVerticalSnapPreference() {
+                                return LinearSmoothScroller.SNAP_TO_START;
+                            }
+
+                            @Override
+                            protected float calculateSpeedPerPixel(android.util.DisplayMetrics displayMetrics) {
+                                return 150f / displayMetrics.densityDpi;
+                            }
+                        };
+                        smoothScroller.setTargetPosition(position);
+                        layoutManager.startSmoothScroll(smoothScroller);
+                    }
+                }
+            }, 100);
+        }
     }
 
     private int getBackgroundForMapType(MapType mapType) {

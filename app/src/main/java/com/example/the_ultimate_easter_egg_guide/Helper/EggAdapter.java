@@ -25,7 +25,7 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
     private int expandedPosition = -1;
 
     public interface OnEggClickListener {
-        void onEggClick(EasterEgg egg);
+        void onEggClick(EasterEgg egg, int position, boolean isExpanding);
     }
 
     public EggAdapter(List<EasterEgg> eggList, OnEggClickListener listener) {
@@ -61,12 +61,13 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
 
         holder.headerCard.setOnClickListener(v -> {
             int previousExpandedPosition = expandedPosition;
-            expandedPosition = isExpanded ? -1 : position;
+            boolean isExpanding = (expandedPosition != position);
+            expandedPosition = isExpanding ? position : -1;
             
             notifyItemChanged(previousExpandedPosition);
             notifyItemChanged(position);
             
-            listener.onEggClick(egg);
+            listener.onEggClick(egg, position, isExpanding);
         });
     }
 
