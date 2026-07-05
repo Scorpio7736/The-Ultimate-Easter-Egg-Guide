@@ -71,17 +71,19 @@ tasks.register<JacocoReport>("jacocoTestReport") {
         "**/R.class", "**/R$*.class", "**/BuildConfig.*", "**/Manifest*.*", "**/*Test*.*", "android/**/*.*"
     )
     
-    // Updated path to be more robust across Gradle versions
+    // Robust class directory resolution
     val javaClasses = fileTree("${project.layout.buildDirectory.get()}/intermediates/javac/debug") {
         include("**/classes/**")
         exclude(fileFilter)
     }
+    
     val mainSrc = "${project.projectDir}/src/main/java"
 
     sourceDirectories.setFrom(files(mainSrc))
-    classDirectories.setFrom(files(javaClasses))
+    classDirectories.setFrom(javaClasses)
     executionData.setFrom(fileTree(project.layout.buildDirectory.get()) {
-        include("jacoco/testDebugUnitTest.exec", "outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec")
+        include("outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec")
+        include("jacoco/testDebugUnitTest.exec")
     })
 }
 

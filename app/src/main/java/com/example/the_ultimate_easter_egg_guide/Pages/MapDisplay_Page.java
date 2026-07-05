@@ -1,9 +1,9 @@
 package com.example.the_ultimate_easter_egg_guide.Pages;
 
-import android.app.Dialog;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDialog;
 
 import com.example.the_ultimate_easter_egg_guide.Models.MapType;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
@@ -21,7 +22,7 @@ import com.google.android.material.card.MaterialCardView;
 public class MapDisplay_Page extends AppCompatActivity {
 
     private Maps selectedMap;
-    private final Handler trailerHandler = new Handler();
+    private final Handler trailerHandler = new Handler(Looper.getMainLooper());
     private Runnable trailerRunnable;
 
     @Override
@@ -147,7 +148,7 @@ public class MapDisplay_Page extends AppCompatActivity {
             mapTrailerVideo.pause();
         }
 
-        Dialog dialog = new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+        AppCompatDialog dialog = new AppCompatDialog(this, R.style.FullScreenDialog);
         dialog.setContentView(R.layout.dialog_video_player);
 
         VideoView popupVideoView = dialog.findViewById(R.id.dialog_video_view);
@@ -175,6 +176,8 @@ public class MapDisplay_Page extends AppCompatActivity {
     }
 
     private void setupTrailer(ImageView mapCoverImage, VideoView mapTrailerVideo) {
+        if (selectedMap.mapTrailer <= 0) return;
+
         String path = "android.resource://" + getPackageName() + "/" + selectedMap.mapTrailer;
         mapTrailerVideo.setVideoURI(Uri.parse(path));
         mapTrailerVideo.setZOrderMediaOverlay(true);

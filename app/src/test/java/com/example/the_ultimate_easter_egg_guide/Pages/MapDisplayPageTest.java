@@ -22,10 +22,31 @@ import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowDialog;
+import org.robolectric.shadows.ShadowLooper;
+
+import java.util.concurrent.TimeUnit;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = 33)
 public class MapDisplayPageTest {
+
+    @Test
+    public void testTrailerAutoStartsAfterDelay() {
+        Intent intent = new Intent(ApplicationProvider.getApplicationContext(), MapDisplay_Page.class);
+        intent.putExtra("MAP_ID", Maps.WAW_Nacht_Der_Untoten.name());
+
+        try (ActivityScenario<MapDisplay_Page> scenario = ActivityScenario.launch(intent)) {
+            scenario.onActivity(activity -> {
+                View trailerVideo = activity.findViewById(R.id.map_trailer_video);
+                
+                // Fast forward 5 seconds to trigger trailerRunnable lambda
+                ShadowLooper.idleMainLooper(5100, TimeUnit.MILLISECONDS);
+                
+                // Assert the lambda logic executed
+                assertEquals(View.VISIBLE, trailerVideo.getVisibility());
+            });
+        }
+    }
 
     @Test
     public void testShowVideoPopup() {
