@@ -12,4 +12,9 @@ public class BOI_EggWarehouse
     public static final MapEggData CallOfTheDead = new MapEggData(COTD_EasterEggs.COTD_MainQuests, COTD_EasterEggs.COTD_SideQuests, null);
     public static final MapEggData ShangriLa = new MapEggData(ShangriLa_EasterEggs.ShangriLa_MainQuests, ShangriLa_EasterEggs.ShangriLa_SideQuests, null);
     public static final MapEggData Moon = new MapEggData(Moon_EasterEggs.Moon_MainQuests, Moon_EasterEggs.Moon_SideQuests, null);
+    public static final MapEggData NachtDerUntoten = new MapEggData(NachtDerUntoten_EasterEggs.NachtDerUntoten_MainQuests, NachtDerUntoten_EasterEggs.NachtDerUntoten_SideQuests, null);
+    public static final MapEggData Verruckt = new MapEggData(Verruckt_EasterEggs.Verruckt_MainQuests, Verruckt_EasterEggs.Verruckt_SideQuests, null);
+    public static final MapEggData ShiNoNuma = new MapEggData(ShiNoNuma_EasterEggs.ShiNoNuma_MainQuests, ShiNoNuma_EasterEggs.ShiNoNuma_SideQuests, null);
+    public static final MapEggData DerReise = new MapEggData(DerReise_EasterEggs.DerReise_MainQuests, DerReise_EasterEggs.DerReise_SideQuests, null);
+
 }

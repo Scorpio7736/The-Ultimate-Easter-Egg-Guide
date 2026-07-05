@@ -44,6 +44,11 @@ public enum Maps
     BOI_Call_Of_The_Dead(games.Black_Ops_I, "Call of the Dead", R.string.map_desc_placeholder, R.drawable.cotd_boi, MapType.Group_935_Winter, BOI_EggWarehouse.CallOfTheDead, R.raw.cotd_trailer),
     BOI_Shangri_La(games.Black_Ops_I, "Shangri La", R.string.map_desc_placeholder, R.drawable.shangrila_boi, MapType.Jungle, BOI_EggWarehouse.ShangriLa, R.raw.shangrila_trailer),
     BOI_Moon(games.Black_Ops_I, "Moon", R.string.map_desc_placeholder, R.drawable.moon_boi, MapType.Group_935_Lunar, BOI_EggWarehouse.Moon, R.raw.moon_trailer),
+    BOI_Nacht_Der_Untoten(games.Black_Ops_I, "Nacht der Untoten", R.string.map_desc_placeholder, R.drawable.nacht_boi, MapType.Group_935, BOI_EggWarehouse.NachtDerUntoten),
+    BOI_Verruckt(games.Black_Ops_I, "Verruckt", R.string.map_desc_placeholder, R.drawable.app_icon, MapType.Group_935, BOI_EggWarehouse.Verruckt),
+    BOI_Shi_No_Numa(games.Black_Ops_I, "Shi No Numa", R.string.map_desc_placeholder, R.drawable.app_icon, MapType.Division_9, BOI_EggWarehouse.ShiNoNuma),
+    BOI_Der_Reise(games.Black_Ops_I, "Der Reise", R.string.map_desc_placeholder, R.drawable.app_icon, MapType.Group_935, BOI_EggWarehouse.DerReise),
+
 
     // --------------------------------- Black Ops II MAPS ---------------------------------
 
@@ -207,6 +212,10 @@ public enum Maps
             BOI_Call_Of_The_Dead,
             BOI_Shangri_La,
             BOI_Moon
+            //BOI_Nacht_Der_Untoten,
+            //BOI_Verruckt,
+            //BOI_Shi_No_Numa,
+            //BOI_Der_Reise
     );
 
     public static final List<Maps> BOII_Maps = List.of(
@@ -227,15 +236,15 @@ public enum Maps
             BOIII_Der_Eisendrache,
             BOIII_Zetsubou_No_Shima,
             BOIII_Gorod_Krovi,
-            BOIII_Revelations,
-            BOIII_Nacht_Der_Untoten,
-            BOIII_Verruckt,
-            BOIII_Shi_No_Numa,
-            BOIII_Kino_Der_Toten,
-            BOIII_Ascension,
-            BOIII_Shangri_La,
-            BOIII_Moon,
-            BOIII_Origins
+            BOIII_Revelations
+            //BOIII_Nacht_Der_Untoten,
+            //BOIII_Verruckt,
+            //BOIII_Shi_No_Numa,
+            //BOIII_Kino_Der_Toten,
+            //BOIII_Ascension,
+            //BOIII_Shangri_La,
+            //BOIII_Moon,
+            //BOIII_Origins
     );
 
     public static final List<Maps> BOIV_Maps = List.of(
