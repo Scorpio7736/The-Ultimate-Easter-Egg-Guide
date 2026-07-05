@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
+import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.Helper.MapAdapter;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
@@ -171,13 +172,13 @@ public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.
         if (isGridView) {
             mapsRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
             if (!gridAdapters.containsKey(currentSelectedGame)) {
-                gridAdapters.put(currentSelectedGame, new MapAdapter(Maps.getMapsForGame(currentSelectedGame), true, this));
+                gridAdapters.put(currentSelectedGame, new MapAdapter(MapsWarehouse.getMapsForGame(currentSelectedGame), true, this));
             }
             mapAdapter = gridAdapters.get(currentSelectedGame);
         } else {
             mapsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
             if (!listAdapters.containsKey(currentSelectedGame)) {
-                listAdapters.put(currentSelectedGame, new MapAdapter(Maps.getMapsForGame(currentSelectedGame), false, this));
+                listAdapters.put(currentSelectedGame, new MapAdapter(MapsWarehouse.getMapsForGame(currentSelectedGame), false, this));
             }
             mapAdapter = listAdapters.get(currentSelectedGame);
         }

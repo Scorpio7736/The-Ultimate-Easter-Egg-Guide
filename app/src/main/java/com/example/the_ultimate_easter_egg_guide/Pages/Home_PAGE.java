@@ -12,6 +12,7 @@ import androidx.core.splashscreen.SplashScreen;
 
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
+import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
 import com.example.the_ultimate_easter_egg_guide.Models.ImageID;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -58,7 +59,7 @@ public class Home_PAGE extends AppCompatActivity {
         slideshowImage = findViewById(R.id.slideshow_image);
 
         // Populate slideshow with all map covers
-        for (ImageID id : Maps.All_Images) {
+        for (ImageID id : MapsWarehouse.All_Images) {
             slideshowImages.add(id.GetImageID());
         }
 
