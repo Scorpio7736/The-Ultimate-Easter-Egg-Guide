@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <string name="general_placeholder_mapdescription">INSERT HERE</string>
+
+    <!-- World at War -->
+    <string name="waw_NachtDerUntoten_mapdescription">An abandoned bunker sits isolated in the fog after a failed mission. With limited weapons, tight rooms, and nowhere to truly run, survivors must hold out against the first waves of the undead.</string>
+    <string name="waw_ShiNoNuma_mapdescription">Deep in a swampy Japanese research site, strange experiments have unleashed the undead. Survivors must move through muddy huts, fend off Hellhounds, and uncover the dark secrets hidden in the jungle.</string>
+    <string name="waw_Verruckt_mapdescription">Inside a ruined German asylum, the undead horror grows more intense. Split starting rooms, deadly corridors, traps, and the first Perk-a-Colas make survival more chaotic and dangerous.</string>
+    <string name="waw_DerRiese_mapdescription">At a secret Group 935 weapons facility, teleporters, Pack-a-Punch, and dangerous experiments reveal the true scale of the zombie outbreak. This map expands the story and introduces some of the most important mechanics in Zombies history.</string>
+
+    <!-- Black Ops III -->
+    <string name="boiii_ShadowsOfEvil_mapdescription">Take to the streets of Morg City to combat the undead. embrace the curse to uncover its mysteries.</string>
+    <string name="boiii_TheGiant_mapdescription">Re-awaken The Giant. Return to the secret facility where it all began, and strike at the heart of the zombie scourge.</string>
+    <string name="boiii_DerEisendrache_mapdescription">Band togeather by a fragile alliance, our heros pursue the scattered remnants of Group 935 to their mountain top fortress in the Austrian Alps...</string>
+    <string name="boiii_ZetsubouNoShima_mapdescription">On a remote Island in the Pacific, a mysterious facility hides the secrets behind Division 9\'s sinister experiments...</string>
+    <string name="boiii_GorodKrovi_mapdescription">As their journey nears its end, our heros must battle ancient beasts in the war torn ruins of Stalingrad...</string>
+    <string name="boiii_Revelations_mapdescription">The time has come to join Doctor Monty in The House, where an ancient evil threatens the survival of our heroes\' immortal souls...</string>
+    <string name="boiii_NachtDerUntoten_mapdescription">You drove them deep into the heart of the Reich. You thought they were dead. You were wrong.</string>
+    <string name="boiii_Verruckt_mapdescription">Electroshock therapy. Chemically engineered beverages. Hordes of undead Nazis. Find the power to unite and send them back to their graves!</string>
+    <string name="boiii_ShiNoNuma_mapdescription">Maggot ridden corpses. Bug infested swamp. Hundreds of undead Imperial Army. Choose your tactic and defend for your lives!</string>
+    <string name="boiii_KinoDerToten_mapdescription">Battle the undead in this theatrical installment of \"Zombies\". New twists and clues could uncover the final plan. It\'s show time!</string>
+    <string name="boiii_Ascension_mapdescription">The risen dead have overtaken a Soviet cosmodrome and all Hell has broken loose. The countdown to the zombie apocalypse has begun.</string>
+    <string name="boiii_ShangriLa_mapdescription">A legendary shrine lost in an exotic jungle, where the undead lurk within a treacherous labyrinth of underground caverns, deadly traps and dark secrets.</string>
+    <string name="boiii_Moon_mapdescription">I believe that this nation should commit itself to achieving the goal, before this decade is out, of landing a man on the moon and returning him safely to the Earth. (JFK, 1961)</string>
+    <string name="boiii_Origins_mapdescription">Witness the origins of Group 935, as an ancient evil is unleashed upon the battlefields of World War 1.</string>
+
+    <!-- Placeholders for other maps to follow schema -->
+    <string name="test_TestingMap1_mapdescription">INSERT HERE</string>
+    <string name="test_TestingMap2_mapdescription">INSERT HERE</string>
+    <string name="test_TestingMap3_mapdescription">INSERT HERE</string>
+    <string name="test_TestingMap4_mapdescription">INSERT HERE</string>
+
+    <string name="boi_KinoDerToten_mapdescription">INSERT HERE</string>
+    <string name="boi_Five_mapdescription">INSERT HERE</string>
+    <string name="boi_Ascension_mapdescription">INSERT HERE</string>
+    <string name="boi_CallOfTheDead_mapdescription">INSERT HERE</string>
+    <string name="boi_ShangriLa_mapdescription">INSERT HERE</string>
+    <string name="boi_Moon_mapdescription">INSERT HERE</string>
+    <string name="boi_NachtDerUntoten_mapdescription">INSERT HERE</string>
+    <string name="boi_Verruckt_mapdescription">INSERT HERE</string>
+    <string name="boi_ShiNoNuma_mapdescription">INSERT HERE</string>
+    <string name="boi_DerReise_mapdescription">INSERT HERE</string>
+
+    <string name="boii_Tranzit_mapdescription">INSERT HERE</string>
+    <string name="boii_Town_mapdescription">INSERT HERE</string>
+    <string name="boii_Farm_mapdescription">INSERT HERE</string>
+    <string name="boii_BusDepot_mapdescription">INSERT HERE</string>
+    <string name="boii_Nuketown_mapdescription">INSERT HERE</string>
+    <string name="boii_DieRise_mapdescription">INSERT HERE</string>
+    <string name="boii_MobOfTheDead_mapdescription">INSERT HERE</string>
+    <string name="boii_Buried_mapdescription">INSERT HERE</string>
+    <string name="boii_Origins_mapdescription">INSERT HERE</string>
+
+    <string name="boiv_DeadOfTheNight_mapdescription">INSERT HERE</string>
+    <string name="boiv_AncientEvil_mapdescription">INSERT HERE</string>
+    <string name="boiv_AlphaOmega_mapdescription">INSERT HERE</string>
+    <string name="boiv_TagDerToten_mapdescription">INSERT HERE</string>
+    <string name="boiv_BloodOfTheDead_mapdescription">INSERT HERE</string>
+    <string name="boiv_Classified_mapdescription">INSERT HERE</string>
+    <string name="boiv_VoyageOfDespair_mapdescription">INSERT HERE</string>
+    <string name="boiv_IX_mapdescription">INSERT HERE</string>
+
+    <string name="bocw_DieMaschine_mapdescription">INSERT HERE</string>
+    <string name="bocw_FirebaseZ_mapdescription">INSERT HERE</string>
+    <string name="bocw_MauerDerToten_mapdescription">INSERT HERE</string>
+    <string name="bocw_Forsaken_mapdescription">INSERT HERE</string>
+
+    <string name="bovi_LibertyFalls_mapdescription">INSERT HERE</string>
+    <string name="bovi_Terminus_mapdescription">INSERT HERE</string>
+    <string name="bovi_CitadelleDesMorts_mapdescription">INSERT HERE</string>
+    <string name="bovi_ShatteredVeil_mapdescription">INSERT HERE</string>
+    <string name="bovi_TheTomb_mapdescription">INSERT HERE</string>
+    <string name="bovi_Reckoning_mapdescription">INSERT HERE</string>
+
+    <string name="bovii_AshesOfTheDamned_mapdescription">INSERT HERE</string>
+    <string name="bovii_AstraMalorum_mapdescription">INSERT HERE</string>
+    <string name="bovii_ParadoxJunction_mapdescription">INSERT HERE</string>
+    <string name="bovii_Totenreich_mapdescription">INSERT HERE</string>
+</resources>

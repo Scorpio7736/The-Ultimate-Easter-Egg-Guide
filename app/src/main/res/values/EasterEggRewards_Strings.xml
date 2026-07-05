@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Easter Egg Rewards -->
+    <string name="reward_label">REWARD:</string>
+    <string name="reward_bragging_rights">Bragging rights</string>
+</resources>
