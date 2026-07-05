@@ -138,7 +138,7 @@ public class MapDisplay_Page extends AppCompatActivity {
         });
     }
 
-    private void showVideoPopup() {
+    void showVideoPopup() {
         if (selectedMap == null || selectedMap.mapTrailer == -1) return;
 
         VideoView mapTrailerVideo = findViewById(R.id.map_trailer_video);
@@ -286,7 +286,7 @@ public class MapDisplay_Page extends AppCompatActivity {
         }
     }
 
-    private int getBackgroundForMapType(MapType mapType) {
+    int getBackgroundForMapType(MapType mapType) {
         if (mapType == null) return R.drawable.general_bkg;
         
         switch (mapType) {
