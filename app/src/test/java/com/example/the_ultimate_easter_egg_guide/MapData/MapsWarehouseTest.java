@@ -92,6 +92,9 @@ public class MapsWarehouseTest {
 
     @Test
     public void testAll_Images() {
-        assertEquals(MapsWarehouse.All_Maps.size(), MapsWarehouse.All_Images.size());
+        long expectedSize = MapsWarehouse.All_Maps.stream()
+                .filter(map -> map.gameName != games.Test && map.mapCover != com.example.the_ultimate_easter_egg_guide.R.drawable.app_icon)
+                .count();
+        assertEquals(expectedSize, MapsWarehouse.All_Images.size());
     }
 }

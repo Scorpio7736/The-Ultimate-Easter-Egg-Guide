@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData;
 
 import com.example.the_ultimate_easter_egg_guide.Models.ImageID;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
+import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.Collections;
 import java.util.List;
@@ -42,6 +43,7 @@ public class MapsWarehouse
 
     private static List<ImageID> getImages(List<Maps> maps) {
         return maps.stream()
+                .filter(map -> map.gameName != games.Test && map.mapCover != R.drawable.app_icon)
                 .map(map -> new ImageID(map.mapCover))
                 .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
     }

@@ -55,6 +55,7 @@ public class KinoDerToten_EasterEggs
                     .addImage()
             )
     ;
+    public static final EasterEgg KnockingChest = new EasterEgg("Knocking Chest");
     public static final EasterEgg Radios = new EasterEgg("Radios")
 
     ;

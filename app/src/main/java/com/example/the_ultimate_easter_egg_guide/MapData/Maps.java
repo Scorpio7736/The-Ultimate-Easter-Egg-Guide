@@ -47,9 +47,9 @@ public enum Maps
     // --------------------------------- Black Ops II MAPS ---------------------------------
 
     BOII_Tranzit(games.Black_Ops_II, "Tranzit",  R.string.boii_Tranzit_mapdescription,R.drawable.boii_tranzit_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Tranzit),
-    BOII_Town(games.Black_Ops_II, "Town", R.string.boii_Town_mapdescription, R.drawable.boii_town_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Town),
-    BOII_Farm(games.Black_Ops_II, "Farm", R.string.boii_Farm_mapdescription, R.drawable.boii_farm_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Farm),
-    BOII_Bus_Depot(games.Black_Ops_II, "Bus Depot", R.string.boii_BusDepot_mapdescription, R.drawable.boii_busdepot_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.BusDepot),
+    //BOII_Town(games.Black_Ops_II, "Town", R.string.boii_Town_mapdescription, R.drawable.boii_town_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Town),
+    //BOII_Farm(games.Black_Ops_II, "Farm", R.string.boii_Farm_mapdescription, R.drawable.boii_farm_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Farm),
+    //BOII_Bus_Depot(games.Black_Ops_II, "Bus Depot", R.string.boii_BusDepot_mapdescription, R.drawable.boii_busdepot_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.BusDepot),
     BOII_Nuketown(games.Black_Ops_II, "Nuketown", R.string.boii_Nuketown_mapdescription, R.drawable.boii_nuketown_mapcover, MapType.Broken_Arrow, BOII_EggWarehouse.Nuketown),
     BOII_Die_Rise(games.Black_Ops_II, "Die Rise", R.string.boii_DieRise_mapdescription, R.drawable.boii_dierise_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.DieRise), //FYI: This map is the worst of all maps across all games of all time. I hate Die Rise.
     BOII_Mob_Of_The_Dead(games.Black_Ops_II, "Mob of the Dead", R.string.boii_MobOfTheDead_mapdescription, R.drawable.boii_mobofthedead_mapcover, MapType.Purgatory, BOII_EggWarehouse.MobOfTheDead),
@@ -109,12 +109,6 @@ public enum Maps
     BOVII_Astra_Malorum(games.Black_Ops_VII, "Astra Malorum", R.string.bovii_AstraMalorum_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.AstraMalorum),
     BOVII_Paradox_Junction(games.Black_Ops_VII, "Paradox Junction", R.string.bovii_ParadoxJunction_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.ParadoxJunction),
     BOVII_Totenreich(games.Black_Ops_VII, "Totenreich", R.string.bovii_Totenreich_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.Totenreich);
-
-
-
-
-
-
     public final games gameName;
     public final String mapName;
     public final int mapCover;
