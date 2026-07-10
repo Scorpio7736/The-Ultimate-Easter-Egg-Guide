@@ -109,4 +109,12 @@ public class Home_PAGE extends AppCompatActivity {
     public void onMapsButtonClick(View view) {
         PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
     }
+
+    public void onStorylineButtonClick(View view) {
+        PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
+    }
+
+    public void onToolsButtonClick(View view) {
+        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
+    }
 }

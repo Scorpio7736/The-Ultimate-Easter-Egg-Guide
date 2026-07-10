@@ -14,7 +14,7 @@ import androidx.test.core.app.ActivityScenario;
 import androidx.test.core.app.ApplicationProvider;
 
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
-import com.example.the_ultimate_easter_egg_guide.Models.MapType;
+import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapType;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import org.junit.Test;

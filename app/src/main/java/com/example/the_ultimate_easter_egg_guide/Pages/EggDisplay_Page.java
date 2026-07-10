@@ -14,7 +14,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Helper.EggAdapter;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
-import com.example.the_ultimate_easter_egg_guide.Models.MapType;
+import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapType;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
@@ -139,5 +139,13 @@ public class EggDisplay_Page extends AppCompatActivity implements EggAdapter.OnE
 
     public void onMapsButtonClick(View view) {
         PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
+    }
+
+    public void onStorylineButtonClick(View view) {
+        PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
+    }
+
+    public void onToolsButtonClick(View view) {
+        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
     }
 }

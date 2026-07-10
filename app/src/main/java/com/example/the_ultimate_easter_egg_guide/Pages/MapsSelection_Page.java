@@ -217,4 +217,12 @@ public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.
     public void onMapsButtonClick(View view) {
         // Already on this page
     }
+
+    public void onStorylineButtonClick(View view) {
+        PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
+    }
+
+    public void onToolsButtonClick(View view) {
+        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
+    }
 }

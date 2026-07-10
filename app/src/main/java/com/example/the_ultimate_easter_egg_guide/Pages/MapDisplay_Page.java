@@ -13,7 +13,7 @@ import android.widget.VideoView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialog;
 
-import com.example.the_ultimate_easter_egg_guide.Models.MapType;
+import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapType;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.R;
@@ -130,7 +130,7 @@ public class MapDisplay_Page extends AppCompatActivity {
         });
 
         findViewById(R.id.option_storyline).setOnClickListener(v -> {
-            Toast.makeText(this, "Storyline coming soon!", Toast.LENGTH_SHORT).show();
+            PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
         });
 
         // Navigation bar settings button
@@ -332,5 +332,13 @@ public class MapDisplay_Page extends AppCompatActivity {
 
     public void onMapsButtonClick(View view) {
         PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
+    }
+
+    public void onStorylineButtonClick(View view) {
+        PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
+    }
+
+    public void onToolsButtonClick(View view) {
+        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
     }
 }
