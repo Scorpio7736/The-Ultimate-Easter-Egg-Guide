@@ -1,5 +1,5 @@
-package com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterData;
-import com.example.the_ultimate_easter_egg_guide.Models.CharacterVersion;
+package com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersion;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterGroup;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.R;
@@ -8,9 +8,22 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public enum Characters
+public enum Player_Characters
 {
 
+    TestCharacter(
+            "Test Character",
+            "Test_First",
+            "Test_Middle",
+            "Test_Last",
+            new Date(2000,1,1),
+            CharacterVersion.Single,
+            CharacterGroup.TEST,
+            Arrays.asList("Test_Nickname_1", "Test_Nickname_2"),
+            R.drawable.cursed_richtofen,
+            games.Test,
+            games.Test
+    ),
     EdwardRichtofen_Primis(
             "Dr. Edward Richtofen",
             "Edward",
@@ -410,7 +423,7 @@ public enum Characters
     public final games finalappearance;
 
 
-    Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, CharacterGroup characterGroup, List<String> characterNicknames, int characterImage, games firstappearance, games finalappearance)
+    Player_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, CharacterGroup characterGroup, List<String> characterNicknames, int characterImage, games firstappearance, games finalappearance)
     {
         this.characterName = characterName;
         this.characterFirstName = characterFirstName;

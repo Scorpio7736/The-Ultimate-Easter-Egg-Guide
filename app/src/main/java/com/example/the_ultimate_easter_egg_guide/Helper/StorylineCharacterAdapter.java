@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterData.Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterGroup;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -26,17 +26,17 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
 
     public StorylineCharacterAdapter() {
         for (CharacterGroup group : CharacterGroup.values()) {
-            List<Characters> charactersInGroup = new ArrayList<>();
+            List<Player_Characters> playerCharactersInGroup = new ArrayList<>();
 
-            for (Characters character : Characters.values()) {
+            for (Player_Characters character : Player_Characters.values()) {
                 if (character.characterGroup == group) {
-                    charactersInGroup.add(character);
+                    playerCharactersInGroup.add(character);
                 }
             }
 
-            if (!charactersInGroup.isEmpty()) {
+            if (!playerCharactersInGroup.isEmpty()) {
                 items.add(group);
-                items.addAll(charactersInGroup);
+                items.addAll(playerCharactersInGroup);
             }
         }
     }
@@ -71,7 +71,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
             ((HeaderViewHolder) holder).groupName.setText(group.displayName);
 
         } else if (holder instanceof CharacterViewHolder) {
-            Characters character = (Characters) item;
+            Player_Characters character = (Player_Characters) item;
             ((CharacterViewHolder) holder).pfpImage.setImageResource(
                     character.characterImage
             );
