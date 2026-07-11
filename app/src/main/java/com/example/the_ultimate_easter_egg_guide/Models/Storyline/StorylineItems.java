@@ -7,7 +7,8 @@ public enum StorylineItems
     Creatures("Creatures"),
     Items("Items"),
     Map("Maps"),
-    Groups("Groups");
+    Groups("Groups"),
+    Youtubers("Cod Zombies YouTubers");
 
 
     public String itemName;

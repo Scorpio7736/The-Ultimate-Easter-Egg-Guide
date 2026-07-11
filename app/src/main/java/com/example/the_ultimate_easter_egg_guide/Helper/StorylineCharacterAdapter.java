@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
-import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.NpcData.NonPlayer_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CodZombiesYoutubersData.CodZombies_Youtubers;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterGroup;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.YoutuberGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -30,11 +32,20 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
     public interface OnCharacterClickListener {
         void onPlayerCharacterClick(Player_Characters character);
         void onNonPlayerCharacterClick(NonPlayer_Characters character);
+        void onYoutuberClick(CodZombies_Youtubers youtuber);
     }
 
     public StorylineCharacterAdapter(StorylineItems category, boolean enableTesting, OnCharacterClickListener listener) {
         this.listener = listener;
-        
+
+        if (category == StorylineItems.Youtubers) {
+            setupYoutuberItems(enableTesting);
+        } else {
+            setupCharacterItems(category, enableTesting);
+        }
+    }
+
+    private void setupCharacterItems(StorylineItems category, boolean enableTesting) {
         for (CharacterGroup group : CharacterGroup.values()) {
             if (enableTesting) {
                 if (group != CharacterGroup.TEST) continue;
@@ -65,9 +76,32 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
         }
     }
 
+    private void setupYoutuberItems(boolean enableTesting) {
+        for (YoutuberGroups group : YoutuberGroups.values()) {
+            if (enableTesting) {
+                if (group != YoutuberGroups.TEST) continue;
+            } else {
+                if (group == YoutuberGroups.TEST) continue;
+            }
+
+            List<Object> youtubersInGroup = new ArrayList<>();
+            for (CodZombies_Youtubers youtuber : CodZombies_Youtubers.values()) {
+                if (youtuber.youtuberGroup == group) {
+                    youtubersInGroup.add(youtuber);
+                }
+            }
+
+            if (!youtubersInGroup.isEmpty()) {
+                items.add(group);
+                items.addAll(youtubersInGroup);
+            }
+        }
+    }
+
     @Override
     public int getItemViewType(int position) {
-        return items.get(position) instanceof CharacterGroup ? TYPE_HEADER : TYPE_CHARACTER;
+        Object item = items.get(position);
+        return (item instanceof CharacterGroup || item instanceof YoutuberGroups) ? TYPE_HEADER : TYPE_CHARACTER;
     }
 
     @NonNull
@@ -88,8 +122,13 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
         Object item = items.get(position);
 
         if (holder instanceof HeaderViewHolder) {
-            CharacterGroup group = (CharacterGroup) item;
-            ((HeaderViewHolder) holder).groupName.setText(group.displayName);
+            String displayName = "";
+            if (item instanceof CharacterGroup) {
+                displayName = ((CharacterGroup) item).displayName;
+            } else if (item instanceof YoutuberGroups) {
+                displayName = ((YoutuberGroups) item).displayName;
+            }
+            ((HeaderViewHolder) holder).groupName.setText(displayName);
 
         } else if (holder instanceof CharacterViewHolder) {
             CharacterViewHolder charHolder = (CharacterViewHolder) holder;
@@ -106,6 +145,13 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
                 charHolder.nameText.setText(character.characterName);
                 charHolder.itemView.setOnClickListener(v -> {
                     if (listener != null) listener.onNonPlayerCharacterClick(character);
+                });
+            } else if (item instanceof CodZombies_Youtubers) {
+                CodZombies_Youtubers youtuber = (CodZombies_Youtubers) item;
+                charHolder.pfpImage.setImageResource(youtuber.characterImage);
+                charHolder.nameText.setText(youtuber.channelName);
+                charHolder.itemView.setOnClickListener(v -> {
+                    if (listener != null) listener.onYoutuberClick(youtuber);
                 });
             }
         }

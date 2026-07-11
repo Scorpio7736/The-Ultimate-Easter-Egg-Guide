@@ -30,7 +30,8 @@ public enum CharacterGroup
     Group935TestSubject("Group 935 Test Subjects"),
     CIA("The C.I.A"),
     CDC("The C.D.C"),
-    ShangriLa("Shangri La");
+    ShangriLa("Shangri La"),
+    YouTubers("Cod Zombies YouTubers");
 
     public final String displayName;
 

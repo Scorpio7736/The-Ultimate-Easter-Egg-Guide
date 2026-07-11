@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData;
+package com.example.the_ultimate_easter_egg_guide.Storyline.NpcData;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersion;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterGroup;
@@ -12,6 +12,19 @@ import java.util.List;
 public enum NonPlayer_Characters
 {
 
+    TEST(
+            "TESTING NPC",
+            "Test",
+            "Test",
+            "Test",
+            new Date(2000,1,1),
+            CharacterVersion.Single,
+            CharacterGroup.TEST,
+            Arrays.asList("Maxis"),
+            R.drawable.cursed_richtofen,
+            games.Test,
+            games.Test
+    ),
     LudwigMaxis_Ultimis(
             "Dr. Ludwig Maxis",
             "Ludwig",

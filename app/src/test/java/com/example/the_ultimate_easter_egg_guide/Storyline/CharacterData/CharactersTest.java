@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterGroup;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersion;
+import com.example.the_ultimate_easter_egg_guide.Storyline.NpcData.NonPlayer_Characters;
 
 import org.junit.Test;
 

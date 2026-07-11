@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +16,8 @@ import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapte
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
-import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.NpcData.NonPlayer_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CodZombiesYoutubersData.CodZombies_Youtubers;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
@@ -67,7 +69,10 @@ public class StorylineSelection_PAGE extends PageController_BaseClass implements
     }
 
     private void loadCategoryData(StorylineItems category) {
-        if (category == StorylineItems.PlayerCharacter || category == StorylineItems.NonPlayerCharacter) {
+        if (category == StorylineItems.PlayerCharacter || 
+            category == StorylineItems.NonPlayerCharacter || 
+            category == StorylineItems.Youtubers) {
+            
             StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(category, ENABLE_TESTING, this);
             gridLayoutManager.setSpanSizeLookup(adapter.getSpanSizeLookup());
             recyclerView.setAdapter(adapter);
@@ -92,6 +97,11 @@ public class StorylineSelection_PAGE extends PageController_BaseClass implements
         intent.putExtra("CHARACTER_ID", character.name());
         intent.putExtra("IS_PLAYER_CHARACTER", false);
         PageTransitionManager.startActivityWithFade(this, intent);
+    }
+
+    @Override
+    public void onYoutuberClick(CodZombies_Youtubers youtuber) {
+        Toast.makeText(this, "Youtuber: " + youtuber.channelName, Toast.LENGTH_SHORT).show();
     }
 
     @Override
