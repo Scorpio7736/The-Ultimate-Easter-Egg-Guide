@@ -6,6 +6,8 @@ public enum YoutuberGroups
     Storyline("Zombies Storyline"),
     CustomZombies("Custom Zombies"),
     EasterEggHunter("Easter Egg Guides"),
+    RestInPeace("Gone but Never Forgotten"),
+    ZombiesOGs("OG Zombies Youtubers"),
     ZHouse("Z-House");
 
     public String displayName;
