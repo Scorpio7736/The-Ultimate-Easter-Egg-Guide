@@ -12,13 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapter;
+import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Storyline_PAGE extends AppCompatActivity {
+public class Storyline_PAGE extends PageController_BaseClass {
 
     private StorylineItems currentCategory;
     private RecyclerView recyclerView;
@@ -27,12 +28,9 @@ public class Storyline_PAGE extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PageTransitionManager.setupTransitions(this);
         setContentView(R.layout.storyline_page);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
+        setupBaseNavigation();
 
         recyclerView = findViewById(R.id.storyline_recycler_view);
         gridLayoutManager = new GridLayoutManager(this, 2);
@@ -68,7 +66,7 @@ public class Storyline_PAGE extends AppCompatActivity {
 
     private void loadCategoryData(StorylineItems category) {
         if (category == StorylineItems.PlayerCharacter) {
-            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter();
+            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(ENABLE_TESTING);
             gridLayoutManager.setSpanSizeLookup(adapter.getSpanSizeLookup());
             recyclerView.setAdapter(adapter);
         } else {
@@ -77,19 +75,8 @@ public class Storyline_PAGE extends AppCompatActivity {
         }
     }
 
-    public void onHomeButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Home_PAGE.class);
-    }
-
-    public void onMapsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
-    }
-
+    @Override
     public void onStorylineButtonClick(View view) {
         // Already on this page
-    }
-
-    public void onToolsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
     }
 }

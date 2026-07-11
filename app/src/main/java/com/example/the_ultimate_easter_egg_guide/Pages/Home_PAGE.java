@@ -7,19 +7,19 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
 import com.example.the_ultimate_easter_egg_guide.Models.ImageID;
+import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home_PAGE extends AppCompatActivity {
+public class Home_PAGE extends PageController_BaseClass {
 
     private ImageView slideshowImage;
     private final List<Integer> slideshowImages = new ArrayList<>();
@@ -36,23 +36,12 @@ public class Home_PAGE extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        PageTransitionManager.setupTransitions(this);
         SplashScreen.installSplashScreen(this);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
 
+        setupBaseNavigation();
         setupSlideshow();
-
-        ImageButton settingsButton = findViewById(R.id.nav_settings_button);
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PageTransitionManager.startActivityWithFade(Home_PAGE.this, Settings_PAGE.class);
-            }
-        });
     }
 
     private void setupSlideshow() {
@@ -102,19 +91,8 @@ public class Home_PAGE extends AppCompatActivity {
         }
     }
 
+    @Override
     public void onHomeButtonClick(View view) {
         // Already on the home page, no action needed
-    }
-
-    public void onMapsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
-    }
-
-    public void onStorylineButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
-    }
-
-    public void onToolsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
     }
 }

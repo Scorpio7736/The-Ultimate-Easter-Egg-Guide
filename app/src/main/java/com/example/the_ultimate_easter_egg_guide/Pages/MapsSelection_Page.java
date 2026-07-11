@@ -18,19 +18,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
+import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.Helper.MapAdapter;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.OnMapClickListener {
+public class MapsSelection_Page extends PageController_BaseClass implements MapAdapter.OnMapClickListener {
 
     private boolean isGridView = true;
     private RecyclerView mapsRecyclerView;
@@ -39,20 +39,15 @@ public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.
     private final Map<games, MapAdapter> gridAdapters = new HashMap<>();
     private final Map<games, MapAdapter> listAdapters = new HashMap<>();
     private final Map<games, Drawable> backgroundCache = new HashMap<>();
-
-    // Configuration for game selection
-    private static final boolean DEV_MODE = false; // Set to true to ONLY show TEST game and maps
-    private static final games DEFAULT_GAME = DEV_MODE ? games.Test : games.World_At_War;
-    private static final List<games> EXCLUDED_GAMES = java.util.Arrays.asList(games.Test);
+    private final games DEFAULT_GAME = ENABLE_TESTING ? games.Test : games.World_At_War;
+    private final List<games> EXCLUDED_GAMES = java.util.Arrays.asList(games.Test);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PageTransitionManager.setupTransitions(this);
         setContentView(R.layout.maps_selection_page);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
+        
+        setupBaseNavigation();
 
         mapsRecyclerView = findViewById(R.id.maps_recycler_view);
 
@@ -60,7 +55,7 @@ public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.
         List<games> filteredGames = new ArrayList<>();
         List<String> gameNames = new ArrayList<>();
         for (games game : games.values()) {
-            if (DEV_MODE) {
+            if (ENABLE_TESTING) {
                 if (game == games.Test) {
                     filteredGames.add(game);
                     gameNames.add(game.gameName);
@@ -126,13 +121,7 @@ public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.
             }
         });
 
-        ImageButton settingsButton = findViewById(R.id.nav_settings_button);
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PageTransitionManager.startActivityWithFade(MapsSelection_Page.this, Settings_PAGE.class);
-            }
-        });
+        // Navigation bar settings button removed, handled by base class
     }
 
     @Override
@@ -210,19 +199,8 @@ public class MapsSelection_Page extends AppCompatActivity implements MapAdapter.
         }
     }
 
-    public void onHomeButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Home_PAGE.class);
-    }
-
+    @Override
     public void onMapsButtonClick(View view) {
         // Already on this page
-    }
-
-    public void onStorylineButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
-    }
-
-    public void onToolsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
     }
 }

@@ -24,8 +24,14 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
 
     private final List<Object> items = new ArrayList<>();
 
-    public StorylineCharacterAdapter() {
+    public StorylineCharacterAdapter(boolean enableTesting) {
         for (CharacterGroup group : CharacterGroup.values()) {
+            if (enableTesting) {
+                if (group != CharacterGroup.TEST) continue;
+            } else {
+                if (group == CharacterGroup.TEST) continue;
+            }
+
             List<Player_Characters> playerCharactersInGroup = new ArrayList<>();
 
             for (Player_Characters character : Player_Characters.values()) {

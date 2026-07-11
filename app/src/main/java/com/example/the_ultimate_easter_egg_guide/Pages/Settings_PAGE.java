@@ -9,21 +9,19 @@ import android.widget.Switch;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
+import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.R;
 
-public class Settings_PAGE extends AppCompatActivity
+public class Settings_PAGE extends PageController_BaseClass
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        PageTransitionManager.setupTransitions(this);
         setContentView(R.layout.settings_page);
-        if (getSupportActionBar() != null)
-        {
-            getSupportActionBar().hide();
-        }
+
+        setupBaseNavigation();
 
         setupSwitch(R.id.switch1, R.id.expandable_layout1);
         setupSwitch(R.id.switch2, R.id.expandable_layout2);
@@ -57,19 +55,4 @@ public class Settings_PAGE extends AppCompatActivity
         });
     }
 
-    public void onHomeButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Home_PAGE.class);
-    }
-
-    public void onMapsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
-    }
-
-    public void onStorylineButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
-    }
-
-    public void onToolsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
-    }
 }

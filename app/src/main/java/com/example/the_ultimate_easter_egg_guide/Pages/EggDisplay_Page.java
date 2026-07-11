@@ -15,12 +15,13 @@ import com.example.the_ultimate_easter_egg_guide.Helper.EggAdapter;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapType;
+import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EggDisplay_Page extends AppCompatActivity implements EggAdapter.OnEggClickListener {
+public class EggDisplay_Page extends PageController_BaseClass implements EggAdapter.OnEggClickListener {
 
     private Maps selectedMap;
     private List<EasterEgg> eggsToShow = new ArrayList<>();
@@ -30,12 +31,9 @@ public class EggDisplay_Page extends AppCompatActivity implements EggAdapter.OnE
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PageTransitionManager.setupTransitions(this);
         setContentView(R.layout.egg_display_page);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
+        setupBaseNavigation();
 
         ImageView backgroundImage = findViewById(R.id.background_image);
         TextView categoryTitle = findViewById(R.id.egg_category_title);
@@ -133,19 +131,4 @@ public class EggDisplay_Page extends AppCompatActivity implements EggAdapter.OnE
         }
     }
 
-    public void onHomeButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Home_PAGE.class);
-    }
-
-    public void onMapsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
-    }
-
-    public void onStorylineButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
-    }
-
-    public void onToolsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
-    }
 }

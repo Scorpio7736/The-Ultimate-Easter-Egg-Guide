@@ -16,6 +16,10 @@ public class PageTransitionManager {
     public static float FADE_SPEED = 0.5f;
 
     public static void setupTransitions(Activity activity) {
+        setupTransitions(activity, new int[0]);
+    }
+
+    public static void setupTransitions(Activity activity, int... excludedIds) {
         // Calculate duration based on speed (0.0 to 1.0)
         // 0.0 -> 1000ms
         // 1.0 -> 0ms
@@ -25,6 +29,14 @@ public class PageTransitionManager {
         
         Fade fade = new Fade();
         fade.setDuration(duration);
+
+        if (excludedIds != null) {
+            for (int id : excludedIds) {
+                if (id != 0) {
+                    fade.excludeTarget(id, true);
+                }
+            }
+        }
 
         window.setEnterTransition(fade);
         window.setExitTransition(fade);

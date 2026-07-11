@@ -16,10 +16,11 @@ import androidx.appcompat.app.AppCompatDialog;
 import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapType;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
+import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.google.android.material.card.MaterialCardView;
 
-public class MapDisplay_Page extends AppCompatActivity {
+public class MapDisplay_Page extends PageController_BaseClass {
 
     private Maps selectedMap;
     private final Handler trailerHandler = new Handler(Looper.getMainLooper());
@@ -28,12 +29,9 @@ public class MapDisplay_Page extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        PageTransitionManager.setupTransitions(this);
         setContentView(R.layout.map_display_page);
         
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
+        setupBaseNavigation();
 
         ImageView backgroundImage = findViewById(R.id.background_image);
         TextView mapTitle = findViewById(R.id.map_title);
@@ -133,10 +131,7 @@ public class MapDisplay_Page extends AppCompatActivity {
             PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
         });
 
-        // Navigation bar settings button
-        findViewById(R.id.nav_settings_button).setOnClickListener(v -> {
-            PageTransitionManager.startActivityWithFade(this, Settings_PAGE.class);
-        });
+        // Navigation bar settings button removed, handled by base class
     }
 
     void showVideoPopup() {
@@ -326,19 +321,4 @@ public class MapDisplay_Page extends AppCompatActivity {
         }
     }
 
-    public void onHomeButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Home_PAGE.class);
-    }
-
-    public void onMapsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, MapsSelection_Page.class);
-    }
-
-    public void onStorylineButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
-    }
-
-    public void onToolsButtonClick(View view) {
-        PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
-    }
 }
