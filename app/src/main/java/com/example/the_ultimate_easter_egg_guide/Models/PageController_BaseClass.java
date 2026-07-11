@@ -3,6 +3,7 @@ package com.example.the_ultimate_easter_egg_guide.Models;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +53,13 @@ public abstract class PageController_BaseClass extends AppCompatActivity {
         if (settingsButton != null) {
             settingsButton.setOnClickListener(v -> 
                 PageTransitionManager.startActivityWithFade(this, Settings_PAGE.class));
+        }
+    }
+
+    protected void SetThisBackground(int imageID) {
+        ImageView background = findViewById(R.id.background_image);
+        if (background != null) {
+            background.setImageResource(imageID);
         }
     }
 

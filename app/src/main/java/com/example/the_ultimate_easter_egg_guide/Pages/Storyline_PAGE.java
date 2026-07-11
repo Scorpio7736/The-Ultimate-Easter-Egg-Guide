@@ -1,5 +1,6 @@
 package com.example.the_ultimate_easter_egg_guide.Pages;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,12 +15,13 @@ import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapter;
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Storyline_PAGE extends PageController_BaseClass {
+public class Storyline_PAGE extends PageController_BaseClass implements StorylineCharacterAdapter.OnCharacterClickListener {
 
     private StorylineItems currentCategory;
     private RecyclerView recyclerView;
@@ -66,13 +68,20 @@ public class Storyline_PAGE extends PageController_BaseClass {
 
     private void loadCategoryData(StorylineItems category) {
         if (category == StorylineItems.PlayerCharacter) {
-            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(ENABLE_TESTING);
+            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(ENABLE_TESTING, this);
             gridLayoutManager.setSpanSizeLookup(adapter.getSpanSizeLookup());
             recyclerView.setAdapter(adapter);
         } else {
             // Placeholder for other categories
             recyclerView.setAdapter(null);
         }
+    }
+
+    @Override
+    public void onCharacterClick(Player_Characters character) {
+        Intent intent = new Intent(this, CharacterDisplay_PAGE.class);
+        intent.putExtra("CHARACTER_ID", character.name());
+        PageTransitionManager.startActivityWithFade(this, intent);
     }
 
     @Override

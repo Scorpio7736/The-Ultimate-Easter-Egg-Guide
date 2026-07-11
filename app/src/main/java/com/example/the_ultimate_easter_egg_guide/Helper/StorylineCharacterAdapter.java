@@ -23,8 +23,14 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
     private static final int TYPE_CHARACTER = 1;
 
     private final List<Object> items = new ArrayList<>();
+    private final OnCharacterClickListener listener;
 
-    public StorylineCharacterAdapter(boolean enableTesting) {
+    public interface OnCharacterClickListener {
+        void onCharacterClick(Player_Characters character);
+    }
+
+    public StorylineCharacterAdapter(boolean enableTesting, OnCharacterClickListener listener) {
+        this.listener = listener;
         for (CharacterGroup group : CharacterGroup.values()) {
             if (enableTesting) {
                 if (group != CharacterGroup.TEST) continue;
@@ -84,6 +90,12 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
             ((CharacterViewHolder) holder).nameText.setText(
                     character.characterName
             );
+            
+            holder.itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    listener.onCharacterClick(character);
+                }
+            });
         }
     }
 
