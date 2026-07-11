@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.appcompat.app.AppCompatDialog;
 
 import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapType;
@@ -128,7 +128,7 @@ public class MapDisplay_Page extends PageController_BaseClass {
         });
 
         findViewById(R.id.option_storyline).setOnClickListener(v -> {
-            PageTransitionManager.startActivityWithFade(this, Storyline_PAGE.class);
+            PageTransitionManager.startActivityWithFade(this, StorylineSelection_PAGE.class);
         });
 
         // Navigation bar settings button removed, handled by base class

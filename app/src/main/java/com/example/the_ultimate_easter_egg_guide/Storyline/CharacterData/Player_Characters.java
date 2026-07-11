@@ -241,7 +241,7 @@ public enum Player_Characters
             CharacterVersion.Single,
             CharacterGroup.CallOfTheDead,
             Arrays.asList(),
-            R.drawable.sarah_pfp,
+            R.drawable.sarahmichellegellar_pfp,
             games.Black_Ops_I,
             games.Black_Ops_I
     ),
@@ -254,7 +254,7 @@ public enum Player_Characters
             CharacterVersion.Single,
             CharacterGroup.CallOfTheDead,
             Arrays.asList(),
-            R.drawable.app_icon,
+            R.drawable.robertengland_pfp,
             games.Black_Ops_I,
             games.Black_Ops_I
     ),
@@ -267,7 +267,7 @@ public enum Player_Characters
             CharacterVersion.Single,
             CharacterGroup.CallOfTheDead,
             Arrays.asList(),
-            R.drawable.app_icon,
+            R.drawable.dannytrejo_pfp,
             games.Black_Ops_I,
             games.Black_Ops_I
     ),
@@ -280,7 +280,7 @@ public enum Player_Characters
             CharacterVersion.Single,
             CharacterGroup.CallOfTheDead,
             Arrays.asList(),
-            R.drawable.app_icon,
+            R.drawable.michaelrooker_pfp,
             games.Black_Ops_I,
             games.Black_Ops_I
     ),
@@ -387,6 +387,58 @@ public enum Player_Characters
             R.drawable.app_icon,
             games.World_At_War,
             games.World_At_War
+    ),
+    NeroBlackstone(
+            "Nero Blackstone",
+            "Nero",
+            "",
+            "Blackstone",
+            new Date(),
+            CharacterVersion.Single,
+            CharacterGroup.ShadowsOfEvil,
+            Arrays.asList("The Magician", "The Amazing Nero"),
+            R.drawable.neroblackstone_pfp,
+            games.Black_Ops_III,
+            games.Black_Ops_III
+    ),
+    JessicaRose(
+            "Jessica Rose",
+            "Jessica",
+            "",
+            "Rose",
+            new Date(),
+            CharacterVersion.Single,
+            CharacterGroup.ShadowsOfEvil,
+            Arrays.asList("The Femme Fatale"),
+            R.drawable.jessicarose_pfp,
+            games.Black_Ops_III,
+            games.Black_Ops_III
+    ),
+    JackVincent(
+            "Jack Vincent",
+            "Jack",
+            "",
+            "Vincent",
+            new Date(),
+            CharacterVersion.Single,
+            CharacterGroup.ShadowsOfEvil,
+            Arrays.asList("The Detective", "Jackie", "Jackie V"),
+            R.drawable.jackvincent_pfp,
+            games.Black_Ops_III,
+            games.Black_Ops_III
+    ),
+    FloydCampbell(
+            "Floyd Campbell",
+            "Floyd",
+            "",
+            "Campbell",
+            new Date(),
+            CharacterVersion.Single,
+            CharacterGroup.ShadowsOfEvil,
+            Arrays.asList("The Boxer"),
+            R.drawable.floydcampbell_pfp,
+            games.Black_Ops_III,
+            games.Black_Ops_III
     );
 
 

@@ -7,7 +7,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,12 +15,13 @@ import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapte
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Storyline_PAGE extends PageController_BaseClass implements StorylineCharacterAdapter.OnCharacterClickListener {
+public class StorylineSelection_PAGE extends PageController_BaseClass implements StorylineCharacterAdapter.OnCharacterClickListener {
 
     private StorylineItems currentCategory;
     private RecyclerView recyclerView;
@@ -67,10 +67,11 @@ public class Storyline_PAGE extends PageController_BaseClass implements Storylin
     }
 
     private void loadCategoryData(StorylineItems category) {
-        if (category == StorylineItems.PlayerCharacter) {
-            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(ENABLE_TESTING, this);
+        if (category == StorylineItems.PlayerCharacter || category == StorylineItems.NonPlayerCharacter) {
+            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(category, ENABLE_TESTING, this);
             gridLayoutManager.setSpanSizeLookup(adapter.getSpanSizeLookup());
             recyclerView.setAdapter(adapter);
+            recyclerView.scheduleLayoutAnimation();
         } else {
             // Placeholder for other categories
             recyclerView.setAdapter(null);
@@ -78,9 +79,18 @@ public class Storyline_PAGE extends PageController_BaseClass implements Storylin
     }
 
     @Override
-    public void onCharacterClick(Player_Characters character) {
+    public void onPlayerCharacterClick(Player_Characters character) {
         Intent intent = new Intent(this, CharacterDisplay_PAGE.class);
         intent.putExtra("CHARACTER_ID", character.name());
+        intent.putExtra("IS_PLAYER_CHARACTER", true);
+        PageTransitionManager.startActivityWithFade(this, intent);
+    }
+
+    @Override
+    public void onNonPlayerCharacterClick(NonPlayer_Characters character) {
+        Intent intent = new Intent(this, CharacterDisplay_PAGE.class);
+        intent.putExtra("CHARACTER_ID", character.name());
+        intent.putExtra("IS_PLAYER_CHARACTER", false);
         PageTransitionManager.startActivityWithFade(this, intent);
     }
 

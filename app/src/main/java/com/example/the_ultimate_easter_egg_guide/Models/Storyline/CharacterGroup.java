@@ -6,24 +6,31 @@ public enum CharacterGroup
     Primis,
     Ultimis,
     Victis,
-    MobOfTheDead("Mob of the Dead"),
-    CallOfTheDead("Call of the Dead"),
+    MobOfTheDead("Mob of the Dead Crew"),
+    CallOfTheDead("Call of the Dead Crew"),
     USGovernment("United States Government"),
     WAW_Nacht("World At War Nacht Der Untoten Crew"),
     WAW_Verruckt("World At War Verruckt Crew"),
+    ShadowsOfEvil("Sadows of Evil Crew"),
 
     //======================= Non Player Character
-    Group935_Ultimis,
-    Group935_Primis,
+    Purgatory,
+    SiberianFacility("Call of the Dead"),
+    Group935_Ultimis("Group 935 - Ultimis"),
+    Group935_Primis("Group 935 - Primis"),
     Agartha,
-    DarkAther,
-    Ascension,
-    BrokenArrow,
-    Division9,
-    ImerialJapan,
-    NaziGermany,
-    ImperialGermany,
-    SovietUnion;
+    DarkAther("The Dark Ather"),
+    Ascension("The Ascension Group"),
+    BrokenArrow("Broken Arrow"),
+    Division9("Division 9"),
+    ImerialJapan("The Empire of Japan"),
+    NaziGermany("Nazi Germany"),
+    ImperialGermany("Imperial Germany"),
+    SovietUnion("The Soviet Union"),
+    Group935TestSubject("Group 935 Test Subjects"),
+    CIA("The C.I.A"),
+    CDC("The C.D.C"),
+    ShangriLa("Shangri La");
 
     public final String displayName;
 

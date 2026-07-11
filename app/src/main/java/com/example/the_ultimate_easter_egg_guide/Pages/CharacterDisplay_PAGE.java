@@ -1,15 +1,16 @@
 package com.example.the_ultimate_easter_egg_guide.Pages;
 
 import android.os.Bundle;
-import android.widget.Toast;
-
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 public class CharacterDisplay_PAGE extends PageController_BaseClass {
 
-    private Player_Characters selectedCharacter;
+    private Player_Characters playerCharacter;
+    private NonPlayer_Characters nonPlayerCharacter;
+    private boolean isPlayerCharacter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,20 +20,29 @@ public class CharacterDisplay_PAGE extends PageController_BaseClass {
 
         if (getIntent().hasExtra("CHARACTER_ID")) {
             String charId = getIntent().getStringExtra("CHARACTER_ID");
-            try {
-                selectedCharacter = Player_Characters.valueOf(charId);
-            } catch (Exception e) {
-                selectedCharacter = null;
+            isPlayerCharacter = getIntent().getBooleanExtra("IS_PLAYER_CHARACTER", true);
+
+            if (isPlayerCharacter) {
+                try {
+                    playerCharacter = Player_Characters.valueOf(charId);
+                } catch (Exception e) {
+                    playerCharacter = null;
+                }
+            } else {
+                try {
+                    nonPlayerCharacter = NonPlayer_Characters.valueOf(charId);
+                } catch (Exception e) {
+                    nonPlayerCharacter = null;
+                }
             }
 
-            if (selectedCharacter != null) {
+            if (playerCharacter != null || nonPlayerCharacter != null) {
                 loadCharacterData();
             }
         }
     }
 
-    private void loadCharacterData()
-    {
-
+    private void loadCharacterData() {
+        // Implementation for displaying character data (bio, image, etc.) will go here
     }
 }

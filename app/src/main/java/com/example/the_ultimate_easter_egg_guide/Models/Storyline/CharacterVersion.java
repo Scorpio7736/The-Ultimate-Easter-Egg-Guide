@@ -4,5 +4,7 @@ public enum CharacterVersion
 {
     Single,
     Primis,
-    Ultimis
+    Ultimis,
+    Ather,
+    DarkAther
 }

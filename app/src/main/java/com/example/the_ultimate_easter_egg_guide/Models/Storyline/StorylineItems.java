@@ -4,6 +4,8 @@ public enum StorylineItems
 {
     PlayerCharacter("Playable Characters"),
     NonPlayerCharacter("Non-Playable Characters"),
+    Creatures("Creatures"),
+    Items("Items"),
     Map("Maps"),
     Groups("Groups");
 

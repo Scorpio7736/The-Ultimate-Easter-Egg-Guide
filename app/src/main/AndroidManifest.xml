@@ -25,7 +25,7 @@
         <activity android:name=".Pages.MapsSelection_Page" />
         <activity android:name=".Pages.MapDisplay_Page" />
         <activity android:name=".Pages.EggDisplay_Page" />
-        <activity android:name=".Pages.Storyline_PAGE" />
+        <activity android:name=".Pages.StorylineSelection_PAGE" />
         <activity android:name=".Pages.Tools_PAGE" />
         <activity android:name=".Pages.CharacterDisplay_PAGE" />
     </application>

@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterGroup;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
@@ -26,11 +28,13 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
     private final OnCharacterClickListener listener;
 
     public interface OnCharacterClickListener {
-        void onCharacterClick(Player_Characters character);
+        void onPlayerCharacterClick(Player_Characters character);
+        void onNonPlayerCharacterClick(NonPlayer_Characters character);
     }
 
-    public StorylineCharacterAdapter(boolean enableTesting, OnCharacterClickListener listener) {
+    public StorylineCharacterAdapter(StorylineItems category, boolean enableTesting, OnCharacterClickListener listener) {
         this.listener = listener;
+        
         for (CharacterGroup group : CharacterGroup.values()) {
             if (enableTesting) {
                 if (group != CharacterGroup.TEST) continue;
@@ -38,17 +42,25 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
                 if (group == CharacterGroup.TEST) continue;
             }
 
-            List<Player_Characters> playerCharactersInGroup = new ArrayList<>();
+            List<Object> charactersInGroup = new ArrayList<>();
 
-            for (Player_Characters character : Player_Characters.values()) {
-                if (character.characterGroup == group) {
-                    playerCharactersInGroup.add(character);
+            if (category == StorylineItems.PlayerCharacter) {
+                for (Player_Characters character : Player_Characters.values()) {
+                    if (character.characterGroup == group) {
+                        charactersInGroup.add(character);
+                    }
+                }
+            } else if (category == StorylineItems.NonPlayerCharacter) {
+                for (NonPlayer_Characters character : NonPlayer_Characters.values()) {
+                    if (character.characterGroup == group) {
+                        charactersInGroup.add(character);
+                    }
                 }
             }
 
-            if (!playerCharactersInGroup.isEmpty()) {
+            if (!charactersInGroup.isEmpty()) {
                 items.add(group);
-                items.addAll(playerCharactersInGroup);
+                items.addAll(charactersInGroup);
             }
         }
     }
@@ -72,10 +84,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
     @Override
-    public void onBindViewHolder(
-            @NonNull RecyclerView.ViewHolder holder,
-            int position
-    ) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Object item = items.get(position);
 
         if (holder instanceof HeaderViewHolder) {
@@ -83,19 +92,22 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
             ((HeaderViewHolder) holder).groupName.setText(group.displayName);
 
         } else if (holder instanceof CharacterViewHolder) {
-            Player_Characters character = (Player_Characters) item;
-            ((CharacterViewHolder) holder).pfpImage.setImageResource(
-                    character.characterImage
-            );
-            ((CharacterViewHolder) holder).nameText.setText(
-                    character.characterName
-            );
-            
-            holder.itemView.setOnClickListener(v -> {
-                if (listener != null) {
-                    listener.onCharacterClick(character);
-                }
-            });
+            CharacterViewHolder charHolder = (CharacterViewHolder) holder;
+            if (item instanceof Player_Characters) {
+                Player_Characters character = (Player_Characters) item;
+                charHolder.pfpImage.setImageResource(character.characterImage);
+                charHolder.nameText.setText(character.characterName);
+                charHolder.itemView.setOnClickListener(v -> {
+                    if (listener != null) listener.onPlayerCharacterClick(character);
+                });
+            } else if (item instanceof NonPlayer_Characters) {
+                NonPlayer_Characters character = (NonPlayer_Characters) item;
+                charHolder.pfpImage.setImageResource(character.characterImage);
+                charHolder.nameText.setText(character.characterName);
+                charHolder.itemView.setOnClickListener(v -> {
+                    if (listener != null) listener.onNonPlayerCharacterClick(character);
+                });
+            }
         }
     }
 
