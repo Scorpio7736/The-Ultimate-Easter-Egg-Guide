@@ -15,7 +15,7 @@ public class TestMap3_EasterEggs
             .addSubStep(new EasterEggStep("Goblet 2: In the Dining Room"))
             .addSubStep(new EasterEggStep("Goblet 3: In the Master Bedroom")))
         .addStep(new EasterEggStep("Fill them with the blood of the undead")
-            .addImage(R.drawable.cursed_richtofen))
+            .addImage(R.drawable.default_test_image))
         .addStep(new EasterEggStep("Toast to the end of the world"));
 
     public static final List<EasterEgg> TestMap3_mainQuests = Arrays.asList(TestMainQuest);

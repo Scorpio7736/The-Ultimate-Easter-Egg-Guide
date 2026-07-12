@@ -18,10 +18,10 @@ public enum Maps
 {
     // --------------------------------- Test MAPS ---------------------------------
 
-    Test_TestingMap1(games.Test, "Testing Map 1", R.string.test_TestingMap1_mapdescription, R.drawable.cursed_richtofen, MapType.NOT_SET, TEST_EggWarehouse.TestMap1),
-    Test_TestingMap2(games.Test, "Testing Map 2", R.string.test_TestingMap2_mapdescription, R.drawable.cursed_richtofen, MapType.NOT_SET, TEST_EggWarehouse.TestMap2),
-    Test_TestingMap3(games.Test, "Testing Map 3", R.string.test_TestingMap3_mapdescription, R.drawable.cursed_richtofen , MapType.NOT_SET, TEST_EggWarehouse.TestMap3),
-    Test_TestingMap4(games.Test, "Testing Map 4", R.string.test_TestingMap4_mapdescription, R.drawable.cursed_richtofen, MapType.NOT_SET, TEST_EggWarehouse.TestMap4),
+    Test_TestingMap1(games.Test, "Testing Map 1", R.string.test_TestingMap1_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_EggWarehouse.TestMap1),
+    Test_TestingMap2(games.Test, "Testing Map 2", R.string.test_TestingMap2_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_EggWarehouse.TestMap2),
+    Test_TestingMap3(games.Test, "Testing Map 3", R.string.test_TestingMap3_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_EggWarehouse.TestMap3),
+    Test_TestingMap4(games.Test, "Testing Map 4", R.string.test_TestingMap4_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_EggWarehouse.TestMap4),
 
     // --------------------------------- WORLD AT WAR MAPS ---------------------------------
 

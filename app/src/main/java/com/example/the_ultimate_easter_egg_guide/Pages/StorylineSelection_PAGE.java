@@ -14,17 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapter;
-import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
+import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CreaturesData.Enemy_Creatures;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CodZombiesYoutubersData.CodZombies_Youtubers;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StorylineSelection_PAGE extends PageController_BaseClass implements StorylineCharacterAdapter.OnCharacterClickListener {
+public class StorylineSelection_PAGE extends NavPageController_BaseClass implements StorylineCharacterAdapter.OnCharacterClickListener {
 
     private StorylineItems currentCategory;
     private RecyclerView recyclerView;
@@ -72,7 +73,8 @@ public class StorylineSelection_PAGE extends PageController_BaseClass implements
     private void loadCategoryData(StorylineItems category) {
         if (category == StorylineItems.PlayerCharacter || 
             category == StorylineItems.NonPlayerCharacter || 
-            category == StorylineItems.Youtubers) {
+            category == StorylineItems.Youtubers ||
+            category == StorylineItems.Creatures) {
             
             StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(category, ENABLE_TESTING, this);
             gridLayoutManager.setSpanSizeLookup(adapter.getSpanSizeLookup());
@@ -98,6 +100,12 @@ public class StorylineSelection_PAGE extends PageController_BaseClass implements
         intent.putExtra("CHARACTER_ID", character.name());
         intent.putExtra("IS_PLAYER_CHARACTER", false);
         PageTransitionManager.startActivityWithFade(this, intent);
+    }
+
+    @Override
+    public void onEnemyCreatureClick(Enemy_Creatures creature) {
+        // Placeholder for creature display page if it exists, or just a toast for now
+        Toast.makeText(this, "Clicked: " + creature.displayName, Toast.LENGTH_SHORT).show();
     }
 
     @Override

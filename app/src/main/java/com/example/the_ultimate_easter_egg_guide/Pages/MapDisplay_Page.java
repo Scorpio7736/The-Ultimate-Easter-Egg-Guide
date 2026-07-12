@@ -30,8 +30,6 @@ public class MapDisplay_Page extends PageController_BaseClass {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_display_page);
-        
-        setupBaseNavigation();
 
         ImageView backgroundImage = findViewById(R.id.background_image);
         TextView mapTitle = findViewById(R.id.map_title);

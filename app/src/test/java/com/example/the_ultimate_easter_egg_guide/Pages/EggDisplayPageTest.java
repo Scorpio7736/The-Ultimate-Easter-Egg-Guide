@@ -3,8 +3,6 @@ package com.example.the_ultimate_easter_egg_guide.Pages;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.robolectric.Shadows.shadowOf;
-
 import android.content.Intent;
 import android.widget.TextView;
 
@@ -79,19 +77,6 @@ public class EggDisplayPageTest {
                 RecyclerView recyclerView = activity.findViewById(R.id.eggs_recycler_view);
                 assertNotNull(recyclerView.getAdapter());
                 assertEquals(0, recyclerView.getAdapter().getItemCount());
-            });
-        }
-    }
-
-    @Test
-    public void testMapsButtonClickNavigates() {
-        try (ActivityScenario<EggDisplay_Page> scenario = ActivityScenario.launch(EggDisplay_Page.class)) {
-            scenario.onActivity(activity -> {
-                activity.onMapsButtonClick(null);
-                
-                Intent actualIntent = shadowOf(activity).getNextStartedActivity();
-                assertNotNull(actualIntent);
-                assertEquals(MapsSelection_Page.class.getName(), actualIntent.getComponent().getClassName());
             });
         }
     }

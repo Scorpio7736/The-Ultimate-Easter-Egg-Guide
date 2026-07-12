@@ -13,13 +13,13 @@ import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
 import com.example.the_ultimate_easter_egg_guide.Models.ImageID;
-import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
+import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home_PAGE extends PageController_BaseClass {
+public class Home_PAGE extends NavPageController_BaseClass {
 
     private ImageView slideshowImage;
     private final List<Integer> slideshowImages = new ArrayList<>();

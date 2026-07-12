@@ -33,8 +33,6 @@ public class EggDisplay_Page extends PageController_BaseClass implements EggAdap
         super.onCreate(savedInstanceState);
         setContentView(R.layout.egg_display_page);
 
-        setupBaseNavigation();
-
         ImageView backgroundImage = findViewById(R.id.background_image);
         TextView categoryTitle = findViewById(R.id.egg_category_title);
         recyclerView = findViewById(R.id.eggs_recycler_view);

@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
-import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
+import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.Helper.MapAdapter;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MapsSelection_Page extends PageController_BaseClass implements MapAdapter.OnMapClickListener {
+public class MapsSelection_Page extends NavPageController_BaseClass implements MapAdapter.OnMapClickListener {
 
     private boolean isGridView = true;
     private RecyclerView mapsRecyclerView;

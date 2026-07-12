@@ -153,20 +153,4 @@ public class MapDisplayPageTest {
             });
         }
     }
-
-    @Test
-    public void testNavBarHome() {
-        Intent intent = new Intent(ApplicationProvider.getApplicationContext(), MapDisplay_Page.class);
-        intent.putExtra("MAP_ID", Maps.WAW_Nacht_Der_Untoten.name());
-
-        try (ActivityScenario<MapDisplay_Page> scenario = ActivityScenario.launch(intent)) {
-            scenario.onActivity(activity -> {
-                activity.findViewById(R.id.nav_home_button).performClick();
-
-                Intent startedIntent = shadowOf(activity).getNextStartedActivity();
-                assertNotNull(startedIntent);
-                assertEquals(Home_PAGE.class.getName(), startedIntent.getComponent().getClassName());
-            });
-        }
-    }
 }

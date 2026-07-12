@@ -5,7 +5,7 @@ import com.example.the_ultimate_easter_egg_guide.R;
 
 public enum CodZombies_Youtubers
 {
-    TEST("TestTuber", YoutuberGroups.TEST, R.drawable.app_icon, "shorts/aM4kt6OgvVo"),
+    TEST("TestTuber", YoutuberGroups.TEST, R.drawable.default_test_image, "shorts/aM4kt6OgvVo"),
     BLACK_OPS_AMAZING("BlackOpsAmazing", YoutuberGroups.Storyline, R.drawable.blackopsamazing_pfp, "@BlackOpsAmazing"),
     MR_ROFL_WAFFLES("MrRoflWaffles", YoutuberGroups.Storyline, R.drawable.mrroflwaffles_pfp, "@MrRoflWaffles"),
     THE_GAMING_REVOLUTION("TheGamingRevolution", YoutuberGroups.Storyline, R.drawable.thegamingrevolution_pfp, "@TheGamingRevo"),

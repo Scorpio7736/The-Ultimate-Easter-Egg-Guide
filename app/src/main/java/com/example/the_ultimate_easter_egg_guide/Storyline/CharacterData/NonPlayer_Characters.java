@@ -1,7 +1,7 @@
 package com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersion;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ICharacter;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.NonPlayer_CharacterGroup;
 
 import com.example.the_ultimate_easter_egg_guide.Models.games;
@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public enum NonPlayer_Characters implements ICharacter
+public enum NonPlayer_Characters implements IStorylineItem
 {
 
     TEST(
@@ -23,7 +23,7 @@ public enum NonPlayer_Characters implements ICharacter
             CharacterVersion.Single,
             NonPlayer_CharacterGroup.TEST,
             Arrays.asList("Maxis"),
-            R.drawable.cursed_richtofen,
+            R.drawable.default_test_image,
             games.Test,
             games.Test
     ),

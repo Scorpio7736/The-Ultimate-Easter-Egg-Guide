@@ -1,6 +1,6 @@
 package com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersion;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ICharacter;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_CharacterGroup;
 
 import com.example.the_ultimate_easter_egg_guide.Models.games;
@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public enum Player_Characters implements ICharacter
+public enum Player_Characters implements IStorylineItem
 {
 
     TestCharacter(
@@ -22,7 +22,7 @@ public enum Player_Characters implements ICharacter
             CharacterVersion.Single,
             Player_CharacterGroup.TEST,
             Arrays.asList("Test_Nickname_1", "Test_Nickname_2"),
-            R.drawable.cursed_richtofen,
+            R.drawable.default_test_image,
             games.Test,
             games.Test
     ),
@@ -399,7 +399,7 @@ public enum Player_Characters implements ICharacter
             CharacterVersion.Single,
             Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList("Tank"),
-            R.drawable.blank_pfp,
+            R.drawable.tankdempsey_verruckt_pfp,
             games.World_At_War,
             games.Black_Ops_IV
     ),
@@ -412,20 +412,20 @@ public enum Player_Characters implements ICharacter
             CharacterVersion.Single,
             Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList(),
-            R.drawable.blank_pfp,
+            R.drawable.johnbanana_pfp,
             games.World_At_War,
             games.World_At_War
     ),
     Smokey(
             "Smokey",
-            "",
+            "David",
             "",
             "",
             new Date(),
             CharacterVersion.Single,
             Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList("Smokey"),
-            R.drawable.blank_pfp,
+            R.drawable.smokey_pfp,
             games.World_At_War,
             games.World_At_War
     ),
@@ -438,7 +438,7 @@ public enum Player_Characters implements ICharacter
             CharacterVersion.Single,
             Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList(),
-            R.drawable.blank_pfp,
+            R.drawable.paxtonridge_pfp,
             games.World_At_War,
             games.World_At_War
     ),
