@@ -3,11 +3,7 @@ package com.example.the_ultimate_easter_egg_guide.Helper;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterGroup;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.YoutuberGroups;
-import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
-import com.example.the_ultimate_easter_egg_guide.Storyline.CodZombiesYoutubersData.CodZombies_Youtubers;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

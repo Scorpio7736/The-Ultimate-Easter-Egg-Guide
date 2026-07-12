@@ -1,6 +1,7 @@
 package com.example.the_ultimate_easter_egg_guide.Pages;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,7 +17,7 @@ import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapte
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
-import com.example.the_ultimate_easter_egg_guide.Storyline.NpcData.NonPlayer_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CodZombiesYoutubersData.CodZombies_Youtubers;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -101,7 +102,12 @@ public class StorylineSelection_PAGE extends PageController_BaseClass implements
 
     @Override
     public void onYoutuberClick(CodZombies_Youtubers youtuber) {
-        Toast.makeText(this, "Youtuber: " + youtuber.channelName, Toast.LENGTH_SHORT).show();
+        if (youtuber.channelLink != null && !youtuber.channelLink.isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(youtuber.channelLink));
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Channel link not available", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

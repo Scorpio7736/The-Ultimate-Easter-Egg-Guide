@@ -6,9 +6,9 @@ public enum YoutuberGroups
     Storyline("Zombies Storyline"),
     CustomZombies("Custom Zombies"),
     EasterEggHunter("Easter Egg Guides"),
-    RestInPeace("Gone but Never Forgotten"),
-    ZombiesOGs("OG Zombies Youtubers"),
-    ZHouse("Z-House");
+    ZombiesOGs("OG Zombies YouTubers"), //Mostly for YouTubers who have stopped posting or fell off.
+    ZHouse("Z-House"),
+    RestInPeace("Gone but Never Forgotten");
 
     public String displayName;
 

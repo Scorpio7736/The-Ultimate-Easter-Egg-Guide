@@ -1,19 +1,12 @@
 package com.example.the_ultimate_easter_egg_guide.Models.Storyline;
 
-public enum CharacterGroup
+public enum NonPlayer_CharacterGroup
 {
     TEST,
     Primis,
     Ultimis,
     Victis,
-    MobOfTheDead("Mob of the Dead Crew"),
-    CallOfTheDead("Call of the Dead Crew"),
     USGovernment("United States Government"),
-    WAW_Nacht("World At War Nacht Der Untoten Crew"),
-    WAW_Verruckt("World At War Verruckt Crew"),
-    ShadowsOfEvil("Sadows of Evil Crew"),
-
-    //======================= Non Player Character
     Purgatory,
     SiberianFacility("Call of the Dead"),
     Group935_Ultimis("Group 935 - Ultimis"),
@@ -30,17 +23,16 @@ public enum CharacterGroup
     Group935TestSubject("Group 935 Test Subjects"),
     CIA("The C.I.A"),
     CDC("The C.D.C"),
-    ShangriLa("Shangri La"),
-    YouTubers("Cod Zombies YouTubers");
+    Other("Other");
 
     public final String displayName;
 
-    CharacterGroup(String displayName)
+    NonPlayer_CharacterGroup(String displayName)
     {
         this.displayName = displayName;
     }
 
-    CharacterGroup()
+    NonPlayer_CharacterGroup()
     {
         this.displayName = this.name();
     }

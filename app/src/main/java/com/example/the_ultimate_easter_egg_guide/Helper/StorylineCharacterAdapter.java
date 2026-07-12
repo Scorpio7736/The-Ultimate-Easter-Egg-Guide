@@ -11,9 +11,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
-import com.example.the_ultimate_easter_egg_guide.Storyline.NpcData.NonPlayer_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CodZombiesYoutubersData.CodZombies_Youtubers;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterGroup;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ICharacter;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.NonPlayer_CharacterGroup;
+
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_CharacterGroup;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.YoutuberGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.R;
@@ -46,32 +49,45 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
     private void setupCharacterItems(StorylineItems category, boolean enableTesting) {
-        for (CharacterGroup group : CharacterGroup.values()) {
-            if (enableTesting) {
-                if (group != CharacterGroup.TEST) continue;
-            } else {
-                if (group == CharacterGroup.TEST) continue;
-            }
+        if (category == StorylineItems.PlayerCharacter) {
+            for (Player_CharacterGroup group : Player_CharacterGroup.values()) {
+                if (enableTesting) {
+                    if (group != Player_CharacterGroup.TEST) continue;
+                } else {
+                    if (group == Player_CharacterGroup.TEST) continue;
+                }
 
-            List<Object> charactersInGroup = new ArrayList<>();
-
-            if (category == StorylineItems.PlayerCharacter) {
+                List<Object> charactersInGroup = new ArrayList<>();
                 for (Player_Characters character : Player_Characters.values()) {
-                    if (character.characterGroup == group) {
+                    if (character.playerCharacterGroup == group) {
                         charactersInGroup.add(character);
                     }
                 }
-            } else if (category == StorylineItems.NonPlayerCharacter) {
-                for (NonPlayer_Characters character : NonPlayer_Characters.values()) {
-                    if (character.characterGroup == group) {
-                        charactersInGroup.add(character);
-                    }
+
+                if (!charactersInGroup.isEmpty()) {
+                    items.add(group);
+                    items.addAll(charactersInGroup);
                 }
             }
+        } else if (category == StorylineItems.NonPlayerCharacter) {
+            for (NonPlayer_CharacterGroup group : NonPlayer_CharacterGroup.values()) {
+                if (enableTesting) {
+                    if (group != NonPlayer_CharacterGroup.TEST) continue;
+                } else {
+                    if (group == NonPlayer_CharacterGroup.TEST) continue;
+                }
 
-            if (!charactersInGroup.isEmpty()) {
-                items.add(group);
-                items.addAll(charactersInGroup);
+                List<Object> charactersInGroup = new ArrayList<>();
+                for (NonPlayer_Characters character : NonPlayer_Characters.values()) {
+                    if (character.nonPlayerCharacterGroup == group) {
+                        charactersInGroup.add(character);
+                    }
+                }
+
+                if (!charactersInGroup.isEmpty()) {
+                    items.add(group);
+                    items.addAll(charactersInGroup);
+                }
             }
         }
     }
@@ -101,7 +117,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
     @Override
     public int getItemViewType(int position) {
         Object item = items.get(position);
-        return (item instanceof CharacterGroup || item instanceof YoutuberGroups) ? TYPE_HEADER : TYPE_CHARACTER;
+        return (item instanceof Player_CharacterGroup || item instanceof NonPlayer_CharacterGroup || item instanceof YoutuberGroups) ? TYPE_HEADER : TYPE_CHARACTER;
     }
 
     @NonNull
@@ -123,8 +139,10 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
 
         if (holder instanceof HeaderViewHolder) {
             String displayName = "";
-            if (item instanceof CharacterGroup) {
-                displayName = ((CharacterGroup) item).displayName;
+            if (item instanceof Player_CharacterGroup) {
+                displayName = ((Player_CharacterGroup) item).displayName;
+            } else if (item instanceof NonPlayer_CharacterGroup) {
+                displayName = ((NonPlayer_CharacterGroup) item).displayName;
             } else if (item instanceof YoutuberGroups) {
                 displayName = ((YoutuberGroups) item).displayName;
             }
@@ -132,19 +150,18 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
 
         } else if (holder instanceof CharacterViewHolder) {
             CharacterViewHolder charHolder = (CharacterViewHolder) holder;
-            if (item instanceof Player_Characters) {
-                Player_Characters character = (Player_Characters) item;
-                charHolder.pfpImage.setImageResource(character.characterImage);
-                charHolder.nameText.setText(character.characterName);
+            if (item instanceof ICharacter) {
+                ICharacter character = (ICharacter) item;
+                charHolder.pfpImage.setImageResource(character.getCharacterImage());
+                charHolder.nameText.setText(character.getCharacterName());
                 charHolder.itemView.setOnClickListener(v -> {
-                    if (listener != null) listener.onPlayerCharacterClick(character);
-                });
-            } else if (item instanceof NonPlayer_Characters) {
-                NonPlayer_Characters character = (NonPlayer_Characters) item;
-                charHolder.pfpImage.setImageResource(character.characterImage);
-                charHolder.nameText.setText(character.characterName);
-                charHolder.itemView.setOnClickListener(v -> {
-                    if (listener != null) listener.onNonPlayerCharacterClick(character);
+                    if (listener != null) {
+                        if (character instanceof Player_Characters) {
+                            listener.onPlayerCharacterClick((Player_Characters) character);
+                        } else if (character instanceof NonPlayer_Characters) {
+                            listener.onNonPlayerCharacterClick((NonPlayer_Characters) character);
+                        }
+                    }
                 });
             } else if (item instanceof CodZombies_Youtubers) {
                 CodZombies_Youtubers youtuber = (CodZombies_Youtubers) item;

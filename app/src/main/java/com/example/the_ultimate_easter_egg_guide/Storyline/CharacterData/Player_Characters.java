@@ -1,6 +1,8 @@
 package com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersion;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterGroup;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ICharacter;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_CharacterGroup;
+
 import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -8,7 +10,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public enum Player_Characters
+public enum Player_Characters implements ICharacter
 {
 
     TestCharacter(
@@ -18,7 +20,7 @@ public enum Player_Characters
             "Test_Last",
             new Date(2000,1,1),
             CharacterVersion.Single,
-            CharacterGroup.TEST,
+            Player_CharacterGroup.TEST,
             Arrays.asList("Test_Nickname_1", "Test_Nickname_2"),
             R.drawable.cursed_richtofen,
             games.Test,
@@ -31,7 +33,7 @@ public enum Player_Characters
             "Richtofen",
             new Date(),
             CharacterVersion.Primis,
-            CharacterGroup.Primis,
+            Player_CharacterGroup.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.richtofen_primis_pfp,
             games.World_At_War,
@@ -44,7 +46,7 @@ public enum Player_Characters
             "Richtofen",
             new Date(),
             CharacterVersion.Ultimis,
-            CharacterGroup.Ultimis,
+            Player_CharacterGroup.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.richtofen_ultimis_pfp,
             games.World_At_War,
@@ -57,7 +59,7 @@ public enum Player_Characters
             "Dempsey",
             new Date(),
             CharacterVersion.Primis,
-            CharacterGroup.Primis,
+            Player_CharacterGroup.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.dempsey_primis_pfp,
             games.Black_Ops_II,
@@ -70,7 +72,7 @@ public enum Player_Characters
             "Dempsey",
             new Date(),
             CharacterVersion.Ultimis,
-            CharacterGroup.Ultimis,
+            Player_CharacterGroup.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.dempsey_ultimis_pfp,
             games.World_At_War,
@@ -83,7 +85,7 @@ public enum Player_Characters
             "Belinski",
             new Date(),
             CharacterVersion.Primis,
-            CharacterGroup.Primis,
+            Player_CharacterGroup.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.nikoli_primis_pfp,
             games.Black_Ops_II,
@@ -96,7 +98,7 @@ public enum Player_Characters
             "Belinski",
             new Date(),
             CharacterVersion.Ultimis,
-            CharacterGroup.Ultimis,
+            Player_CharacterGroup.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.nikoli_ultimis_pfp,
             games.World_At_War,
@@ -109,7 +111,7 @@ public enum Player_Characters
             "Masaki",
             new Date(),
             CharacterVersion.Primis,
-            CharacterGroup.Primis,
+            Player_CharacterGroup.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.takeo_primis_pfp,
             games.Black_Ops_II,
@@ -122,7 +124,7 @@ public enum Player_Characters
             "Masaki",
             new Date(),
             CharacterVersion.Ultimis,
-            CharacterGroup.Ultimis,
+            Player_CharacterGroup.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.takeo_ultimis_pfp,
             games.World_At_War,
@@ -135,7 +137,7 @@ public enum Player_Characters
             "Briarton",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.Victis,
+            Player_CharacterGroup.Victis,
             Arrays.asList("Misty", "Lady"),
             R.drawable.misty_pfp,
             games.Black_Ops_II,
@@ -148,7 +150,7 @@ public enum Player_Characters
             "Johnson",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.Victis,
+            Player_CharacterGroup.Victis,
             Arrays.asList("Marly", "Darlington", "Brain-Box"),
             R.drawable.marlton_pfp,
             games.Black_Ops_II,
@@ -161,7 +163,7 @@ public enum Player_Characters
             "Stuhlinger",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.Victis,
+            Player_CharacterGroup.Victis,
             Arrays.asList("Stu", "Stupid-ger", "Stewie", "Sammy", "Stuhlicker"),
             R.drawable.stuhlinger_pfp,
             games.Black_Ops_II,
@@ -174,11 +176,63 @@ public enum Player_Characters
             "",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.Victis,
+            Player_CharacterGroup.Victis,
             Arrays.asList("Russ", "Old Man"),
             R.drawable.russman_pfp,
             games.Black_Ops_II,
             games.Black_Ops_IV
+    ),
+    JFK(
+            "JFK",
+            "John",
+            "Fitzgerald",
+            "Kennedy",
+            new Date(),
+            CharacterVersion.Single,
+            Player_CharacterGroup.FIVE,
+            Arrays.asList("Jack", "JFK", "Lancer"),
+            R.drawable.jfk_pfp,
+            games.Black_Ops_I,
+            games.Black_Ops_III
+    ),
+    RichardNixon(
+            "Richard Nixon",
+            "Richard",
+            "Milhous",
+            "Nixon",
+            new Date(),
+            CharacterVersion.Single,
+            Player_CharacterGroup.FIVE,
+            Arrays.asList("Dick", "Dickie", "Dickie Nix", "Tricky Dick"),
+            R.drawable.richardnixon_pfp,
+            games.Black_Ops_I,
+            games.Black_Ops_III
+    ),
+    RobertMcNamara(
+            "Robert McNamara",
+            "Robert",
+            "",
+            "McNamara",
+            new Date(),
+            CharacterVersion.Single,
+            Player_CharacterGroup.FIVE,
+            Arrays.asList("Bob"),
+            R.drawable.robertmcnamara_pfp,
+            games.Black_Ops_I,
+            games.Black_Ops_III
+    ),
+    FidelCastro(
+            "Fidel Castro",
+            "Fidel",
+            "Alejandro",
+            "Castro Ruz",
+            new Date(),
+            CharacterVersion.Single,
+            Player_CharacterGroup.FIVE,
+            Arrays.asList(),
+            R.drawable.fidelcastro_pfp,
+            games.Black_Ops_I,
+            games.Black_Ops_III
     ),
     AlbertArlington(
             "The Weasel",
@@ -187,7 +241,7 @@ public enum Player_Characters
             "Arlington",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.MobOfTheDead,
+            Player_CharacterGroup.MobOfTheDead,
             Arrays.asList("The Weasel"),
             R.drawable.weasel_pfp,
             games.Black_Ops_II,
@@ -200,7 +254,7 @@ public enum Player_Characters
             "O'Leary",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.MobOfTheDead,
+            Player_CharacterGroup.MobOfTheDead,
             Arrays.asList("Finn"),
             R.drawable.finn_pfp,
             games.Black_Ops_II,
@@ -213,7 +267,7 @@ public enum Player_Characters
             "DeLuca",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.MobOfTheDead,
+            Player_CharacterGroup.MobOfTheDead,
             Arrays.asList("Sal", "Mr.DeLuca"),
             R.drawable.sal_pfp,
             games.Black_Ops_II,
@@ -226,7 +280,7 @@ public enum Player_Characters
             "Handsome",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.MobOfTheDead,
+            Player_CharacterGroup.MobOfTheDead,
             Arrays.asList(),
             R.drawable.billy_pfp,
             games.Black_Ops_II,
@@ -239,7 +293,7 @@ public enum Player_Characters
             "Gellar",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.CallOfTheDead,
+            Player_CharacterGroup.CallOfTheDead,
             Arrays.asList(),
             R.drawable.sarahmichellegellar_pfp,
             games.Black_Ops_I,
@@ -252,7 +306,7 @@ public enum Player_Characters
             "England",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.CallOfTheDead,
+            Player_CharacterGroup.CallOfTheDead,
             Arrays.asList(),
             R.drawable.robertengland_pfp,
             games.Black_Ops_I,
@@ -265,7 +319,7 @@ public enum Player_Characters
             "Trejo",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.CallOfTheDead,
+            Player_CharacterGroup.CallOfTheDead,
             Arrays.asList(),
             R.drawable.dannytrejo_pfp,
             games.Black_Ops_I,
@@ -278,7 +332,7 @@ public enum Player_Characters
             "Rooker",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.CallOfTheDead,
+            Player_CharacterGroup.CallOfTheDead,
             Arrays.asList(),
             R.drawable.michaelrooker_pfp,
             games.Black_Ops_I,
@@ -291,9 +345,9 @@ public enum Player_Characters
             "",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.WAW_Nacht,
+            Player_CharacterGroup.WAW_Nacht,
             Arrays.asList(),
-            R.drawable.app_icon,
+            R.drawable.blank_pfp,
             games.World_At_War,
             games.World_At_War
     ),
@@ -304,9 +358,9 @@ public enum Player_Characters
             "",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.WAW_Nacht,
+            Player_CharacterGroup.WAW_Nacht,
             Arrays.asList(),
-            R.drawable.app_icon,
+            R.drawable.blank_pfp,
             games.World_At_War,
             games.World_At_War
     ),
@@ -317,9 +371,9 @@ public enum Player_Characters
             "",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.WAW_Nacht,
+            Player_CharacterGroup.WAW_Nacht,
             Arrays.asList(),
-            R.drawable.app_icon,
+            R.drawable.blank_pfp,
             games.World_At_War,
             games.World_At_War
     ),
@@ -330,9 +384,9 @@ public enum Player_Characters
             "",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.WAW_Nacht,
+            Player_CharacterGroup.WAW_Nacht,
             Arrays.asList(),
-            R.drawable.app_icon,
+            R.drawable.blank_pfp,
             games.World_At_War,
             games.World_At_War
     ),
@@ -343,9 +397,9 @@ public enum Player_Characters
             "Dempsey",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.WAW_Verruckt,
+            Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList("Tank"),
-            R.drawable.app_icon,
+            R.drawable.blank_pfp,
             games.World_At_War,
             games.Black_Ops_IV
     ),
@@ -356,9 +410,9 @@ public enum Player_Characters
             "Banana",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.WAW_Verruckt,
+            Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList(),
-            R.drawable.app_icon,
+            R.drawable.blank_pfp,
             games.World_At_War,
             games.World_At_War
     ),
@@ -369,9 +423,9 @@ public enum Player_Characters
             "",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.WAW_Verruckt,
+            Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList("Smokey"),
-            R.drawable.app_icon,
+            R.drawable.blank_pfp,
             games.World_At_War,
             games.World_At_War
     ),
@@ -382,9 +436,9 @@ public enum Player_Characters
             "Ridge",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.WAW_Verruckt,
+            Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList(),
-            R.drawable.app_icon,
+            R.drawable.blank_pfp,
             games.World_At_War,
             games.World_At_War
     ),
@@ -395,7 +449,7 @@ public enum Player_Characters
             "Blackstone",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.ShadowsOfEvil,
+            Player_CharacterGroup.ShadowsOfEvil,
             Arrays.asList("The Magician", "The Amazing Nero"),
             R.drawable.neroblackstone_pfp,
             games.Black_Ops_III,
@@ -408,7 +462,7 @@ public enum Player_Characters
             "Rose",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.ShadowsOfEvil,
+            Player_CharacterGroup.ShadowsOfEvil,
             Arrays.asList("The Femme Fatale"),
             R.drawable.jessicarose_pfp,
             games.Black_Ops_III,
@@ -421,7 +475,7 @@ public enum Player_Characters
             "Vincent",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.ShadowsOfEvil,
+            Player_CharacterGroup.ShadowsOfEvil,
             Arrays.asList("The Detective", "Jackie", "Jackie V"),
             R.drawable.jackvincent_pfp,
             games.Black_Ops_III,
@@ -434,7 +488,7 @@ public enum Player_Characters
             "Campbell",
             new Date(),
             CharacterVersion.Single,
-            CharacterGroup.ShadowsOfEvil,
+            Player_CharacterGroup.ShadowsOfEvil,
             Arrays.asList("The Boxer"),
             R.drawable.floydcampbell_pfp,
             games.Black_Ops_III,
@@ -453,9 +507,9 @@ public enum Player_Characters
     //      "",
     //      new Date(),
     //      CharacterVersion.Single,
-    //      CharacterGroup.Victis,
+    //      Player_CharacterGroup.Victis,
     //      Arrays.asList("Template", "Template"),
-    //      R.drawable.app_icon,
+    //      R.drawable.blank_pfp,
     //      games.Black_Ops_II,
     //      games.Black_Ops_IV
     //),
@@ -468,14 +522,30 @@ public enum Player_Characters
     public final String characterLastName;
     public final Date characterBirthday;
     public final CharacterVersion characterVersion;
-    public final CharacterGroup characterGroup;
+    public final Player_CharacterGroup playerCharacterGroup;
     public final List<String> characterNicknames;
     public final int characterImage;
     public final games firstappearance;
     public final games finalappearance;
 
 
-    Player_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, CharacterGroup characterGroup, List<String> characterNicknames, int characterImage, games firstappearance, games finalappearance)
+    @Override
+    public int getCharacterImage() {
+        return characterImage;
+    }
+
+    @Override
+    public String getCharacterName() {
+        return characterName;
+    }
+
+    @Override
+    public Object getCharacterGroup() {
+        return playerCharacterGroup;
+    }
+
+
+    Player_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, Player_CharacterGroup playerCharacterGroup, List<String> characterNicknames, int characterImage, games firstappearance, games finalappearance)
     {
         this.characterName = characterName;
         this.characterFirstName = characterFirstName;
@@ -483,10 +553,11 @@ public enum Player_Characters
         this.characterLastName = characterLastName;
         this.characterBirthday = characterBirthday;
         this.characterVersion = characterVersion;
-        this.characterGroup = characterGroup;
+        this.playerCharacterGroup = playerCharacterGroup;
         this.characterNicknames = characterNicknames;
         this.characterImage = characterImage;
         this.firstappearance = firstappearance;
         this.finalappearance = finalappearance;
     }
+
 }
