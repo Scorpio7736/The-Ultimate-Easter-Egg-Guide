@@ -16,6 +16,7 @@ import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapter;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
+import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CreaturesData.Enemy_Creatures;
@@ -28,8 +29,10 @@ import java.util.List;
 public class StorylineSelection_PAGE extends NavPageController_BaseClass implements StorylineCharacterAdapter.OnCharacterClickListener {
 
     private StorylineItems currentCategory;
+    private games selectedGame = null;
     private RecyclerView recyclerView;
     private GridLayoutManager gridLayoutManager;
+    private Spinner gameFilterSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,10 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
         gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
+        gameFilterSpinner = findViewById(R.id.game_filter_spinner);
+
         setupCategorySpinner();
+        setupGameFilterSpinner();
     }
 
     private void setupCategorySpinner() {
@@ -70,13 +76,57 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
         });
     }
 
+    private void setupGameFilterSpinner() {
+        List<String> gameNames = new ArrayList<>();
+        gameNames.add("All Games");
+        for (games game : games.values()) {
+            if (ENABLE_TESTING || game != games.Test) {
+                gameNames.add(game.gameName);
+            }
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, gameNames);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        gameFilterSpinner.setAdapter(adapter);
+
+        gameFilterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    selectedGame = null;
+                } else {
+                    // Offset by 1 because of "All Games"
+                    int gameIndex = position - 1;
+                    List<games> availableGames = new ArrayList<>();
+                    for (games g : games.values()) {
+                        if (ENABLE_TESTING || g != games.Test) {
+                            availableGames.add(g);
+                        }
+                    }
+                    selectedGame = availableGames.get(gameIndex);
+                }
+                loadCategoryData(currentCategory);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+    }
+
     private void loadCategoryData(StorylineItems category) {
+        if (category == StorylineItems.Creatures) {
+            gameFilterSpinner.setVisibility(View.VISIBLE);
+        } else {
+            gameFilterSpinner.setVisibility(View.GONE);
+            selectedGame = null;
+        }
+
         if (category == StorylineItems.PlayerCharacter || 
             category == StorylineItems.NonPlayerCharacter || 
             category == StorylineItems.Youtubers ||
             category == StorylineItems.Creatures) {
             
-            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(category, ENABLE_TESTING, this);
+            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(category, ENABLE_TESTING, selectedGame, this);
             gridLayoutManager.setSpanSizeLookup(adapter.getSpanSizeLookup());
             recyclerView.setAdapter(adapter);
             recyclerView.scheduleLayoutAnimation();
@@ -104,8 +154,12 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
 
     @Override
     public void onEnemyCreatureClick(Enemy_Creatures creature) {
-        // Placeholder for creature display page if it exists, or just a toast for now
-        Toast.makeText(this, "Clicked: " + creature.displayName, Toast.LENGTH_SHORT).show();
+        if (creature.fandomLink != null && !creature.fandomLink.isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(creature.fandomLink));
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Fandom link not available", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

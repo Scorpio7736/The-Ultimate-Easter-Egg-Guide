@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
+import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import org.junit.Test;
@@ -19,32 +21,53 @@ public class EnemyCreaturesTest {
     public void testEnumInitialization() {
         for (Enemy_Creatures creature : Enemy_Creatures.values()) {
             assertNotNull("Display name should not be null for " + creature.name(), creature.displayName);
-            assertTrue("Display name should not be empty for " + creature.name(), creature.displayName.length() > 0);
+            assertTrue("Display name should not be empty for " + creature.name(), !creature.displayName.isEmpty());
             assertTrue("Creature cover should be a valid resource ID for " + creature.name(), creature.creatureCover != 0);
             assertNotNull("Creature group should not be null for " + creature.name(), creature.creatureGroup);
+            assertNotNull("Games list should not be null for " + creature.name(), creature.gamesList);
+            assertTrue("Games list should not be empty for " + creature.name(), !creature.gamesList.isEmpty());
+            assertNotNull("Fandom link should not be null for " + creature.name(), creature.fandomLink);
+            assertTrue("Fandom link should be a valid URL for " + creature.name(), creature.fandomLink.startsWith("https://callofduty.fandom.com/wiki/"));
+        }
+    }
+
+    @Test
+    public void testInterfaceImplementation() {
+        for (Enemy_Creatures creature : Enemy_Creatures.values()) {
+            assertEquals(creature.displayName, creature.getCharacterName());
+            assertEquals(creature.creatureCover, creature.getCharacterImage());
+            assertEquals(creature.creatureGroup, creature.getCharacterGroup());
         }
     }
 
     @Test
     public void testSpecificCreatureData() {
-        // Test a few specific ones to ensure they were mapped correctly
-        assertEquals("Brutus", Enemy_Creatures.Brutus.displayName);
-        assertEquals(R.drawable.brutus_pfp, Enemy_Creatures.Brutus.creatureCover);
+        // Test Zombie which uses GetAllGamesBetween
+        Enemy_Creatures zombie = Enemy_Creatures.Zombie;
+        assertEquals("Zombie", zombie.displayName);
+        assertTrue(zombie.gamesList.contains(games.World_At_War));
+        assertTrue(zombie.gamesList.contains(games.Black_Ops_I));
+        assertEquals("https://callofduty.fandom.com/wiki/Zombie", zombie.fandomLink);
 
-        assertEquals("The Shadowman", Enemy_Creatures.TheShadowMan.displayName);
-        assertEquals(R.drawable.shadowman_pfp, Enemy_Creatures.TheShadowMan.creatureCover);
+        // Test Brutus which has a specific PFP
+        Enemy_Creatures brutus = Enemy_Creatures.Brutus;
+        assertEquals("Brutus", brutus.displayName);
+        assertEquals(R.drawable.brutus_pfp, brutus.creatureCover);
+        assertTrue(brutus.gamesList.contains(games.Black_Ops_II));
+        assertTrue(brutus.gamesList.contains(games.Black_Ops_IV));
 
-        assertEquals("Zombie", Enemy_Creatures.Zombie.displayName);
-        assertEquals(R.drawable.app_icon, Enemy_Creatures.Zombie.creatureCover);
-        
-        assertEquals("Megaton", Enemy_Creatures.Megaton.displayName);
+        // Test George Romero
+        Enemy_Creatures george = Enemy_Creatures.GeorgeRomero;
+        assertEquals("George Romero", george.displayName);
+        assertEquals(1, george.gamesList.size());
+        assertEquals(games.Black_Ops_I, george.gamesList.get(0));
     }
-    
+
     @Test
-    public void testDisplayNameFormatting() {
-        // Verify some BO4+ names that were corrected
-        assertEquals("Nosferatu", Enemy_Creatures.NosForotues.displayName);
-        assertEquals("Spartoi", Enemy_Creatures.Spartwa.displayName);
-        assertEquals("Gegenees", Enemy_Creatures.Gigganeese.displayName);
+    public void testFandomLinks() {
+        assertEquals("https://callofduty.fandom.com/wiki/Hellhound", Enemy_Creatures.Hellhound.fandomLink);
+        assertEquals("https://callofduty.fandom.com/wiki/Margwa", Enemy_Creatures.Margwa.fandomLink);
+        // Pentagon Thief has special path
+        assertEquals("https://callofduty.fandom.com/wiki/Yuri_Zavoyski_(Aether)", Enemy_Creatures.PentagonThief.fandomLink);
     }
 }

@@ -75,6 +75,16 @@
             android:paddingStart="12dp"
             android:paddingEnd="12dp" />
 
+        <Spinner
+            android:id="@+id/game_filter_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/spinner_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:visibility="gone" />
+
     </LinearLayout>
 
     <include layout="@layout/navigation_overlay" />

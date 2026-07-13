@@ -16,6 +16,7 @@ import androidx.test.core.app.ActivityScenario;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
+import com.example.the_ultimate_easter_egg_guide.Storyline.CreaturesData.Enemy_Creatures;
 import com.example.the_ultimate_easter_egg_guide.Storyline.CodZombiesYoutubersData.CodZombies_Youtubers;
 
 import org.junit.Test;
@@ -106,9 +107,13 @@ public class StorylineSelectionPageTest {
     public void testOnEnemyCreatureClick() {
         try (ActivityScenario<StorylineSelection_PAGE> scenario = ActivityScenario.launch(StorylineSelection_PAGE.class)) {
             scenario.onActivity(activity -> {
-                com.example.the_ultimate_easter_egg_guide.Storyline.CreaturesData.Enemy_Creatures creature = com.example.the_ultimate_easter_egg_guide.Storyline.CreaturesData.Enemy_Creatures.Zombie;
+                Enemy_Creatures creature = Enemy_Creatures.Zombie;
                 activity.onEnemyCreatureClick(creature);
-                // Currently it just shows a toast, so we just verify it doesn't crash
+                
+                Intent actualIntent = shadowOf(activity).getNextStartedActivity();
+                assertNotNull(actualIntent);
+                assertEquals(Intent.ACTION_VIEW, actualIntent.getAction());
+                assertEquals(Uri.parse(creature.fandomLink), actualIntent.getData());
             });
         }
     }

@@ -22,4 +22,9 @@ public enum games {
     {
         this.gameName = gameName;
     }
+
+    public static List<games> GetAllGamesBetween(games start, games end)
+    {
+        return gamesList.subList(gamesList.indexOf(start), gamesList.indexOf(end));
+    }
 }

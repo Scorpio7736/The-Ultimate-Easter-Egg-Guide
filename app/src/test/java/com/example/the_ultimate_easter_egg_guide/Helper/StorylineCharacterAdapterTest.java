@@ -71,6 +71,33 @@ public class StorylineCharacterAdapterTest {
     }
 
     @Test
+    public void testCreaturesCategory() {
+        StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(
+                StorylineItems.Creatures,
+                false,
+                null
+        );
+
+        int itemCount = adapter.getItemCount();
+        assertTrue("Item count should be greater than 0", itemCount > 0);
+
+        boolean foundHeader = false;
+        boolean foundCreature = false;
+
+        for (int i = 0; i < itemCount; i++) {
+            int viewType = adapter.getItemViewType(i);
+            if (viewType == 0) { // TYPE_HEADER
+                foundHeader = true;
+            } else if (viewType == 1) { // TYPE_CHARACTER
+                foundCreature = true;
+            }
+        }
+
+        assertTrue("Should contain creature group headers", foundHeader);
+        assertTrue("Should contain creatures", foundCreature);
+    }
+
+    @Test
     public void testTestingEnabled() {
         StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(
                 StorylineItems.PlayerCharacter,

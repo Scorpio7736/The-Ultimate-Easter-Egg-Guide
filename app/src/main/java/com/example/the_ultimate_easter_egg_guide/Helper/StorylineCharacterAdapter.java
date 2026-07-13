@@ -21,6 +21,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_Charact
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CreatureGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.YoutuberGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
+import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
@@ -42,12 +43,16 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
     public StorylineCharacterAdapter(StorylineItems category, boolean enableTesting, OnCharacterClickListener listener) {
+        this(category, enableTesting, null, listener);
+    }
+
+    public StorylineCharacterAdapter(StorylineItems category, boolean enableTesting, games gameFilter, OnCharacterClickListener listener) {
         this.listener = listener;
 
         if (category == StorylineItems.Youtubers) {
             setupYoutuberItems(enableTesting);
         } else if (category == StorylineItems.Creatures) {
-            setupCreatureItems(enableTesting);
+            setupCreatureItems(enableTesting, gameFilter);
         } else {
             setupCharacterItems(category, enableTesting);
         }
@@ -97,7 +102,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
         }
     }
 
-    private void setupCreatureItems(boolean enableTesting) {
+    private void setupCreatureItems(boolean enableTesting, games gameFilter) {
         for (CreatureGroups group : CreatureGroups.values()) {
             if (enableTesting) {
                 if (group != CreatureGroups.TEST) continue;
@@ -108,7 +113,9 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
             List<Object> creaturesInGroup = new ArrayList<>();
             for (Enemy_Creatures creature : Enemy_Creatures.values()) {
                 if (creature.creatureGroup == group) {
-                    creaturesInGroup.add(creature);
+                    if (gameFilter == null || creature.gamesList.contains(gameFilter)) {
+                        creaturesInGroup.add(creature);
+                    }
                 }
             }
 
