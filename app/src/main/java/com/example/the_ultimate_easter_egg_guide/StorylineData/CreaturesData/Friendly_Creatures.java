@@ -16,16 +16,15 @@ public enum Friendly_Creatures implements IStorylineItems
     Leroy("Arthur (Leroy)", R.drawable.leroy_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_II), "Arthur_(Zombies)"),
 
     TEDD("T.E.D.D.", R.drawable.tedd_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_II), "T.E.D.D."),
+    MaxisDrone("Maxis Drone", R.drawable.maxisdrone_pfp, CreatureGroups.Special, Arrays.asList(Games.Black_Ops_II, Games.Black_Ops_III), "Maxis_Drone"),
 
-    MaxisDrone("Maxis Drone", R.drawable.app_icon, CreatureGroups.Special, Arrays.asList(Games.Black_Ops_II, Games.Black_Ops_III), "Maxis_Drone"),
+    CivilProtector("Civil Protector", R.drawable.civilprotector_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Civil_Protector"),
 
-    CivilProtector("Civil Protector", R.drawable.app_icon, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Civil_Protector"),
+    KeeperProtector("Keeper Protector", R.drawable.keeperprotector_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Keeper_Protector"),
 
-    KeeperProtector("Keeper Protector", R.drawable.app_icon, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Keeper_Protector"),
+    GauntletOfSiegfried("Gauntlet of Siegfried", R.drawable.gauntletofsiegfried_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Gauntlet_of_Siegfried"),
 
-    DragonWhelp("Dragon Whelp", R.drawable.app_icon, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Gauntlet_of_Siegfried"),
-
-    WolfSpirit("Wolf Spirit", R.drawable.app_icon, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Wrath_of_the_Ancients"),
+    WolfSpirit("Wolf Spirit", R.drawable.wolfspirit_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Wrath_of_the_Ancients"),
 
     FriendlyThrasher("Friendly Thrasher", R.drawable.app_icon, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Thrasher"),
 

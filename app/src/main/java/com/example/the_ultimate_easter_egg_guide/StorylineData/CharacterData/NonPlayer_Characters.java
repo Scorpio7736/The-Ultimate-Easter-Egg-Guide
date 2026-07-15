@@ -28,7 +28,7 @@ public enum NonPlayer_Characters implements IStorylineItems
     Brock("Brock", NonPlayer_CharacterGroups.Other, R.drawable.blank_pfp, Arrays.asList(Games.Black_Ops_I, Games.Black_Ops_III)),
     Gary("Gary", NonPlayer_CharacterGroups.Other, R.drawable.blank_pfp, Arrays.asList(Games.Black_Ops_I, Games.Black_Ops_III)),
     Leroy("Leroy", NonPlayer_CharacterGroups.Other, R.drawable.leroy_pfp, Collections.singletonList(Games.Black_Ops_II)),
-    Monty("Dr. Monty", NonPlayer_CharacterGroups.Agartha, R.drawable.blank_pfp, Collections.singletonList(Games.Black_Ops_III)),
+    Monty("Dr. Monty", NonPlayer_CharacterGroups.Agartha, R.drawable.monty_pfp, Collections.singletonList(Games.Black_Ops_III)),
     Shadowman("The Shadowman", NonPlayer_CharacterGroups.DarkAther, R.drawable.shadowman_pfp, Games.GetAllGamesBetween(Games.Black_Ops_III, Games.Black_Ops_IV)),
     PabloMarinus("Pablo Marinus", NonPlayer_CharacterGroups.Group935TestSubject, R.drawable.pablomarinus_pfp, Arrays.asList(Games.Black_Ops_I, Games.Black_Ops_III, Games.Black_Ops_IV));
 
