@@ -7,7 +7,7 @@ public enum ItemGroups
     StorylineItem("Storyline Items"),
     PerkaCola("Perk a Colas");
 
-    public String displayName;
+    public final String displayName;
     ItemGroups(String displayName)
     {
         this.displayName = displayName;

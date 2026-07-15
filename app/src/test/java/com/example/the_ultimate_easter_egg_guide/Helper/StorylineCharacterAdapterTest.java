@@ -1,6 +1,4 @@
 package com.example.the_ultimate_easter_egg_guide.Helper;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
@@ -128,7 +126,7 @@ public class StorylineCharacterAdapterTest {
     @Test
     public void testGroupsCategory() {
         StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(
-                StorylineItems.Groups,
+                StorylineItems.Organizations,
                 false,
                 null
         );
@@ -200,7 +198,7 @@ public class StorylineCharacterAdapterTest {
     public void testGameFilteringForGroups() {
         // Group 935 is in WAW
         StorylineCharacterAdapter wawAdapter = new StorylineCharacterAdapter(
-                StorylineItems.Groups,
+                StorylineItems.Organizations,
                 false,
                 Games.World_At_War,
                 null
@@ -209,7 +207,7 @@ public class StorylineCharacterAdapterTest {
 
         // Division 9 is only in BO3
         StorylineCharacterAdapter bo3Adapter = new StorylineCharacterAdapter(
-                StorylineItems.Groups,
+                StorylineItems.Organizations,
                 false,
                 Games.Black_Ops_III,
                 null
@@ -236,23 +234,5 @@ public class StorylineCharacterAdapterTest {
                 null
         );
         assertTrue(bo3Adapter.getItemCount() > 0);
-    }
-
-    @Test
-    public void testTestingEnabled() {
-        StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(
-                StorylineItems.PlayerCharacter,
-                true, // enableTesting
-                null
-        );
-
-        // If testing is enabled, only TEST group should be added.
-        // Assuming Player_Characters has at least one in TEST group
-        int itemCount = adapter.getItemCount();
-        
-        for (int i = 0; i < itemCount; i++) {
-            // We can't access private 'items', but we check logic in constructor
-            // Verification is indirect here unless we expose items or check counts
-        }
     }
 }

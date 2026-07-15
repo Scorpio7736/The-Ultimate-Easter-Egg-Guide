@@ -22,7 +22,7 @@ import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.Pla
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Enemy_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Friendly_Creatures;
-import com.example.the_ultimate_easter_egg_guide.StorylineData.GroupsData.Groups;
+import com.example.the_ultimate_easter_egg_guide.StorylineData.OrganizationsData.Organizations;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData.Items;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CodZombiesYoutubersData.CodZombies_Youtubers;
 import com.example.the_ultimate_easter_egg_guide.R;
@@ -79,7 +79,7 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
 
     private void loadCategoryData(StorylineItems category) {
         boolean showGameFilter = category == StorylineItems.Creatures || 
-                               category == StorylineItems.Groups || 
+                               category == StorylineItems.Organizations ||
                                category == StorylineItems.NonPlayerCharacter || 
                                category == StorylineItems.PlayerCharacter;
         
@@ -112,7 +112,7 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
             currentCategory == StorylineItems.Youtubers ||
             currentCategory == StorylineItems.Creatures ||
             currentCategory == StorylineItems.Items ||
-            currentCategory == StorylineItems.Groups) {
+            currentCategory == StorylineItems.Organizations) {
             
             StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(currentCategory, ENABLE_TESTING, selectedGame, selectedItemGroup, this);
             gridLayoutManager.setSpanSizeLookup(adapter.getSpanSizeLookup());
@@ -161,7 +161,7 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
     }
 
     @Override
-    public void onGroupClick(Groups group) {
+    public void onGroupClick(Organizations group) {
         if (group.fandomLink != null && !group.fandomLink.isEmpty()) {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(group.fandomLink));
             startActivity(intent);

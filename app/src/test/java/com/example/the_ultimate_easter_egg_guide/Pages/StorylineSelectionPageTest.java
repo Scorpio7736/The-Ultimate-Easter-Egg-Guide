@@ -20,9 +20,8 @@ import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.Non
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.Player_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Enemy_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Friendly_Creatures;
-import com.example.the_ultimate_easter_egg_guide.StorylineData.GroupsData.Groups;
+import com.example.the_ultimate_easter_egg_guide.StorylineData.OrganizationsData.Organizations;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData.Items;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ItemGroups;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CodZombiesYoutubersData.CodZombies_Youtubers;
 
 import org.junit.Test;
@@ -143,7 +142,7 @@ public class StorylineSelectionPageTest {
     public void testOnGroupClick() {
         try (ActivityScenario<StorylineSelection_PAGE> scenario = ActivityScenario.launch(StorylineSelection_PAGE.class)) {
             scenario.onActivity(activity -> {
-                Groups group = Groups.Group935;
+                Organizations group = Organizations.Group935;
                 activity.onGroupClick(group);
                 
                 Intent actualIntent = shadowOf(activity).getNextStartedActivity();

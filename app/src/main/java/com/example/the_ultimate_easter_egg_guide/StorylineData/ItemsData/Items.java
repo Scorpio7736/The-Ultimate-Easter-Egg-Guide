@@ -11,7 +11,7 @@ import java.util.List;
 
 public enum Items implements IStorylineItems
 {
-    TEST("TEST", R.drawable.app_icon, ItemGroups.TEST, Arrays.asList(Games.Test), "Category:Organizations"),
+    TEST("Test Item", R.drawable.app_icon, ItemGroups.TEST, Collections.singletonList(Games.Test), "Category:Organizations"),
     //PERKS
     JUGGERNOG("Jugger-Nog", R.drawable.app_icon, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Juggernog"),
     QUICK_REVIVE("Quick Revive", R.drawable.app_icon, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Quick_Revive"),

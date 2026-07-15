@@ -7,11 +7,11 @@ public enum StorylineItems
     Creatures("Creatures"),
     Items("Items"),
     Map("Maps"),
-    Groups("Groups"),
+    Organizations("Organizations"),
     Youtubers("Cod Zombies YouTubers");
 
 
-    public String itemName;
+    public final String itemName;
     StorylineItems(String itemName)
     {
         this.itemName = itemName;
