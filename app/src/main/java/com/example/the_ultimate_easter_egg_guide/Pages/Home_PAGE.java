@@ -4,15 +4,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.core.splashscreen.SplashScreen;
 
-import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
-import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
-import com.example.the_ultimate_easter_egg_guide.Models.ImageID;
+import com.example.the_ultimate_easter_egg_guide.Models.Images.ImageID;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.R;
 

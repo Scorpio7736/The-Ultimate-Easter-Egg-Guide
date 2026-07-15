@@ -1,5 +1,5 @@
 package com.example.the_ultimate_easter_egg_guide.Models.EasterEgg;
-import com.example.the_ultimate_easter_egg_guide.Models.ImageID;
+import com.example.the_ultimate_easter_egg_guide.Models.Images.ImageID;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;

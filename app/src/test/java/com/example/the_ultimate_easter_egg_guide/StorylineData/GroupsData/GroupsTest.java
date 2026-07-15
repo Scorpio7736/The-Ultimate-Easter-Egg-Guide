@@ -4,8 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.example.the_ultimate_easter_egg_guide.Models.games;
-import com.example.the_ultimate_easter_egg_guide.R;
+import com.example.the_ultimate_easter_egg_guide.Models.Games;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,12 +32,12 @@ public class GroupsTest {
     public void testSpecificGroupData() {
         Groups g935 = Groups.Group935;
         assertEquals("Group 935", g935.displayName);
-        assertTrue(g935.gamesList.contains(games.World_At_War));
+        assertTrue(g935.gamesList.contains(Games.World_At_War));
         assertEquals("https://callofduty.fandom.com/wiki/Group_935", g935.fandomLink);
         
         Groups brokenArrow = Groups.BrokenArrow;
         assertEquals("Broken Arrow", brokenArrow.displayName);
-        assertTrue(brokenArrow.gamesList.contains(games.Black_Ops_II));
-        assertTrue(brokenArrow.gamesList.contains(games.Black_Ops_IV));
+        assertTrue(brokenArrow.gamesList.contains(Games.Black_Ops_II));
+        assertTrue(brokenArrow.gamesList.contains(Games.Black_Ops_IV));
     }
 }

@@ -1,0 +1,21 @@
+images
+
+map cover: gamecode_mapname_mapcover
+background: gamecode_bkgname_bkg
+char portrait: gamecode_charname_charpfp
+youtuber portrait: youtubername_youtuberpfp
+Easter Egg step: gamecode_mapname_stepname_step
+
+
+
+
+
+
+
+
+
+
+
+popup asks on load if you would like to download images from the web or wait on first load
+button in settings that says update images from web
+after one month from last download popup happens that tells you you should and gives option to

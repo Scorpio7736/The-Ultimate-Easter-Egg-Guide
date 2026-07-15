@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.example.the_ultimate_easter_egg_guide.Models.games;
+import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import org.junit.Test;
@@ -44,22 +44,22 @@ public class EnemyCreaturesTest {
         // Test Zombie which uses GetAllGamesBetween
         Enemy_Creatures zombie = Enemy_Creatures.Zombie;
         assertEquals("Zombie", zombie.displayName);
-        assertTrue(zombie.gamesList.contains(games.World_At_War));
-        assertTrue(zombie.gamesList.contains(games.Black_Ops_I));
+        assertTrue(zombie.gamesList.contains(Games.World_At_War));
+        assertTrue(zombie.gamesList.contains(Games.Black_Ops_I));
         assertEquals("https://callofduty.fandom.com/wiki/Zombie", zombie.fandomLink);
 
         // Test Brutus which has a specific PFP
         Enemy_Creatures brutus = Enemy_Creatures.Brutus;
         assertEquals("Brutus", brutus.displayName);
         assertEquals(R.drawable.brutus_pfp, brutus.creatureCover);
-        assertTrue(brutus.gamesList.contains(games.Black_Ops_II));
-        assertTrue(brutus.gamesList.contains(games.Black_Ops_IV));
+        assertTrue(brutus.gamesList.contains(Games.Black_Ops_II));
+        assertTrue(brutus.gamesList.contains(Games.Black_Ops_IV));
 
         // Test George Romero
         Enemy_Creatures george = Enemy_Creatures.GeorgeRomero;
         assertEquals("George Romero", george.displayName);
         assertEquals(1, george.gamesList.size());
-        assertEquals(games.Black_Ops_I, george.gamesList.get(0));
+        assertEquals(Games.Black_Ops_I, george.gamesList.get(0));
     }
 
     @Test

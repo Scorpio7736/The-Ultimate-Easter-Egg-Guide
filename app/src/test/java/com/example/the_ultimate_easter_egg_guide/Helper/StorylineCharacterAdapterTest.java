@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
-import com.example.the_ultimate_easter_egg_guide.Models.games;
+import com.example.the_ultimate_easter_egg_guide.Models.Games;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -131,7 +131,7 @@ public class StorylineCharacterAdapterTest {
         StorylineCharacterAdapter wawAdapter = new StorylineCharacterAdapter(
                 StorylineItems.Creatures,
                 false,
-                games.World_At_War,
+                Games.World_At_War,
                 null
         );
         
@@ -142,7 +142,7 @@ public class StorylineCharacterAdapterTest {
         StorylineCharacterAdapter bo3Adapter = new StorylineCharacterAdapter(
                 StorylineItems.Creatures,
                 false,
-                games.Black_Ops_III,
+                Games.Black_Ops_III,
                 null
         );
         assertTrue(bo3Adapter.getItemCount() > 0);
@@ -154,7 +154,7 @@ public class StorylineCharacterAdapterTest {
         StorylineCharacterAdapter bo3Adapter = new StorylineCharacterAdapter(
                 StorylineItems.PlayerCharacter,
                 false,
-                games.Black_Ops_III,
+                Games.Black_Ops_III,
                 null
         );
         assertTrue(bo3Adapter.getItemCount() > 0);
@@ -163,7 +163,7 @@ public class StorylineCharacterAdapterTest {
         StorylineCharacterAdapter wawAdapter = new StorylineCharacterAdapter(
                 StorylineItems.PlayerCharacter,
                 false,
-                games.World_At_War,
+                Games.World_At_War,
                 null
         );
         assertTrue(wawAdapter.getItemCount() > 0);
@@ -175,7 +175,7 @@ public class StorylineCharacterAdapterTest {
         StorylineCharacterAdapter wawAdapter = new StorylineCharacterAdapter(
                 StorylineItems.Groups,
                 false,
-                games.World_At_War,
+                Games.World_At_War,
                 null
         );
         assertTrue(wawAdapter.getItemCount() > 0);
@@ -184,7 +184,7 @@ public class StorylineCharacterAdapterTest {
         StorylineCharacterAdapter bo3Adapter = new StorylineCharacterAdapter(
                 StorylineItems.Groups,
                 false,
-                games.Black_Ops_III,
+                Games.Black_Ops_III,
                 null
         );
         assertTrue(bo3Adapter.getItemCount() > 0);

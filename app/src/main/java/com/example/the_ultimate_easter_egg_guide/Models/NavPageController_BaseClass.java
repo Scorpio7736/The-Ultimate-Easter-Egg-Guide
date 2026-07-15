@@ -8,7 +8,6 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Pages.Home_PAGE;
@@ -66,7 +65,7 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
     }
 
     protected interface OnGameSelectedListener {
-        void onGameSelected(@Nullable games selectedGame);
+        void onGameSelected(@Nullable Games selectedGame);
     }
 
     protected void setupGameFilter(OnGameSelectedListener listener) {
@@ -75,8 +74,8 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
 
         List<String> gameNames = new ArrayList<>();
         gameNames.add("All Games");
-        for (games game : games.values()) {
-            if (ENABLE_TESTING || game != games.Test) {
+        for (Games game : Games.values()) {
+            if (ENABLE_TESTING || game != Games.Test) {
                 gameNames.add(game.gameName);
             }
         }
@@ -88,12 +87,12 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
         gameFilterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                games selectedGame = null;
+                Games selectedGame = null;
                 if (position != 0) {
                     int gameIndex = position - 1;
-                    List<games> availableGames = new ArrayList<>();
-                    for (games g : games.values()) {
-                        if (ENABLE_TESTING || g != games.Test) {
+                    List<Games> availableGames = new ArrayList<>();
+                    for (Games g : Games.values()) {
+                        if (ENABLE_TESTING || g != Games.Test) {
                             availableGames.add(g);
                         }
                     }

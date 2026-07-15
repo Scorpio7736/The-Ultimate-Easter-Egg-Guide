@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
-import com.example.the_ultimate_easter_egg_guide.Models.games;
+import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.Helper.MapAdapter;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.R;
@@ -35,12 +34,12 @@ public class MapsSelection_Page extends NavPageController_BaseClass implements M
     private boolean isGridView = true;
     private RecyclerView mapsRecyclerView;
     private MapAdapter mapAdapter;
-    private games currentSelectedGame;
-    private final Map<games, MapAdapter> gridAdapters = new HashMap<>();
-    private final Map<games, MapAdapter> listAdapters = new HashMap<>();
-    private final Map<games, Drawable> backgroundCache = new HashMap<>();
-    private final games DEFAULT_GAME = ENABLE_TESTING ? games.Test : games.World_At_War;
-    private final List<games> EXCLUDED_GAMES = java.util.Arrays.asList(games.Test);
+    private Games currentSelectedGame;
+    private final Map<Games, MapAdapter> gridAdapters = new HashMap<>();
+    private final Map<Games, MapAdapter> listAdapters = new HashMap<>();
+    private final Map<Games, Drawable> backgroundCache = new HashMap<>();
+    private final Games DEFAULT_GAME = ENABLE_TESTING ? Games.Test : Games.World_At_War;
+    private final List<Games> EXCLUDED_GAMES = java.util.Arrays.asList(Games.Test);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +51,11 @@ public class MapsSelection_Page extends NavPageController_BaseClass implements M
         mapsRecyclerView = findViewById(R.id.maps_recycler_view);
 
         Spinner spinner = findViewById(R.id.myDropdown);
-        List<games> filteredGames = new ArrayList<>();
+        List<Games> filteredGames = new ArrayList<>();
         List<String> gameNames = new ArrayList<>();
-        for (games game : games.values()) {
+        for (Games game : Games.values()) {
             if (ENABLE_TESTING) {
-                if (game == games.Test) {
+                if (game == Games.Test) {
                     filteredGames.add(game);
                     gameNames.add(game.gameName);
                 }
@@ -131,7 +130,7 @@ public class MapsSelection_Page extends NavPageController_BaseClass implements M
         PageTransitionManager.startActivityWithFade(MapsSelection_Page.this, intent);
     }
 
-    private void loadGameData(games selectedGame, boolean animate) {
+    private void loadGameData(Games selectedGame, boolean animate) {
         currentSelectedGame = selectedGame;
         ImageView backgroundImage = findViewById(R.id.background_image);
 
@@ -178,7 +177,7 @@ public class MapsSelection_Page extends NavPageController_BaseClass implements M
         mapsRecyclerView.scheduleLayoutAnimation();
     }
 
-    private int getBackgroundForGame(games game) {
+    private int getBackgroundForGame(Games game) {
         switch (game) {
             case World_At_War:
                 return R.drawable.waw_bkg_m;

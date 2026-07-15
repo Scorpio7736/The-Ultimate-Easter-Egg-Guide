@@ -4,7 +4,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersi
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.NonPlayer_CharacterGroup;
 
-import com.example.the_ultimate_easter_egg_guide.Models.games;
+import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.Arrays;
@@ -24,8 +24,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.TEST,
             Arrays.asList("Maxis"),
             R.drawable.default_test_image,
-            games.Test,
-            games.Test
+            Games.Test,
+            Games.Test
     ),
     LudwigMaxis_Ultimis(
             "Dr. Ludwig Maxis",
@@ -37,8 +37,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Group935_Ultimis,
             Arrays.asList("Maxis"),
             R.drawable.ludwigmaxis_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     SamanthaMaxis(
             "Samantha Maxis",
@@ -50,8 +50,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Group935_Ultimis,
             Arrays.asList("Sam"),
             R.drawable.samanthamaxis_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     Sophia(
             "Sophia",
@@ -63,8 +63,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Group935_Ultimis,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     Groph(
             "Dr. Groph",
@@ -76,8 +76,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Group935_Ultimis,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     Schuster(
             "Dr. Schuster",
@@ -89,8 +89,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Group935_Ultimis,
             Arrays.asList(),
             R.drawable.schuster_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     CorneliusPernell(
             "Cornelius Pernell",
@@ -102,8 +102,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.USGovernment,
             Arrays.asList("Peter's Handler"),
             R.drawable.blank_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     PeterMcCain(
             "Peter McCain",
@@ -115,8 +115,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.USGovernment,
             Arrays.asList(),
             R.drawable.petermccain_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     Hale(
             "Dr. Hale",
@@ -128,8 +128,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.BrokenArrow,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.Black_Ops_IV,
-            games.Black_Ops_IV
+            Games.Black_Ops_IV,
+            Games.Black_Ops_IV
     ),
     GeorgeSawyer(
             "George Sawyer",
@@ -141,8 +141,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.USGovernment,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.Black_Ops_IV,
-            games.Black_Ops_IV
+            Games.Black_Ops_IV,
+            Games.Black_Ops_IV
     ),
     Barkley(
             "Barkley",
@@ -154,8 +154,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.BrokenArrow,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.Black_Ops_IV,
-            games.Black_Ops_IV
+            Games.Black_Ops_IV,
+            Games.Black_Ops_IV
     ),
     HarveyYena(
             "Dr. Harvey Yena",
@@ -167,8 +167,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.SovietUnion,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_I
+            Games.Black_Ops_I,
+            Games.Black_Ops_I
     ),
     YuriZavoyski(
             "Dr. Yuri Zavoyski",
@@ -180,8 +180,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.SovietUnion,
             Arrays.asList(),
             R.drawable.yurizavoyski_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     AntonGersh(
             "Dr. Anton Gersh",
@@ -193,8 +193,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.SovietUnion,
             Arrays.asList(),
             R.drawable.antongersh_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     Brock(
             "Brock",
@@ -206,8 +206,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Other,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     Gary(
             "Gary",
@@ -219,8 +219,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Other,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     Leroy(
             "Leroy",
@@ -232,8 +232,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Other,
             Arrays.asList("The Giant"),
             R.drawable.leroy_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_II
+            Games.Black_Ops_II,
+            Games.Black_Ops_II
     ),
     Monty(
             "Dr. Monty",
@@ -245,8 +245,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Agartha,
             Arrays.asList("The Duck"),
             R.drawable.blank_pfp,
-            games.Black_Ops_III,
-            games.Black_Ops_III
+            Games.Black_Ops_III,
+            Games.Black_Ops_III
     ),
     Shadowman(
             "The Shadowman",
@@ -258,8 +258,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.DarkAther,
             Arrays.asList("Mr. Rapt"),
             R.drawable.shadowman_pfp,
-            games.Black_Ops_III,
-            games.Black_Ops_IV
+            Games.Black_Ops_III,
+            Games.Black_Ops_IV
     ),
     PabloMarinus(
             "Pablo Marinus",
@@ -271,8 +271,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             NonPlayer_CharacterGroup.Group935TestSubject,
             Arrays.asList("The Mexican"),
             R.drawable.pablomarinus_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_IV
+            Games.Black_Ops_I,
+            Games.Black_Ops_IV
     );
 
 
@@ -299,8 +299,8 @@ public enum NonPlayer_Characters implements IStorylineItem
     public final NonPlayer_CharacterGroup nonPlayerCharacterGroup;
     public final List<String> characterNicknames;
     public final int characterImage;
-    public final games firstappearance;
-    public final games finalappearance;
+    public final Games firstappearance;
+    public final Games finalappearance;
 
 
     @Override
@@ -319,7 +319,7 @@ public enum NonPlayer_Characters implements IStorylineItem
     }
 
 
-    NonPlayer_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, NonPlayer_CharacterGroup nonPlayerCharacterGroup, List<String> characterNicknames, int characterImage, games firstappearance, games finalappearance)
+    NonPlayer_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, NonPlayer_CharacterGroup nonPlayerCharacterGroup, List<String> characterNicknames, int characterImage, Games firstappearance, Games finalappearance)
     {
         this.characterName = characterName;
         this.characterFirstName = characterFirstName;

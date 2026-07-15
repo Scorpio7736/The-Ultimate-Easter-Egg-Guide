@@ -3,7 +3,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersi
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_CharacterGroup;
 
-import com.example.the_ultimate_easter_egg_guide.Models.games;
+import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.Arrays;
@@ -23,8 +23,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.TEST,
             Arrays.asList("Test_Nickname_1", "Test_Nickname_2"),
             R.drawable.default_test_image,
-            games.Test,
-            games.Test
+            Games.Test,
+            Games.Test
     ),
     EdwardRichtofen_Primis(
             "Dr. Edward Richtofen",
@@ -36,8 +36,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.richtofen_primis_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     EdwardRichtofen_Ultimis(
             "Edward Richtofen",
@@ -49,8 +49,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.richtofen_ultimis_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     TankDempsey_Primis(
             "Tank Dempsey",
@@ -62,8 +62,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.dempsey_primis_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     TankDempsey_Ultimis(
             "Tank Dempsey",
@@ -75,8 +75,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.dempsey_ultimis_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     NikolaiBelinski_Primis(
             "Nikolai Belinski",
@@ -88,8 +88,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.nikoli_primis_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     NikolaiBelinski_Ultimis(
             "Nikolai Belinski",
@@ -101,8 +101,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.nikoli_ultimis_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     TakeoMasaki_Primis(
             "Takeo Masaki",
@@ -114,8 +114,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.takeo_primis_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     TakeoMasaki_Ultimis(
             "Takeo Masaki",
@@ -127,8 +127,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.takeo_ultimis_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     AbigailBriarton(
             "Abigail 'Misty' Briarton",
@@ -140,8 +140,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Victis,
             Arrays.asList("Misty", "Lady"),
             R.drawable.misty_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     MarltonJohnson(
             "Marlton Johnson",
@@ -153,8 +153,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Victis,
             Arrays.asList("Marly", "Darlington", "Brain-Box"),
             R.drawable.marlton_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     SamuelStuhlinger(
             "Samuel Stuhlinger",
@@ -166,8 +166,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Victis,
             Arrays.asList("Stu", "Stupid-ger", "Stewie", "Sammy", "Stuhlicker"),
             R.drawable.stuhlinger_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     Russman(
         "Russman",
@@ -179,8 +179,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.Victis,
             Arrays.asList("Russ", "Old Man"),
             R.drawable.russman_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     JFK(
             "JFK",
@@ -192,8 +192,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.FIVE,
             Arrays.asList("Jack", "JFK", "Lancer"),
             R.drawable.jfk_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     RichardNixon(
             "Richard Nixon",
@@ -205,8 +205,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.FIVE,
             Arrays.asList("Dick", "Dickie", "Dickie Nix", "Tricky Dick"),
             R.drawable.richardnixon_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     RobertMcNamara(
             "Robert McNamara",
@@ -218,8 +218,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.FIVE,
             Arrays.asList("Bob"),
             R.drawable.robertmcnamara_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     FidelCastro(
             "Fidel Castro",
@@ -231,8 +231,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.FIVE,
             Arrays.asList(),
             R.drawable.fidelcastro_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_III
+            Games.Black_Ops_I,
+            Games.Black_Ops_III
     ),
     AlbertArlington(
             "The Weasel",
@@ -244,8 +244,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.MobOfTheDead,
             Arrays.asList("The Weasel"),
             R.drawable.weasel_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     MichaelOLeary(
             "Finn O'Leary",
@@ -257,8 +257,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.MobOfTheDead,
             Arrays.asList("Finn"),
             R.drawable.finn_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     SalvatoreDeLuca(
             "Sal DeLuca",
@@ -270,8 +270,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.MobOfTheDead,
             Arrays.asList("Sal", "Mr.DeLuca"),
             R.drawable.sal_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     BillyHandsome(
             "Billy Handsome",
@@ -283,8 +283,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.MobOfTheDead,
             Arrays.asList(),
             R.drawable.billy_pfp,
-            games.Black_Ops_II,
-            games.Black_Ops_IV
+            Games.Black_Ops_II,
+            Games.Black_Ops_IV
     ),
     SarahMichelleGellar(
             "Sarah Michelle Gellar",
@@ -296,8 +296,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.CallOfTheDead,
             Arrays.asList(),
             R.drawable.sarahmichellegellar_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_I
+            Games.Black_Ops_I,
+            Games.Black_Ops_I
     ),
     RobertEngland(
             "Robert England",
@@ -309,8 +309,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.CallOfTheDead,
             Arrays.asList(),
             R.drawable.robertengland_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_I
+            Games.Black_Ops_I,
+            Games.Black_Ops_I
     ),
     DannyTrejo(
             "Danny Trejo",
@@ -322,8 +322,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.CallOfTheDead,
             Arrays.asList(),
             R.drawable.dannytrejo_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_I
+            Games.Black_Ops_I,
+            Games.Black_Ops_I
     ),
     MichaelRooker(
             "Michael Rooker",
@@ -335,8 +335,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.CallOfTheDead,
             Arrays.asList(),
             R.drawable.michaelrooker_pfp,
-            games.Black_Ops_I,
-            games.Black_Ops_I
+            Games.Black_Ops_I,
+            Games.Black_Ops_I
     ),
     UnknownMarine1(
             "Unknown Marine 1",
@@ -348,8 +348,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.WAW_Nacht,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.World_At_War,
-            games.World_At_War
+            Games.World_At_War,
+            Games.World_At_War
     ),
     UnknownMarine2(
             "Unknown Marine 2",
@@ -361,8 +361,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.WAW_Nacht,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.World_At_War,
-            games.World_At_War
+            Games.World_At_War,
+            Games.World_At_War
     ),
     UnknownMarine3(
             "Unknown Marine 3",
@@ -374,8 +374,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.WAW_Nacht,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.World_At_War,
-            games.World_At_War
+            Games.World_At_War,
+            Games.World_At_War
     ),
     UnknownMarine4(
             "Unknown Marine 4",
@@ -387,8 +387,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.WAW_Nacht,
             Arrays.asList(),
             R.drawable.blank_pfp,
-            games.World_At_War,
-            games.World_At_War
+            Games.World_At_War,
+            Games.World_At_War
     ),
     TankDempsey(
             "Tank Dempsey",
@@ -400,8 +400,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList("Tank"),
             R.drawable.tankdempsey_verruckt_pfp,
-            games.World_At_War,
-            games.Black_Ops_IV
+            Games.World_At_War,
+            Games.Black_Ops_IV
     ),
     JohnBanana(
             "John Banana",
@@ -413,8 +413,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList(),
             R.drawable.johnbanana_pfp,
-            games.World_At_War,
-            games.World_At_War
+            Games.World_At_War,
+            Games.World_At_War
     ),
     Smokey(
             "Smokey",
@@ -426,8 +426,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList("Smokey"),
             R.drawable.smokey_pfp,
-            games.World_At_War,
-            games.World_At_War
+            Games.World_At_War,
+            Games.World_At_War
     ),
     PaxtonRidge(
             "Paxton Ridge",
@@ -439,8 +439,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.WAW_Verruckt,
             Arrays.asList(),
             R.drawable.paxtonridge_pfp,
-            games.World_At_War,
-            games.World_At_War
+            Games.World_At_War,
+            Games.World_At_War
     ),
     NeroBlackstone(
             "Nero Blackstone",
@@ -452,8 +452,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.ShadowsOfEvil,
             Arrays.asList("The Magician", "The Amazing Nero"),
             R.drawable.neroblackstone_pfp,
-            games.Black_Ops_III,
-            games.Black_Ops_III
+            Games.Black_Ops_III,
+            Games.Black_Ops_III
     ),
     JessicaRose(
             "Jessica Rose",
@@ -465,8 +465,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.ShadowsOfEvil,
             Arrays.asList("The Femme Fatale"),
             R.drawable.jessicarose_pfp,
-            games.Black_Ops_III,
-            games.Black_Ops_III
+            Games.Black_Ops_III,
+            Games.Black_Ops_III
     ),
     JackVincent(
             "Jack Vincent",
@@ -478,8 +478,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.ShadowsOfEvil,
             Arrays.asList("The Detective", "Jackie", "Jackie V"),
             R.drawable.jackvincent_pfp,
-            games.Black_Ops_III,
-            games.Black_Ops_III
+            Games.Black_Ops_III,
+            Games.Black_Ops_III
     ),
     FloydCampbell(
             "Floyd Campbell",
@@ -491,8 +491,8 @@ public enum Player_Characters implements IStorylineItem
             Player_CharacterGroup.ShadowsOfEvil,
             Arrays.asList("The Boxer"),
             R.drawable.floydcampbell_pfp,
-            games.Black_Ops_III,
-            games.Black_Ops_III
+            Games.Black_Ops_III,
+            Games.Black_Ops_III
     );
 
 
@@ -525,8 +525,8 @@ public enum Player_Characters implements IStorylineItem
     public final Player_CharacterGroup playerCharacterGroup;
     public final List<String> characterNicknames;
     public final int characterImage;
-    public final games firstappearance;
-    public final games finalappearance;
+    public final Games firstappearance;
+    public final Games finalappearance;
 
 
     @Override
@@ -545,7 +545,7 @@ public enum Player_Characters implements IStorylineItem
     }
 
 
-    Player_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, Player_CharacterGroup playerCharacterGroup, List<String> characterNicknames, int characterImage, games firstappearance, games finalappearance)
+    Player_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, Player_CharacterGroup playerCharacterGroup, List<String> characterNicknames, int characterImage, Games firstappearance, Games finalappearance)
     {
         this.characterName = characterName;
         this.characterFirstName = characterFirstName;

@@ -16,7 +16,7 @@ import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapter;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
-import com.example.the_ultimate_easter_egg_guide.Models.games;
+import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.Player_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Enemy_Creatures;
@@ -31,7 +31,7 @@ import java.util.List;
 public class StorylineSelection_PAGE extends NavPageController_BaseClass implements StorylineCharacterAdapter.OnCharacterClickListener {
 
     private StorylineItems currentCategory;
-    private games selectedGame = null;
+    private Games selectedGame = null;
     private RecyclerView recyclerView;
     private GridLayoutManager gridLayoutManager;
 

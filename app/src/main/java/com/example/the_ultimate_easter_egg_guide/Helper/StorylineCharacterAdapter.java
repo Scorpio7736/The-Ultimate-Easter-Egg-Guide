@@ -23,7 +23,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_Charact
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CreatureGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.YoutuberGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
-import com.example.the_ultimate_easter_egg_guide.Models.games;
+import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
         this(category, enableTesting, null, listener);
     }
 
-    public StorylineCharacterAdapter(StorylineItems category, boolean enableTesting, games gameFilter, OnCharacterClickListener listener) {
+    public StorylineCharacterAdapter(StorylineItems category, boolean enableTesting, Games gameFilter, OnCharacterClickListener listener) {
         this.listener = listener;
 
         if (category == StorylineItems.Youtubers) {
@@ -64,7 +64,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
         }
     }
 
-    private void setupCharacterItems(StorylineItems category, boolean enableTesting, games gameFilter) {
+    private void setupCharacterItems(StorylineItems category, boolean enableTesting, Games gameFilter) {
         if (category == StorylineItems.PlayerCharacter) {
             for (Player_CharacterGroup group : Player_CharacterGroup.values()) {
                 if (enableTesting) {
@@ -79,7 +79,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
                         if (gameFilter == null) {
                             charactersInGroup.add(character);
                         } else {
-                            List<games> appearances = games.GetAllGamesBetween(character.firstappearance, character.finalappearance);
+                            List<Games> appearances = Games.GetAllGamesBetween(character.firstappearance, character.finalappearance);
                             if (appearances.contains(gameFilter) || character.finalappearance == gameFilter) {
                                 charactersInGroup.add(character);
                             }
@@ -107,7 +107,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
                             charactersInGroup.add(character);
                         } else {
                             // Use GetAllGamesBetween to see if they appeared in the filtered game
-                            List<games> appearances = games.GetAllGamesBetween(character.firstappearance, character.finalappearance);
+                            List<Games> appearances = Games.GetAllGamesBetween(character.firstappearance, character.finalappearance);
                             // Also need to check finalappearance because GetAllGamesBetween is exclusive of end
                             if (appearances.contains(gameFilter) || character.finalappearance == gameFilter) {
                                 charactersInGroup.add(character);
@@ -124,7 +124,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
         }
     }
 
-    private void setupCreatureItems(boolean enableTesting, games gameFilter) {
+    private void setupCreatureItems(boolean enableTesting, Games gameFilter) {
         for (CreatureGroups group : CreatureGroups.values()) {
             if (enableTesting) {
                 if (group != CreatureGroups.TEST) continue;
@@ -156,7 +156,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
         }
     }
 
-    private void setupGroupItems(boolean enableTesting, games gameFilter) {
+    private void setupGroupItems(boolean enableTesting, Games gameFilter) {
         List<Object> groupsInList = new ArrayList<>();
         for (Groups group : Groups.values()) {
             if (enableTesting) {
