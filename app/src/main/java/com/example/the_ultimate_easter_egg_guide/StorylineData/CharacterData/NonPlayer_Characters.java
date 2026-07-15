@@ -1,8 +1,8 @@
 package com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersion;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.NonPlayer_CharacterGroup;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersions;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.NonPlayer_CharacterGroups;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.R;
@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public enum NonPlayer_Characters implements IStorylineItem
+public enum NonPlayer_Characters implements IStorylineItems
 {
 
     TEST(
@@ -20,8 +20,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "Test",
             "Test",
             new Date(2000,1,1),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.TEST,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.TEST,
             Arrays.asList("Maxis"),
             R.drawable.default_test_image,
             Games.Test,
@@ -33,8 +33,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Maxis",
             new Date(),
-            CharacterVersion.Ultimis,
-            NonPlayer_CharacterGroup.Group935_Ultimis,
+            CharacterVersions.Ultimis,
+            NonPlayer_CharacterGroups.Group935_Ultimis,
             Arrays.asList("Maxis"),
             R.drawable.ludwigmaxis_pfp,
             Games.World_At_War,
@@ -46,8 +46,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Maxis",
             new Date(),
-            CharacterVersion.Ultimis,
-            NonPlayer_CharacterGroup.Group935_Ultimis,
+            CharacterVersions.Ultimis,
+            NonPlayer_CharacterGroups.Group935_Ultimis,
             Arrays.asList("Sam"),
             R.drawable.samanthamaxis_pfp,
             Games.World_At_War,
@@ -59,8 +59,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.Group935_Ultimis,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.Group935_Ultimis,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.Black_Ops_I,
@@ -72,8 +72,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Groph",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.Group935_Ultimis,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.Group935_Ultimis,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.Black_Ops_I,
@@ -85,8 +85,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Schuster",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.Group935_Ultimis,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.Group935_Ultimis,
             Arrays.asList(),
             R.drawable.schuster_pfp,
             Games.World_At_War,
@@ -98,8 +98,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Pernell",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.USGovernment,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.USGovernment,
             Arrays.asList("Peter's Handler"),
             R.drawable.blank_pfp,
             Games.World_At_War,
@@ -111,8 +111,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "McCain",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.USGovernment,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.USGovernment,
             Arrays.asList(),
             R.drawable.petermccain_pfp,
             Games.World_At_War,
@@ -124,8 +124,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Hale",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.BrokenArrow,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.BrokenArrow,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.Black_Ops_IV,
@@ -137,8 +137,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Sawyer",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.USGovernment,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.USGovernment,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.Black_Ops_IV,
@@ -150,8 +150,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.BrokenArrow,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.BrokenArrow,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.Black_Ops_IV,
@@ -163,8 +163,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Yena",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.SovietUnion,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.SovietUnion,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.Black_Ops_I,
@@ -176,8 +176,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Zavoyski",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.SovietUnion,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.SovietUnion,
             Arrays.asList(),
             R.drawable.yurizavoyski_pfp,
             Games.Black_Ops_I,
@@ -189,8 +189,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Gersh",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.SovietUnion,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.SovietUnion,
             Arrays.asList(),
             R.drawable.antongersh_pfp,
             Games.Black_Ops_I,
@@ -202,8 +202,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.Other,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.Other,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.Black_Ops_I,
@@ -215,8 +215,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.Other,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.Other,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.Black_Ops_I,
@@ -228,8 +228,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.Other,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.Other,
             Arrays.asList("The Giant"),
             R.drawable.leroy_pfp,
             Games.Black_Ops_II,
@@ -241,8 +241,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Monty",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.Agartha,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.Agartha,
             Arrays.asList("The Duck"),
             R.drawable.blank_pfp,
             Games.Black_Ops_III,
@@ -254,8 +254,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.DarkAther,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.DarkAther,
             Arrays.asList("Mr. Rapt"),
             R.drawable.shadowman_pfp,
             Games.Black_Ops_III,
@@ -267,8 +267,8 @@ public enum NonPlayer_Characters implements IStorylineItem
             "",
             "Marinus",
             new Date(),
-            CharacterVersion.Single,
-            NonPlayer_CharacterGroup.Group935TestSubject,
+            CharacterVersions.Single,
+            NonPlayer_CharacterGroups.Group935TestSubject,
             Arrays.asList("The Mexican"),
             R.drawable.pablomarinus_pfp,
             Games.Black_Ops_I,
@@ -295,8 +295,8 @@ public enum NonPlayer_Characters implements IStorylineItem
     public final String characterMiddleName;
     public final String characterLastName;
     public final Date characterBirthday;
-    public final CharacterVersion characterVersion;
-    public final NonPlayer_CharacterGroup nonPlayerCharacterGroup;
+    public final CharacterVersions characterVersions;
+    public final NonPlayer_CharacterGroups nonPlayerCharacterGroup;
     public final List<String> characterNicknames;
     public final int characterImage;
     public final Games firstappearance;
@@ -304,29 +304,29 @@ public enum NonPlayer_Characters implements IStorylineItem
 
 
     @Override
-    public int getCharacterImage() {
+    public int GetImage() {
         return characterImage;
     }
 
     @Override
-    public String getCharacterName() {
+    public String GetDisplayName() {
         return characterName;
     }
 
     @Override
-    public Object getCharacterGroup() {
+    public Object GetGroup() {
         return nonPlayerCharacterGroup;
     }
 
 
-    NonPlayer_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, NonPlayer_CharacterGroup nonPlayerCharacterGroup, List<String> characterNicknames, int characterImage, Games firstappearance, Games finalappearance)
+    NonPlayer_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersions characterVersion, NonPlayer_CharacterGroups nonPlayerCharacterGroup, List<String> characterNicknames, int characterImage, Games firstappearance, Games finalappearance)
     {
         this.characterName = characterName;
         this.characterFirstName = characterFirstName;
         this.characterMiddleName = characterMiddleName;
         this.characterLastName = characterLastName;
         this.characterBirthday = characterBirthday;
-        this.characterVersion = characterVersion;
+        this.characterVersions = characterVersion;
         this.nonPlayerCharacterGroup = nonPlayerCharacterGroup;
         this.characterNicknames = characterNicknames;
         this.characterImage = characterImage;

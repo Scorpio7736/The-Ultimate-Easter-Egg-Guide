@@ -1,6 +1,6 @@
 package com.example.the_ultimate_easter_egg_guide.Models.Storyline;
 
-public enum Player_CharacterGroup
+public enum Player_CharacterGroups
 {
     TEST,
     WAW_Nacht("World At War Nacht Der Untoten Crew"),
@@ -15,12 +15,12 @@ public enum Player_CharacterGroup
 
     public final String displayName;
 
-    Player_CharacterGroup(String displayName)
+    Player_CharacterGroups(String displayName)
     {
         this.displayName = displayName;
     }
 
-    Player_CharacterGroup()
+    Player_CharacterGroups()
     {
         this.displayName = this.name();
     }

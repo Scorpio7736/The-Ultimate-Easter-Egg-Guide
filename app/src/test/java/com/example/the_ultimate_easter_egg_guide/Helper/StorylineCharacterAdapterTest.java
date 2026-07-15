@@ -99,6 +99,33 @@ public class StorylineCharacterAdapterTest {
     }
 
     @Test
+    public void testItemsCategory() {
+        StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(
+                StorylineItems.Items,
+                false,
+                null
+        );
+
+        int itemCount = adapter.getItemCount();
+        assertTrue("Item count should be greater than 0", itemCount > 0);
+
+        boolean foundHeader = false;
+        boolean foundItem = false;
+
+        for (int i = 0; i < itemCount; i++) {
+            int viewType = adapter.getItemViewType(i);
+            if (viewType == 0) { // TYPE_HEADER
+                foundHeader = true;
+            } else if (viewType == 1) { // TYPE_CHARACTER
+                foundItem = true;
+            }
+        }
+
+        assertTrue("Should contain item group headers", foundHeader);
+        assertTrue("Should contain items", foundItem);
+    }
+
+    @Test
     public void testGroupsCategory() {
         StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(
                 StorylineItems.Groups,
@@ -183,6 +210,27 @@ public class StorylineCharacterAdapterTest {
         // Division 9 is only in BO3
         StorylineCharacterAdapter bo3Adapter = new StorylineCharacterAdapter(
                 StorylineItems.Groups,
+                false,
+                Games.Black_Ops_III,
+                null
+        );
+        assertTrue(bo3Adapter.getItemCount() > 0);
+    }
+
+    @Test
+    public void testGameFilteringForItems() {
+        // Juggernog is in WAW
+        StorylineCharacterAdapter wawAdapter = new StorylineCharacterAdapter(
+                StorylineItems.Items,
+                false,
+                Games.World_At_War,
+                null
+        );
+        assertTrue(wawAdapter.getItemCount() > 0);
+
+        // Widow's Wine is only in BO3
+        StorylineCharacterAdapter bo3Adapter = new StorylineCharacterAdapter(
+                StorylineItems.Items,
                 false,
                 Games.Black_Ops_III,
                 null

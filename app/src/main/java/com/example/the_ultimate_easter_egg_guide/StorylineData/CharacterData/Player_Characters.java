@@ -1,7 +1,7 @@
 package com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersion;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_CharacterGroup;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersions;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_CharacterGroups;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.R;
@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public enum Player_Characters implements IStorylineItem
+public enum Player_Characters implements IStorylineItems
 {
 
     TestCharacter(
@@ -19,8 +19,8 @@ public enum Player_Characters implements IStorylineItem
             "Test_Middle",
             "Test_Last",
             new Date(2000,1,1),
-            CharacterVersion.Single,
-            Player_CharacterGroup.TEST,
+            CharacterVersions.Single,
+            Player_CharacterGroups.TEST,
             Arrays.asList("Test_Nickname_1", "Test_Nickname_2"),
             R.drawable.default_test_image,
             Games.Test,
@@ -32,8 +32,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Richtofen",
             new Date(),
-            CharacterVersion.Primis,
-            Player_CharacterGroup.Primis,
+            CharacterVersions.Primis,
+            Player_CharacterGroups.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.richtofen_primis_pfp,
             Games.World_At_War,
@@ -45,8 +45,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Richtofen",
             new Date(),
-            CharacterVersion.Ultimis,
-            Player_CharacterGroup.Ultimis,
+            CharacterVersions.Ultimis,
+            Player_CharacterGroups.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.richtofen_ultimis_pfp,
             Games.World_At_War,
@@ -58,8 +58,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Dempsey",
             new Date(),
-            CharacterVersion.Primis,
-            Player_CharacterGroup.Primis,
+            CharacterVersions.Primis,
+            Player_CharacterGroups.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.dempsey_primis_pfp,
             Games.Black_Ops_II,
@@ -71,8 +71,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Dempsey",
             new Date(),
-            CharacterVersion.Ultimis,
-            Player_CharacterGroup.Ultimis,
+            CharacterVersions.Ultimis,
+            Player_CharacterGroups.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.dempsey_ultimis_pfp,
             Games.World_At_War,
@@ -84,8 +84,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Belinski",
             new Date(),
-            CharacterVersion.Primis,
-            Player_CharacterGroup.Primis,
+            CharacterVersions.Primis,
+            Player_CharacterGroups.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.nikoli_primis_pfp,
             Games.Black_Ops_II,
@@ -97,8 +97,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Belinski",
             new Date(),
-            CharacterVersion.Ultimis,
-            Player_CharacterGroup.Ultimis,
+            CharacterVersions.Ultimis,
+            Player_CharacterGroups.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.nikoli_ultimis_pfp,
             Games.World_At_War,
@@ -110,8 +110,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Masaki",
             new Date(),
-            CharacterVersion.Primis,
-            Player_CharacterGroup.Primis,
+            CharacterVersions.Primis,
+            Player_CharacterGroups.Primis,
             Arrays.asList(" ", " ", " "),
             R.drawable.takeo_primis_pfp,
             Games.Black_Ops_II,
@@ -123,8 +123,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Masaki",
             new Date(),
-            CharacterVersion.Ultimis,
-            Player_CharacterGroup.Ultimis,
+            CharacterVersions.Ultimis,
+            Player_CharacterGroups.Ultimis,
             Arrays.asList(" ", " ", " "),
             R.drawable.takeo_ultimis_pfp,
             Games.World_At_War,
@@ -136,8 +136,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Briarton",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.Victis,
+            CharacterVersions.Single,
+            Player_CharacterGroups.Victis,
             Arrays.asList("Misty", "Lady"),
             R.drawable.misty_pfp,
             Games.Black_Ops_II,
@@ -149,8 +149,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Johnson",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.Victis,
+            CharacterVersions.Single,
+            Player_CharacterGroups.Victis,
             Arrays.asList("Marly", "Darlington", "Brain-Box"),
             R.drawable.marlton_pfp,
             Games.Black_Ops_II,
@@ -162,8 +162,8 @@ public enum Player_Characters implements IStorylineItem
             "J",
             "Stuhlinger",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.Victis,
+            CharacterVersions.Single,
+            Player_CharacterGroups.Victis,
             Arrays.asList("Stu", "Stupid-ger", "Stewie", "Sammy", "Stuhlicker"),
             R.drawable.stuhlinger_pfp,
             Games.Black_Ops_II,
@@ -175,8 +175,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.Victis,
+            CharacterVersions.Single,
+            Player_CharacterGroups.Victis,
             Arrays.asList("Russ", "Old Man"),
             R.drawable.russman_pfp,
             Games.Black_Ops_II,
@@ -188,8 +188,8 @@ public enum Player_Characters implements IStorylineItem
             "Fitzgerald",
             "Kennedy",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.FIVE,
+            CharacterVersions.Single,
+            Player_CharacterGroups.FIVE,
             Arrays.asList("Jack", "JFK", "Lancer"),
             R.drawable.jfk_pfp,
             Games.Black_Ops_I,
@@ -201,8 +201,8 @@ public enum Player_Characters implements IStorylineItem
             "Milhous",
             "Nixon",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.FIVE,
+            CharacterVersions.Single,
+            Player_CharacterGroups.FIVE,
             Arrays.asList("Dick", "Dickie", "Dickie Nix", "Tricky Dick"),
             R.drawable.richardnixon_pfp,
             Games.Black_Ops_I,
@@ -214,8 +214,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "McNamara",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.FIVE,
+            CharacterVersions.Single,
+            Player_CharacterGroups.FIVE,
             Arrays.asList("Bob"),
             R.drawable.robertmcnamara_pfp,
             Games.Black_Ops_I,
@@ -227,8 +227,8 @@ public enum Player_Characters implements IStorylineItem
             "Alejandro",
             "Castro Ruz",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.FIVE,
+            CharacterVersions.Single,
+            Player_CharacterGroups.FIVE,
             Arrays.asList(),
             R.drawable.fidelcastro_pfp,
             Games.Black_Ops_I,
@@ -240,8 +240,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Arlington",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.MobOfTheDead,
+            CharacterVersions.Single,
+            Player_CharacterGroups.MobOfTheDead,
             Arrays.asList("The Weasel"),
             R.drawable.weasel_pfp,
             Games.Black_Ops_II,
@@ -253,8 +253,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "O'Leary",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.MobOfTheDead,
+            CharacterVersions.Single,
+            Player_CharacterGroups.MobOfTheDead,
             Arrays.asList("Finn"),
             R.drawable.finn_pfp,
             Games.Black_Ops_II,
@@ -266,8 +266,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "DeLuca",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.MobOfTheDead,
+            CharacterVersions.Single,
+            Player_CharacterGroups.MobOfTheDead,
             Arrays.asList("Sal", "Mr.DeLuca"),
             R.drawable.sal_pfp,
             Games.Black_Ops_II,
@@ -279,8 +279,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Handsome",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.MobOfTheDead,
+            CharacterVersions.Single,
+            Player_CharacterGroups.MobOfTheDead,
             Arrays.asList(),
             R.drawable.billy_pfp,
             Games.Black_Ops_II,
@@ -292,8 +292,8 @@ public enum Player_Characters implements IStorylineItem
             "Michelle",
             "Gellar",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.CallOfTheDead,
+            CharacterVersions.Single,
+            Player_CharacterGroups.CallOfTheDead,
             Arrays.asList(),
             R.drawable.sarahmichellegellar_pfp,
             Games.Black_Ops_I,
@@ -305,8 +305,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "England",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.CallOfTheDead,
+            CharacterVersions.Single,
+            Player_CharacterGroups.CallOfTheDead,
             Arrays.asList(),
             R.drawable.robertengland_pfp,
             Games.Black_Ops_I,
@@ -318,8 +318,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Trejo",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.CallOfTheDead,
+            CharacterVersions.Single,
+            Player_CharacterGroups.CallOfTheDead,
             Arrays.asList(),
             R.drawable.dannytrejo_pfp,
             Games.Black_Ops_I,
@@ -331,8 +331,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Rooker",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.CallOfTheDead,
+            CharacterVersions.Single,
+            Player_CharacterGroups.CallOfTheDead,
             Arrays.asList(),
             R.drawable.michaelrooker_pfp,
             Games.Black_Ops_I,
@@ -344,8 +344,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.WAW_Nacht,
+            CharacterVersions.Single,
+            Player_CharacterGroups.WAW_Nacht,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.World_At_War,
@@ -357,8 +357,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.WAW_Nacht,
+            CharacterVersions.Single,
+            Player_CharacterGroups.WAW_Nacht,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.World_At_War,
@@ -370,8 +370,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.WAW_Nacht,
+            CharacterVersions.Single,
+            Player_CharacterGroups.WAW_Nacht,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.World_At_War,
@@ -383,8 +383,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.WAW_Nacht,
+            CharacterVersions.Single,
+            Player_CharacterGroups.WAW_Nacht,
             Arrays.asList(),
             R.drawable.blank_pfp,
             Games.World_At_War,
@@ -396,8 +396,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Dempsey",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.WAW_Verruckt,
+            CharacterVersions.Single,
+            Player_CharacterGroups.WAW_Verruckt,
             Arrays.asList("Tank"),
             R.drawable.tankdempsey_verruckt_pfp,
             Games.World_At_War,
@@ -409,8 +409,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Banana",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.WAW_Verruckt,
+            CharacterVersions.Single,
+            Player_CharacterGroups.WAW_Verruckt,
             Arrays.asList(),
             R.drawable.johnbanana_pfp,
             Games.World_At_War,
@@ -422,8 +422,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.WAW_Verruckt,
+            CharacterVersions.Single,
+            Player_CharacterGroups.WAW_Verruckt,
             Arrays.asList("Smokey"),
             R.drawable.smokey_pfp,
             Games.World_At_War,
@@ -435,8 +435,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Ridge",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.WAW_Verruckt,
+            CharacterVersions.Single,
+            Player_CharacterGroups.WAW_Verruckt,
             Arrays.asList(),
             R.drawable.paxtonridge_pfp,
             Games.World_At_War,
@@ -448,8 +448,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Blackstone",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.ShadowsOfEvil,
+            CharacterVersions.Single,
+            Player_CharacterGroups.ShadowsOfEvil,
             Arrays.asList("The Magician", "The Amazing Nero"),
             R.drawable.neroblackstone_pfp,
             Games.Black_Ops_III,
@@ -461,8 +461,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Rose",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.ShadowsOfEvil,
+            CharacterVersions.Single,
+            Player_CharacterGroups.ShadowsOfEvil,
             Arrays.asList("The Femme Fatale"),
             R.drawable.jessicarose_pfp,
             Games.Black_Ops_III,
@@ -474,8 +474,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Vincent",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.ShadowsOfEvil,
+            CharacterVersions.Single,
+            Player_CharacterGroups.ShadowsOfEvil,
             Arrays.asList("The Detective", "Jackie", "Jackie V"),
             R.drawable.jackvincent_pfp,
             Games.Black_Ops_III,
@@ -487,8 +487,8 @@ public enum Player_Characters implements IStorylineItem
             "",
             "Campbell",
             new Date(),
-            CharacterVersion.Single,
-            Player_CharacterGroup.ShadowsOfEvil,
+            CharacterVersions.Single,
+            Player_CharacterGroups.ShadowsOfEvil,
             Arrays.asList("The Boxer"),
             R.drawable.floydcampbell_pfp,
             Games.Black_Ops_III,
@@ -521,8 +521,8 @@ public enum Player_Characters implements IStorylineItem
     public final String characterMiddleName;
     public final String characterLastName;
     public final Date characterBirthday;
-    public final CharacterVersion characterVersion;
-    public final Player_CharacterGroup playerCharacterGroup;
+    public final CharacterVersions characterVersions;
+    public final Player_CharacterGroups playerCharacterGroup;
     public final List<String> characterNicknames;
     public final int characterImage;
     public final Games firstappearance;
@@ -530,29 +530,29 @@ public enum Player_Characters implements IStorylineItem
 
 
     @Override
-    public int getCharacterImage() {
+    public int GetImage() {
         return characterImage;
     }
 
     @Override
-    public String getCharacterName() {
+    public String GetDisplayName() {
         return characterName;
     }
 
     @Override
-    public Object getCharacterGroup() {
+    public Object GetGroup() {
         return playerCharacterGroup;
     }
 
 
-    Player_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersion characterVersion, Player_CharacterGroup playerCharacterGroup, List<String> characterNicknames, int characterImage, Games firstappearance, Games finalappearance)
+    Player_Characters(String characterName, String characterFirstName, String characterMiddleName, String characterLastName, Date characterBirthday, CharacterVersions characterVersion, Player_CharacterGroups playerCharacterGroup, List<String> characterNicknames, int characterImage, Games firstappearance, Games finalappearance)
     {
         this.characterName = characterName;
         this.characterFirstName = characterFirstName;
         this.characterMiddleName = characterMiddleName;
         this.characterLastName = characterLastName;
         this.characterBirthday = characterBirthday;
-        this.characterVersion = characterVersion;
+        this.characterVersions = characterVersion;
         this.playerCharacterGroup = playerCharacterGroup;
         this.characterNicknames = characterNicknames;
         this.characterImage = characterImage;

@@ -6,6 +6,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -15,6 +16,7 @@ import com.example.the_ultimate_easter_egg_guide.Pages.MapsSelection_Page;
 import com.example.the_ultimate_easter_egg_guide.Pages.Settings_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.StorylineSelection_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.Tools_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ItemGroups;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.ArrayList;
@@ -56,11 +58,18 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
     }
 
     protected void setGameFilterVisibility(boolean visible) {
-        View title = findViewById(R.id.game_filter_title);
+        setGameFilterVisibility(visible, "Filter by Game");
+    }
+
+    protected void setGameFilterVisibility(boolean visible, String titleText) {
+        TextView title = findViewById(R.id.game_filter_title);
         View spinner = findViewById(R.id.game_filter_spinner);
         int visibility = visible ? View.VISIBLE : View.GONE;
         
-        if (title != null) title.setVisibility(visibility);
+        if (title != null) {
+            title.setVisibility(visibility);
+            title.setText(titleText);
+        }
         if (spinner != null) spinner.setVisibility(visibility);
     }
 
@@ -68,37 +77,53 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
         void onGameSelected(@Nullable Games selectedGame);
     }
 
-    protected void setupGameFilter(OnGameSelectedListener listener) {
-        Spinner gameFilterSpinner = findViewById(R.id.game_filter_spinner);
-        if (gameFilterSpinner == null) return;
+    protected interface OnFilterSelectedListener<T> {
+        void onFilterSelected(@Nullable T selectedItem);
+    }
 
-        List<String> gameNames = new ArrayList<>();
-        gameNames.add("All Games");
-        for (Games game : Games.values()) {
-            if (ENABLE_TESTING || game != Games.Test) {
-                gameNames.add(game.gameName);
+    protected void setupGameFilter(OnGameSelectedListener listener) {
+        setupFilter(Games.class, "All Games", (OnFilterSelectedListener<Games>) listener::onGameSelected);
+    }
+
+    protected <T extends Enum<T>> void setupFilter(Class<T> enumClass, String allOptionText, OnFilterSelectedListener<T> listener) {
+        Spinner filterSpinner = findViewById(R.id.game_filter_spinner);
+        if (filterSpinner == null) return;
+
+        List<String> displayNames = new ArrayList<>();
+        displayNames.add(allOptionText);
+        
+        T[] enumConstants = enumClass.getEnumConstants();
+        List<T> filteredConstants = new ArrayList<>();
+        
+        if (enumConstants != null) {
+            for (T constant : enumConstants) {
+                // Special handling for Games which has a gameName field
+                String displayName = constant.name();
+                if (constant instanceof Games) {
+                    if (!ENABLE_TESTING && constant == Games.Test) continue;
+                    displayName = ((Games) constant).gameName;
+                } else if (constant instanceof ItemGroups) {
+                    if (!ENABLE_TESTING && constant == ItemGroups.TEST) continue;
+                    displayName = ((ItemGroups) constant).displayName;
+                }
+                
+                displayNames.add(displayName);
+                filteredConstants.add(constant);
             }
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, gameNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, displayNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        gameFilterSpinner.setAdapter(adapter);
+        filterSpinner.setAdapter(adapter);
 
-        gameFilterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        filterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Games selectedGame = null;
+                T selectedItem = null;
                 if (position != 0) {
-                    int gameIndex = position - 1;
-                    List<Games> availableGames = new ArrayList<>();
-                    for (Games g : Games.values()) {
-                        if (ENABLE_TESTING || g != Games.Test) {
-                            availableGames.add(g);
-                        }
-                    }
-                    selectedGame = availableGames.get(gameIndex);
+                    selectedItem = filteredConstants.get(position - 1);
                 }
-                if (listener != null) listener.onGameSelected(selectedGame);
+                if (listener != null) listener.onFilterSelected(selectedItem);
             }
 
             @Override

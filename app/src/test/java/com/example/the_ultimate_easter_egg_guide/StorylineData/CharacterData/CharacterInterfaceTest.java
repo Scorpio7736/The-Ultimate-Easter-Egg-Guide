@@ -4,10 +4,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_CharacterGroup;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.Player_CharacterGroups;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.NonPlayer_CharacterGroup;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.NonPlayer_CharacterGroups;
 
 import org.junit.Test;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class CharacterInterfaceTest {
 
     @Test
     public void testPolymorphicCharacterList() {
-        List<IStorylineItem> characters = new ArrayList<>();
+        List<IStorylineItems> characters = new ArrayList<>();
         
         // Add a Player Character
         characters.add(Player_Characters.EdwardRichtofen_Primis);
@@ -26,52 +26,52 @@ public class CharacterInterfaceTest {
 
         assertEquals(2, characters.size());
 
-        for (IStorylineItem character : characters) {
-            assertNotNull("Name should be accessible via interface", character.getCharacterName());
-            assertNotNull("Group should be accessible via interface", character.getCharacterGroup());
-            assertTrue("Image ID should be valid", character.getCharacterImage() != 0);
+        for (IStorylineItems character : characters) {
+            assertNotNull("Name should be accessible via interface", character.GetDisplayName());
+            assertNotNull("Group should be accessible via interface", character.GetGroup());
+            assertTrue("Image ID should be valid", character.GetImage() != 0);
         }
     }
 
     @Test
     public void testPlayerCharacterInterfaceImplementation() {
-        IStorylineItem character = Player_Characters.EdwardRichtofen_Primis;
+        IStorylineItems character = Player_Characters.EdwardRichtofen_Primis;
         
-        assertEquals("Dr. Edward Richtofen", character.getCharacterName());
-        assertEquals(Player_CharacterGroup.Primis, character.getCharacterGroup());
+        assertEquals("Dr. Edward Richtofen", character.GetDisplayName());
+        assertEquals(Player_CharacterGroups.Primis, character.GetGroup());
         // Verify field matches getter
-        assertEquals(Player_Characters.EdwardRichtofen_Primis.characterName, character.getCharacterName());
-        assertEquals(Player_Characters.EdwardRichtofen_Primis.playerCharacterGroup, character.getCharacterGroup());
+        assertEquals(Player_Characters.EdwardRichtofen_Primis.characterName, character.GetDisplayName());
+        assertEquals(Player_Characters.EdwardRichtofen_Primis.playerCharacterGroup, character.GetGroup());
     }
 
     @Test
     public void testNonPlayerCharacterInterfaceImplementation() {
-        IStorylineItem character = NonPlayer_Characters.LudwigMaxis_Ultimis;
+        IStorylineItems character = NonPlayer_Characters.LudwigMaxis_Ultimis;
         
-        assertEquals("Dr. Ludwig Maxis", character.getCharacterName());
-        assertEquals(NonPlayer_CharacterGroup.Group935_Ultimis, character.getCharacterGroup());
+        assertEquals("Dr. Ludwig Maxis", character.GetDisplayName());
+        assertEquals(NonPlayer_CharacterGroups.Group935_Ultimis, character.GetGroup());
         // Verify field matches getter
-        assertEquals(NonPlayer_Characters.LudwigMaxis_Ultimis.characterName, character.getCharacterName());
-        assertEquals(NonPlayer_Characters.LudwigMaxis_Ultimis.nonPlayerCharacterGroup, character.getCharacterGroup());
+        assertEquals(NonPlayer_Characters.LudwigMaxis_Ultimis.characterName, character.GetDisplayName());
+        assertEquals(NonPlayer_Characters.LudwigMaxis_Ultimis.nonPlayerCharacterGroup, character.GetGroup());
     }
 
     @Test
     public void testAllPlayerCharactersImplementInterface() {
         for (Player_Characters pc : Player_Characters.values()) {
-            assertTrue(pc instanceof IStorylineItem);
-            IStorylineItem character = (IStorylineItem) pc;
-            assertEquals(pc.characterName, character.getCharacterName());
-            assertEquals(pc.playerCharacterGroup, character.getCharacterGroup());
+            assertTrue(pc instanceof IStorylineItems);
+            IStorylineItems character = (IStorylineItems) pc;
+            assertEquals(pc.characterName, character.GetDisplayName());
+            assertEquals(pc.playerCharacterGroup, character.GetGroup());
         }
     }
 
     @Test
     public void testAllNonPlayerCharactersImplementInterface() {
         for (NonPlayer_Characters npc : NonPlayer_Characters.values()) {
-            assertTrue(npc instanceof IStorylineItem);
-            IStorylineItem character = (IStorylineItem) npc;
-            assertEquals(npc.characterName, character.getCharacterName());
-            assertEquals(npc.nonPlayerCharacterGroup, character.getCharacterGroup());
+            assertTrue(npc instanceof IStorylineItems);
+            IStorylineItems character = (IStorylineItems) npc;
+            assertEquals(npc.characterName, character.GetDisplayName());
+            assertEquals(npc.nonPlayerCharacterGroup, character.GetGroup());
         }
     }
 }

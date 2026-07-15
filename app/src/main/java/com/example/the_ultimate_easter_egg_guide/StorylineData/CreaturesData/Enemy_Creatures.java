@@ -1,14 +1,14 @@
 package com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CreatureGroups;
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.Arrays;
 import java.util.List;
 
-public enum Enemy_Creatures implements IStorylineItem
+public enum Enemy_Creatures implements IStorylineItems
 {
     Test("Test Creature", R.drawable.app_icon, CreatureGroups.TEST, Arrays.asList(Games.Test), ""),
     Zombie("Zombie", R.drawable.app_icon, CreatureGroups.StandardEnemy, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_VII), "Zombie"),
@@ -76,17 +76,17 @@ public enum Enemy_Creatures implements IStorylineItem
     public final String fandomLink;
 
     @Override
-    public int getCharacterImage() {
+    public int GetImage() {
         return creatureCover;
     }
 
     @Override
-    public String getCharacterName() {
+    public String GetDisplayName() {
         return displayName;
     }
 
     @Override
-    public Object getCharacterGroup() {
+    public Object GetGroup() {
         return creatureGroup;
     }
 

@@ -1,6 +1,6 @@
 package com.example.the_ultimate_easter_egg_guide.Models.Storyline;
 
-public enum NonPlayer_CharacterGroup
+public enum NonPlayer_CharacterGroups
 {
     TEST,
     Primis,
@@ -27,12 +27,12 @@ public enum NonPlayer_CharacterGroup
 
     public final String displayName;
 
-    NonPlayer_CharacterGroup(String displayName)
+    NonPlayer_CharacterGroups(String displayName)
     {
         this.displayName = displayName;
     }
 
-    NonPlayer_CharacterGroup()
+    NonPlayer_CharacterGroups()
     {
         this.displayName = this.name();
     }

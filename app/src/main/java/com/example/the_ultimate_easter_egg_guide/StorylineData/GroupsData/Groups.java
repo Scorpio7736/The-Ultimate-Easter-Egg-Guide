@@ -1,13 +1,13 @@
 package com.example.the_ultimate_easter_egg_guide.StorylineData.GroupsData;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.Arrays;
 import java.util.List;
 
-public enum Groups implements IStorylineItem
+public enum Groups implements IStorylineItems
 {
     TEST("TEST", R.drawable.app_icon, Arrays.asList(Games.Test), "Category:Organizations"),
     Group935("Group 935", R.drawable.app_icon, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_IV), "Group_935"),
@@ -38,17 +38,17 @@ public enum Groups implements IStorylineItem
     }
 
     @Override
-    public int getCharacterImage() {
+    public int GetImage() {
         return groupImage;
     }
 
     @Override
-    public String getCharacterName() {
+    public String GetDisplayName() {
         return displayName;
     }
 
     @Override
-    public Object getCharacterGroup() {
+    public Object GetGroup() {
         return "Organization";
     }
 }

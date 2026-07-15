@@ -33,9 +33,9 @@ public class EnemyCreaturesTest {
     @Test
     public void testInterfaceImplementation() {
         for (Enemy_Creatures creature : Enemy_Creatures.values()) {
-            assertEquals(creature.displayName, creature.getCharacterName());
-            assertEquals(creature.creatureCover, creature.getCharacterImage());
-            assertEquals(creature.creatureGroup, creature.getCharacterGroup());
+            assertEquals(creature.displayName, creature.GetDisplayName());
+            assertEquals(creature.creatureCover, creature.GetImage());
+            assertEquals(creature.creatureGroup, creature.GetGroup());
         }
     }
 

@@ -1,10 +1,10 @@
 package com.example.the_ultimate_easter_egg_guide.StorylineData.CodZombiesYoutubersData;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.YoutuberGroups;
 import com.example.the_ultimate_easter_egg_guide.R;
 
-public enum CodZombies_Youtubers implements IStorylineItem
+public enum CodZombies_Youtubers implements IStorylineItems
 {
     TEST("TestTuber", YoutuberGroups.TEST, R.drawable.default_test_image, "shorts/aM4kt6OgvVo"),
     BLACK_OPS_AMAZING("BlackOpsAmazing", YoutuberGroups.Storyline, R.drawable.blackopsamazing_pfp, "@BlackOpsAmazing"),
@@ -48,17 +48,17 @@ public enum CodZombies_Youtubers implements IStorylineItem
     }
 
     @Override
-    public int getCharacterImage() {
+    public int GetImage() {
         return characterImage;
     }
 
     @Override
-    public String getCharacterName() {
+    public String GetDisplayName() {
         return channelName;
     }
 
     @Override
-    public Object getCharacterGroup() {
+    public Object GetGroup() {
         return youtuberGroup;
     }
 }

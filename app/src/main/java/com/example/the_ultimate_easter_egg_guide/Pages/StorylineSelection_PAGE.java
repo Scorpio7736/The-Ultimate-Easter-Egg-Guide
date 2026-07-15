@@ -16,12 +16,14 @@ import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapter;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ItemGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.Player_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Enemy_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Friendly_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.GroupsData.Groups;
+import com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData.Items;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CodZombiesYoutubersData.CodZombies_Youtubers;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -32,6 +34,7 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
 
     private StorylineItems currentCategory;
     private Games selectedGame = null;
+    private ItemGroups selectedItemGroup = null;
     private RecyclerView recyclerView;
     private GridLayoutManager gridLayoutManager;
 
@@ -47,10 +50,6 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
         recyclerView.setLayoutManager(gridLayoutManager);
 
         setupCategorySpinner();
-        setupGameFilter(game -> {
-            selectedGame = game;
-            loadCategoryData(currentCategory);
-        });
     }
 
     private void setupCategorySpinner() {
@@ -79,23 +78,43 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
     }
 
     private void loadCategoryData(StorylineItems category) {
-        boolean showFilter = category == StorylineItems.Creatures || 
-                           category == StorylineItems.Groups || 
-                           category == StorylineItems.NonPlayerCharacter || 
-                           category == StorylineItems.PlayerCharacter;
+        boolean showGameFilter = category == StorylineItems.Creatures || 
+                               category == StorylineItems.Groups || 
+                               category == StorylineItems.NonPlayerCharacter || 
+                               category == StorylineItems.PlayerCharacter;
         
-        setGameFilterVisibility(showFilter);
-        if (!showFilter) {
+        boolean showGroupFilter = category == StorylineItems.Items;
+
+        if (showGameFilter) {
+            setGameFilterVisibility(true, "Filter by Game");
+            setupGameFilter(game -> {
+                selectedGame = game;
+                refreshAdapter();
+            });
+        } else if (showGroupFilter) {
+            setGameFilterVisibility(true, "Filter by Group");
+            setupFilter(ItemGroups.class, "All Groups", group -> {
+                selectedItemGroup = group;
+                refreshAdapter();
+            });
+        } else {
+            setGameFilterVisibility(false);
             selectedGame = null;
+            selectedItemGroup = null;
         }
 
-        if (category == StorylineItems.PlayerCharacter || 
-            category == StorylineItems.NonPlayerCharacter || 
-            category == StorylineItems.Youtubers ||
-            category == StorylineItems.Creatures ||
-            category == StorylineItems.Groups) {
+        refreshAdapter();
+    }
+
+    private void refreshAdapter() {
+        if (currentCategory == StorylineItems.PlayerCharacter || 
+            currentCategory == StorylineItems.NonPlayerCharacter || 
+            currentCategory == StorylineItems.Youtubers ||
+            currentCategory == StorylineItems.Creatures ||
+            currentCategory == StorylineItems.Items ||
+            currentCategory == StorylineItems.Groups) {
             
-            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(category, ENABLE_TESTING, selectedGame, this);
+            StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(currentCategory, ENABLE_TESTING, selectedGame, selectedItemGroup, this);
             gridLayoutManager.setSpanSizeLookup(adapter.getSpanSizeLookup());
             recyclerView.setAdapter(adapter);
             recyclerView.scheduleLayoutAnimation();
@@ -145,6 +164,16 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
     public void onGroupClick(Groups group) {
         if (group.fandomLink != null && !group.fandomLink.isEmpty()) {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(group.fandomLink));
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Fandom link not available", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onItemClick(Items item) {
+        if (item.fandomLink != null && !item.fandomLink.isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.fandomLink));
             startActivity(intent);
         } else {
             Toast.makeText(this, "Fandom link not available", Toast.LENGTH_SHORT).show();

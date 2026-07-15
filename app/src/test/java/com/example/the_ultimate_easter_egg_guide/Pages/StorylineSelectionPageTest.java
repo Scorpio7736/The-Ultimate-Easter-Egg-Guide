@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.test.core.app.ActivityScenario;
@@ -20,6 +21,8 @@ import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.Pla
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Enemy_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Friendly_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.GroupsData.Groups;
+import com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData.Items;
+import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ItemGroups;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CodZombiesYoutubersData.CodZombies_Youtubers;
 
 import org.junit.Test;
@@ -152,6 +155,21 @@ public class StorylineSelectionPageTest {
     }
 
     @Test
+    public void testOnItemClick() {
+        try (ActivityScenario<StorylineSelection_PAGE> scenario = ActivityScenario.launch(StorylineSelection_PAGE.class)) {
+            scenario.onActivity(activity -> {
+                Items item = Items.JUGGERNOG;
+                activity.onItemClick(item);
+                
+                Intent actualIntent = shadowOf(activity).getNextStartedActivity();
+                assertNotNull(actualIntent);
+                assertEquals(Intent.ACTION_VIEW, actualIntent.getAction());
+                assertEquals(Uri.parse(item.fandomLink), actualIntent.getData());
+            });
+        }
+    }
+
+    @Test
     public void testGameFilterVisibilityByCategory() {
         try (ActivityScenario<StorylineSelection_PAGE> scenario = ActivityScenario.launch(StorylineSelection_PAGE.class)) {
             scenario.onActivity(activity -> {
@@ -189,7 +207,22 @@ public class StorylineSelectionPageTest {
                 if (creatureIndex != -1) {
                     categorySpinner.setSelection(creatureIndex);
                     assertEquals(View.VISIBLE, gameFilterSpinner.getVisibility());
-                    assertEquals(View.VISIBLE, gameFilterTitle.getVisibility());
+                    assertEquals("Filter by Game", ((TextView) activity.findViewById(R.id.game_filter_title)).getText().toString());
+                }
+
+                // Switch to Items (should be "Filter by Group")
+                int itemsIndex = -1;
+                for (int i = 0; i < categorySpinner.getAdapter().getCount(); i++) {
+                    if (categorySpinner.getAdapter().getItem(i).toString().equalsIgnoreCase("Items")) {
+                        itemsIndex = i;
+                        break;
+                    }
+                }
+
+                if (itemsIndex != -1) {
+                    categorySpinner.setSelection(itemsIndex);
+                    assertEquals(View.VISIBLE, gameFilterSpinner.getVisibility());
+                    assertEquals("Filter by Group", ((TextView) activity.findViewById(R.id.game_filter_title)).getText().toString());
                 }
             });
         }
