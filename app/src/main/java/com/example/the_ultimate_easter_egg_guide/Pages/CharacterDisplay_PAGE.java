@@ -2,8 +2,8 @@ package com.example.the_ultimate_easter_egg_guide.Pages;
 
 import android.os.Bundle;
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
-import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.Player_Characters;
-import com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData.NonPlayer_Characters;
+import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.Player_Characters;
+import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 public class CharacterDisplay_PAGE extends PageController_BaseClass {

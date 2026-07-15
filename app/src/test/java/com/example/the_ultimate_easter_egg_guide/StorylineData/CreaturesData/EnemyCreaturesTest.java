@@ -1,10 +1,9 @@
-package com.example.the_ultimate_easter_egg_guide.Storyline.CreaturesData;
+package com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
 import com.example.the_ultimate_easter_egg_guide.Models.games;
 import com.example.the_ultimate_easter_egg_guide.R;
 

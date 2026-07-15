@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData;
+package com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CharacterVersion;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;

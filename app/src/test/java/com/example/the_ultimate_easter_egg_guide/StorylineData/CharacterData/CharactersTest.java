@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide.Storyline.CharacterData;
+package com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

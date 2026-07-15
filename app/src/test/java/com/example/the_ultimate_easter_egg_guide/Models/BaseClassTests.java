@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.robolectric.Shadows.shadowOf;
 
 import android.content.Intent;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -88,6 +89,24 @@ public class BaseClassTests {
                 Intent settingsIntent = shadowOf(activity).getNextStartedActivity();
                 assertNotNull(settingsIntent);
                 assertEquals(Settings_PAGE.class.getName(), settingsIntent.getComponent().getClassName());
+            });
+        }
+    }
+
+    @Test
+    public void testGameFilterVisibilityLogic() {
+        try (ActivityScenario<StorylineSelection_PAGE> scenario = ActivityScenario.launch(StorylineSelection_PAGE.class)) {
+            scenario.onActivity(activity -> {
+                View title = activity.findViewById(R.id.game_filter_title);
+                View spinner = activity.findViewById(R.id.game_filter_spinner);
+                
+                activity.setGameFilterVisibility(true);
+                assertEquals(View.VISIBLE, title.getVisibility());
+                assertEquals(View.VISIBLE, spinner.getVisibility());
+                
+                activity.setGameFilterVisibility(false);
+                assertEquals(View.GONE, title.getVisibility());
+                assertEquals(View.GONE, spinner.getVisibility());
             });
         }
     }

@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide.Storyline.CreaturesData;
+package com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.CreatureGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItem;
@@ -43,7 +43,11 @@ public enum Enemy_Creatures implements IStorylineItem
     ValkyrieDrone("Valkyrie Drone", R.drawable.app_icon, CreatureGroups.Special, Arrays.asList(games.Black_Ops_III), "Valkyrie_Drone"),
     Dragon("Dragon", R.drawable.app_icon, CreatureGroups.Special, Arrays.asList(games.Black_Ops_III), "Dragon_(Black_Ops_III)"),
     NikoliMech("Nikolai's Mech", R.drawable.app_icon, CreatureGroups.Boss, Arrays.asList(games.Black_Ops_III), "Nikolai_Belinski_(Ultimis)"),
-    Furies("Furies", R.drawable.app_icon, CreatureGroups.Special, Arrays.asList(games.Black_Ops_III, games.Black_Ops_IV), "Fury");
+    Furies("Furies", R.drawable.app_icon, CreatureGroups.Special, Arrays.asList(games.Black_Ops_III, games.Black_Ops_IV), "Fury"),
+    CorruptedKeeper("Corrupted Keeper", R.drawable.app_icon, CreatureGroups.Special, Arrays.asList(games.Black_Ops_III), "Keeper"),
+    CosmicSilverback("Cosmic Silverback", R.drawable.app_icon, CreatureGroups.Boss, Arrays.asList(games.Black_Ops_I, games.Black_Ops_III), "Cosmic_Silverback"),
+    ElderGod("Apothicon Elder God", R.drawable.app_icon, CreatureGroups.Boss, Arrays.asList(games.Black_Ops_III), "Apothicon");
+
     //BO4
     //Stoker("Stoker", R.drawable.app_icon, CreatureGroups.Special, Arrays.asList(games.Black_Ops_IV)),
     //JoltingJack("Jolting Jack", R.drawable.app_icon, CreatureGroups.StandardEnemy, Arrays.asList(games.Black_Ops_IV), "Jolting_Jack"),
