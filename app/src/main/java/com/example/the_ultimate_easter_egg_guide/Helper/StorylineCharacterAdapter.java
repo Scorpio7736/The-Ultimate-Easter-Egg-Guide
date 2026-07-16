@@ -16,6 +16,7 @@ import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Ene
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Friendly_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.OrganizationsData.Organizations;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData.Items;
+import com.example.the_ultimate_easter_egg_guide.StorylineData.MapsData.Maps;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CodZombiesYoutubersData.CodZombies_Youtubers;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.NonPlayer_CharacterGroups;
@@ -46,6 +47,7 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
         void onFriendlyCreatureClick(Friendly_Creatures creature);
         void onGroupClick(Organizations group);
         void onItemClick(Items item);
+        void onMapClick(Maps map);
         void onYoutuberClick(CodZombies_Youtubers youtuber);
     }
 
@@ -68,6 +70,8 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
             setupGroupItems(enableTesting, gameFilter);
         } else if (category == StorylineItems.Items) {
             setupItemItems(enableTesting, gameFilter, itemGroupFilter);
+        } else if (category == StorylineItems.Map) {
+            setupMapItems(enableTesting, gameFilter);
         } else {
             setupCharacterItems(category, enableTesting, gameFilter);
         }
@@ -200,6 +204,20 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
         }
     }
 
+    private void setupMapItems(boolean enableTesting, Games gameFilter) {
+        List<Object> mapsInList = new ArrayList<>();
+        for (Maps map : Maps.values()) {
+            if (gameFilter == null || map.gamesList.contains(gameFilter)) {
+                mapsInList.add(map);
+            }
+        }
+
+        if (!mapsInList.isEmpty()) {
+            items.add("Maps"); // Simple header
+            items.addAll(mapsInList);
+        }
+    }
+
     private void setupYoutuberItems(boolean enableTesting) {
         for (YoutuberGroups group : YoutuberGroups.values()) {
             if (enableTesting) {
@@ -282,6 +300,8 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
                             listener.onGroupClick((Organizations) character);
                         } else if (character instanceof Items) {
                             listener.onItemClick((Items) character);
+                        } else if (character instanceof Maps) {
+                            listener.onMapClick((Maps) character);
                         } else if (character instanceof CodZombies_Youtubers) {
                             listener.onYoutuberClick((CodZombies_Youtubers) character);
                         }

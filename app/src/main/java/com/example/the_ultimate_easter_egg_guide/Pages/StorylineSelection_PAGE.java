@@ -24,6 +24,7 @@ import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Ene
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Friendly_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.OrganizationsData.Organizations;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData.Items;
+import com.example.the_ultimate_easter_egg_guide.StorylineData.MapsData.Maps;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CodZombiesYoutubersData.CodZombies_Youtubers;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -81,7 +82,8 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
         boolean showGameFilter = category == StorylineItems.Creatures || 
                                category == StorylineItems.Organizations ||
                                category == StorylineItems.NonPlayerCharacter || 
-                               category == StorylineItems.PlayerCharacter;
+                               category == StorylineItems.PlayerCharacter ||
+                               category == StorylineItems.Map;
         
         boolean showGroupFilter = category == StorylineItems.Items;
 
@@ -112,7 +114,8 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
             currentCategory == StorylineItems.Youtubers ||
             currentCategory == StorylineItems.Creatures ||
             currentCategory == StorylineItems.Items ||
-            currentCategory == StorylineItems.Organizations) {
+            currentCategory == StorylineItems.Organizations ||
+            currentCategory == StorylineItems.Map) {
             
             StorylineCharacterAdapter adapter = new StorylineCharacterAdapter(currentCategory, ENABLE_TESTING, selectedGame, selectedItemGroup, this);
             gridLayoutManager.setSpanSizeLookup(adapter.getSpanSizeLookup());
@@ -174,6 +177,16 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
     public void onItemClick(Items item) {
         if (item.fandomLink != null && !item.fandomLink.isEmpty()) {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.fandomLink));
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Fandom link not available", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onMapClick(Maps map) {
+        if (map.fandomLink != null && !map.fandomLink.isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(map.fandomLink));
             startActivity(intent);
         } else {
             Toast.makeText(this, "Fandom link not available", Toast.LENGTH_SHORT).show();
