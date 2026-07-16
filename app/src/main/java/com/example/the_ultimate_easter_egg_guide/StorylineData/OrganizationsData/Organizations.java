@@ -13,7 +13,7 @@ public enum Organizations implements IStorylineItems
 {
     TEST("Test Organization", R.drawable.app_icon, OrganizationGroups.TEST, Collections.singletonList(Games.Test), "Category:Organizations"),
     Group935("Group 935", R.drawable.group935_pfp, OrganizationGroups.German, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_IV), "Group_935"),
-    Division9("Division 9", R.drawable.division9_bkg, OrganizationGroups.Japanese, Collections.singletonList(Games.Black_Ops_III), "Division_9"),
+    Division9("Division 9", R.drawable.division9_pfp, OrganizationGroups.Japanese, Collections.singletonList(Games.Black_Ops_III), "Division_9"),
     Ascension("The Ascension Group", R.drawable.ascensiongroup_pfp, OrganizationGroups.Soviet, Arrays.asList(Games.Black_Ops_I, Games.Black_Ops_III), "Ascension_Group"),
     BrokenArrow("Broken Arrow", R.drawable.brokenarrow_pfp, OrganizationGroups.American, Arrays.asList(Games.Black_Ops_II, Games.Black_Ops_IV), "Broken_Arrow"),
     USGovernment("US Government", R.drawable.usgovernment_pfp, OrganizationGroups.American, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_IV), "United_States_Government"),
