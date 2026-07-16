@@ -28,7 +28,7 @@ public enum Friendly_Creatures implements IStorylineItems
 
     FriendlyThrasher("Friendly Thrasher", R.drawable.app_icon, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Thrasher"),
 
-    FriendlySpider("Friendly Spider", R.drawable.app_icon, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Spider_(Zombies)");
+    SPIDER_BAIT("Spider Bait", R.drawable.spiderbait_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Spider_(Zombies)");
 
     public final String displayName;
     public final int creatureCover;
