@@ -1,17 +1,18 @@
 name: Android Repository Checks
 
 on:
+  push:
+    branches:
+      - "**"
+
   pull_request:
     branches:
       - main
 
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
-
 jobs:
   build:
     name: Build succeeds
