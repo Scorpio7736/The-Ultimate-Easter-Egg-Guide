@@ -8,7 +8,7 @@ public enum CodZombies_Youtubers implements IStorylineItems
 {
     TEST("TestTuber", YoutuberGroups.TEST, R.drawable.default_test_image, "shorts/aM4kt6OgvVo"),
     BLACK_OPS_AMAZING("BlackOpsAmazing", YoutuberGroups.Storyline, R.drawable.blackopsamazing_pfp, "@BlackOpsAmazing"),
-    MR_ROFL_WAFFLES("MrRoflWaffles", YoutuberGroups.Storyline, R.drawable.mrroflwaffles_pfp, "@MrRoflWaffles"),
+    MR_ROFL_WAFFLES("MrRoflWaffles", YoutuberGroups.EasterEggHunter, R.drawable.mrroflwaffles_pfp, "@MrRoflWaffles"),
     THE_GAMING_REVOLUTION("TheGamingRevolution", YoutuberGroups.Storyline, R.drawable.thegamingrevolution_pfp, "@TheGamingRevo"),
     CH0PPER("Ch0pper", YoutuberGroups.Storyline, R.drawable.chopper_pfp, "@Ch0pper"),
 
@@ -20,6 +20,7 @@ public enum CodZombies_Youtubers implements IStorylineItems
     LEX_LOUNGE("Lex Lounge", YoutuberGroups.CustomZombies, R.drawable.lexlounge_pfp, "@LexLounge"),
     YouAlwaysWin("YouAlwaysWin", YoutuberGroups.CustomZombies, R.drawable.youalwayswin_pfp, "@YouAlwaysWin"),
 
+    GREG_FPS("GregFPS", YoutuberGroups.EasterEggHunter, R.drawable.gregfps_pfp, "@GregFPS"),
     CODENAME_PIZZA("CodeNamePizza", YoutuberGroups.EasterEggHunter, R.drawable.codenamepizza_pfp, "@CodeNamePizza"),
     MR_DALEK_JD("MrDalekJD", YoutuberGroups.EasterEggHunter, R.drawable.mrdalekjd_pfp, "@MrDalekJD"),
     GLITCHING_QUEEN("Glitching Queen", YoutuberGroups.EasterEggHunter, R.drawable.glitchingqueen_pfp, "@GlitchingQueen"),

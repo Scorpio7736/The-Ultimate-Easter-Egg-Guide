@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide.Pages;
+package com.example.the_ultimate_easter_egg_guide.Pages.Navigation;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -21,6 +21,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseCl
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.Helper.MapAdapter;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
+import com.example.the_ultimate_easter_egg_guide.Pages.MapDisplay_Page;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

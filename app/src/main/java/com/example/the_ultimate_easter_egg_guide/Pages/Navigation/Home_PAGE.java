@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide.Pages;
+package com.example.the_ultimate_easter_egg_guide.Pages.Navigation;
 
 import android.os.Bundle;
 import android.os.Handler;

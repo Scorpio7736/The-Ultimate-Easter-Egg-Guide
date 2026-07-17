@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.The_Ultimate_Easter_Egg_Guide">
         <activity
-            android:name=".Pages.Home_PAGE"
+            android:name=".Pages.Navigation.Home_PAGE"
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
@@ -24,12 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Pages.Settings_PAGE" />
-        <activity android:name=".Pages.MapsSelection_Page" />
+        <activity android:name=".Pages.Navigation.Settings_PAGE" />
+        <activity android:name=".Pages.Navigation.MapsSelection_Page" />
         <activity android:name=".Pages.MapDisplay_Page" />
         <activity android:name=".Pages.EggDisplay_Page" />
-        <activity android:name=".Pages.StorylineSelection_PAGE" />
-        <activity android:name=".Pages.Tools_PAGE" />
+        <activity android:name=".Pages.Navigation.StorylineSelection_PAGE" />
+        <activity android:name=".Pages.Navigation.Tools_PAGE" />
         <activity android:name=".Pages.CharacterDisplay_PAGE" />
     </application>
 

@@ -13,10 +13,11 @@ import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatDialog;
 
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapType;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapType;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.StorylineSelection_PAGE;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.google.android.material.card.MaterialCardView;
 

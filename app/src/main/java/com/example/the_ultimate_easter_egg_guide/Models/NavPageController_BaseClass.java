@@ -11,11 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
-import com.example.the_ultimate_easter_egg_guide.Pages.Home_PAGE;
-import com.example.the_ultimate_easter_egg_guide.Pages.MapsSelection_Page;
-import com.example.the_ultimate_easter_egg_guide.Pages.Settings_PAGE;
-import com.example.the_ultimate_easter_egg_guide.Pages.StorylineSelection_PAGE;
-import com.example.the_ultimate_easter_egg_guide.Pages.Tools_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Home_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.MapsSelection_Page;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Settings_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.StorylineSelection_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Tools_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ItemGroups;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -90,7 +90,9 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
         if (filterSpinner == null) return;
 
         List<String> displayNames = new ArrayList<>();
-        displayNames.add(allOptionText);
+        if (!ENABLE_TESTING) {
+            displayNames.add(allOptionText);
+        }
         
         T[] enumConstants = enumClass.getEnumConstants();
         List<T> filteredConstants = new ArrayList<>();
@@ -100,10 +102,18 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
                 // Special handling for Games which has a gameName field
                 String displayName = constant.name();
                 if (constant instanceof Games) {
-                    if (!ENABLE_TESTING && constant == Games.Test) continue;
+                    if (ENABLE_TESTING) {
+                        if (constant != Games.Test) continue;
+                    } else {
+                        if (constant == Games.Test) continue;
+                    }
                     displayName = ((Games) constant).gameName;
                 } else if (constant instanceof ItemGroups) {
-                    if (!ENABLE_TESTING && constant == ItemGroups.TEST) continue;
+                    if (ENABLE_TESTING) {
+                        if (constant != ItemGroups.TEST) continue;
+                    } else {
+                        if (constant == ItemGroups.TEST) continue;
+                    }
                     displayName = ((ItemGroups) constant).displayName;
                 }
                 
@@ -120,8 +130,14 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 T selectedItem = null;
-                if (position != 0) {
-                    selectedItem = filteredConstants.get(position - 1);
+                if (ENABLE_TESTING) {
+                    if (position < filteredConstants.size()) {
+                        selectedItem = filteredConstants.get(position);
+                    }
+                } else {
+                    if (position != 0) {
+                        selectedItem = filteredConstants.get(position - 1);
+                    }
                 }
                 if (listener != null) listener.onFilterSelected(selectedItem);
             }

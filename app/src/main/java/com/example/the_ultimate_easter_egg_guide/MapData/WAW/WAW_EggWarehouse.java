@@ -1,6 +1,6 @@
 package com.example.the_ultimate_easter_egg_guide.MapData.WAW;
 
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapEggData;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapEggData;
 
 public class WAW_EggWarehouse
 {

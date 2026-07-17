@@ -12,11 +12,11 @@ import android.widget.ImageView;
 
 import androidx.test.core.app.ActivityScenario;
 
-import com.example.the_ultimate_easter_egg_guide.Pages.Home_PAGE;
-import com.example.the_ultimate_easter_egg_guide.Pages.MapsSelection_Page;
-import com.example.the_ultimate_easter_egg_guide.Pages.Settings_PAGE;
-import com.example.the_ultimate_easter_egg_guide.Pages.StorylineSelection_PAGE;
-import com.example.the_ultimate_easter_egg_guide.Pages.Tools_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Home_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.MapsSelection_Page;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Settings_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.StorylineSelection_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Tools_PAGE;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import org.junit.Test;

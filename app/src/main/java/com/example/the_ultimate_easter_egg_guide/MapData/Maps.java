@@ -9,8 +9,8 @@ import com.example.the_ultimate_easter_egg_guide.MapData.BOVI.BOVI_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.MapData.BOVII.BOVII_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.MapData.Test.TEST_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.MapData.WAW.WAW_EggWarehouse;
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapEggData;
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapType;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapEggData;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapType;
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.R;
 

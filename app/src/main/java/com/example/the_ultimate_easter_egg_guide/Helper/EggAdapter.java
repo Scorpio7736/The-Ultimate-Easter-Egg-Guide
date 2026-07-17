@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEgg;
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
 import com.example.the_ultimate_easter_egg_guide.Models.Images.ImageID;
 import com.example.the_ultimate_easter_egg_guide.R;
 

@@ -12,8 +12,8 @@ import android.widget.LinearLayout;
 
 import androidx.test.core.app.ApplicationProvider;
 
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEgg;
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import org.junit.Before;

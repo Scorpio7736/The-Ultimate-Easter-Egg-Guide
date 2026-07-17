@@ -4,7 +4,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class MapsWarehouseTest {
+public class StorylineMapsWarehouseTest {
 
     @Test
     public void testWAW_Maps() {

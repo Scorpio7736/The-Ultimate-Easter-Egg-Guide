@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".Pages.Tools_PAGE">
+    tools:context=".Pages.Navigation.Tools_PAGE">
 
     <ImageView
         android:id="@+id/background_image"

@@ -1,6 +1,6 @@
 package com.example.the_ultimate_easter_egg_guide.MapData.BOI;
 
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEgg;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 
 import java.util.Arrays;
 import java.util.List;

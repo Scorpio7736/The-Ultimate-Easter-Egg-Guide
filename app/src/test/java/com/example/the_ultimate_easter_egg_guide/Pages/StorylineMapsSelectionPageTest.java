@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.test.core.app.ActivityScenario;
 
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.MapsSelection_Page;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -24,7 +25,7 @@ import org.robolectric.annotation.Config;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = 33)
-public class MapsSelectionPageTest {
+public class StorylineMapsSelectionPageTest {
 
     @Test
     public void testActivityLaunches() {

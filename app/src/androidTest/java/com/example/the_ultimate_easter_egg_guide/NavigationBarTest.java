@@ -10,10 +10,10 @@ import androidx.test.espresso.intent.Intents;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.example.the_ultimate_easter_egg_guide.Pages.Home_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Home_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.MapDisplay_Page;
-import com.example.the_ultimate_easter_egg_guide.Pages.MapsSelection_Page;
-import com.example.the_ultimate_easter_egg_guide.Pages.Settings_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.MapsSelection_Page;
+import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Settings_PAGE;
 
 import org.junit.After;
 import org.junit.Before;

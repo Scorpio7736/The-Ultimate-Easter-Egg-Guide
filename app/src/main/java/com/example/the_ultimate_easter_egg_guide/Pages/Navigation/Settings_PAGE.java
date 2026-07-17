@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide.Pages;
+package com.example.the_ultimate_easter_egg_guide.Pages.Navigation;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,9 +6,6 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.R;
 

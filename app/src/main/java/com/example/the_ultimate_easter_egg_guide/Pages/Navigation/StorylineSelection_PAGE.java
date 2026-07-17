@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide.Pages;
+package com.example.the_ultimate_easter_egg_guide.Pages.Navigation;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -18,13 +18,14 @@ import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseCl
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ItemGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
+import com.example.the_ultimate_easter_egg_guide.Pages.CharacterDisplay_PAGE;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.Player_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Enemy_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Friendly_Creatures;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.OrganizationsData.Organizations;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData.Items;
-import com.example.the_ultimate_easter_egg_guide.StorylineData.MapsData.Maps;
+import com.example.the_ultimate_easter_egg_guide.StorylineData.MapsData.StorylineMaps;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CodZombiesYoutubersData.CodZombies_Youtubers;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -184,7 +185,7 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
     }
 
     @Override
-    public void onMapClick(Maps map) {
+    public void onMapClick(StorylineMaps map) {
         if (map.fandomLink != null && !map.fandomLink.isEmpty()) {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(map.fandomLink));
             startActivity(intent);

@@ -5,16 +5,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.EasterEgg;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Helper.EggAdapter;
-import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapType;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapType;
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.R;
 

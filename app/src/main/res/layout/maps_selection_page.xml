@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/app_background"
     android:fitsSystemWindows="true"
-    tools:context=".Pages.MapsSelection_Page">
+    tools:context=".Pages.Navigation.MapsSelection_Page">
 
     <ImageView
         android:id="@+id/background_image"

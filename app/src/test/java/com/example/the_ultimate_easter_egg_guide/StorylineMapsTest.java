@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.List;
 
-public class MapsTest {
+public class StorylineMapsTest {
     @Test
     public void testGetMapsForGame() {
         List<Maps> wawMaps = MapsWarehouse.getMapsForGame(Games.World_At_War);

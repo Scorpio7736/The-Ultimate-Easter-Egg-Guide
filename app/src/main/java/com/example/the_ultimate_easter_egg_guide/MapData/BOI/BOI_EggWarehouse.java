@@ -2,7 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOI;
 
 import static com.example.the_ultimate_easter_egg_guide.MapData.BOI.KinoDerToten_EasterEggs.KinoDerToten_sideQuests;
 
-import com.example.the_ultimate_easter_egg_guide.Models.EasterEgg.MapEggData;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapEggData;
 
 public class BOI_EggWarehouse
 {
