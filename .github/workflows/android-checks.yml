@@ -2,67 +2,48 @@ name: Android Repository Checks
 
 on:
   push:
-    branches:
-      - "**"
-
   pull_request:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
   contents: read
+
 jobs:
-  build:
-    name: Build succeeds
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v6
-
-      - name: Set up Java 17
-        uses: actions/setup-java@v5
-        with:
-          distribution: temurin
-          java-version: "17"
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v6
-
-      - name: Make Gradle executable
-        run: chmod +x gradlew
-
-      - name: Build project
-        run: ./gradlew clean build
-
-  testing-disabled:
+  check-testing-setting:
     name: ENABLE_TESTING is false
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
-      - name: Check ENABLE_TESTING
-        shell: python
+      - name: Validate ENABLE_TESTING
+        shell: bash
         run: |
+          python3 <<'PYTHON'
           from pathlib import Path
           import re
           import sys
 
-          files = list(Path(".").rglob("PageController_BaseClass.java"))
+          search_root = Path("app/src/main/java")
+
+          files = list(
+              search_root.rglob("PageController_BaseClass.java")
+          )
 
           if not files:
               print(
-                  "::error::PageController_BaseClass.java could not be found."
+                  "::error::Could not find "
+                  "PageController_BaseClass.java under app/src/main/java."
               )
               sys.exit(1)
 
           if len(files) > 1:
               print(
-                  "::error::Multiple PageController_BaseClass.java files were found."
+                  "::error::Multiple PageController_BaseClass.java "
+                  "files were found."
               )
 
               for file in files:
@@ -73,18 +54,62 @@ jobs:
           file = files[0]
           source = file.read_text(encoding="utf-8")
 
-          false_declaration = re.compile(
-              r"(?m)^[ \t]*"
-              r"(?:(?:public|protected|private|static|final)\s+)*"
-              r"boolean\s+ENABLE_TESTING\s*=\s*false\s*;"
-              r"[ \t]*(?://.*)?$"
+          # Remove block and line comments before checking.
+          source = re.sub(
+              r"/\*.*?\*/",
+              "",
+              source,
+              flags=re.DOTALL
           )
 
-          if not false_declaration.search(source):
+          source = re.sub(
+              r"//.*",
+              "",
+              source
+          )
+
+          assignments = re.findall(
+              r"\bENABLE_TESTING\s*=\s*(true|false)\s*;",
+              source
+          )
+
+          if not assignments:
               print(
                   f"::error file={file}::"
-                  "ENABLE_TESTING must be declared as false."
+                  "Could not find an ENABLE_TESTING assignment."
               )
               sys.exit(1)
 
-          print(f"Passed: ENABLE_TESTING is false in {file}")
+          print(f"File checked: {file}")
+          print(f"Values found: {assignments}")
+
+          if any(value != "false" for value in assignments):
+              print(
+                  f"::error file={file}::"
+                  "ENABLE_TESTING must be false."
+              )
+              sys.exit(1)
+
+          print("Passed: ENABLE_TESTING is false.")
+          PYTHON
+
+  build:
+    name: Android build succeeds
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+
+      - name: Make Gradle executable
+        run: chmod +x gradlew
+
+      - name: Build project
+        run: ./gradlew clean build --stacktrace
