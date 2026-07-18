@@ -82,43 +82,57 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
     }
 
     protected void setupGameFilter(OnGameSelectedListener listener) {
-        setupFilter(Games.class, "All Games", (OnFilterSelectedListener<Games>) listener::onGameSelected);
+        setupGameFilter(R.id.game_filter_spinner, listener);
+    }
+
+    protected void setupGameFilter(int spinnerId, OnGameSelectedListener listener) {
+        setupGameFilter(spinnerId, true, listener);
+    }
+
+    protected void setupGameFilter(int spinnerId, boolean includeAllOption, OnGameSelectedListener listener) {
+        setupFilter(spinnerId, Games.class, includeAllOption ? "All Games" : null, (OnFilterSelectedListener<Games>) listener::onGameSelected);
     }
 
     protected <T extends Enum<T>> void setupFilter(Class<T> enumClass, String allOptionText, OnFilterSelectedListener<T> listener) {
-        Spinner filterSpinner = findViewById(R.id.game_filter_spinner);
+        setupFilter(R.id.game_filter_spinner, enumClass, allOptionText, listener);
+    }
+
+    protected <T extends Enum<T>> void setupFilter(int spinnerId, Class<T> enumClass, @Nullable String allOptionText, OnFilterSelectedListener<T> listener) {
+        Spinner filterSpinner = findViewById(spinnerId);
         if (filterSpinner == null) return;
 
         List<String> displayNames = new ArrayList<>();
-        if (!ENABLE_TESTING) {
+        boolean hasAllOptionLocal = false;
+        if (!ENABLE_TESTING && allOptionText != null) {
             displayNames.add(allOptionText);
+            hasAllOptionLocal = true;
         }
+        final boolean hasAllOption = hasAllOptionLocal;
         
-        T[] enumConstants = enumClass.getEnumConstants();
         List<T> filteredConstants = new ArrayList<>();
         
-        if (enumConstants != null) {
-            for (T constant : enumConstants) {
-                // Special handling for Games which has a gameName field
-                String displayName = constant.name();
-                if (constant instanceof Games) {
-                    if (ENABLE_TESTING) {
-                        if (constant != Games.Test) continue;
-                    } else {
-                        if (constant == Games.Test) continue;
+        if (enumClass == Games.class) {
+            List<Games> visibleGames = Games.getVisibleGames(ENABLE_TESTING);
+            for (Games game : visibleGames) {
+                displayNames.add(game.gameName);
+                filteredConstants.add((T) game);
+            }
+        } else {
+            T[] enumConstants = enumClass.getEnumConstants();
+            if (enumConstants != null) {
+                for (T constant : enumConstants) {
+                    String displayName = constant.name();
+                    if (constant instanceof ItemGroups) {
+                        if (ENABLE_TESTING) {
+                            if (constant != ItemGroups.TEST) continue;
+                        } else {
+                            if (constant == ItemGroups.TEST) continue;
+                        }
+                        displayName = ((ItemGroups) constant).displayName;
                     }
-                    displayName = ((Games) constant).gameName;
-                } else if (constant instanceof ItemGroups) {
-                    if (ENABLE_TESTING) {
-                        if (constant != ItemGroups.TEST) continue;
-                    } else {
-                        if (constant == ItemGroups.TEST) continue;
-                    }
-                    displayName = ((ItemGroups) constant).displayName;
+                    displayNames.add(displayName);
+                    filteredConstants.add(constant);
                 }
-                
-                displayNames.add(displayName);
-                filteredConstants.add(constant);
             }
         }
 
@@ -130,7 +144,7 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 T selectedItem = null;
-                if (ENABLE_TESTING) {
+                if (ENABLE_TESTING || !hasAllOption) {
                     if (position < filteredConstants.size()) {
                         selectedItem = filteredConstants.get(position);
                     }

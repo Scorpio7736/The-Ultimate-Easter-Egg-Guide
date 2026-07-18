@@ -29,4 +29,19 @@ public enum Games {
     {
         return gamesList.subList(gamesList.indexOf(start), gamesList.indexOf(end));
     }
+
+    public static List<Games> getVisibleGames(boolean enableTesting) {
+        if (enableTesting) {
+            return List.of(Games.Test);
+        } else {
+            return gamesList.stream()
+                    .filter(g -> g != Games.Test &&
+                                    g != Games.Black_Ops_IV &&
+                                    g != Games.Black_Ops_Cold_War &&
+                                    g != Games.Black_Ops_VI &&
+                                    g != Games.Black_Ops_VII
+                    )
+                    .collect(java.util.stream.Collectors.toList());
+        }
+    }
 }

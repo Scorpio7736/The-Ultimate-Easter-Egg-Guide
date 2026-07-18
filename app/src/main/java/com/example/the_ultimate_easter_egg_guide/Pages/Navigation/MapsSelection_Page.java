@@ -40,7 +40,6 @@ public class MapsSelection_Page extends NavPageController_BaseClass implements M
     private final Map<Games, MapAdapter> listAdapters = new HashMap<>();
     private final Map<Games, Drawable> backgroundCache = new HashMap<>();
     private final Games DEFAULT_GAME = ENABLE_TESTING ? Games.Test : Games.World_At_War;
-    private final List<Games> EXCLUDED_GAMES = java.util.Arrays.asList(Games.Test);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,59 +50,23 @@ public class MapsSelection_Page extends NavPageController_BaseClass implements M
 
         mapsRecyclerView = findViewById(R.id.maps_recycler_view);
 
-        Spinner spinner = findViewById(R.id.myDropdown);
-        List<Games> filteredGames = new ArrayList<>();
-        List<String> gameNames = new ArrayList<>();
-        for (Games game : Games.values()) {
-            if (ENABLE_TESTING) {
-                if (game == Games.Test) {
-                    filteredGames.add(game);
-                    gameNames.add(game.gameName);
-                }
-            } else {
-                if (!EXCLUDED_GAMES.contains(game)) {
-                    filteredGames.add(game);
-                    gameNames.add(game.gameName);
-                }
-            }
-        }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, gameNames);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        // Find index of default game, otherwise use 0
-        int defaultPosition = 0;
-        for (int i = 0; i < filteredGames.size(); i++) {
-            if (filteredGames.get(i) == DEFAULT_GAME) {
-                defaultPosition = i;
-                break;
-            }
-        }
-        spinner.setSelection(defaultPosition);
-        currentSelectedGame = filteredGames.get(defaultPosition);
-
-        // Initialize with selected game immediately
-        loadGameData(currentSelectedGame, false);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            private boolean isFirstSelection = true;
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (isFirstSelection) {
-                    isFirstSelection = false;
-                    return; // Skip animation on first automated selection
-                }
-                currentSelectedGame = filteredGames.get(position);
+        setupGameFilter(R.id.myDropdown, false, game -> {
+            currentSelectedGame = game;
+            if (currentSelectedGame != null) {
                 loadGameData(currentSelectedGame, true);
             }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // Do nothing
-            }
         });
+
+        // Initialize with default
+        currentSelectedGame = DEFAULT_GAME;
+        loadGameData(currentSelectedGame, false);
+
+        // Sync spinner selection
+        List<Games> visibleGames = Games.getVisibleGames(ENABLE_TESTING);
+        int index = visibleGames.indexOf(DEFAULT_GAME);
+        if (index != -1) {
+            ((Spinner)findViewById(R.id.myDropdown)).setSelection(index);
+        }
 
         FloatingActionButton toggleButton = findViewById(R.id.view_toggle_button);
         toggleButton.setOnClickListener(new View.OnClickListener() {
