@@ -4,6 +4,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapEggData;
 
 import org.junit.Test;
+
 import java.util.List;
 
 public class EasterEggIntegrityTest {
@@ -25,8 +26,12 @@ public class EasterEggIntegrityTest {
         if (!errorMessage.isEmpty()) {
             String yellow = "\u001B[33m";
             String reset = "\u001B[0m";
-            String header = String.format("%-20s | %-30s | %-12s | %-40s | %s\n", "VIEW", "MAP", "TYPE", "EASTER EGG", "STATUS");
-            String separator = "------------------------------------------------------------------------------------------------------------------------------\n";
+            // Column widths: MAP(30), TYPE(12), EGG(40), STATUS(10)
+            int mapW = 30, typeW = 12, eggW = 40, statusW = 10;
+            String header = String.format("%-" + mapW + "s | %-" + typeW + "s | %-" + eggW + "s | %s\n", 
+                    "MAP", "TYPE", "EASTER EGG", "STATUS");
+            String separator = new String(new char[mapW + typeW + eggW + statusW + 9]).replace("\0", "-") + "\n";
+            
             System.err.println(yellow + "DATA INTEGRITY WARNING (Incomplete Easter Eggs found):" + reset);
             System.err.println(header + separator + errorMessage);
         }
@@ -37,21 +42,16 @@ public class EasterEggIntegrityTest {
         String blue = "\u001B[34m";
         String yellow = "\u001B[33m";
         String reset = "\u001B[0m";
+        int mapW = 30, typeW = 12, eggW = 40;
 
         if (eggs == null) return;
         for (EasterEgg egg : eggs) {
             if (egg.easterEggSteps == null || egg.easterEggSteps.isEmpty()) {
-                // Clickable link format for Android Studio console
-                String viewLink = "(Maps.java:1)"; 
+                String paddedMap = String.format("%-" + mapW + "s", mapName);
+                String paddedType = String.format("%-" + typeW + "s", type);
+                String paddedEgg = String.format("%-" + eggW + "s", egg.easterEggName);
                 
-                // Formatting with padding for alignment
-                String paddedView = String.format("%-20s", viewLink);
-                String paddedMap = String.format("%-30s", mapName);
-                String paddedType = String.format("%-12s", type);
-                String paddedEgg = String.format("%-40s", egg.easterEggName);
-                
-                errors.append(String.format("%s | %s%s%s | %s%s%s | %s%s%s | %sNO STEPS%s\n", 
-                        paddedView,
+                errors.append(String.format("%s%s%s | %s%s%s | %s%s%s | %sNO STEPS%s\n", 
                         purple, paddedMap, reset, 
                         blue, paddedType, reset,
                         yellow, paddedEgg, reset,
