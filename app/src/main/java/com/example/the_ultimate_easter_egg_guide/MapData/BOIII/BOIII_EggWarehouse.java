@@ -8,8 +8,8 @@ public class BOIII_EggWarehouse
     public static final MapEggData TheGiant = new MapEggData(TheGiant_EasterEggs.TheGiant_MainQuests, TheGiant_EasterEggs.TheGiant_SideQuests, null);
     public static final MapEggData DerEisendrache = new MapEggData(DerEisendrache_EasterEggs.DerEisendrache_MainQuests, DerEisendrache_EasterEggs.DerEisendrache_SideQuests, DerEisendrache_EasterEggs.DerEisendrache_Buildables);
     public static final MapEggData ZetsubouNoShima = new MapEggData(ZetsubouNoShima_EasterEggs.ZetsubouNoShima_MainQuests, ZetsubouNoShima_EasterEggs.ZetsubouNoShima_SideQuests, ZetsubouNoShima_EasterEggs.ZetsubouNoShima_Buildables);
-    public static final MapEggData GorodKrovi = new MapEggData(null, null, null);
-    public static final MapEggData Revelations = new MapEggData(null, null, null);
+    public static final MapEggData GorodKrovi = new MapEggData(GorodKrovi_EasterEggs.GorodKrovi_MainQuests, GorodKrovi_EasterEggs.GorodKrovi_SideQuests, GorodKrovi_EasterEggs.GorodKrovi_Buildables);
+    public static final MapEggData Revelations = new MapEggData(Revelations_EasterEggs.Revelations_MainQuests, Revelations_EasterEggs.Revelations_SideQuests, Revelations_EasterEggs.Revelations_Buildables);
     public static final MapEggData NachtDerUntoten = new MapEggData(null, null, null);
     public static final MapEggData Verruckt = new MapEggData(null, null, null);
     public static final MapEggData ShiNoNuma = new MapEggData(null, null, null);
