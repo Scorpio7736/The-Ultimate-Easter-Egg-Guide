@@ -65,12 +65,32 @@ public class ConstructionStatusAuditTest {
 
         if (!constructionDetails.isEmpty()) {
             System.out.println("\n### " + YELLOW + "UNDER CONSTRUCTION" + RESET + " Audit ###\n");
-            System.out.println("| XML Page | Page Controller | Status |");
+
+            // Calculate max column widths
+            int maxXml = "XML Page".length();
+            int maxController = "Page Controller".length();
+            for (String[] detail : constructionDetails) {
+                maxXml = Math.max(maxXml, detail[0].length() + 4); // +4 for .xml
+                maxController = Math.max(maxController, detail[1].length() + 5); // +5 for .java
+            }
+
+            String format = "| %-" + maxXml + "s | %-" + maxController + "s | %-18s |%n";
+            
+            // Print Header
+            System.out.format(format, "XML Page", "Page Controller", "Status");
+            System.out.println("| " + "-".repeat(maxXml) + " | " + "-".repeat(maxController) + " | " + "-".repeat(18) + " |");
+
+            // Print Rows
             for (String[] detail : constructionDetails) {
                 String xml = PURPLE + detail[0] + ".xml" + RESET;
                 String controller = BLUE + detail[1] + ".java" + RESET;
                 String status = YELLOW + "UNDER CONSTRUCTION" + RESET;
-                System.out.println("| " + xml + " | " + controller + " | " + status + " |");
+                
+                // Adjust format for ANSI codes (which don't take up space in the console but do in the string length)
+                String rowXml = xml + " ".repeat(Math.max(0, maxXml - (detail[0].length() + 4)));
+                String rowController = controller + " ".repeat(Math.max(0, maxController - (detail[1].length() + 5)));
+                
+                System.out.println("| " + rowXml + " | " + rowController + " | " + status + " |");
             }
             System.out.println();
         } else {
