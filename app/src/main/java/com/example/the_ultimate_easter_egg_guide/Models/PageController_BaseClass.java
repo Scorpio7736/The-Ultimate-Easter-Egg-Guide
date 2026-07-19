@@ -11,7 +11,8 @@ import com.example.the_ultimate_easter_egg_guide.R;
 
 public abstract class PageController_BaseClass extends AppCompatActivity {
     
-    public final boolean ENABLE_TESTING = false;
+    // Ensure this is false for production
+    public static final boolean ENABLE_TESTING = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

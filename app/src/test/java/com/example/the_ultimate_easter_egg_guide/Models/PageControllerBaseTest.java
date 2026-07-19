@@ -14,7 +14,6 @@ public class PageControllerBaseTest {
     public void testEnableTestingIsFalse() {
         // This test ensures that ENABLE_TESTING is set to false.
         // It will fail if ENABLE_TESTING is true.
-        PageController_BaseClass controller = new PageController_BaseClass() {};
-        assertFalse("ENABLE_TESTING must be false.", controller.ENABLE_TESTING);
+        assertFalse("ENABLE_TESTING must be false.", PageController_BaseClass.ENABLE_TESTING);
     }
 }
