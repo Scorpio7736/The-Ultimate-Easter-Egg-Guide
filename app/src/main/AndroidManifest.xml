@@ -31,6 +31,7 @@
         <activity android:name=".Pages.Navigation.StorylineSelection_PAGE" />
         <activity android:name=".Pages.Navigation.Tools_PAGE" />
         <activity android:name=".Pages.CharacterDisplay_PAGE" />
+        <activity android:name=".Pages.QuickRefDisplay_PAGE" />
     </application>
 
 </manifest>

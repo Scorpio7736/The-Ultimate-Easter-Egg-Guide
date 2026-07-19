@@ -207,6 +207,12 @@ public class StorylineCharacterAdapter extends RecyclerView.Adapter<RecyclerView
     private void setupMapItems(boolean enableTesting, Games gameFilter) {
         List<Object> mapsInList = new ArrayList<>();
         for (StorylineMaps map : StorylineMaps.values()) {
+            if (enableTesting) {
+                if (map.game != Games.Test) continue;
+            } else {
+                if (map.game == Games.Test) continue;
+            }
+
             if (gameFilter == null || map.game == gameFilter) {
                 mapsInList.add(map);
             }
