@@ -90,6 +90,8 @@ tasks.register<JacocoReport>("jacocoTestReport") {
 dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
+    implementation(libs.lifecycle.process)
+    implementation(libs.work.runtime)
     implementation("androidx.core:core-splashscreen:1.2.0")
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)

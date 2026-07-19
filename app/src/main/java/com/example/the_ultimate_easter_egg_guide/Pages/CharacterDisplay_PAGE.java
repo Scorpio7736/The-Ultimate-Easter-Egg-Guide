@@ -18,6 +18,8 @@ public class CharacterDisplay_PAGE extends PageController_BaseClass {
         setContentView(R.layout.character_display_page);
         SetThisBackground(R.drawable.character_bio_bkg);
 
+        enableConstructionBlur();
+
         if (getIntent().hasExtra("CHARACTER_ID")) {
             String charId = getIntent().getStringExtra("CHARACTER_ID");
             isPlayerCharacter = getIntent().getBooleanExtra("IS_PLAYER_CHARACTER", true);

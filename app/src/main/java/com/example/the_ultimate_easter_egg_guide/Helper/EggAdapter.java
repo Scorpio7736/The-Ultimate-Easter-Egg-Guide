@@ -1,8 +1,10 @@
 package com.example.the_ultimate_easter_egg_guide.Helper;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,14 +24,16 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
 
     private final List<EasterEgg> eggList;
     private final OnEggClickListener listener;
+    private final String gameName;
     private int expandedPosition = -1;
 
     public interface OnEggClickListener {
         void onEggClick(EasterEgg egg, int position, boolean isExpanding);
     }
 
-    public EggAdapter(List<EasterEgg> eggList, OnEggClickListener listener) {
+    public EggAdapter(List<EasterEgg> eggList, String gameName, OnEggClickListener listener) {
         this.eggList = eggList;
+        this.gameName = gameName;
         this.listener = listener;
     }
 
@@ -69,6 +73,53 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
             
             listener.onEggClick(egg, position, isExpanding);
         });
+
+        holder.shareButton.setOnClickListener(v -> {
+            String shareText = formatEggShareText(egg);
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+            sendIntent.setType("text/plain");
+
+            Intent shareIntent = Intent.createChooser(sendIntent, "Share Easter Egg Guide");
+            holder.itemView.getContext().startActivity(shareIntent);
+        });
+    }
+
+    private String formatEggShareText(EasterEgg egg) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("You can find many more easter eggs for ").append(gameName).append(" on the app!\n");
+        sb.append("https://play.google.com/store/apps/details?id=com.example.the_ultimate_easter_egg_guide\n\n");
+        
+        sb.append("[").append(egg.easterEggName).append("]\n");
+        
+        String reward = (egg.easterEggReward != null && egg.easterEggReward.rewardDescription != null && !egg.easterEggReward.rewardDescription.isEmpty()) 
+                ? egg.easterEggReward.rewardDescription 
+                : "Bragging Rights";
+        sb.append("Reward: ").append(reward).append("\n\n");
+        
+        appendStepsToString(sb, egg.easterEggSteps, 0);
+        
+        return sb.toString();
+    }
+
+    private void appendStepsToString(StringBuilder sb, List<EasterEggStep> steps, int depth) {
+        for (int i = 0; i < steps.size(); i++) {
+            EasterEggStep step = steps.get(i);
+            
+            if (depth == 0) {
+                sb.append("Step ").append(i + 1).append(": ").append(step.stepName).append("\n");
+            } else {
+                char letter = (char) ('A' + i);
+                sb.append("  ").append(letter).append(": ").append(step.stepName).append("\n");
+            }
+            
+            if (step.subSteps != null && !step.subSteps.isEmpty()) {
+                appendStepsToString(sb, step.subSteps, depth + 1);
+            }
+            
+            if (depth == 0) sb.append("\n");
+        }
     }
 
     private void populateSteps(LinearLayout container, List<EasterEggStep> steps, int depth) {
@@ -159,6 +210,7 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
         LinearLayout stepsContainer;
         TextView rewardText;
         ImageView expandArrow;
+        ImageButton shareButton;
 
         public EggViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -168,6 +220,7 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
             stepsContainer = itemView.findViewById(R.id.steps_container);
             rewardText = itemView.findViewById(R.id.reward_text);
             expandArrow = itemView.findViewById(R.id.expand_arrow);
+            shareButton = itemView.findViewById(R.id.share_egg_button);
         }
     }
 }

@@ -48,7 +48,7 @@ public class EggAdapterTest {
         egg2.addStep(new EasterEggStep("Step 2.1"));
         testEggs.add(egg2);
 
-        adapter = new EggAdapter(testEggs, (egg, position, isExpanding) -> {
+        adapter = new EggAdapter(testEggs, "Test Game", (egg, position, isExpanding) -> {
             clickedPosition.set(position);
             wasExpanding.set(isExpanding);
         });

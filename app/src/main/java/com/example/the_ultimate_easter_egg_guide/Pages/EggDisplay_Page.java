@@ -72,7 +72,8 @@ public class EggDisplay_Page extends PageController_BaseClass implements EggAdap
         // Setup RecyclerView
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        EggAdapter adapter = new EggAdapter(eggsToShow, this);
+        String gameName = selectedMap != null ? selectedMap.gameName.gameName : "Unknown Game";
+        EggAdapter adapter = new EggAdapter(eggsToShow, gameName, this);
         recyclerView.setAdapter(adapter);
     }
 
