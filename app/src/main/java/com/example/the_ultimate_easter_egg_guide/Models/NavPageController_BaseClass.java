@@ -2,13 +2,16 @@ package com.example.the_ultimate_easter_egg_guide.Models;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Home_PAGE;
@@ -183,5 +186,42 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
         if (!(this instanceof Tools_PAGE)) {
             PageTransitionManager.startActivityWithFade(this, Tools_PAGE.class);
         }
+    }
+
+    @Override
+    protected void enableConstructionBlur() {
+        super.enableConstructionBlur();
+
+        ViewGroup rootView = findViewById(android.R.id.content);
+        if (rootView == null || rootView.getChildCount() == 0) return;
+
+        // Get the original layout root to check for fitsSystemWindows
+        View originalRoot = rootView.getChildAt(0);
+
+        // Create a new ConstraintLayout to hold the navigation buttons
+        ConstraintLayout navContainer = new ConstraintLayout(this);
+        navContainer.setLayoutParams(new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        
+        // Ensure the container respects system bars (status bar, nav bar) 
+        // if the original page did, keeping the nav bar in the same spot.
+        navContainer.setFitsSystemWindows(originalRoot.getFitsSystemWindows());
+
+        // Lift all navigation components above the blur overlay
+        int[] navIds = getExcludedTransitionIds();
+        for (int id : navIds) {
+            View v = findViewById(id);
+            if (v != null) {
+                ViewGroup parent = (ViewGroup) v.getParent();
+                if (parent != null && parent != navContainer) {
+                    parent.removeView(v);
+                    navContainer.addView(v);
+                }
+            }
+        }
+
+        // Add the container to the root view (it will be the last child, hence on top)
+        rootView.addView(navContainer);
     }
 }

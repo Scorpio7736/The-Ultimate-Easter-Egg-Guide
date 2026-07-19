@@ -40,6 +40,8 @@ public abstract class PageController_BaseClass extends AppCompatActivity {
     }
 
     protected void enableConstructionBlur() {
+        if (ENABLE_TESTING) return;
+
         ViewGroup rootView = findViewById(android.R.id.content);
         if (rootView == null) return;
 
