@@ -32,6 +32,8 @@ public class MapDisplay_Page extends PageController_BaseClass {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_display_page);
 
+        //enableConstructionBlur();
+
         ImageView backgroundImage = findViewById(R.id.background_image);
         TextView mapTitle = findViewById(R.id.map_title);
         ImageView mapCoverImage = findViewById(R.id.map_cover_image);
@@ -137,6 +139,7 @@ public class MapDisplay_Page extends PageController_BaseClass {
         if (selectedMap == null || selectedMap.mapTrailer == -1) return;
 
         VideoView mapTrailerVideo = findViewById(R.id.map_trailer_video);
+        int currentPos = mapTrailerVideo.getCurrentPosition();
         boolean wasPlaying = mapTrailerVideo.isPlaying();
         if (wasPlaying) {
             mapTrailerVideo.pause();
@@ -154,11 +157,13 @@ public class MapDisplay_Page extends PageController_BaseClass {
         popupVideoView.setOnPreparedListener(mp -> {
             mp.setLooping(false);
             mp.setVolume(1.0f, 1.0f); // Play with sound
+            mp.seekTo(currentPos);
             popupVideoView.start();
         });
 
         dialog.setOnDismissListener(d -> {
             if (wasPlaying && !isFinishing() && !isDestroyed()) {
+                mapTrailerVideo.seekTo(popupVideoView.getCurrentPosition());
                 mapTrailerVideo.start();
             }
         });
@@ -234,13 +239,15 @@ public class MapDisplay_Page extends PageController_BaseClass {
             }
         };
 
-        // Initial 5 second delay for the first play
+        // Initial 5-second delay for the first play
         trailerHandler.postDelayed(trailerRunnable, 5000);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        if (isUnderConstructionEnabled) return;
+
         if (selectedMap != null && selectedMap.mapTrailer != -1) {
             resetTrailerUI();
             setupTrailer(findViewById(R.id.map_cover_image), findViewById(R.id.map_trailer_video));

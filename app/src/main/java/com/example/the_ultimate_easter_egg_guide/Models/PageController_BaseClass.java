@@ -22,6 +22,7 @@ public abstract class PageController_BaseClass extends AppCompatActivity {
     
     // Ensure this is false for production
     public static final boolean ENABLE_TESTING = false;
+    protected boolean isUnderConstructionEnabled = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public abstract class PageController_BaseClass extends AppCompatActivity {
 
     protected void enableConstructionBlur() {
         if (ENABLE_TESTING) return;
+        isUnderConstructionEnabled = true;
 
         ViewGroup rootView = findViewById(android.R.id.content);
         if (rootView == null) return;

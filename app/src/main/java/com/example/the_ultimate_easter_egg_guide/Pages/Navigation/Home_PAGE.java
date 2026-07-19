@@ -51,7 +51,9 @@ public class Home_PAGE extends NavPageController_BaseClass {
 
         if (!slideshowImages.isEmpty()) {
             slideshowImage.setImageResource(slideshowImages.get(0));
-            sliderHandler.postDelayed(sliderRunnable, 4000);
+            if (!isUnderConstructionEnabled) {
+                sliderHandler.postDelayed(sliderRunnable, 4000);
+            }
         }
     }
 
@@ -83,6 +85,8 @@ public class Home_PAGE extends NavPageController_BaseClass {
     @Override
     protected void onResume() {
         super.onResume();
+        if (isUnderConstructionEnabled) return;
+
         if (!slideshowImages.isEmpty()) {
             sliderHandler.postDelayed(sliderRunnable, 4000);
         }
