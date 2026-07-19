@@ -39,11 +39,8 @@ public class Tools_PAGE extends NavPageController_BaseClass implements ToolAdapt
 
     @Override
     public void onToolClick(Tools tool) {
-        if (tool == Tools.ICE_STAFF_QUICK_REF || 
-            tool == Tools.FIRE_STAFF_QUICK_REF || 
-            tool == Tools.WIND_STAFF_QUICK_REF || 
-            tool == Tools.LIGHTNING_STAFF_QUICK_REF) {
-            
+        if (tool.toolType == ToolType.QUICK_REF)
+        {
             Intent intent = new Intent(this, QuickRefDisplay_PAGE.class);
             intent.putExtra(QuickRefDisplay_PAGE.EXTRA_IMAGE_ID, tool.icon);
             startActivity(intent);

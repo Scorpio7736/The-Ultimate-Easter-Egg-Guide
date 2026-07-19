@@ -19,6 +19,7 @@ public class Settings_PAGE extends NavPageController_BaseClass
         setContentView(R.layout.settings_page);
 
         setupBaseNavigation();
+        enableConstructionBlur();
 
         setupSwitch(R.id.switch1, R.id.expandable_layout1);
         setupSwitch(R.id.switch2, R.id.expandable_layout2);
