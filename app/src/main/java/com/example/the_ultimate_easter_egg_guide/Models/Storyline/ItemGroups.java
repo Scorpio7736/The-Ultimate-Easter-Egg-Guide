@@ -5,7 +5,9 @@ public enum ItemGroups
     TEST("Test Items"),
     WonderWeapon("Wonder Weapons"),
     StorylineItem("Storyline Items"),
-    PerkaCola("Perk a Colas");
+    Consumables("Consumables"),
+
+    ;
 
     public final String displayName;
     ItemGroups(String displayName)

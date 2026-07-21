@@ -1,10 +1,13 @@
 package com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData;
 
+import android.content.ClipData;
+
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ItemGroups;
 import com.example.the_ultimate_easter_egg_guide.R;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -13,19 +16,20 @@ public enum Items implements IStorylineItems
 {
     TEST("Test Item", R.drawable.app_icon, ItemGroups.TEST, Collections.singletonList(Games.Test), "Category:Organizations"),
     //PERKS
-    JUGGERNOG("Jugger-Nog", R.drawable.juggernog_pfp, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Juggernog"),
-    QUICK_REVIVE("Quick Revive", R.drawable.quickrevive_pfp, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Quick_Revive"),
-    SPEED_COLA("Speed Cola", R.drawable.speedcola_pfp, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Speed_Cola"),
-    DOUBLE_TAP_ROOT_BEER("Double Tap Root Beer", R.drawable.doubletap_pfp, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Double_Tap_Root_Beer"),
-    STAMIN_UP("Stamin-Up", R.drawable.staminup_pfp, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_III), "Stamin-Up"),
-    PHD_FLOPPER("PhD Flopper", R.drawable.phdflopper_pfp, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_II), "PhD_Flopper"),
-    DEADSHOT_DAIQUIRI("Deadshot Daiquiri", R.drawable.deadshotdaiquiri_pfp, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_III), "Deadshot_Daiquiri"),
-    MULE_KICK("Mule Kick", R.drawable.mulekick_pfp, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_III), "Mule_Kick"),
-    TOMBSTONE_SODA("Tombstone Soda", R.drawable.tombstone_pfp, ItemGroups.PerkaCola, Collections.singletonList(Games.Black_Ops_II), "Tombstone_Soda"),
-    WHOS_WHO("Who's Who", R.drawable.whoswho_pfp, ItemGroups.PerkaCola, Collections.singletonList(Games.Black_Ops_II), "Who%27s_Who"),
-    ELECTRIC_CHERRY("Electric Cherry", R.drawable.electriccherry_pfp, ItemGroups.PerkaCola, Games.GetAllGamesBetween(Games.Black_Ops_II, Games.Black_Ops_III), "Electric_Cherry"),
-    VULTURE_AID("Vulture Aid Elixir", R.drawable.vultureaid_pfp, ItemGroups.PerkaCola, Collections.singletonList(Games.Black_Ops_II), "Vulture_Aid"),
-    WIDOWS_WINE("Widow's Wine", R.drawable.widowswine_pfp, ItemGroups.PerkaCola, Collections.singletonList(Games.Black_Ops_III), "Widow%27s_Wine"),
+    JUGGERNOG("Jugger-Nog", R.drawable.juggernog_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Juggernog"),
+    QUICK_REVIVE("Quick Revive", R.drawable.quickrevive_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Quick_Revive"),
+    SPEED_COLA("Speed Cola", R.drawable.speedcola_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Speed_Cola"),
+    DOUBLE_TAP_ROOT_BEER("Double Tap Root Beer", R.drawable.doubletap_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Double_Tap_Root_Beer"),
+    STAMIN_UP("Stamin-Up", R.drawable.staminup_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_III), "Stamin-Up"),
+    PHD_FLOPPER("PhD Flopper", R.drawable.phdflopper_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_II), "PhD_Flopper"),
+    DEADSHOT_DAIQUIRI("Deadshot Daiquiri", R.drawable.deadshotdaiquiri_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_III), "Deadshot_Daiquiri"),
+    MULE_KICK("Mule Kick", R.drawable.mulekick_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_III), "Mule_Kick"),
+    TOMBSTONE_SODA("Tombstone Soda", R.drawable.tombstone_pfp, ItemGroups.Consumables, Collections.singletonList(Games.Black_Ops_II), "Tombstone_Soda"),
+    WHOS_WHO("Who's Who", R.drawable.whoswho_pfp, ItemGroups.Consumables, Collections.singletonList(Games.Black_Ops_II), "Who%27s_Who"),
+    ELECTRIC_CHERRY("Electric Cherry", R.drawable.electriccherry_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.Black_Ops_II, Games.Black_Ops_III), "Electric_Cherry"),
+    VULTURE_AID("Vulture Aid Elixir", R.drawable.vultureaid_pfp, ItemGroups.Consumables, Collections.singletonList(Games.Black_Ops_II), "Vulture_Aid"),
+    WIDOWS_WINE("Widow's Wine", R.drawable.widowswine_pfp, ItemGroups.Consumables, Collections.singletonList(Games.Black_Ops_III), "Widow%27s_Wine"),
+
     //WONDER WEAPONS
     RAY_GUN("Ray Gun", R.drawable.raygun_pfp, ItemGroups.WonderWeapon, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Ray_Gun"),
     WUNDERWAFFE_DG_2("Wunderwaffe DG-2", R.drawable.wunderwaffedg2_pfp, ItemGroups.WonderWeapon, Arrays.asList(Games.World_At_War, Games.Black_Ops_I, Games.Black_Ops_III), "Wunderwaffe_DG-2"),
@@ -74,6 +78,8 @@ public enum Items implements IStorylineItems
     //STORYLINEITEMS
     ELEMENT_115("Element 115", R.drawable.element115_pfp, ItemGroups.StorylineItem, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_III), "Element_115"),
     LIQUID_DIVINIUM("Liquid Divinium", R.drawable.liquiddivinium_pfp, ItemGroups.StorylineItem, Games.GetAllGamesBetween(Games.Black_Ops_II, Games.Black_Ops_III), "Liquid_Divinium"),
+    Pack_A_Punch("Pack-A-Punch", R.drawable.packapunch_pfp, ItemGroups.StorylineItem, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_VII), "Pack-a-Punch_Machine/Treyarch"),
+    AGARTHAN_DEVICE("Agarthan Device", R.drawable.agarthandevice_pfp, ItemGroups.StorylineItem, Games.GetAllGamesBetween(Games.Black_Ops_III, Games.Black_Ops_IV), "Agarthan_Device"),
     GOLDEN_ROD("Golden Rod - Vril Device", R.drawable.goldenrod_pfp, ItemGroups.StorylineItem, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_III), "Vril_Device"),
     FOCUSING_STONE("Focusing Stone", R.drawable.focusingstone_pfp, ItemGroups.StorylineItem, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_III), "Focusing_Stone"),
     MPD("Moon Pyramid Device", R.drawable.mpd_pfp, ItemGroups.StorylineItem, Games.GetAllGamesBetween(Games.Black_Ops_I, Games.Black_Ops_III), "MPD"),
@@ -84,9 +90,10 @@ public enum Items implements IStorylineItems
     GRAMOPHONE("Gramophone", R.drawable.gramophone_pfp, ItemGroups.StorylineItem, Games.GetAllGamesBetween(Games.Black_Ops_II, Games.Black_Ops_III), "Gramophone"),
     SUMMONING_KEY("Summoning Key", R.drawable.summoningkey_pfp, ItemGroups.StorylineItem, Collections.singletonList(Games.Black_Ops_III), "Summoning_Key"),
     KRONORIUM("Kronorium", R.drawable.kronorium_pfp, ItemGroups.StorylineItem, Collections.singletonList(Games.Black_Ops_III), "Kronorium"),
-    GATEWORM("Gateworm", R.drawable.gateworm_pfp, ItemGroups.StorylineItem, Collections.singletonList(Games.Black_Ops_III), "Gateworm");
+    GATEWORM("Gateworm", R.drawable.gateworm_pfp, ItemGroups.StorylineItem, Collections.singletonList(Games.Black_Ops_III), "Gateworm"),
+    GOBBLEGUMS("Gobble Gums", R.drawable.gobblegums_pfp, ItemGroups.Consumables, Games.GetAllGamesBetween(Games.Black_Ops_III, Games.Black_Ops_IV), "GobbleGum"),
 
-
+    ;
     public final String displayName;
     public final int itemImage;
     public final ItemGroups itemGroup;
