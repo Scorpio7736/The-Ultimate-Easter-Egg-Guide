@@ -192,6 +192,10 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
     protected void enableConstructionBlur() {
         super.enableConstructionBlur();
 
+        // If the base class decided to skip the blur (e.g. during dev mode),
+        // then we shouldn't attempt to lift the navigation components.
+        if (!isUnderConstructionEnabled) return;
+
         ViewGroup rootView = findViewById(android.R.id.content);
         if (rootView == null || rootView.getChildCount() == 0) return;
 

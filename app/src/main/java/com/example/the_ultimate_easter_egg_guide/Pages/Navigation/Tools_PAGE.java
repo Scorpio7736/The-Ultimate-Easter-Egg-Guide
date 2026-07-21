@@ -16,7 +16,6 @@ import com.example.the_ultimate_easter_egg_guide.Pages.Tools.RecommendGums_ToolP
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.example.the_ultimate_easter_egg_guide.ToolsData.Tools;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -32,6 +31,7 @@ public class Tools_PAGE extends NavPageController_BaseClass implements ToolAdapt
         setContentView(R.layout.tools_page);
 
         setupBaseNavigation();
+        excludeFromDevMode();
 
         toolsRecyclerView = findViewById(R.id.tools_recycler_view);
         toolsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -60,12 +60,9 @@ public class Tools_PAGE extends NavPageController_BaseClass implements ToolAdapt
     }
 
     private void updateToolsList() {
-        // Filter tools based on ENABLE_TESTING flag
-
-        List<Tools> visibleTools = new ArrayList<Tools>();
-
-        visibleTools = Stream.of(Tools.values())
-                .filter(tool -> ENABLE_TESTING == (tool.toolType == ToolType.TEST))
+        // Show all tools in Dev Mode, or filter out TEST tools in production
+        List<Tools> visibleTools = Stream.of(Tools.values())
+                .filter(tool -> ENABLE_TESTING || tool.toolType != ToolType.TEST)
                 .collect(Collectors.toList());
 
         ToolAdapter toolAdapter = new ToolAdapter(visibleTools, this);
