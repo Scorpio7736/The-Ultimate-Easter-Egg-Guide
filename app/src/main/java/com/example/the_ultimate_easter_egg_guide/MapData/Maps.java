@@ -76,39 +76,41 @@ public enum Maps
 
     // --------------------------------- Black Ops IV MAPS ---------------------------------
 
-    BOIV_Dead_Of_The_Night(Games.Black_Ops_IV, "Dead of the Night", R.string.boiv_DeadOfTheNight_mapdescription, R.drawable.boiv_deadofthenight_mapcover, MapType.Chaos, BOIV_EggWarehouse.DeadOfTheNight),
-    BOIV_Ancient_Evil(Games.Black_Ops_IV, "Ancient Evil", R.string.boiv_AncientEvil_mapdescription, R.drawable.boiv_ancientevil_mapcover, MapType.Chaos, BOIV_EggWarehouse.AncientEvil),
-    BOIV_Alpha_Omega(Games.Black_Ops_IV, "Alpha Omega", R.string.boiv_AlphaOmega_mapdescription, R.drawable.boiv_alphaomega_mapcover, MapType.Broken_Arrow, BOIV_EggWarehouse.AlphaOmega),
-    BOIV_Tag_Der_Toten(Games.Black_Ops_IV, "Tag der Toten", R.string.boiv_TagDerToten_mapdescription, R.drawable.boiv_tagdertoten_mapcover, MapType.Group_935_Winter, BOIV_EggWarehouse.TagDerToten),
-    BOIV_Blood_Of_The_Dead(Games.Black_Ops_IV, "Blood of the Dead", R.string.boiv_BloodOfTheDead_mapdescription, R.drawable.boiv_bloodofthedead_mapcover, MapType.Purgatory, BOIV_EggWarehouse.BloodOfTheDead),
-    BOIV_Classified(Games.Black_Ops_IV, "Classified", R.string.boiv_Classified_mapdescription, R.drawable.boiv_classified_mapcover, MapType.US_Government, BOIV_EggWarehouse.Classified),
-    BOIV_Voyage_Of_Despair(Games.Black_Ops_IV, "Voyage of Despair", R.string.boiv_VoyageOfDespair_mapdescription, R.drawable.boiv_voyageofdispair_mapcover, MapType.Chaos, BOIV_EggWarehouse.VoyageOfDespair),
-    BOIV_IX(Games.Black_Ops_IV, "IX", R.string.boiv_IX_mapdescription, R.drawable.boiv_ix_mapcover, MapType.Chaos, BOIV_EggWarehouse.IX),
+    //BOIV_Dead_Of_The_Night(Games.Black_Ops_IV, "Dead of the Night", R.string.boiv_DeadOfTheNight_mapdescription, R.drawable.boiv_deadofthenight_mapcover, MapType.Chaos, BOIV_EggWarehouse.DeadOfTheNight),
+    //BOIV_Ancient_Evil(Games.Black_Ops_IV, "Ancient Evil", R.string.boiv_AncientEvil_mapdescription, R.drawable.boiv_ancientevil_mapcover, MapType.Chaos, BOIV_EggWarehouse.AncientEvil),
+    //BOIV_Alpha_Omega(Games.Black_Ops_IV, "Alpha Omega", R.string.boiv_AlphaOmega_mapdescription, R.drawable.boiv_alphaomega_mapcover, MapType.Broken_Arrow, BOIV_EggWarehouse.AlphaOmega),
+    //BOIV_Tag_Der_Toten(Games.Black_Ops_IV, "Tag der Toten", R.string.boiv_TagDerToten_mapdescription, R.drawable.boiv_tagdertoten_mapcover, MapType.Group_935_Winter, BOIV_EggWarehouse.TagDerToten),
+    //BOIV_Blood_Of_The_Dead(Games.Black_Ops_IV, "Blood of the Dead", R.string.boiv_BloodOfTheDead_mapdescription, R.drawable.boiv_bloodofthedead_mapcover, MapType.Purgatory, BOIV_EggWarehouse.BloodOfTheDead),
+    //BOIV_Classified(Games.Black_Ops_IV, "Classified", R.string.boiv_Classified_mapdescription, R.drawable.boiv_classified_mapcover, MapType.US_Government, BOIV_EggWarehouse.Classified),
+    //BOIV_Voyage_Of_Despair(Games.Black_Ops_IV, "Voyage of Despair", R.string.boiv_VoyageOfDespair_mapdescription, R.drawable.boiv_voyageofdispair_mapcover, MapType.Chaos, BOIV_EggWarehouse.VoyageOfDespair),
+    //BOIV_IX(Games.Black_Ops_IV, "IX", R.string.boiv_IX_mapdescription, R.drawable.boiv_ix_mapcover, MapType.Chaos, BOIV_EggWarehouse.IX),
 
 
     // --------------------------------- Black Ops Cold War MAPS ---------------------------------
 
-    BOCW_Die_Maschine(Games.Black_Ops_Cold_War, "Die Maschine", R.string.bocw_DieMaschine_mapdescription, R.drawable.bocw_diemachine_mapcover, MapType.NOT_SET, BOCW_EggWarehouse.DieMaschine),
-    BOCW_Firebase_Z(Games.Black_Ops_Cold_War, "Firebase Z", R.string.bocw_FirebaseZ_mapdescription, R.drawable.bocw_firebasez_mapcover, MapType.NOT_SET, BOCW_EggWarehouse.FirebaseZ),
-    BOCW_Mauer_Der_Toten(Games.Black_Ops_Cold_War, "Mauer der Toten", R.string.bocw_MauerDerToten_mapdescription, R.drawable.bocw_mauerdertoten_mapcover, MapType.NOT_SET, BOCW_EggWarehouse.MauerDerToten),
-    BOCW_Forsaken(Games.Black_Ops_Cold_War, "Forsaken", R.string.bocw_Forsaken_mapdescription, R.drawable.bocw_forsaken_mapcover, MapType.NOT_SET, BOCW_EggWarehouse.Forsaken),
+    //BOCW_Die_Maschine(Games.Black_Ops_Cold_War, "Die Maschine", R.string.bocw_DieMaschine_mapdescription, R.drawable.bocw_diemachine_mapcover, MapType.NOT_SET, BOCW_EggWarehouse.DieMaschine),
+    //BOCW_Firebase_Z(Games.Black_Ops_Cold_War, "Firebase Z", R.string.bocw_FirebaseZ_mapdescription, R.drawable.bocw_firebasez_mapcover, MapType.NOT_SET, BOCW_EggWarehouse.FirebaseZ),
+    //BOCW_Mauer_Der_Toten(Games.Black_Ops_Cold_War, "Mauer der Toten", R.string.bocw_MauerDerToten_mapdescription, R.drawable.bocw_mauerdertoten_mapcover, MapType.NOT_SET, BOCW_EggWarehouse.MauerDerToten),
+    //BOCW_Forsaken(Games.Black_Ops_Cold_War, "Forsaken", R.string.bocw_Forsaken_mapdescription, R.drawable.bocw_forsaken_mapcover, MapType.NOT_SET, BOCW_EggWarehouse.Forsaken),
 
     // --------------------------------- Black Ops VI MAPS ---------------------------------
 
-    BOVI_Liberty_Falls(Games.Black_Ops_VI, "Liberty Falls", R.string.bovi_LibertyFalls_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.LibertyFalls),
-    BOVI_Terminus(Games.Black_Ops_VI, "Terminus", R.string.bovi_Terminus_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.Terminus),
-    BOVI_Citadelle_Des_Morts(Games.Black_Ops_VI, "Citadelle des Morts", R.string.bovi_CitadelleDesMorts_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.CitadelleDesMorts),
-    BOVI_Shattered_Veil(Games.Black_Ops_VI, "Shattered Veil", R.string.bovi_ShatteredVeil_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.ShatteredVeil),
-    BOVI_The_Tomb(Games.Black_Ops_VI, "The Tomb", R.string.bovi_TheTomb_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.TheTomb),
-    BOVI_Reckoning(Games.Black_Ops_VI, "Reckoning", R.string.bovi_Reckoning_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.Reckoning),
+    //BOVI_Liberty_Falls(Games.Black_Ops_VI, "Liberty Falls", R.string.bovi_LibertyFalls_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.LibertyFalls),
+    //BOVI_Terminus(Games.Black_Ops_VI, "Terminus", R.string.bovi_Terminus_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.Terminus),
+    //BOVI_Citadelle_Des_Morts(Games.Black_Ops_VI, "Citadelle des Morts", R.string.bovi_CitadelleDesMorts_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.CitadelleDesMorts),
+    //BOVI_Shattered_Veil(Games.Black_Ops_VI, "Shattered Veil", R.string.bovi_ShatteredVeil_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.ShatteredVeil),
+    //BOVI_The_Tomb(Games.Black_Ops_VI, "The Tomb", R.string.bovi_TheTomb_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.TheTomb),
+    //BOVI_Reckoning(Games.Black_Ops_VI, "Reckoning", R.string.bovi_Reckoning_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVI_EggWarehouse.Reckoning),
 
 
     // --------------------------------- Black Ops VII MAPS ---------------------------------
 
-    BOVII_Ashes_Of_The_Damned(Games.Black_Ops_VII, "Ashes of the Damned", R.string.bovii_AshesOfTheDamned_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.AshesOfTheDamned),
-    BOVII_Astra_Malorum(Games.Black_Ops_VII, "Astra Malorum", R.string.bovii_AstraMalorum_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.AstraMalorum),
-    BOVII_Paradox_Junction(Games.Black_Ops_VII, "Paradox Junction", R.string.bovii_ParadoxJunction_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.ParadoxJunction),
-    BOVII_Totenreich(Games.Black_Ops_VII, "Totenreich", R.string.bovii_Totenreich_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.Totenreich);
+    //BOVII_Ashes_Of_The_Damned(Games.Black_Ops_VII, "Ashes of the Damned", R.string.bovii_AshesOfTheDamned_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.AshesOfTheDamned),
+    //BOVII_Astra_Malorum(Games.Black_Ops_VII, "Astra Malorum", R.string.bovii_AstraMalorum_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.AstraMalorum),
+    //BOVII_Paradox_Junction(Games.Black_Ops_VII, "Paradox Junction", R.string.bovii_ParadoxJunction_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.ParadoxJunction),
+    //BOVII_Totenreich(Games.Black_Ops_VII, "Totenreich", R.string.bovii_Totenreich_mapdescription, R.drawable.app_icon, MapType.NOT_SET, BOVII_EggWarehouse.Totenreich),
+
+    ;
     public final Games gameName;
     public final String mapName;
     public final int mapCover;

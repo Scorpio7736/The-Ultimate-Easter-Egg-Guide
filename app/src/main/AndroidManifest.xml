@@ -35,8 +35,8 @@
         <activity android:name=".Pages.CharacterDisplay_PAGE" />
         <activity android:name=".Pages.QuickRefDisplay_PAGE" />
         <activity android:name=".Pages.AboutMe_PAGE" />
-        <activity android:name=".Pages.RecommendGums_ToolPage" />
-        <activity android:name=".Pages.InGameNotes_ToolPage" />
+        <activity android:name=".Pages.Tools.RecommendGums_ToolPage" />
+        <activity android:name=".Pages.Tools.InGameNotes_ToolPage" />
     </application>
 
 </manifest>

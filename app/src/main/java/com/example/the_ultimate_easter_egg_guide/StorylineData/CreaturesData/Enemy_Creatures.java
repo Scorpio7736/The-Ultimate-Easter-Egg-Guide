@@ -11,7 +11,7 @@ import java.util.List;
 
 public enum Enemy_Creatures implements IStorylineItems
 {
-    Test("Test Enemy Creature", R.drawable.app_icon, CreatureGroups.TEST, Collections.singletonList(Games.Test), ""),
+    Test("Test Enemy Creature", R.drawable.default_test_image_6, CreatureGroups.TEST, Collections.singletonList(Games.Test), ""),
     Zombie("Zombie", R.drawable.zombie_pfp, CreatureGroups.StandardEnemy, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_VII), "Zombie"),
     Hellhound("Hellhound", R.drawable.hellhound_pfp, CreatureGroups.Special, Games.GetAllGamesBetween(Games.World_At_War, Games.Black_Ops_Cold_War), "Hellhound"),
     Nova6Crawler("Nova 6 Crawler", R.drawable.nova6crawler_pfp, CreatureGroups.Special, Arrays.asList(Games.Black_Ops_I, Games.Black_Ops_III), "Crawler_Zombie"),
@@ -31,15 +31,15 @@ public enum Enemy_Creatures implements IStorylineItems
     TheAncients("The Ancients", R.drawable.theancients_pfp, CreatureGroups.StandardEnemy, Arrays.asList(Games.Black_Ops_II, Games.Black_Ops_III), "The_Ancients"),
     Margwa("Margwa", R.drawable.margwa_pfp, CreatureGroups.Special, Arrays.asList(Games.Black_Ops_III, Games.Black_Ops_IV), "Margwa"),
     Parasite("Parasite", R.drawable.parasite_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Parasite"),
-    Meatballs("Meatballs", R.drawable.app_icon, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), ""),
+    Meatballs("Meatballs", R.drawable.meatballs_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Insanity_Elemental"),
     CorruptedKeepers("CorruptedKeepers", R.drawable.corruptedkeeper_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Keeper"),
-    KeeperBoss("Keeper Boss", R.drawable.app_icon, CreatureGroups.Boss, Collections.singletonList(Games.Black_Ops_III), "Keeper"),
+    KeeperBoss("Keeper Boss", R.drawable.keeperboss_pfp, CreatureGroups.Boss, Collections.singletonList(Games.Black_Ops_III), "Keeper"),
     SkeletonZombie("Skeleton Zombie", R.drawable.skeletonzombie_pfp, CreatureGroups.StandardEnemy, Collections.singletonList(Games.Black_Ops_III), "Skeleton"),
     TheShadowMan("The Shadowman", R.drawable.shadowman_pfp, CreatureGroups.Boss, Arrays.asList(Games.Black_Ops_III, Games.Black_Ops_IV), "Shadowman"),
     Thrasher("Thrasher", R.drawable.thrasher_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Thrasher"),
     Spiders("Spiders", R.drawable.spider_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Spider_(Zombies)"),
     SpiderBoss("Spider Boss", R.drawable.spiderboss_pfp, CreatureGroups.Boss, Collections.singletonList(Games.Black_Ops_III), "Giant_Spider"),
-    ThrasherBoss("Thrasher Boss", R.drawable.app_icon, CreatureGroups.Boss, Collections.singletonList(Games.Black_Ops_III), "Thrasher"),
+    ThrasherBoss("Thrasher Boss", R.drawable.thrasherboss_pfp, CreatureGroups.Boss, Collections.singletonList(Games.Black_Ops_III), "Thrasher"),
     Mangler("Mangler", R.drawable.mangler_pfp, CreatureGroups.Special, Arrays.asList(Games.Black_Ops_III, Games.Black_Ops_IV), "Mangler"),
     ValkyrieDrone("Valkyrie Drone", R.drawable.valkyriedrone_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Valkyrie_Drone"),
     Dragon("Dragon", R.drawable.dragon_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_III), "Dragon_(Black_Ops_III)"),

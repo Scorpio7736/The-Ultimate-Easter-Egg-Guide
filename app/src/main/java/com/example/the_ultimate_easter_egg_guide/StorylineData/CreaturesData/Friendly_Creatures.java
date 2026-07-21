@@ -11,7 +11,7 @@ import java.util.List;
 
 public enum Friendly_Creatures implements IStorylineItems
 {
-    Test("Test Friendly Creature", R.drawable.app_icon, CreatureGroups.TEST, Collections.singletonList(Games.Test), ""),
+    Test("Test Friendly Creature", R.drawable.default_test_image_2, CreatureGroups.TEST, Collections.singletonList(Games.Test), ""),
 
     Leroy("Arthur (Leroy)", R.drawable.leroy_pfp, CreatureGroups.Special, Collections.singletonList(Games.Black_Ops_II), "Arthur_(Zombies)"),
 

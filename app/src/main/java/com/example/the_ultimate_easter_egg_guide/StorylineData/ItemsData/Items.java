@@ -84,7 +84,7 @@ public enum Items implements IStorylineItems
     GRAMOPHONE("Gramophone", R.drawable.gramophone_pfp, ItemGroups.StorylineItem, Games.GetAllGamesBetween(Games.Black_Ops_II, Games.Black_Ops_III), "Gramophone"),
     SUMMONING_KEY("Summoning Key", R.drawable.summoningkey_pfp, ItemGroups.StorylineItem, Collections.singletonList(Games.Black_Ops_III), "Summoning_Key"),
     KRONORIUM("Kronorium", R.drawable.kronorium_pfp, ItemGroups.StorylineItem, Collections.singletonList(Games.Black_Ops_III), "Kronorium"),
-    GATEWORM("Gateworm", R.drawable.app_icon, ItemGroups.StorylineItem, Collections.singletonList(Games.Black_Ops_III), "Gateworm");
+    GATEWORM("Gateworm", R.drawable.gateworm_pfp, ItemGroups.StorylineItem, Collections.singletonList(Games.Black_Ops_III), "Gateworm");
 
 
     public final String displayName;

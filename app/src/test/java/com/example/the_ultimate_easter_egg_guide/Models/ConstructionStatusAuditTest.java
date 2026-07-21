@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import com.example.the_ultimate_easter_egg_guide.Pages.AboutMe_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.CharacterDisplay_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.EggDisplay_Page;
-import com.example.the_ultimate_easter_egg_guide.Pages.InGameNotes_ToolPage;
+import com.example.the_ultimate_easter_egg_guide.Pages.Tools.InGameNotes_ToolPage;
 import com.example.the_ultimate_easter_egg_guide.Pages.MapDisplay_Page;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Home_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.MapsSelection_Page;
@@ -15,7 +15,7 @@ import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Settings_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.StorylineSelection_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Tools_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.QuickRefDisplay_PAGE;
-import com.example.the_ultimate_easter_egg_guide.Pages.RecommendGums_ToolPage;
+import com.example.the_ultimate_easter_egg_guide.Pages.Tools.RecommendGums_ToolPage;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

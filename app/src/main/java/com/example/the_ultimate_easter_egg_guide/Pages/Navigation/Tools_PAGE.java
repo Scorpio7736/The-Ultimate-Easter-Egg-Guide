@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.the_ultimate_easter_egg_guide.Helper.ToolAdapter;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Tools.ToolType;
-import com.example.the_ultimate_easter_egg_guide.Pages.InGameNotes_ToolPage;
+import com.example.the_ultimate_easter_egg_guide.Pages.Tools.InGameNotes_ToolPage;
 import com.example.the_ultimate_easter_egg_guide.Pages.QuickRefDisplay_PAGE;
-import com.example.the_ultimate_easter_egg_guide.Pages.RecommendGums_ToolPage;
+import com.example.the_ultimate_easter_egg_guide.Pages.Tools.RecommendGums_ToolPage;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.example.the_ultimate_easter_egg_guide.ToolsData.Tools;
 
