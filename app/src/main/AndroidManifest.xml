@@ -22,6 +22,7 @@
         <activity
             android:name=".Pages.Navigation.Home_PAGE"
 
+            android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
