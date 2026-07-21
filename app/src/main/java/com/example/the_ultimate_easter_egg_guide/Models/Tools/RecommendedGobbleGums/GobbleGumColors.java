@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobble
 
 public enum GobbleGumColors
 {
+    TEST("TEST"),
     BLUE("Round-Limited"),
     ORANGE("Immediate Activation / Conditional Activation"),
     GREEN("Time-Limited"),
