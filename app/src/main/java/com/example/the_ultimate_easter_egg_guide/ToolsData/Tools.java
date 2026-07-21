@@ -17,7 +17,7 @@ public enum Tools {
     WIND_STAFF_QUICK_REF("Wind Staff Quick Ref.", "Quick reference to all steps to build and upgrade the Wind Staff", R.drawable.tool_windstaffquickref, ToolType.QUICK_REF),
     LIGHTNING_STAFF_QUICK_REF("Lightning Staff Quick Ref.", "Quick reference to all steps to build and upgrade the Lightning Staff", R.drawable.tool_lightningstaffquickref, ToolType.QUICK_REF),
     BURIED_LANTERN_CODES("Buried Lantern Codes Quick Ref", "Quick refrence to all Buried lantern codes.", R.drawable.tools_buriedlanterncodes, ToolType.QUICK_REF),
-
+    IN_GAME_NOTES("In Game Notes", "A quick game notes sheet", R.drawable.kronorium_pfp, ToolType.OTHER),
     ;
 
     public final ToolType toolType;

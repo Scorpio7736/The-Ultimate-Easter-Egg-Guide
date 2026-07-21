@@ -1,4 +1,4 @@
-package com.example.the_ultimate_easter_egg_guide;
+package com.example.the_ultimate_easter_egg_guide.Helper;
 
 import android.app.Application;
 
@@ -8,9 +8,6 @@ import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
-import com.example.the_ultimate_easter_egg_guide.Helper.AppLifecycleObserver;
-import com.example.the_ultimate_easter_egg_guide.Helper.NotificationHelper;
-import com.example.the_ultimate_easter_egg_guide.Helper.NotificationWorker;
 import com.example.the_ultimate_easter_egg_guide.Models.Notifications.NotificationType;
 import com.example.the_ultimate_easter_egg_guide.Models.Notifications.Notifications;
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
@@ -26,6 +23,11 @@ public class GuideApplication extends Application {
 
         NotificationHelper.createNotificationChannel(this);
 
+        // Skip WorkManager initialization in Robolectric tests to avoid IllegalStateException
+        if (isRobolectric()) {
+            return;
+        }
+
         ProcessLifecycleOwner.get().getLifecycle().addObserver(new AppLifecycleObserver(this));
 
         if (!PageController_BaseClass.ENABLE_TESTING) {
@@ -33,6 +35,10 @@ public class GuideApplication extends Application {
         } else {
             cancelProductionNotifications();
         }
+    }
+
+    private boolean isRobolectric() {
+        return "robolectric".equals(android.os.Build.FINGERPRINT);
     }
 
     private void scheduleProductionNotifications() {

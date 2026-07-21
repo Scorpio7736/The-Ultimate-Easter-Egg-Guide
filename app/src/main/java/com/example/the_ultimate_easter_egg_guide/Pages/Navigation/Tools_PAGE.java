@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.the_ultimate_easter_egg_guide.Helper.ToolAdapter;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Tools.ToolType;
+import com.example.the_ultimate_easter_egg_guide.Pages.InGameNotes_ToolPage;
 import com.example.the_ultimate_easter_egg_guide.Pages.QuickRefDisplay_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.RecommendGums_ToolPage;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.example.the_ultimate_easter_egg_guide.ToolsData.Tools;
 
@@ -43,6 +45,16 @@ public class Tools_PAGE extends NavPageController_BaseClass implements ToolAdapt
         {
             Intent intent = new Intent(this, QuickRefDisplay_PAGE.class);
             intent.putExtra(QuickRefDisplay_PAGE.EXTRA_IMAGE_ID, tool.icon);
+            startActivity(intent);
+        }
+        else if (tool == Tools.Recommended_GUMS)
+        {
+            Intent intent = new Intent(this, RecommendGums_ToolPage.class);
+            startActivity(intent);
+        }
+        else if (tool == Tools.IN_GAME_NOTES)
+        {
+            Intent intent = new Intent(this, InGameNotes_ToolPage.class);
             startActivity(intent);
         }
     }

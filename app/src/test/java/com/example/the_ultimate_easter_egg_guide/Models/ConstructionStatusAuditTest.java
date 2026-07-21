@@ -4,8 +4,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.example.the_ultimate_easter_egg_guide.Pages.AboutMe_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.CharacterDisplay_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.EggDisplay_Page;
+import com.example.the_ultimate_easter_egg_guide.Pages.InGameNotes_ToolPage;
 import com.example.the_ultimate_easter_egg_guide.Pages.MapDisplay_Page;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Home_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.MapsSelection_Page;
@@ -13,6 +15,7 @@ import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Settings_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.StorylineSelection_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.Tools_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.QuickRefDisplay_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.RecommendGums_ToolPage;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -39,7 +42,10 @@ public class ConstructionStatusAuditTest {
                 MapDisplay_Page.class,
                 EggDisplay_Page.class,
                 CharacterDisplay_PAGE.class,
-                QuickRefDisplay_PAGE.class
+                QuickRefDisplay_PAGE.class,
+                AboutMe_PAGE.class,
+                RecommendGums_ToolPage.class,
+                InGameNotes_ToolPage.class
         };
 
         // ANSI Color Codes
@@ -108,6 +114,9 @@ public class ConstructionStatusAuditTest {
         if (clazz == EggDisplay_Page.class) return "egg_display_page";
         if (clazz == CharacterDisplay_PAGE.class) return "character_display_page";
         if (clazz == QuickRefDisplay_PAGE.class) return "quick_ref_display_page";
+        if (clazz == AboutMe_PAGE.class) return "about_me_page";
+        if (clazz == InGameNotes_ToolPage.class) return "in_game_notes_tool_page";
+        if (clazz == RecommendGums_ToolPage.class) return "recommend_gums_tool_page";
         return "unknown";
     }
 
