@@ -30,11 +30,6 @@ public class MapAdapter extends RecyclerView.Adapter<MapAdapter.MapViewHolder> {
         this.listener = listener;
     }
 
-    public void updateData(List<Maps> newList) {
-        this.mapList = newList;
-        notifyDataSetChanged();
-    }
-
     @NonNull
     @Override
     public MapViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

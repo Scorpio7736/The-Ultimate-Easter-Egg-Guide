@@ -6,5 +6,6 @@ public enum GobbleGumTypes
     Classic,
     Mega,
     Rare_Mega,
-    Ultra_Rare_Mega
+    Ultra_Rare_Mega,
+    Whimsical
 }

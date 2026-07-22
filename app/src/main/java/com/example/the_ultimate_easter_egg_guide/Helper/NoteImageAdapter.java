@@ -39,10 +39,6 @@ public class NoteImageAdapter extends RecyclerView.Adapter<NoteImageAdapter.View
         notifyDataSetChanged();
     }
 
-    public List<String> getImagePaths() {
-        return new ArrayList<>(imagePaths);
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -7,15 +7,14 @@ import static org.junit.Assert.assertTrue;
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobbleGums.GobbleGumColors;
 import com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobbleGums.GobbleGumTypes;
-import com.example.the_ultimate_easter_egg_guide.R;
 
 import org.junit.Test;
 
-public class GobbleGumsTest {
+public class GobbleGumsBoiiiTest {
 
     @Test
     public void testEnumInitialization() {
-        for (GobbleGums gum : GobbleGums.values()) {
+        for (GobbleGums_boiii gum : GobbleGums_boiii.values()) {
             assertNotNull("Gum name should not be null for " + gum.name(), gum.gumName);
             assertTrue("Gum name should not be empty for " + gum.name(), !gum.gumName.isEmpty());
             assertTrue("Gum cover should be a valid resource ID for " + gum.name(), gum.gumCover != 0);
@@ -27,15 +26,15 @@ public class GobbleGumsTest {
 
     @Test
     public void testSpecificGumData() {
-        // Test Perkaholic
-        GobbleGums perkaholic = GobbleGums.PERKAHOLIC;
-        assertEquals("Perkaholic", perkaholic.gumName);
-        assertEquals(Games.Black_Ops_III, perkaholic.game);
-        assertEquals(GobbleGumTypes.Mega, perkaholic.gumType);
-        assertEquals(GobbleGumColors.ORANGE, perkaholic.gumColor);
+        // Test Test
+        GobbleGums_boiii Test = GobbleGums_boiii.TEST;
+        assertEquals("TEST GUM", Test.gumName);
+        assertEquals(Games.Test, Test.game);
+        assertEquals(GobbleGumTypes.TEST, Test.gumType);
+        assertEquals(GobbleGumColors.TEST, Test.gumColor);
 
         // Test Alchemical Antithesis
-        GobbleGums alchemical = GobbleGums.ALCHEMICAL_ANTITHESIS;
+        GobbleGums_boiii alchemical = GobbleGums_boiii.ALCHEMICAL_ANTITHESIS;
         assertEquals("Alchemical Antithesis", alchemical.gumName);
         assertEquals(Games.Black_Ops_III, alchemical.game);
         assertEquals(GobbleGumTypes.Classic, alchemical.gumType);

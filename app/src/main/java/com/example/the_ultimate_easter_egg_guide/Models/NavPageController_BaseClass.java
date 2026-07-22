@@ -93,14 +93,18 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
     }
 
     protected void setupGameFilter(int spinnerId, boolean includeAllOption, OnGameSelectedListener listener) {
-        setupFilter(spinnerId, Games.class, includeAllOption ? "All Games" : null, (OnFilterSelectedListener<Games>) listener::onGameSelected);
+        setupGameFilter(spinnerId, includeAllOption, null, listener);
+    }
+
+    protected void setupGameFilter(int spinnerId, boolean includeAllOption, @Nullable Games initialSelection, OnGameSelectedListener listener) {
+        setupFilter(spinnerId, Games.class, includeAllOption ? "All Games" : null, initialSelection, (OnFilterSelectedListener<Games>) listener::onGameSelected);
     }
 
     protected <T extends Enum<T>> void setupFilter(Class<T> enumClass, String allOptionText, OnFilterSelectedListener<T> listener) {
-        setupFilter(R.id.game_filter_spinner, enumClass, allOptionText, listener);
+        setupFilter(R.id.game_filter_spinner, enumClass, allOptionText, null, listener);
     }
 
-    protected <T extends Enum<T>> void setupFilter(int spinnerId, Class<T> enumClass, @Nullable String allOptionText, OnFilterSelectedListener<T> listener) {
+    protected <T extends Enum<T>> void setupFilter(int spinnerId, Class<T> enumClass, @Nullable String allOptionText, @Nullable T initialSelection, OnFilterSelectedListener<T> listener) {
         Spinner filterSpinner = findViewById(spinnerId);
         if (filterSpinner == null) return;
 
@@ -142,6 +146,16 @@ public abstract class NavPageController_BaseClass extends PageController_BaseCla
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, displayNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         filterSpinner.setAdapter(adapter);
+
+        // Handle initial selection
+        if (initialSelection != null) {
+            int itemIndex = filteredConstants.indexOf(initialSelection);
+            if (itemIndex != -1) {
+                // If we have an "All" option at index 0, the items are shifted by 1
+                int spinnerIndex = hasAllOption ? itemIndex + 1 : itemIndex;
+                filterSpinner.setSelection(spinnerIndex);
+            }
+        }
 
         filterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

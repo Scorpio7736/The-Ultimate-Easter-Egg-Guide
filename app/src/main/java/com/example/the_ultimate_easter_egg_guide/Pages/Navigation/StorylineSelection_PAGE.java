@@ -34,6 +34,9 @@ import java.util.List;
 
 public class StorylineSelection_PAGE extends NavPageController_BaseClass implements StorylineCharacterAdapter.OnCharacterClickListener {
 
+    public static final String EXTRA_INITIAL_CATEGORY = "EXTRA_INITIAL_CATEGORY";
+    public static final String EXTRA_INITIAL_GAME = "EXTRA_INITIAL_GAME";
+
     private StorylineItems currentCategory;
     private Games selectedGame = null;
     private ItemGroups selectedItemGroup = null;
@@ -51,10 +54,25 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
         gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        setupCategorySpinner();
+        // Handle initial category/game if passed from intent
+        StorylineItems initialCategory = null;
+        Games initialGame = null;
+
+        if (getIntent().hasExtra(EXTRA_INITIAL_CATEGORY)) {
+            try {
+                initialCategory = StorylineItems.valueOf(getIntent().getStringExtra(EXTRA_INITIAL_CATEGORY));
+            } catch (Exception ignored) {}
+        }
+        if (getIntent().hasExtra(EXTRA_INITIAL_GAME)) {
+            try {
+                initialGame = Games.valueOf(getIntent().getStringExtra(EXTRA_INITIAL_GAME));
+            } catch (Exception ignored) {}
+        }
+
+        setupCategorySpinner(initialCategory, initialGame);
     }
 
-    private void setupCategorySpinner() {
+    private void setupCategorySpinner(StorylineItems initialCategory, Games initialGame) {
         Spinner spinner = findViewById(R.id.storyline_spinner);
         List<String> categories = new ArrayList<>();
         for (StorylineItems item : StorylineItems.values()) {
@@ -65,11 +83,22 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        // Set initial category selection
+        if (initialCategory != null) {
+            int pos = java.util.Arrays.asList(StorylineItems.values()).indexOf(initialCategory);
+            if (pos != -1) spinner.setSelection(pos);
+        }
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 currentCategory = StorylineItems.values()[position];
-                loadCategoryData(currentCategory);
+                // Only pass initial game on the first load for the specific category
+                if (currentCategory == initialCategory) {
+                    loadCategoryData(currentCategory, initialGame);
+                } else {
+                    loadCategoryData(currentCategory, null);
+                }
             }
 
             @Override
@@ -79,7 +108,7 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
         });
     }
 
-    private void loadCategoryData(StorylineItems category) {
+    private void loadCategoryData(StorylineItems category, Games initialGame) {
         boolean showGameFilter = category == StorylineItems.Creatures || 
                                category == StorylineItems.Organizations ||
                                category == StorylineItems.NonPlayerCharacter || 
@@ -90,7 +119,7 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
 
         if (showGameFilter) {
             setGameFilterVisibility(true, "Filter by Game");
-            setupGameFilter(game -> {
+            setupGameFilter(R.id.game_filter_spinner, true, initialGame, game -> {
                 selectedGame = game;
                 refreshAdapter();
             });

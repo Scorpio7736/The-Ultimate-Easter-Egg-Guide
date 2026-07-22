@@ -129,7 +129,14 @@ public class MapDisplay_Page extends PageController_BaseClass {
         });
 
         findViewById(R.id.option_storyline).setOnClickListener(v -> {
-            PageTransitionManager.startActivityWithFade(this, StorylineSelection_PAGE.class);
+            if (selectedMap != null) {
+                android.content.Intent intent = new android.content.Intent(this, StorylineSelection_PAGE.class);
+                intent.putExtra(StorylineSelection_PAGE.EXTRA_INITIAL_CATEGORY, com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems.Map.name());
+                intent.putExtra(StorylineSelection_PAGE.EXTRA_INITIAL_GAME, selectedMap.gameName.name());
+                PageTransitionManager.startActivityWithFade(this, intent);
+            } else {
+                PageTransitionManager.startActivityWithFade(this, StorylineSelection_PAGE.class);
+            }
         });
 
         // Navigation bar settings button removed, handled by base class

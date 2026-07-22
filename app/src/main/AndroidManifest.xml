@@ -40,6 +40,7 @@
         <activity android:name=".Pages.CharacterDisplay_PAGE" />
         <activity android:name=".Pages.QuickRefDisplay_PAGE" />
         <activity android:name=".Pages.AboutMe_PAGE" />
+        <activity android:name=".Pages.ContactUs_PAGE" />
         <activity android:name=".Pages.Tools.RecommendGums_ToolPage" />
         <activity
             android:name=".Pages.Tools.InGameNotes_ToolPage"
