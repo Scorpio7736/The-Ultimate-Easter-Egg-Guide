@@ -46,22 +46,22 @@ public enum Maps
 
     // --------------------------------- Black Ops II MAPS ---------------------------------
 
-    BOII_Tranzit(Games.Black_Ops_II, "Tranzit",  R.string.boii_Tranzit_mapdescription,R.drawable.boii_tranzit_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Tranzit),
+    BOII_Tranzit(Games.Black_Ops_II, "Tranzit",  R.string.boii_Tranzit_mapdescription,R.drawable.boii_tranzit_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Tranzit, R.raw.tranzit_trailer),
     //BOII_Town(games.Black_Ops_II, "Town", R.string.boii_Town_mapdescription, R.drawable.boii_town_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Town),
     //BOII_Farm(games.Black_Ops_II, "Farm", R.string.boii_Farm_mapdescription, R.drawable.boii_farm_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Farm),
     //BOII_Bus_Depot(games.Black_Ops_II, "Bus Depot", R.string.boii_BusDepot_mapdescription, R.drawable.boii_busdepot_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.BusDepot),
-    BOII_Nuketown(Games.Black_Ops_II, "Nuketown", R.string.boii_Nuketown_mapdescription, R.drawable.boii_nuketown_mapcover, MapType.Broken_Arrow, BOII_EggWarehouse.Nuketown),
-    BOII_Die_Rise(Games.Black_Ops_II, "Die Rise", R.string.boii_DieRise_mapdescription, R.drawable.boii_dierise_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.DieRise), //FYI: This map is the worst of all maps across all games of all time. I hate Die Rise.
-    BOII_Mob_Of_The_Dead(Games.Black_Ops_II, "Mob of the Dead", R.string.boii_MobOfTheDead_mapdescription, R.drawable.boii_mobofthedead_mapcover, MapType.Purgatory, BOII_EggWarehouse.MobOfTheDead),
-    BOII_Buried(Games.Black_Ops_II, "Buried", R.string.boii_Buried_mapdescription, R.drawable.boii_buried_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Buried),
-    BOII_Origins(Games.Black_Ops_II, "Origins", R.string.boii_Origins_mapdescription, R.drawable.boii_origins_mapcover, MapType.Crazy_Place, BOII_EggWarehouse.Origins),
+    BOII_Nuketown(Games.Black_Ops_II, "Nuketown", R.string.boii_Nuketown_mapdescription, R.drawable.boii_nuketown_mapcover, MapType.Broken_Arrow, BOII_EggWarehouse.Nuketown, R.raw.nuketown_trailer),
+    BOII_Die_Rise(Games.Black_Ops_II, "Die Rise", R.string.boii_DieRise_mapdescription, R.drawable.boii_dierise_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.DieRise, R.raw.dierise_trailer), //FYI: This map is the worst of all maps across all games of all time. I hate Die Rise.
+    BOII_Mob_Of_The_Dead(Games.Black_Ops_II, "Mob of the Dead", R.string.boii_MobOfTheDead_mapdescription, R.drawable.boii_mobofthedead_mapcover, MapType.Purgatory, BOII_EggWarehouse.MobOfTheDead, R.raw.mobofthedead_trailer),
+    BOII_Buried(Games.Black_Ops_II, "Buried", R.string.boii_Buried_mapdescription, R.drawable.boii_buried_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Buried, R.raw.buried_trailer),
+    BOII_Origins(Games.Black_Ops_II, "Origins", R.string.boii_Origins_mapdescription, R.drawable.boii_origins_mapcover, MapType.Crazy_Place, BOII_EggWarehouse.Origins, R.raw.origins_trailer),
 
     // --------------------------------- Black Ops III MAPS ---------------------------------
 
     BOIII_Shadows_Of_Evil(Games.Black_Ops_III, "Shadows of Evil", R.string.boiii_ShadowsOfEvil_mapdescription, R.drawable.boiii_shadowsofevil_mapcover, MapType.Morge_City, BOIII_EggWarehouse.ShadowsOfEvil, R.raw.soe_trailer),
     BOIII_The_Giant(Games.Black_Ops_III, "The Giant", R.string.boiii_TheGiant_mapdescription, R.drawable.boiii_thegiant_mapcover, MapType.Group_935_Winter, BOIII_EggWarehouse.TheGiant, R.raw.thegiant_trailer),
     BOIII_Der_Eisendrache(Games.Black_Ops_III, "Der Eisendrache", R.string.boiii_DerEisendrache_mapdescription, R.drawable.boiii_dereisendrache_mapcover, MapType.Group_935_Winter, BOIII_EggWarehouse.DerEisendrache, R.raw.dereisendrache_trailer),
-    BOIII_Zetsubou_No_Shima(Games.Black_Ops_III, "Zetsubou No Shima", R.string.boiii_ZetsubouNoShima_mapdescription, R.drawable.boiii_zetsubounoshima_mapcover, MapType.Division_9, BOIII_EggWarehouse.ZetsubouNoShima),
+    BOIII_Zetsubou_No_Shima(Games.Black_Ops_III, "Zetsubou No Shima", R.string.boiii_ZetsubouNoShima_mapdescription, R.drawable.boiii_zetsubounoshima_mapcover, MapType.Division_9, BOIII_EggWarehouse.ZetsubouNoShima, R.raw.zetsubounoshima_trailer),
     BOIII_Gorod_Krovi(Games.Black_Ops_III, "Gorod Krovi", R.string.boiii_GorodKrovi_mapdescription, R.drawable.boiii_gorodkrovi_mapcover, MapType.Stalingrad, BOIII_EggWarehouse.GorodKrovi, R.raw.gorodkrovi_trailer),
     BOIII_Revelations(Games.Black_Ops_III, "Revelations", R.string.boiii_Revelations_mapdescription, R.drawable.boiii_revelations_mapcover, MapType.Agartha, BOIII_EggWarehouse.Revelations, R.raw.revelations_trailer),
     //BOIII_Nacht_Der_Untoten(games.Black_Ops_III, "Nacht der Untoten", R.string.boiii_NachtDerUntoten_mapdescription, R.drawable.boiii_nachtderuntoten_mapcover, MapType.Group_935, BOIII_EggWarehouse.NachtDerUntoten),
