@@ -10,7 +10,6 @@ import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Pages.AboutMe_PAGE;
-import com.example.the_ultimate_easter_egg_guide.Pages.CharacterDisplay_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.ContactUs_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.EggDisplay_Page;
 import com.example.the_ultimate_easter_egg_guide.Pages.MapDisplay_Page;
@@ -74,7 +73,6 @@ public class MasterAuditTest {
                 Settings_PAGE.class,
                 MapDisplay_Page.class,
                 EggDisplay_Page.class,
-                CharacterDisplay_PAGE.class,
                 QuickRefDisplay_PAGE.class,
                 AboutMe_PAGE.class,
                 RecommendGums_ToolPage.class,
@@ -271,7 +269,6 @@ public class MasterAuditTest {
         if (clazz == Settings_PAGE.class) return "settings_page";
         if (clazz == MapDisplay_Page.class) return "map_display_page";
         if (clazz == EggDisplay_Page.class) return "egg_display_page";
-        if (clazz == CharacterDisplay_PAGE.class) return "character_display_page";
         if (clazz == QuickRefDisplay_PAGE.class) return "quick_ref_display_page";
         if (clazz == AboutMe_PAGE.class) return "about_me_page";
         if (clazz == InGameNotes_ToolPage.class) return "in_game_notes_tool_page";

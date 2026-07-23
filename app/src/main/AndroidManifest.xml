@@ -37,7 +37,6 @@
         <activity android:name=".Pages.EggDisplay_Page" />
         <activity android:name=".Pages.Navigation.StorylineSelection_PAGE" />
         <activity android:name=".Pages.Navigation.Tools_PAGE" />
-        <activity android:name=".Pages.CharacterDisplay_PAGE" />
         <activity android:name=".Pages.QuickRefDisplay_PAGE" />
         <activity android:name=".Pages.AboutMe_PAGE" />
         <activity android:name=".Pages.ContactUs_PAGE" />

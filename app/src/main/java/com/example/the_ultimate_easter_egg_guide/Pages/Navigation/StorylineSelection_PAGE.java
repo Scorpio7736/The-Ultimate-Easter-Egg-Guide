@@ -12,13 +12,11 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Helper.StorylineCharacterAdapter;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ItemGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
-import com.example.the_ultimate_easter_egg_guide.Pages.CharacterDisplay_PAGE;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.Player_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CharacterData.NonPlayer_Characters;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Enemy_Creatures;
@@ -159,18 +157,22 @@ public class StorylineSelection_PAGE extends NavPageController_BaseClass impleme
 
     @Override
     public void onPlayerCharacterClick(Player_Characters character) {
-        Intent intent = new Intent(this, CharacterDisplay_PAGE.class);
-        intent.putExtra("CHARACTER_ID", character.name());
-        intent.putExtra("IS_PLAYER_CHARACTER", true);
-        PageTransitionManager.startActivityWithFade(this, intent);
+        if (character.GetFandomLink() != null && !character.GetFandomLink().isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(character.GetFandomLink()));
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Fandom link not available", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
     public void onNonPlayerCharacterClick(NonPlayer_Characters character) {
-        Intent intent = new Intent(this, CharacterDisplay_PAGE.class);
-        intent.putExtra("CHARACTER_ID", character.name());
-        intent.putExtra("IS_PLAYER_CHARACTER", false);
-        PageTransitionManager.startActivityWithFade(this, intent);
+        if (character.GetFandomLink() != null && !character.GetFandomLink().isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(character.GetFandomLink()));
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Fandom link not available", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

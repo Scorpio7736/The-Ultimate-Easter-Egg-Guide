@@ -71,9 +71,8 @@ public class StorylineSelectionPageTest {
                 
                 Intent actualIntent = shadowOf(activity).getNextStartedActivity();
                 assertNotNull(actualIntent);
-                assertEquals(CharacterDisplay_PAGE.class.getName(), actualIntent.getComponent().getClassName());
-                assertEquals(character.name(), actualIntent.getStringExtra("CHARACTER_ID"));
-                assertTrue(actualIntent.getBooleanExtra("IS_PLAYER_CHARACTER", false));
+                assertEquals(Intent.ACTION_VIEW, actualIntent.getAction());
+                assertEquals(Uri.parse(character.fandomLink), actualIntent.getData());
             });
         }
     }
@@ -87,9 +86,8 @@ public class StorylineSelectionPageTest {
                 
                 Intent actualIntent = shadowOf(activity).getNextStartedActivity();
                 assertNotNull(actualIntent);
-                assertEquals(CharacterDisplay_PAGE.class.getName(), actualIntent.getComponent().getClassName());
-                assertEquals(character.name(), actualIntent.getStringExtra("CHARACTER_ID"));
-                assertFalse(actualIntent.getBooleanExtra("IS_PLAYER_CHARACTER", true));
+                assertEquals(Intent.ACTION_VIEW, actualIntent.getAction());
+                assertEquals(Uri.parse(character.fandomLink), actualIntent.getData());
             });
         }
     }
