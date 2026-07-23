@@ -11,6 +11,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Pages.AboutMe_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.CharacterDisplay_PAGE;
+import com.example.the_ultimate_easter_egg_guide.Pages.ContactUs_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.EggDisplay_Page;
 import com.example.the_ultimate_easter_egg_guide.Pages.MapDisplay_Page;
 import com.example.the_ultimate_easter_egg_guide.Pages.QuickRefDisplay_PAGE;
@@ -77,7 +78,8 @@ public class MasterAuditTest {
                 QuickRefDisplay_PAGE.class,
                 AboutMe_PAGE.class,
                 RecommendGums_ToolPage.class,
-                InGameNotes_ToolPage.class
+                InGameNotes_ToolPage.class,
+                ContactUs_PAGE.class
         };
 
         List<String[]> failures = new ArrayList<>();
@@ -274,6 +276,7 @@ public class MasterAuditTest {
         if (clazz == AboutMe_PAGE.class) return "about_me_page";
         if (clazz == InGameNotes_ToolPage.class) return "in_game_notes_tool_page";
         if (clazz == RecommendGums_ToolPage.class) return "recommend_gums_tool_page";
+        if (clazz == ContactUs_PAGE.class) return "contact_us_page";
         return "unknown";
     }
 

@@ -50,7 +50,7 @@ public enum Maps
     //BOII_Town(games.Black_Ops_II, "Town", R.string.boii_Town_mapdescription, R.drawable.boii_town_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Town),
     //BOII_Farm(games.Black_Ops_II, "Farm", R.string.boii_Farm_mapdescription, R.drawable.boii_farm_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Farm),
     //BOII_Bus_Depot(games.Black_Ops_II, "Bus Depot", R.string.boii_BusDepot_mapdescription, R.drawable.boii_busdepot_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.BusDepot),
-    BOII_Nuketown(Games.Black_Ops_II, "Nuketown", R.string.boii_Nuketown_mapdescription, R.drawable.boii_nuketown_mapcover, MapType.Broken_Arrow, BOII_EggWarehouse.Nuketown, R.raw.nuketown_trailer),
+    BOII_Nuketown(Games.Black_Ops_II, "Nuketown", R.string.boii_Nuketown_mapdescription, R.drawable.boii_nuketown_mapcover, MapType.Broken_Arrow, BOII_EggWarehouse.Nuketown),
     BOII_Die_Rise(Games.Black_Ops_II, "Die Rise", R.string.boii_DieRise_mapdescription, R.drawable.boii_dierise_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.DieRise, R.raw.dierise_trailer), //FYI: This map is the worst of all maps across all games of all time. I hate Die Rise.
     BOII_Mob_Of_The_Dead(Games.Black_Ops_II, "Mob of the Dead", R.string.boii_MobOfTheDead_mapdescription, R.drawable.boii_mobofthedead_mapcover, MapType.Purgatory, BOII_EggWarehouse.MobOfTheDead, R.raw.mobofthedead_trailer),
     BOII_Buried(Games.Black_Ops_II, "Buried", R.string.boii_Buried_mapdescription, R.drawable.boii_buried_mapcover, MapType.Broken_Earth, BOII_EggWarehouse.Buried, R.raw.buried_trailer),

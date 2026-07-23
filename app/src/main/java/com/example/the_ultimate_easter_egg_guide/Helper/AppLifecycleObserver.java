@@ -23,8 +23,16 @@ public class AppLifecycleObserver implements DefaultLifecycleObserver {
     }
 
     @Override
+    public void onStart(@NonNull LifecycleOwner owner) {
+        // App enters foreground
+        MusicManager.getInstance(context).resumeMusic();
+    }
+
+    @Override
     public void onStop(@NonNull LifecycleOwner owner) {
         // App enters background
+        MusicManager.getInstance(context).pauseMusic();
+        
         if (PageController_BaseClass.ENABLE_TESTING) {
             Data inputData = new Data.Builder()
                     .putString(NotificationWorker.KEY_NOTIFICATION_NAME, Notifications.TEST.name())

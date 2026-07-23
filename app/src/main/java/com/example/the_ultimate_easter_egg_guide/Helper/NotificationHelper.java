@@ -30,7 +30,7 @@ public class NotificationHelper {
 
     public static void sendNotification(Context context, Notifications notification) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.app_icon)
+                .setSmallIcon(R.drawable.apothicon_pfp)
                 .setContentTitle(notification.notificationTitle)
                 .setContentText(notification.notificationMsg)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)

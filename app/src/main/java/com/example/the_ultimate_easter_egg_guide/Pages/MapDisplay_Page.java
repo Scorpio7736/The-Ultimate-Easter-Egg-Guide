@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatDialog;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapType;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
+import com.example.the_ultimate_easter_egg_guide.Helper.MusicManager;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.StorylineSelection_PAGE;
@@ -145,6 +146,9 @@ public class MapDisplay_Page extends PageController_BaseClass {
     void showVideoPopup() {
         if (selectedMap == null || selectedMap.mapTrailer == -1) return;
 
+        // Fade out background music
+        MusicManager.getInstance(this).fadeOutPause();
+
         VideoView mapTrailerVideo = findViewById(R.id.map_trailer_video);
         int currentPos = mapTrailerVideo.getCurrentPosition();
         boolean wasPlaying = mapTrailerVideo.isPlaying();
@@ -173,6 +177,8 @@ public class MapDisplay_Page extends PageController_BaseClass {
                 mapTrailerVideo.seekTo(popupVideoView.getCurrentPosition());
                 mapTrailerVideo.start();
             }
+            // Fade back in background music
+            MusicManager.getInstance(this).fadeInResume();
         });
 
         popupVideoView.setOnCompletionListener(mp -> dialog.dismiss());

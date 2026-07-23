@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/general_bkg"
+        android:src="@drawable/settings_bkg_m"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,56 +36,128 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/about_me_button"
-                style="@style/Widget.MaterialComponents.Button.Icon"
+            <!-- About Me Header -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/about_me_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/nz_font"
-                android:padding="16dp"
-                android:text="About Me"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/primary_blue_dark"
-                app:cornerRadius="8dp"
-                app:icon="@drawable/ic_view_list"
-                app:iconGravity="textStart"
-                app:iconPadding="12dp"
-                app:iconTint="@color/white" />
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#44000000"
+                app:cardCornerRadius="12dp"
+                app:strokeColor="#44FFFFFF"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/permissions_button"
-                style="@style/Widget.MaterialComponents.Button.Icon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/nz_font"
-                android:padding="16dp"
-                android:text="Set Permissions"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/primary_blue_dark"
-                app:cornerRadius="8dp"
-                app:icon="@drawable/ic_settings_navbutton"
-                app:iconGravity="textStart"
-                app:iconPadding="12dp"
-                app:iconTint="@color/white" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/contact_us_button"
-                style="@style/Widget.MaterialComponents.Button.Icon"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="About Me"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/nz_font"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_view_list"
+                        app:tint="@color/accent_gold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Permissions Header -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/permissions_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/nz_font"
-                android:padding="16dp"
-                android:text="Contact us!"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/primary_blue_dark"
-                app:cornerRadius="8dp"
-                app:icon="@drawable/ic_view_list"
-                app:iconGravity="textStart"
-                app:iconPadding="12dp"
-                app:iconTint="@color/white" />
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#44000000"
+                app:cardCornerRadius="12dp"
+                app:strokeColor="#44FFFFFF"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Set Permissions"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/nz_font"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_view_list"
+                        app:tint="@color/accent_gold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Contact Us Header -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/contact_us_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#44000000"
+                app:cardCornerRadius="12dp"
+                app:strokeColor="#44FFFFFF"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contact us!"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/nz_font"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_view_list"
+                        app:tint="@color/accent_gold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/sound_settings_header"
@@ -108,7 +180,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Sound Settings"
-                        android:textColor="@color/accent_gold"
+                        android:textColor="@color/white"
                         android:textSize="20sp"
                         android:fontFamily="@font/nz_font"
                         app:layout_constraintStart_toStartOf="parent"
@@ -138,34 +210,83 @@
                 android:paddingEnd="8dp"
                 android:layout_marginBottom="16dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:background="#22FFFFFF"
-                    android:backgroundTint="@color/divider_dark">
+                    app:cardBackgroundColor="#44000000"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="#44FFFFFF"
+                    app:strokeWidth="1dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Enable Music"
-                        android:textColor="@color/text_primary"
-                        android:textSize="18sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent" />
+                        android:orientation="vertical">
 
-                    <com.google.android.material.switchmaterial.SwitchMaterial
-                        android:id="@+id/audio_settings_switch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:thumbTint="@color/primary_blue"
-                        app:trackTint="@color/primary_blue_dark" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp">
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Enable Music"
+                                android:textColor="@color/text_primary"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <com.google.android.material.switchmaterial.SwitchMaterial
+                                android:id="@+id/audio_settings_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:thumbTint="@color/primary_blue"
+                                app:trackTint="@color/primary_blue_dark" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#22FFFFFF"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select Track"
+                                android:textColor="@color/text_primary"
+                                android:textSize="18sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                            <Spinner
+                                android:id="@+id/music_track_spinner"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"
+                                android:background="@drawable/spinner_background"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
 
@@ -184,6 +305,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:fontFamily="@font/nz_font"
         android:id="@+id/title_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
