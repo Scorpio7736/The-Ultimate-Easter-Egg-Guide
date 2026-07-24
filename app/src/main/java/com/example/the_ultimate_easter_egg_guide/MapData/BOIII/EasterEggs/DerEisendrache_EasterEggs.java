@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOIII.EasterEggs;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1239,7 +1240,7 @@ public class DerEisendrache_EasterEggs
         FreeMegaGobbleGum
     );
 
-    public static final List<EasterEgg> DerEisendrache_Buildables = Arrays.asList(
+    public static final List<Procedure> DerEisendrache_Buildables = Arrays.asList(
         RagnarokDG4,
         RocketShield,
         WrathOfTheAncients,

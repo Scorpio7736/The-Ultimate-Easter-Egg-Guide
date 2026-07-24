@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOIII.EasterEggs;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 
 import java.util.Arrays;
 import java.util.List;
@@ -446,7 +447,7 @@ public class GorodKrovi_EasterEggs
 
     );
 
-    public static final List<EasterEgg> GorodKrovi_Buildables = Arrays.asList(
+    public static final List<Procedure> GorodKrovi_Buildables = Arrays.asList(
         GuardOfFafnir,
         GauntletOfSiegfried,
         DragonStrike,

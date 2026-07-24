@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOII.EasterEggs;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1110,7 +1111,7 @@ public class Buried_EasterEggs
         TimeBombPerkTrick,
         ChalkWeaponPlacement
     );
-    public static final List<EasterEgg> Buried_Buildables = Arrays.asList(
+    public static final List<Procedure> Buried_Buildables = Arrays.asList(
         CraftingTables,
         Turbine,
         NavTable,

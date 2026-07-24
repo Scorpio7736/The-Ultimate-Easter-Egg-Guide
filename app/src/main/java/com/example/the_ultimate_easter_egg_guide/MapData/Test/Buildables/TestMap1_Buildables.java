@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.Test.Buildables;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.Arrays;
@@ -20,7 +21,7 @@ public class TestMap1_Buildables
                             .addImage(R.drawable.default_test_image)))
             .addStep(new EasterEggStep("Enter the Portal"));
 
-    public static final List<EasterEgg> TestMap1_Buildables = Arrays.asList(
+    public static final List<Procedure> TestMap1_Buildables = Arrays.asList(
             TestEggBuildable1
     );
 }

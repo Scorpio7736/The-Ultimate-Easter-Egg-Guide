@@ -1,6 +1,7 @@
 package com.example.the_ultimate_easter_egg_guide.MapData.Test.Buildables;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -14,5 +15,5 @@ public class TestMap2_Buildables
                     .addImage(R.drawable.default_test_image))
             .addStep(new EasterEggStep("Part 2: The Fuel"));
 
-    public static final List<EasterEgg> TestMap2_Buildables = Arrays.asList(TestBuildable);
+    public static final List<Procedure> TestMap2_Buildables = Arrays.asList(TestBuildable);
 }

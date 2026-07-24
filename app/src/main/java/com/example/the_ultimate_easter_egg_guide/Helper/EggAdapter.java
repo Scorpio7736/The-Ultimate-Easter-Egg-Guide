@@ -12,8 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.ProcedureStep;
 import com.example.the_ultimate_easter_egg_guide.Models.Images.ImageID;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -22,16 +22,16 @@ import java.util.List;
 
 public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
 
-    private final List<EasterEgg> eggList;
+    private final List<Procedure> eggList;
     private final OnEggClickListener listener;
     private final String gameName;
     private int expandedPosition = -1;
 
     public interface OnEggClickListener {
-        void onEggClick(EasterEgg egg, int position, boolean isExpanding);
+        void onEggClick(Procedure egg, int position, boolean isExpanding);
     }
 
-    public EggAdapter(List<EasterEgg> eggList, String gameName, OnEggClickListener listener) {
+    public EggAdapter(List<Procedure> eggList, String gameName, OnEggClickListener listener) {
         this.eggList = eggList;
         this.gameName = gameName;
         this.listener = listener;
@@ -46,18 +46,18 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull EggViewHolder holder, int position) {
-        EasterEgg egg = eggList.get(position);
-        holder.eggName.setText(egg.easterEggName);
+        Procedure egg = eggList.get(position);
+        holder.eggName.setText(egg.name);
 
         boolean isExpanded = position == expandedPosition;
         holder.dropdownContainer.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
         holder.expandArrow.setRotation(isExpanded ? 180 : 0);
 
         if (isExpanded) {
-            populateSteps(holder.stepsContainer, egg.easterEggSteps, 0);
+            populateSteps(holder.stepsContainer, egg.steps, 0);
             
-            if (egg.easterEggReward != null && egg.easterEggReward.rewardDescription != null && !egg.easterEggReward.rewardDescription.isEmpty()) {
-                holder.rewardText.setText(egg.easterEggReward.rewardDescription);
+            if (egg.outcome != null && egg.outcome.description != null && !egg.outcome.description.isEmpty()) {
+                holder.rewardText.setText(egg.outcome.description);
             } else {
                 holder.rewardText.setText(holder.itemView.getContext().getString(R.string.reward_bragging_rights));
             }
@@ -86,32 +86,32 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
         });
     }
 
-    private String formatEggShareText(EasterEgg egg) {
+    private String formatEggShareText(Procedure egg) {
         StringBuilder sb = new StringBuilder();
         sb.append("You can find many more easter eggs for ").append(gameName).append(" on the app!\n");
         sb.append("https://play.google.com/store/apps/details?id=com.example.the_ultimate_easter_egg_guide\n\n");
         
-        sb.append("[").append(egg.easterEggName).append("]\n");
+        sb.append("[").append(egg.name).append("]\n");
         
-        String reward = (egg.easterEggReward != null && egg.easterEggReward.rewardDescription != null && !egg.easterEggReward.rewardDescription.isEmpty()) 
-                ? egg.easterEggReward.rewardDescription 
+        String reward = (egg.outcome != null && egg.outcome.description != null && !egg.outcome.description.isEmpty()) 
+                ? egg.outcome.description 
                 : "Bragging Rights";
         sb.append("Reward: ").append(reward).append("\n\n");
         
-        appendStepsToString(sb, egg.easterEggSteps, 0);
+        appendStepsToString(sb, egg.steps, 0);
         
         return sb.toString();
     }
 
-    private void appendStepsToString(StringBuilder sb, List<EasterEggStep> steps, int depth) {
+    private void appendStepsToString(StringBuilder sb, List<ProcedureStep> steps, int depth) {
         for (int i = 0; i < steps.size(); i++) {
-            EasterEggStep step = steps.get(i);
+            ProcedureStep step = steps.get(i);
             
             if (depth == 0) {
-                sb.append("Step ").append(i + 1).append(": ").append(step.stepName).append("\n");
+                sb.append("Step ").append(i + 1).append(": ").append(step.name).append("\n");
             } else {
                 char letter = (char) ('A' + i);
-                sb.append("  ").append(letter).append(": ").append(step.stepName).append("\n");
+                sb.append("  ").append(letter).append(": ").append(step.name).append("\n");
             }
             
             if (step.subSteps != null && !step.subSteps.isEmpty()) {
@@ -122,12 +122,12 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
         }
     }
 
-    private void populateSteps(LinearLayout container, List<EasterEggStep> steps, int depth) {
+    private void populateSteps(LinearLayout container, List<ProcedureStep> steps, int depth) {
         container.removeAllViews();
         LayoutInflater inflater = LayoutInflater.from(container.getContext());
 
         for (int i = 0; i < steps.size(); i++) {
-            EasterEggStep step = steps.get(i);
+            ProcedureStep step = steps.get(i);
             View stepView = inflater.inflate(R.layout.step_item, container, false);
             
             TextView stepNameText = stepView.findViewById(R.id.step_name_text);
@@ -140,7 +140,7 @@ public class EggAdapter extends RecyclerView.Adapter<EggAdapter.EggViewHolder> {
                 prefix = letter + ":   ";
             }
             
-            stepNameText.setText(prefix + step.stepName);
+            stepNameText.setText(prefix + step.name);
 
             // Populate Images
             LinearLayout imagesContainer = stepView.findViewById(R.id.step_images_container);

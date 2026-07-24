@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import androidx.test.core.app.ApplicationProvider;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
 import com.example.the_ultimate_easter_egg_guide.R;
 
@@ -32,7 +33,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class EggAdapterTest {
 
     private EggAdapter adapter;
-    private List<EasterEgg> testEggs;
+    private List<Procedure> testEggs;
     private final AtomicInteger clickedPosition = new AtomicInteger(-1);
     private final AtomicBoolean wasExpanding = new AtomicBoolean(false);
 

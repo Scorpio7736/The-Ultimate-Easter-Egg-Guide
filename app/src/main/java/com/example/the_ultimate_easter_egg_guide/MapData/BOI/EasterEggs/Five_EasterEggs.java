@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOI.EasterEggs;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +48,7 @@ public class Five_EasterEggs
     public static final EasterEgg RedPhones = new EasterEgg("The Red Phones");
 
     public static final EasterEgg Traps = new EasterEgg("Traps");
-    public static final List<EasterEgg> Five_Buildables = Arrays.asList(
+    public static final List<Procedure> Five_Buildables = Arrays.asList(
         Traps
     );
     public static final List<EasterEgg> Five_SideQuests = Arrays.asList(

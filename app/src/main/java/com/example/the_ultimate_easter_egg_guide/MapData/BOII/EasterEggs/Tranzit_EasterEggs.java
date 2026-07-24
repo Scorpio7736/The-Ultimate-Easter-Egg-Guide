@@ -1,7 +1,10 @@
 package com.example.the_ultimate_easter_egg_guide.MapData.BOII.EasterEggs;
 
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Buildable;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.BuildableStep;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 
 import java.util.Arrays;
 import java.util.List;
@@ -433,38 +436,38 @@ public class Tranzit_EasterEggs
             ;
 
 
-    public static final EasterEgg Turbine =
-            new EasterEgg("Turbine")
+    public static final Buildable Turbine =
+            new Buildable("Turbine")
 
-                    .addStep(new EasterEggStep("Collect the Mannequin")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Mannequin")
+                            .addSubStep(new BuildableStep(
                                             "Find the mannequin torso inside the Bus Depot starting room."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Fan")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Fan")
+                            .addSubStep(new BuildableStep(
                                             "Find the fan inside the Bus Depot starting room."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Model-Plane Tail")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Model-Plane Tail")
+                            .addSubStep(new BuildableStep(
                                             "Find the model-plane tail inside the Bus Depot starting room."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Build the Turbine")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Build the Turbine")
+                            .addSubStep(new BuildableStep(
                                     "Place all three parts onto the workbench inside the Bus Depot."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "The Turbine can temporarily power doors, perk machines, Denizen teleporters, the Turret, the Electric Trap, and the Pack-A-Punch access door."
                                     )
                                             .addImage()
@@ -473,46 +476,46 @@ public class Tranzit_EasterEggs
             ;
 
 
-    public static final EasterEgg PowerSwitch =
-            new EasterEgg("PowerSwitch")
+    public static final Buildable PowerSwitch =
+            new Buildable("PowerSwitch")
 
-                    .addStep(new EasterEggStep("Enter the Power Lab")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Enter the Power Lab")
+                            .addSubStep(new BuildableStep(
                                             "Stop at the Power Station, open the outhouse door, and jump into the underground facility."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Severed Arm")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Severed Arm")
+                            .addSubStep(new BuildableStep(
                                             "Search the upper stairways and boxes inside the Power Lab for the severed arm."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Power Lever")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Power Lever")
+                            .addSubStep(new BuildableStep(
                                             "Search the computer desks, workbench area, and boxes inside the Power Lab for the lever."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Electrical Panel")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Electrical Panel")
+                            .addSubStep(new BuildableStep(
                                             "Search near the entrance barrier, stairways, desks, and workbench for the electrical panel."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Build and Activate the Power Switch")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Build and Activate the Power Switch")
+                            .addSubStep(new BuildableStep(
                                     "Place all three parts onto the Power Lab workbench."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Interact with the completed switch to activate the map's power and release the Avogadro."
                                     )
                                             .addImage()
@@ -521,36 +524,36 @@ public class Tranzit_EasterEggs
             ;
 
 
-    public static final EasterEgg ZombieShield =
-            new EasterEgg("Zombie Shield")
+    public static final Buildable ZombieShield =
+            new Buildable("Zombie Shield")
 
-                    .addStep(new EasterEggStep("Collect the Car Door")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Car Door")
+                            .addSubStep(new BuildableStep(
                                     "Search the Diner garage for the car door."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "It can appear on the damaged car, on a nearby table, or inside the small rear room."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Hand Truck")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Hand Truck")
+                            .addSubStep(new BuildableStep(
                                     "Search inside the Diner for the hand truck or dolly."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "It can appear behind the counter or near the booths."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Build the Zombie Shield")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Build the Zombie Shield")
+                            .addSubStep(new BuildableStep(
                                     "Take both parts to the workbench inside the Diner garage."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "The Zombie Shield blocks attacks from behind while carried and can be held in front of the player as a melee weapon."
                                     )
                                             .addImage()
@@ -559,70 +562,70 @@ public class Tranzit_EasterEggs
             ;
 
 
-    public static final EasterEgg PackAPunch =
-            new EasterEgg("Pack-A-Punch")
+    public static final Buildable PackAPunch =
+            new Buildable("Pack-A-Punch")
 
-                    .addStep(new EasterEggStep("Turn On the Power")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Turn On the Power")
+                            .addSubStep(new BuildableStep(
                                             "Build and activate the Power Switch at the Power Station."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Power the Pack-A-Punch Door")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Power the Pack-A-Punch Door")
+                            .addSubStep(new BuildableStep(
                                     "Carry a Turbine into the underground Power Lab."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Immediately after dropping into the facility, turn around and place the Turbine beside the metal door marked with a lightning symbol."
                                     )
                                             .addImage()
                             )
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                     "The Turbine must remain active long enough to open the corresponding door beneath the Bank."
                             ))
                     )
 
-                    .addStep(new EasterEggStep("Open the Bank Vault")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Open the Bank Vault")
+                            .addSubStep(new BuildableStep(
                                     "Travel to Town and enter the Bank."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Throw an explosive at the first metal vault door."
                                     )
                                             .addImage()
                             )
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Enter the vault hallway and use another explosive to open the second metal door."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Enter the Underground Room")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Enter the Underground Room")
+                            .addSubStep(new BuildableStep(
                                             "If the Power Station Turbine is still active, the hidden metal barrier will be open and a staircase will lead underground."
                                     )
                                             .addImage()
                             )
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                     "If the barrier is closed, return to the Power Station and place another Turbine beside the lightning door."
                             ))
                     )
 
-                    .addStep(new EasterEggStep("Build Pack-A-Punch")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Build Pack-A-Punch")
+                            .addSubStep(new BuildableStep(
                                             "Search the underground corridors for the Pack-A-Punch battery, base, and upper machine component."
                                     )
                                             .addImage()
                                             .addImage()
                                             .addImage()
                             )
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                     "Place all three parts onto the workbench at the end of the underground room."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Use the completed Pack-A-Punch Machine to upgrade a weapon for 5,000 points."
                                     )
                                             .addImage()
@@ -631,44 +634,44 @@ public class Tranzit_EasterEggs
             ;
 
 
-    public static final EasterEgg Turret =
-            new EasterEgg("Turret")
+    public static final Buildable Turret =
+            new Buildable("Turret")
 
-                    .addStep(new EasterEggStep("Collect the RPD")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the RPD")
+                            .addSubStep(new BuildableStep(
                                     "Search the Farmhouse and Barn for the mounted RPD."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Possible locations include the upstairs couch, barrels near Double Tap Root Beer, or the Farmhouse balcony."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Lawn Mower")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Lawn Mower")
+                            .addSubStep(new BuildableStep(
                                             "Search outside the Farmhouse and on the lower floor of the Barn for the lawn mower."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Ammunition Pouch")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Ammunition Pouch")
+                            .addSubStep(new BuildableStep(
                                             "Search the ground floor of the Farmhouse for the ammunition pouch."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Build and Power the Turret")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Build and Power the Turret")
+                            .addSubStep(new BuildableStep(
                                     "Place all three parts onto the workbench on the ground floor of the Farmhouse."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                     "Place an active Turbine behind the completed Turret to power it."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "The Turret automatically fires at zombies in front of it, but its gunfire can also injure players."
                                     )
                                             .addImage()
@@ -677,44 +680,44 @@ public class Tranzit_EasterEggs
             ;
 
 
-    public static final EasterEgg ElectricTrap =
-            new EasterEgg("Electric Trap")
+    public static final Buildable ElectricTrap =
+            new Buildable("Electric Trap")
 
-                    .addStep(new EasterEggStep("Collect the Battery")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Battery")
+                            .addSubStep(new BuildableStep(
                                     "Search the Power Station area near Tombstone Soda for the battery."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "The battery can appear on nearby barrels."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Metal Rod")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Metal Rod")
+                            .addSubStep(new BuildableStep(
                                             "Search the upper area near the windows and stairs for the metal rod."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Tesla Base")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Tesla Base")
+                            .addSubStep(new BuildableStep(
                                             "Search near the Tombstone Soda machine for the Tesla-coil base."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Build and Power the Electric Trap")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Build and Power the Electric Trap")
+                            .addSubStep(new BuildableStep(
                                     "Place all three parts onto the workbench in the Tombstone area of the Power Station."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                     "Place an active Turbine behind the Electric Trap to power it."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "The trap produces a damaging electrical field that kills zombies but can also down nearby players."
                                     )
                                             .addImage()
@@ -723,64 +726,64 @@ public class Tranzit_EasterEggs
             ;
 
 
-    public static final EasterEgg JetGun =
-            new EasterEgg("Jet-Gun")
+    public static final Buildable JetGun =
+            new Buildable("Jet-Gun")
 
-                    .addStep(new EasterEggStep("Collect the Jet Engine")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Jet Engine")
+                            .addSubStep(new BuildableStep(
                                     "Search the tunnel between the Bus Depot and Diner."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "The Jet Engine can appear near the zombie barriers, wrecked vehicles, M16 wall-buy, or roadside railing."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Wires")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Wires")
+                            .addSubStep(new BuildableStep(
                                     "Turn on the power and enter the lower Power Station area near Tombstone Soda."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Search the collapsed catwalk, wooden bridge, electrical equipment, and lower rooms for the Wires."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Handbrake")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Handbrake")
+                            .addSubStep(new BuildableStep(
                                     "Enter the hidden Nacht der Untoten building in the cornfield."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Search near the lamp, cabinets, debris, and damaged staircase for the Handbrake."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Pressure Gauge")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Pressure Gauge")
+                            .addSubStep(new BuildableStep(
                                     "Enter the Hunter's Cabin in the fog between the Power Station and Town."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Search near the fireplace, bed, bed frame, and shelf for the Pressure Gauge."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Build and Use the Jet Gun")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Build and Use the Jet Gun")
+                            .addSubStep(new BuildableStep(
                                     "Take all four parts to the workbench on the ground floor of the Town Bar."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                     "Only one player can carry the Jet Gun at a time, and it does not occupy a normal weapon slot."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                     "Watch the pressure gauge while firing. Allow the weapon to cool before the gauge reaches its limit."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "If the Jet Gun overheats, it breaks into its four parts and must be rebuilt."
                                     )
                                             .addImage()
@@ -789,77 +792,77 @@ public class Tranzit_EasterEggs
             ;
 
 
-    public static final EasterEgg NavTable =
-            new EasterEgg("NAV Table")
+    public static final Buildable NavTable =
+            new Buildable("NAV Table")
 
-                    .addStep(new EasterEggStep("Locate the Construction Point")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Locate the Construction Point")
+                            .addSubStep(new BuildableStep(
                                     "Find the electrical Pylon in the cornfield between the Farm and Power Station."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "The NAV Table is assembled at the construction point underneath the Pylon."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Meteorite")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Meteorite")
+                            .addSubStep(new BuildableStep(
                                     "Open the Bus Depot exit door and inspect the damaged exterior wall beside the original Mystery Box location."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Crouch beside the opening and collect the purple Meteorite."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Radio")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Radio")
+                            .addSubStep(new BuildableStep(
                                     "Search the Diner garage on top of the tall metal cabinet."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "If it is not in the garage, search the cabinets and shelving inside the hidden Nacht der Untoten building."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Electrical Box")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Electrical Box")
+                            .addSubStep(new BuildableStep(
                                     "Search the Farmhouse wall beside the weapon-storage refrigerator."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "If it is not at the Farm, search beside the dumpster near the Town Mystery Box location."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Collect the Wooden Table")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Collect the Wooden Table")
+                            .addSubStep(new BuildableStep(
                                     "Search the tunnel between the Bus Depot and Diner near the M16 wall-buy and zombie barriers."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "If it is not in the tunnel, search the lower Power Station platform beneath the Tombstone area."
                                     )
                                             .addImage()
                             )
                     )
 
-                    .addStep(new EasterEggStep("Assemble the NAV Table")
-                            .addSubStep(new EasterEggStep(
+                    .addStep(new BuildableStep("Assemble the NAV Table")
+                            .addSubStep(new BuildableStep(
                                     "Carry each part separately to the construction point underneath the Pylon."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                             "Place all four parts to complete the NAV Table."
                                     )
                                             .addImage()
                             )
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                     "Once the table is built, its completion is normally stored on the participating players' profiles."
                             ))
-                            .addSubStep(new EasterEggStep(
+                            .addSubStep(new BuildableStep(
                                     "The Buried Navcard can be inserted into the completed TranZit NAV Table."
                             ))
                     )
@@ -878,7 +881,7 @@ public class Tranzit_EasterEggs
         TowerOfBabble_Richtofen
     );
 
-    public static final List<EasterEgg> Tranzit_Buildables = Arrays.asList(
+    public static final List<Procedure> Tranzit_Buildables = Arrays.asList(
         ZombieShield,
         Turbine,
         JetGun,

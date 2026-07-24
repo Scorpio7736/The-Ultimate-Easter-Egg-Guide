@@ -8,8 +8,8 @@ import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
 import com.example.the_ultimate_easter_egg_guide.Models.Games;
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.ProcedureStep;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
 import com.example.the_ultimate_easter_egg_guide.Pages.AboutMe_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.ContactUs_PAGE;
@@ -694,17 +694,15 @@ public class MasterAuditTest {
                 continue;
             }
 
-            List<EasterEgg> allEggs = getAllEasterEggs(map);
+            List<Procedure> allEggs = getAllEasterEggs(map);
 
-            for (EasterEgg egg : allEggs) {
-
+            for (Procedure egg : allEggs) {
                 totalEggsChecked++;
-
-                if (egg.easterEggSteps == null
-                        || egg.easterEggSteps.isEmpty()) {
+                if (egg.steps == null
+                        || egg.steps.isEmpty()) {
                     failures.add(new MapAuditResult(
                             map.name(),
-                            egg.easterEggName,
+                            egg.name,
                             "NO STEPS"
                     ));
                 }
@@ -807,13 +805,13 @@ public class MasterAuditTest {
                 continue;
             }
 
-            List<EasterEgg> allEggs = getAllEasterEggs(map);
+            List<Procedure> allEggs = getAllEasterEggs(map);
 
-            for (EasterEgg egg : allEggs) {
+            for (Procedure egg : allEggs) {
                 totalStepsChecked += scanStepsForImages(
                         map.name(),
-                        egg.easterEggName,
-                        egg.easterEggSteps,
+                        egg.name,
+                        egg.steps,
                         failures
                 );
             }
@@ -928,9 +926,9 @@ public class MasterAuditTest {
         fullReport.append(sb).append("\n");
     }
 
-    private List<EasterEgg> getAllEasterEggs(Maps map) {
+    private List<Procedure> getAllEasterEggs(Maps map) {
 
-        List<EasterEgg> allEggs = new ArrayList<>();
+        List<Procedure> allEggs = new ArrayList<>();
 
         if (map.eggData == null) {
             return allEggs;
@@ -954,7 +952,7 @@ public class MasterAuditTest {
     private int scanStepsForImages(
             String mapName,
             String eggName,
-            List<EasterEggStep> steps,
+            List<ProcedureStep> steps,
             List<StepAuditResult> failures
     ) {
 
@@ -964,13 +962,13 @@ public class MasterAuditTest {
 
         int count = 0;
 
-        for (EasterEggStep step : steps) {
+        for (ProcedureStep step : steps) {
 
             count++;
 
-            String stepName = step.stepName == null
+            String stepName = step.name == null
                     ? "UNNAMED STEP"
-                    : step.stepName;
+                    : step.name;
 
             if (isUsingPlaceholder(step)) {
                 failures.add(new StepAuditResult(
@@ -992,7 +990,7 @@ public class MasterAuditTest {
         return count;
     }
 
-    private boolean isUsingPlaceholder(EasterEggStep step) {
+    private boolean isUsingPlaceholder(ProcedureStep step) {
 
         if (step.images == null || step.images.isEmpty()) {
             return false;

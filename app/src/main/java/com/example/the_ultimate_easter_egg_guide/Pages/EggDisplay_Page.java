@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 import com.example.the_ultimate_easter_egg_guide.Helper.EggAdapter;
 import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapType;
@@ -22,7 +22,7 @@ import java.util.List;
 public class EggDisplay_Page extends PageController_BaseClass implements EggAdapter.OnEggClickListener {
 
     private Maps selectedMap;
-    private List<EasterEgg> eggsToShow = new ArrayList<>();
+    private List<Procedure> eggsToShow = new ArrayList<>();
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;
 
@@ -54,15 +54,15 @@ public class EggDisplay_Page extends PageController_BaseClass implements EggAdap
                     switch (category) {
                         case "MAIN_QUEST":
                             categoryTitle.setText("Main Quests");
-                            eggsToShow = selectedMap.eggData.mainQuests;
+                            eggsToShow = new ArrayList<>(selectedMap.eggData.mainQuests);
                             break;
                         case "SIDE_QUESTS":
                             categoryTitle.setText("Side Quests");
-                            eggsToShow = selectedMap.eggData.sideQuests;
+                            eggsToShow = new ArrayList<>(selectedMap.eggData.sideQuests);
                             break;
                         case "BUILDABLES":
                             categoryTitle.setText("Buildables");
-                            eggsToShow = selectedMap.eggData.Buildables;
+                            eggsToShow = new ArrayList<>(selectedMap.eggData.Buildables);
                             break;
                     }
                 }
@@ -78,7 +78,7 @@ public class EggDisplay_Page extends PageController_BaseClass implements EggAdap
     }
 
     @Override
-    public void onEggClick(EasterEgg egg, int position, boolean isExpanding) {
+    public void onEggClick(Procedure egg, int position, boolean isExpanding) {
         if (isExpanding && layoutManager != null) {
             recyclerView.postDelayed(() -> {
                 View itemView = layoutManager.findViewByPosition(position);

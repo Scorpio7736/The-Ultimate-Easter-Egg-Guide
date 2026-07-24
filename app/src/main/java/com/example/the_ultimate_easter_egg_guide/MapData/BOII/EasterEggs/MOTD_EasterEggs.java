@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOII.EasterEggs;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 
 import java.util.Arrays;
 import java.util.List;
@@ -338,7 +339,7 @@ public class MOTD_EasterEggs {
         GoldenSpork,
         Brutus115
     );
-    public static final List<EasterEgg> MOTD_Buildables = Arrays.asList(
+    public static final List<Procedure> MOTD_Buildables = Arrays.asList(
         FreeBlundergat,
         HellsRetriever,
         HellsRedeemer,

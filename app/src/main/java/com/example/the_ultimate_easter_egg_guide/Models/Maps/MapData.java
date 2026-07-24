@@ -6,9 +6,9 @@ import java.util.List;
 public class MapData {
     public final List<EasterEgg> mainQuests;
     public final List<EasterEgg> sideQuests;
-    public final List<EasterEgg> Buildables;
+    public final List<Procedure> Buildables;
 
-    public MapData(List<EasterEgg> mainQuests, List<EasterEgg> sideQuests, List<EasterEgg> Buildables) {
+    public MapData(List<EasterEgg> mainQuests, List<EasterEgg> sideQuests, List<Procedure> Buildables) {
         this.mainQuests = mainQuests != null ? mainQuests : new ArrayList<>();
         this.sideQuests = sideQuests != null ? sideQuests : new ArrayList<>();
         this.Buildables = Buildables != null ? Buildables : new ArrayList<>();

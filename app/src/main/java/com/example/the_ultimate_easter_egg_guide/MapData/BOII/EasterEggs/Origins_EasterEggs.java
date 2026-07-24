@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOII.EasterEggs;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1075,7 +1076,7 @@ public class Origins_EasterEggs
         GStrikes
     );
 
-    public static final List<EasterEgg> Origins_Buildables = Arrays.asList(
+    public static final List<Procedure> Origins_Buildables = Arrays.asList(
         ZombieShield,
         MaxisDrone,
         StaffOfIce,
