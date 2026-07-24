@@ -18,7 +18,6 @@ import com.example.the_ultimate_easter_egg_guide.MapData.Maps;
 import com.example.the_ultimate_easter_egg_guide.Helper.MusicManager;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
-import com.example.the_ultimate_easter_egg_guide.Pages.Navigation.StorylineSelection_PAGE;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.google.android.material.card.MaterialCardView;
 
@@ -129,16 +128,7 @@ public class MapDisplay_Page extends PageController_BaseClass {
             }
         });
 
-        findViewById(R.id.option_storyline).setOnClickListener(v -> {
-            if (selectedMap != null) {
-                android.content.Intent intent = new android.content.Intent(this, StorylineSelection_PAGE.class);
-                intent.putExtra(StorylineSelection_PAGE.EXTRA_INITIAL_CATEGORY, com.example.the_ultimate_easter_egg_guide.Models.Storyline.StorylineItems.Map.name());
-                intent.putExtra(StorylineSelection_PAGE.EXTRA_INITIAL_GAME, selectedMap.gameName.name());
-                PageTransitionManager.startActivityWithFade(this, intent);
-            } else {
-                PageTransitionManager.startActivityWithFade(this, StorylineSelection_PAGE.class);
-            }
-        });
+        // Storyline button functionality removed as per request
 
         // Navigation bar settings button removed, handled by base class
     }
