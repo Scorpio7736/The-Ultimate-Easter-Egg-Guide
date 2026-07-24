@@ -1,15 +1,15 @@
 package com.example.the_ultimate_easter_egg_guide.MapData.BOIV;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapEggData;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapData;
 
 public class BOIV_EggWarehouse
 {
-    public static final MapEggData DeadOfTheNight = new MapEggData(null, null, null);
-    public static final MapEggData AncientEvil = new MapEggData(null, null, null);
-    public static final MapEggData AlphaOmega = new MapEggData(null, null, null);
-    public static final MapEggData TagDerToten = new MapEggData(null, null, null);
-    public static final MapEggData BloodOfTheDead = new MapEggData(null, null, null);
-    public static final MapEggData Classified = new MapEggData(null, null, null);
-    public static final MapEggData VoyageOfDespair = new MapEggData(null, null, null);
-    public static final MapEggData IX = new MapEggData(null, null, null);
+    public static final MapData DeadOfTheNight = new MapData(null, null, null);
+    public static final MapData AncientEvil = new MapData(null, null, null);
+    public static final MapData AlphaOmega = new MapData(null, null, null);
+    public static final MapData TagDerToten = new MapData(null, null, null);
+    public static final MapData BloodOfTheDead = new MapData(null, null, null);
+    public static final MapData Classified = new MapData(null, null, null);
+    public static final MapData VoyageOfDespair = new MapData(null, null, null);
+    public static final MapData IX = new MapData(null, null, null);
 }

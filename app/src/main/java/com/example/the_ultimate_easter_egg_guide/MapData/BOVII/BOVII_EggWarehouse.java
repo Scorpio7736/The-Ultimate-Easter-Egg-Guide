@@ -1,11 +1,11 @@
 package com.example.the_ultimate_easter_egg_guide.MapData.BOVII;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapEggData;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapData;
 
 public class BOVII_EggWarehouse
 {
-    public static final MapEggData AshesOfTheDamned = new MapEggData(null, null, null);
-    public static final MapEggData AstraMalorum = new MapEggData(null, null, null);
-    public static final MapEggData ParadoxJunction = new MapEggData(null, null, null);
-    public static final MapEggData Totenreich = new MapEggData(null, null, null);
+    public static final MapData AshesOfTheDamned = new MapData(null, null, null);
+    public static final MapData AstraMalorum = new MapData(null, null, null);
+    public static final MapData ParadoxJunction = new MapData(null, null, null);
+    public static final MapData Totenreich = new MapData(null, null, null);
 }

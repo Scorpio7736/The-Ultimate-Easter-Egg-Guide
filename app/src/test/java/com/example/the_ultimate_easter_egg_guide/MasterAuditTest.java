@@ -1,5 +1,7 @@
 package com.example.the_ultimate_easter_egg_guide;
 
+import static android.graphics.Color.GREEN;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -64,6 +66,7 @@ public class MasterAuditTest {
 
     @Test
     public void audit1_ConstructionStatus() {
+
         @SuppressWarnings("unchecked")
         Class<? extends PageController_BaseClass>[] pages = new Class[]{
                 Home_PAGE.class,
@@ -81,48 +84,136 @@ public class MasterAuditTest {
         };
 
         List<String[]> failures = new ArrayList<>();
+        int pagesChecked = 0;
+
         for (Class<? extends PageController_BaseClass> pageClass : pages) {
+
+            pagesChecked++;
+
             try {
-                PageController_BaseClass activity = Robolectric.buildActivity(pageClass).create().get();
+                PageController_BaseClass activity =
+                        Robolectric.buildActivity(pageClass)
+                                .create()
+                                .get();
+
                 if (isUnderConstruction(activity)) {
-                    failures.add(new String[]{getLayoutName(pageClass), pageClass.getSimpleName()});
+                    failures.add(new String[]{
+                            getLayoutName(pageClass) + ".xml",
+                            pageClass.getSimpleName() + ".java",
+                            "UNDER CONSTRUCTION"
+                    });
                 }
-            } catch (Exception ignored) {}
+
+            } catch (Exception exception) {
+                failures.add(new String[]{
+                        getLayoutName(pageClass) + ".xml",
+                        pageClass.getSimpleName() + ".java",
+                        "AUDIT ERROR"
+                });
+            }
         }
 
         StringBuilder sb = new StringBuilder();
-        sb.append("\n### ").append(YELLOW).append("UNDER CONSTRUCTION").append(RESET).append(" Audit ###\n\n");
-        
+
+        sb.append("\n");
+        sb.append("============================================================\n");
+        sb.append(YELLOW)
+                .append("               CONSTRUCTION STATUS AUDIT")
+                .append(RESET)
+                .append("\n");
+        sb.append("============================================================\n\n");
+
+        sb.append("Pages Checked : ")
+                .append(pagesChecked)
+                .append("\n");
+
+        sb.append("Issues Found  : ")
+                .append(failures.isEmpty() ? GREEN : YELLOW)
+                .append(failures.size())
+                .append(RESET)
+                .append("\n\n");
+
         if (!failures.isEmpty()) {
+
             int maxXml = "XML Page".length();
             int maxController = "Page Controller".length();
-            for (String[] f : failures) {
-                maxXml = Math.max(maxXml, f[0].length() + 4);
-                maxController = Math.max(maxController, f[1].length() + 5);
+            int maxStatus = "Status".length();
+
+            for (String[] failure : failures) {
+                maxXml = Math.max(maxXml, failure[0].length());
+                maxController = Math.max(maxController, failure[1].length());
+                maxStatus = Math.max(maxStatus, failure[2].length());
             }
 
-            String format = "| %-" + maxXml + "s | %-" + maxController + "s | %-18s |%n";
-            sb.append(String.format(format, "XML Page", "Page Controller", "Status"));
-            sb.append("| ").append("-".repeat(maxXml)).append(" | ").append("-".repeat(maxController)).append(" | ").append("-".repeat(18)).append(" |\n");
+            String separator =
+                    "+-" + "-".repeat(maxXml) +
+                            "-+-" + "-".repeat(maxController) +
+                            "-+-" + "-".repeat(maxStatus) +
+                            "-+\n";
 
-            for (String[] f : failures) {
-                String xml = PURPLE + f[0] + ".xml" + RESET;
-                String controller = BLUE + f[1] + ".java" + RESET;
-                String status = YELLOW + "UNDER CONSTRUCTION" + RESET;
-                
-                String rowXml = xml + " ".repeat(Math.max(0, maxXml - (f[0].length() + 4)));
-                String rowController = controller + " ".repeat(Math.max(0, maxController - (f[1].length() + 5)));
-                sb.append("| ").append(rowXml).append(" | ").append(rowController).append(" | ").append(status).append(" |\n");
+            sb.append(separator);
+
+            sb.append(String.format(
+                    "| %-" + maxXml + "s | %-" + maxController + "s | %-" + maxStatus + "s |%n",
+                    "XML Page",
+                    "Page Controller",
+                    "Status"
+            ));
+
+            sb.append(separator);
+
+            for (String[] failure : failures) {
+
+                sb.append("| ")
+                        .append(PURPLE)
+                        .append(failure[0])
+                        .append(RESET)
+                        .append(" ".repeat(maxXml - failure[0].length()))
+                        .append(" | ")
+
+                        .append(BLUE)
+                        .append(failure[1])
+                        .append(RESET)
+                        .append(" ".repeat(maxController - failure[1].length()))
+                        .append(" | ")
+
+                        .append(YELLOW)
+                        .append(failure[2])
+                        .append(RESET)
+                        .append(" ".repeat(maxStatus - failure[2].length()))
+                        .append(" |\n");
             }
+
+            sb.append(separator);
+
+            sb.append("\n")
+                    .append(YELLOW)
+                    .append("WARNING: ")
+                    .append(failures.size())
+                    .append(
+                            failures.size() == 1
+                                    ? " page requires attention."
+                                    : " pages require attention."
+                    )
+                    .append(RESET)
+                    .append("\n");
+
         } else {
-            sb.append("All pages are completed.\n");
+
+            sb.append(GREEN)
+                    .append("PASS: All pages are completed.")
+                    .append(RESET)
+                    .append("\n");
         }
+
         fullReport.append(sb).append("\n");
     }
 
     @Test
     public void audit2_StorylineItems() {
+
         List<AuditResult> failures = new ArrayList<>();
+
         checkEnum(Enemy_Creatures.values(), failures);
         checkEnum(Friendly_Creatures.values(), failures);
         checkEnum(NonPlayer_Characters.values(), failures);
@@ -133,117 +224,480 @@ public class MasterAuditTest {
         checkEnum(CodZombies_Youtubers.values(), failures);
 
         StringBuilder sb = new StringBuilder();
-        sb.append("### ").append(YELLOW).append("STORYLINE IMAGE AUDIT").append(RESET).append(" ###\n\n");
+
+        sb.append("\n");
+        sb.append("============================================================\n");
+        sb.append(YELLOW)
+                .append("                STORYLINE IMAGE AUDIT")
+                .append(RESET)
+                .append("\n");
+        sb.append("============================================================\n\n");
+
+        sb.append("Issues Found : ")
+                .append(failures.isEmpty() ? GREEN : YELLOW)
+                .append(failures.size())
+                .append(RESET)
+                .append("\n\n");
 
         if (!failures.isEmpty()) {
+
             int maxCategory = "Category".length();
-            int maxItem = "Item Name".length();
-            for (AuditResult res : failures) {
-                maxCategory = Math.max(maxCategory, res.category.length());
-                maxItem = Math.max(maxItem, res.itemName.length());
+            int maxItem = "Item".length();
+            int maxStatus = "Status".length();
+
+            for (AuditResult result : failures) {
+                maxCategory = Math.max(maxCategory, result.category.length());
+                maxItem = Math.max(maxItem, result.itemName.length());
+                maxStatus = Math.max(maxStatus, result.reason.length());
             }
 
-            String format = "| %-" + maxCategory + "s | %-" + maxItem + "s | %-15s |%n";
-            sb.append(String.format(format, "Category", "Item Name", "Reason"));
-            sb.append("| ").append("-".repeat(maxCategory)).append(" | ").append("-".repeat(maxItem)).append(" | ").append("-".repeat(15)).append(" |\n");
+            String separator =
+                    "+-" + "-".repeat(maxCategory) +
+                            "-+-" + "-".repeat(maxItem) +
+                            "-+-" + "-".repeat(maxStatus) +
+                            "-+\n";
 
-            for (AuditResult res : failures) {
-                String catStr = BLUE + res.category + RESET + " ".repeat(Math.max(0, maxCategory - res.category.length()));
-                String itemStr = PURPLE + res.itemName + RESET + " ".repeat(Math.max(0, maxItem - res.itemName.length()));
-                String reasonStr = YELLOW + res.reason + RESET;
-                sb.append("| ").append(catStr).append(" | ").append(itemStr).append(" | ").append(reasonStr).append(" |\n");
+            sb.append(separator);
+
+            sb.append(String.format(
+                    "| %-" + maxCategory + "s | %-" + maxItem + "s | %-" + maxStatus + "s |%n",
+                    "Category",
+                    "Item",
+                    "Status"
+            ));
+
+            sb.append(separator);
+
+            for (AuditResult result : failures) {
+
+                sb.append("| ")
+                        .append(BLUE)
+                        .append(result.category)
+                        .append(RESET)
+                        .append(" ".repeat(maxCategory - result.category.length()))
+                        .append(" | ")
+
+                        .append(PURPLE)
+                        .append(result.itemName)
+                        .append(RESET)
+                        .append(" ".repeat(maxItem - result.itemName.length()))
+                        .append(" | ")
+
+                        .append(YELLOW)
+                        .append(result.reason)
+                        .append(RESET)
+                        .append(" ".repeat(maxStatus - result.reason.length()))
+                        .append(" |\n");
             }
+
+            sb.append(separator);
+
+            sb.append("\n")
+                    .append(YELLOW)
+                    .append("WARNING: ")
+                    .append(failures.size())
+                    .append(
+                            failures.size() == 1
+                                    ? " storyline item has an invalid or placeholder image."
+                                    : " storyline items have invalid or placeholder images."
+                    )
+                    .append(RESET)
+                    .append("\n");
+
         } else {
-            sb.append("All storyline items have valid images.\n");
+
+            sb.append(GREEN)
+                    .append("PASS: All storyline items have valid images.")
+                    .append(RESET)
+                    .append("\n");
         }
+
         fullReport.append(sb).append("\n");
     }
 
     @Test
     public void audit3_MapData() {
+
         List<MapAuditResult> failures = new ArrayList<>();
+        int totalMapsChecked = 0;
+
         for (Games game : Games.values()) {
-            if (game == Games.Test) continue;
+
+            if (game == Games.Test) {
+                continue;
+            }
+
             List<Maps> maps = MapsWarehouse.getMapsForGame(game);
+
             for (Maps map : maps) {
+
+                totalMapsChecked++;
+
                 List<String> issues = new ArrayList<>();
-                if (map.mapCover <= 0 || map.mapCover == R.drawable.app_icon) issues.add("Missing Cover");
-                if (map.mapDescription <= 0) issues.add("Missing Desc");
-                if (map.mapTrailer == -1) issues.add("Missing Trailer");
-                if (map.eggData == null) issues.add("Missing EggData");
+
+                if (map.mapCover <= 0 || map.mapCover == R.drawable.app_icon) {
+                    issues.add("MISSING COVER");
+                }
+
+                if (map.mapDescription <= 0) {
+                    issues.add("MISSING DESCRIPTION");
+                }
+
+                if (map.mapTrailer == -1) {
+                    issues.add("MISSING TRAILER");
+                }
+
+                if (map.eggData == null) {
+                    issues.add("MISSING EGG DATA");
+                }
 
                 if (!issues.isEmpty()) {
-                    failures.add(new MapAuditResult(map.name(), game.gameName, String.join(", ", issues)));
+                    failures.add(new MapAuditResult(
+                            map.name(),
+                            game.gameName,
+                            String.join(", ", issues)
+                    ));
                 }
             }
         }
 
         StringBuilder sb = new StringBuilder();
-        sb.append("### ").append(YELLOW).append("MAP DATA AUDIT").append(RESET).append(" ###\n\n");
+
+        sb.append("\n");
+        sb.append("============================================================\n");
+        sb.append(YELLOW)
+                .append("                    MAP DATA AUDIT")
+                .append(RESET)
+                .append("\n");
+        sb.append("============================================================\n\n");
+
+        sb.append("Maps Checked : ")
+                .append(totalMapsChecked)
+                .append("\n");
+
+        sb.append("Issues Found : ")
+                .append(failures.isEmpty() ? GREEN : YELLOW)
+                .append(failures.size())
+                .append(RESET)
+                .append("\n\n");
 
         if (!failures.isEmpty()) {
-            int maxMap = "Map Name".length();
+
+            int maxMap = "Map".length();
             int maxGame = "Game".length();
             int maxIssue = "Issues".length();
-            for (MapAuditResult res : failures) {
-                maxMap = Math.max(maxMap, res.mapName.length());
-                maxGame = Math.max(maxGame, res.gameName.length());
-                maxIssue = Math.max(maxIssue, res.issues.length());
+
+            for (MapAuditResult result : failures) {
+                maxMap = Math.max(maxMap, result.mapName.length());
+                maxGame = Math.max(maxGame, result.gameName.length());
+                maxIssue = Math.max(maxIssue, result.issues.length());
             }
 
-            String format = "| %-" + maxMap + "s | %-" + maxGame + "s | %-" + maxIssue + "s |%n";
-            sb.append(String.format(format, "Map Name", "Game", "Issues"));
-            sb.append("| ").append("-".repeat(maxMap)).append(" | ").append("-".repeat(maxGame)).append(" | ").append("-".repeat(maxIssue)).append(" |\n");
+            String separator =
+                    "+-" + "-".repeat(maxMap) +
+                            "-+-" + "-".repeat(maxGame) +
+                            "-+-" + "-".repeat(maxIssue) +
+                            "-+\n";
 
-            for (MapAuditResult res : failures) {
-                String mapStr = PURPLE + res.mapName + RESET + " ".repeat(Math.max(0, maxMap - res.mapName.length()));
-                String gameStr = BLUE + res.gameName + RESET + " ".repeat(Math.max(0, maxGame - res.gameName.length()));
-                String issueStr = YELLOW + res.issues + RESET;
-                sb.append("| ").append(mapStr).append(" | ").append(gameStr).append(" | ").append(issueStr).append(" |\n");
+            sb.append(separator);
+
+            sb.append(String.format(
+                    "| %-" + maxMap + "s | %-" + maxGame + "s | %-" + maxIssue + "s |%n",
+                    "Map",
+                    "Game",
+                    "Issues"
+            ));
+
+            sb.append(separator);
+
+            for (MapAuditResult result : failures) {
+
+                sb.append("| ")
+                        .append(PURPLE)
+                        .append(result.mapName)
+                        .append(RESET)
+                        .append(" ".repeat(maxMap - result.mapName.length()))
+                        .append(" | ")
+
+                        .append(BLUE)
+                        .append(result.gameName)
+                        .append(RESET)
+                        .append(" ".repeat(maxGame - result.gameName.length()))
+                        .append(" | ")
+
+                        .append(YELLOW)
+                        .append(result.issues)
+                        .append(RESET)
+                        .append(" ".repeat(maxIssue - result.issues.length()))
+                        .append(" |\n");
             }
+
+            sb.append(separator);
+
+            sb.append("\n")
+                    .append(YELLOW)
+                    .append("WARNING: ")
+                    .append(failures.size())
+                    .append(
+                            failures.size() == 1
+                                    ? " map has incomplete data."
+                                    : " maps have incomplete data."
+                    )
+                    .append(RESET)
+                    .append("\n");
+
         } else {
-            sb.append("All map data is complete.\n");
+
+            sb.append(GREEN)
+                    .append("PASS: All map data is complete.")
+                    .append(RESET)
+                    .append("\n");
         }
+
         fullReport.append(sb).append("\n");
     }
 
     @Test
     public void audit4_GobbleGums() {
+
         List<GumAuditResult> failures = new ArrayList<>();
+        int totalGumsChecked = 0;
+
         for (GobbleGums_boiii gum : GobbleGums_boiii.values()) {
-            if (gum.game == Games.Test || gum.name().equalsIgnoreCase("TEST")) continue;
+
+            if (gum.game == Games.Test || gum.name().equalsIgnoreCase("TEST")) {
+                continue;
+            }
+
+            totalGumsChecked++;
+
             if (gum.gumCover <= 0 || gum.gumCover == R.drawable.app_icon) {
-                failures.add(new GumAuditResult("GobbleGums.java", gum.name(), gum.gumName, "DEFAULTED"));
+                failures.add(new GumAuditResult(
+                        "GobbleGums_boiii.java",
+                        gum.name(),
+                        gum.gumName,
+                        "PLACEHOLDER"
+                ));
             }
         }
 
         StringBuilder sb = new StringBuilder();
-        sb.append("### ").append(YELLOW).append("GOBBLE GUM IMAGE AUDIT").append(RESET).append(" ###\n\n");
+
+        sb.append("\n");
+        sb.append("============================================================\n");
+        sb.append(YELLOW)
+                .append("                GOBBLEGUM IMAGE AUDIT")
+                .append(RESET)
+                .append("\n");
+        sb.append("============================================================\n\n");
+
+        sb.append("GobbleGums Checked : ")
+                .append(totalGumsChecked)
+                .append("\n");
+
+        sb.append("Issues Found       : ")
+                .append(failures.isEmpty() ? GREEN : YELLOW)
+                .append(failures.size())
+                .append(RESET)
+                .append("\n\n");
 
         if (!failures.isEmpty()) {
-            int maxFile = "File Name".length();
-            int maxName = "Gum name".length();
-            int maxDisplay = "Display Name".length();
-            for (GumAuditResult res : failures) {
-                maxFile = Math.max(maxFile, res.sourceFile.length());
-                maxName = Math.max(maxName, res.gumName.length());
-                maxDisplay = Math.max(maxDisplay, res.displayName.length());
+
+            int maxFile = "File".length();
+            int maxGum = "Gum".length();
+            int maxStatus = "Status".length();
+
+            for (GumAuditResult result : failures) {
+                maxFile = Math.max(maxFile, result.sourceFile.length());
+                maxGum = Math.max(maxGum, result.gumName.length());
+                maxStatus = Math.max(maxStatus, result.status.length());
             }
 
-            String format = "| %-" + maxFile + "s | %-" + maxName + "s | %-" + maxDisplay + "s | %-15s |%n";
-            sb.append(String.format(format, "File Name", "Gum name", "Display Name", "ICON"));
-            sb.append("| ").append("-".repeat(maxFile)).append(" | ").append("-".repeat(maxName)).append(" | ").append("-".repeat(maxDisplay)).append(" | ").append("-".repeat(15)).append(" |\n");
+            String separator =
+                    "+-" + "-".repeat(maxFile) +
+                            "-+-" + "-".repeat(maxGum) +
+                            "-+-" + "-".repeat(maxStatus) +
+                            "-+\n";
 
-            for (GumAuditResult res : failures) {
-                String fileStr = BLUE + res.sourceFile + RESET + " ".repeat(Math.max(0, maxFile - res.sourceFile.length()));
-                String nameStr = PURPLE + res.gumName + RESET + " ".repeat(Math.max(0, maxName - res.gumName.length()));
-                String displayStr = res.displayName + " ".repeat(Math.max(0, maxDisplay - res.displayName.length()));
-                String statusStr = YELLOW + res.status + RESET;
-                sb.append("| ").append(fileStr).append(" | ").append(nameStr).append(" | ").append(displayStr).append(" | ").append(statusStr).append(" |\n");
+            sb.append(separator);
+
+            sb.append(String.format(
+                    "| %-" + maxFile + "s | %-" + maxGum + "s | %-" + maxStatus + "s |%n",
+                    "File",
+                    "Gum",
+                    "Status"
+            ));
+
+            sb.append(separator);
+
+            for (GumAuditResult result : failures) {
+
+                sb.append("| ")
+                        .append(BLUE)
+                        .append(result.sourceFile)
+                        .append(RESET)
+                        .append(" ".repeat(maxFile - result.sourceFile.length()))
+                        .append(" | ")
+
+                        .append(PURPLE)
+                        .append(result.gumName)
+                        .append(RESET)
+                        .append(" ".repeat(maxGum - result.gumName.length()))
+                        .append(" | ")
+
+                        .append(YELLOW)
+                        .append(result.status)
+                        .append(RESET)
+                        .append(" ".repeat(maxStatus - result.status.length()))
+                        .append(" |\n");
             }
+
+            sb.append(separator);
+
+            sb.append("\n")
+                    .append(YELLOW)
+                    .append("WARNING: ")
+                    .append(failures.size())
+                    .append(
+                            failures.size() == 1
+                                    ? " GobbleGum is using a placeholder image."
+                                    : " GobbleGums are using placeholder images."
+                    )
+                    .append(RESET)
+                    .append("\n");
+
         } else {
-            sb.append("All GobbleGums have valid images.\n");
+
+            sb.append(GREEN)
+                    .append("PASS: All GobbleGums have valid images.")
+                    .append(RESET)
+                    .append("\n");
         }
+
+        fullReport.append(sb).append("\n");
+    }
+
+    @Test
+    public void audit5_MapDescriptionPlaceholders() {
+
+        List<MapAuditResult> failures = new ArrayList<>();
+        int totalMapsChecked = 0;
+
+        for (Games game : Games.values()) {
+
+            if (game == Games.Test) {
+                continue;
+            }
+
+            List<Maps> maps = MapsWarehouse.getMapsForGame(game);
+
+            for (Maps map : maps) {
+
+                totalMapsChecked++;
+
+                if (map.mapDescription == R.string.general_placeholder_mapdescription) {
+                    failures.add(new MapAuditResult(
+                            map.name(),
+                            game.gameName,
+                            "PLACEHOLDER"
+                    ));
+                }
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("\n");
+        sb.append("============================================================\n");
+        sb.append(YELLOW)
+                .append("              MAP DESCRIPTION AUDIT")
+                .append(RESET)
+                .append("\n");
+        sb.append("============================================================\n\n");
+
+        sb.append("Maps Checked : ")
+                .append(totalMapsChecked)
+                .append("\n");
+
+        sb.append("Issues Found : ")
+                .append(failures.isEmpty() ? GREEN : YELLOW)
+                .append(failures.size())
+                .append(RESET)
+                .append("\n\n");
+
+        if (!failures.isEmpty()) {
+
+            int maxMap = "Map".length();
+            int maxGame = "Game".length();
+            int maxStatus = "Status".length();
+
+            for (MapAuditResult result : failures) {
+                maxMap = Math.max(maxMap, result.mapName.length());
+                maxGame = Math.max(maxGame, result.gameName.length());
+                maxStatus = Math.max(maxStatus, result.issues.length());
+            }
+
+            String separator =
+                    "+-" + "-".repeat(maxMap) +
+                            "-+-" + "-".repeat(maxGame) +
+                            "-+-" + "-".repeat(maxStatus) +
+                            "-+\n";
+
+            sb.append(separator);
+
+            sb.append(String.format(
+                    "| %-" + maxMap + "s | %-" + maxGame + "s | %-" + maxStatus + "s |%n",
+                    "Map",
+                    "Game",
+                    "Status"
+            ));
+
+            sb.append(separator);
+
+            for (MapAuditResult result : failures) {
+
+                sb.append("| ")
+                        .append(PURPLE)
+                        .append(result.mapName)
+                        .append(RESET)
+                        .append(" ".repeat(maxMap - result.mapName.length()))
+                        .append(" | ")
+
+                        .append(BLUE)
+                        .append(result.gameName)
+                        .append(RESET)
+                        .append(" ".repeat(maxGame - result.gameName.length()))
+                        .append(" | ")
+
+                        .append(YELLOW)
+                        .append(result.issues)
+                        .append(RESET)
+                        .append(" ".repeat(maxStatus - result.issues.length()))
+                        .append(" |\n");
+            }
+
+            sb.append(separator);
+
+            sb.append("\n")
+                    .append(YELLOW)
+                    .append("WARNING: ")
+                    .append(failures.size())
+                    .append(
+                            failures.size() == 1
+                                    ? " map is still using the default description."
+                                    : " maps are still using the default description."
+                    )
+                    .append(RESET)
+                    .append("\n");
+
+        } else {
+
+            sb.append(GREEN)
+                    .append("PASS: All production maps have unique descriptions.")
+                    .append(RESET)
+                    .append("\n");
+        }
+
         fullReport.append(sb).append("\n");
     }
 

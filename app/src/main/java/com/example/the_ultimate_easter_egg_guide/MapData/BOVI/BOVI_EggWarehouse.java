@@ -1,13 +1,13 @@
 package com.example.the_ultimate_easter_egg_guide.MapData.BOVI;
 
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapEggData;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapData;
 
 public class BOVI_EggWarehouse
 {
-    public static final MapEggData LibertyFalls = new MapEggData(null, null, null);
-    public static final MapEggData Terminus = new MapEggData(null, null, null);
-    public static final MapEggData CitadelleDesMorts = new MapEggData(null, null, null);
-    public static final MapEggData ShatteredVeil = new MapEggData(null, null, null);
-    public static final MapEggData TheTomb = new MapEggData(null, null, null);
-    public static final MapEggData Reckoning = new MapEggData(null, null, null);
+    public static final MapData LibertyFalls = new MapData(null, null, null);
+    public static final MapData Terminus = new MapData(null, null, null);
+    public static final MapData CitadelleDesMorts = new MapData(null, null, null);
+    public static final MapData ShatteredVeil = new MapData(null, null, null);
+    public static final MapData TheTomb = new MapData(null, null, null);
+    public static final MapData Reckoning = new MapData(null, null, null);
 }

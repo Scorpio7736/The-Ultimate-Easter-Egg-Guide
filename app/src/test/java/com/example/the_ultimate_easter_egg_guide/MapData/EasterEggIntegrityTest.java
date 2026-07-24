@@ -2,7 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapEggData;
+import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapData;
 import com.example.the_ultimate_easter_egg_guide.R;
 
 import org.junit.Test;
@@ -17,7 +17,7 @@ public class EasterEggIntegrityTest {
         StringBuilder errors = new StringBuilder();
 
         for (Maps map : Maps.values()) {
-            MapEggData data = map.eggData;
+            MapData data = map.eggData;
             if (data == null) continue;
 
             checkEggList(map.name(), "Main Quest", data.mainQuests, errors);
@@ -45,7 +45,7 @@ public class EasterEggIntegrityTest {
         StringBuilder errors = new StringBuilder();
 
         for (Maps map : Maps.values()) {
-            MapEggData data = map.eggData;
+            MapData data = map.eggData;
             if (data == null) continue;
 
             checkStepImages(map.name(), data.mainQuests, errors);

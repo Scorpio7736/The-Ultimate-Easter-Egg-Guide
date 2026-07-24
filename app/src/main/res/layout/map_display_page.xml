@@ -135,7 +135,7 @@
                 android:layout_marginBottom="24dp"
                 android:background="#99000000"
                 android:padding="12dp"
-                android:text="INSERT HERE"
+                android:text="@string/general_placeholder_mapdescription"
                 android:textColor="#E0E0E0"
                 android:textSize="16sp"
                 android:visibility="gone" />
