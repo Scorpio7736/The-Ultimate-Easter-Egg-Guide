@@ -24,12 +24,9 @@ public class TestMap2_EasterEggs
             .addImage(R.drawable.default_test_image))
         .addStep(new EasterEggStep("Listen to the message"));
 
-    public static final EasterEgg TestBuildable = new EasterEgg("Test Map 2 Buildable", "Custom Wonder Weapon")
-        .addStep(new EasterEggStep("Part 1: The Engine")
-            .addImage(R.drawable.default_test_image))
-        .addStep(new EasterEggStep("Part 2: The Fuel"));
+
 
     public static final List<EasterEgg> TestMap2_mainQuests = Arrays.asList(TestMainQuest);
     public static final List<EasterEgg> TestMap2_sideQuests = Arrays.asList(TestSideQuest);
-    public static final List<EasterEgg> TestMap2_Buildables = Arrays.asList(TestBuildable);
+
 }

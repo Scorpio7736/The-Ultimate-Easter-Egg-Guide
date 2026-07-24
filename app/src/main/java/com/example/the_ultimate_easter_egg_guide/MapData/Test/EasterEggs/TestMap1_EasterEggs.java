@@ -45,17 +45,6 @@ public class TestMap1_EasterEggs
         .addStep(new EasterEggStep("Find the Third Teddy Bear")
             .addImage(R.drawable.default_test_image));
 
-    public static final EasterEgg TestEggBuildable1 = new EasterEgg("Boss Battle Prep")
-        .addStep(new EasterEggStep("Build the Shield")
-            .addSubStep(new EasterEggStep("Find Handle"))
-            .addSubStep(new EasterEggStep("Find Frame"))
-            .addSubStep(new EasterEggStep("Find Glass")))
-        .addStep(new EasterEggStep("Charge the Soul Jar")
-            .addImage(R.drawable.default_test_image)
-            .addSubStep(new EasterEggStep("Find Jar from image below")
-                .addImage(R.drawable.default_test_image)))
-        .addStep(new EasterEggStep("Enter the Portal"));
-
     //==============================================================================================
     public static final List<EasterEgg> TestMap1_mainQuests = Arrays.asList(
             TestEggQuest1,
@@ -64,8 +53,5 @@ public class TestMap1_EasterEggs
     public static final List<EasterEgg> TestMap1_sideQuests = Arrays.asList(
             TestEggSideQuest1,
             TestEggSideQuest2
-    );
-    public static final List<EasterEgg> TestMap1_Buildables = Arrays.asList(
-            TestEggBuildable1
     );
 }

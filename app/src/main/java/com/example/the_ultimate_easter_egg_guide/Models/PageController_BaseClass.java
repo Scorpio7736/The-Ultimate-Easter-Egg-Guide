@@ -21,7 +21,7 @@ import com.google.android.material.card.MaterialCardView;
 public abstract class PageController_BaseClass extends AppCompatActivity {
     
     // Ensure this is false for production
-    public static final boolean ENABLE_TESTING = false;
+    public static final boolean ENABLE_TESTING = true;
     protected boolean isUnderConstructionEnabled = false;
     protected boolean isExcludedFromDevMode = false;
 

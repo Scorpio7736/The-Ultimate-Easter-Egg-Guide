@@ -3,7 +3,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData;
 import com.example.the_ultimate_easter_egg_guide.MapData.BOI.BOI_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.MapData.BOII.BOII_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.MapData.BOIII.BOIII_EggWarehouse;
-import com.example.the_ultimate_easter_egg_guide.MapData.Test.TEST_EggWarehouse;
+import com.example.the_ultimate_easter_egg_guide.MapData.Test.TEST_MapDataWarehouse;
 import com.example.the_ultimate_easter_egg_guide.MapData.WAW.WAW_EggWarehouse;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapData;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapType;
@@ -14,10 +14,10 @@ public enum Maps
 {
     // --------------------------------- Test MAPS ---------------------------------
 
-    Test_TestingMap1(Games.Test, "Testing Map 1", R.string.test_TestingMap1_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_EggWarehouse.TestMap1),
-    Test_TestingMap2(Games.Test, "Testing Map 2", R.string.test_TestingMap2_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_EggWarehouse.TestMap2),
-    Test_TestingMap3(Games.Test, "Testing Map 3", R.string.test_TestingMap3_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_EggWarehouse.TestMap3),
-    Test_TestingMap4(Games.Test, "Testing Map 4", R.string.test_TestingMap4_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_EggWarehouse.TestMap4),
+    Test_TestingMap1(Games.Test, "Testing Map 1", R.string.test_TestingMap1_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_MapDataWarehouse.TestMap1),
+    Test_TestingMap2(Games.Test, "Testing Map 2", R.string.test_TestingMap2_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_MapDataWarehouse.TestMap2),
+    Test_TestingMap3(Games.Test, "Testing Map 3", R.string.test_TestingMap3_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_MapDataWarehouse.TestMap3),
+    Test_TestingMap4(Games.Test, "Testing Map 4", R.string.test_TestingMap4_mapdescription, R.drawable.default_test_image, MapType.NOT_SET, TEST_MapDataWarehouse.TestMap4),
 
     // --------------------------------- WORLD AT WAR MAPS ---------------------------------
 

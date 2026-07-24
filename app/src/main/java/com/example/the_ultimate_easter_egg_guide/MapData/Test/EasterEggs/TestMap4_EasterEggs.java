@@ -14,5 +14,5 @@ public class TestMap4_EasterEggs
 
     public static final List<EasterEgg> TestMap4_mainQuests = Arrays.asList(TestMainQuest);
     public static final List<EasterEgg> TestMap4_sideQuests = Arrays.asList();
-    public static final List<EasterEgg> TestMap4_Buildables = Arrays.asList();
+
 }
