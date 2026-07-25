@@ -17,7 +17,5 @@ public class Verruckt_EasterEggs
 
     );
 
-    public static final List<Procedure> Verruckt_Buildables = Arrays.asList(
 
-    );
 }

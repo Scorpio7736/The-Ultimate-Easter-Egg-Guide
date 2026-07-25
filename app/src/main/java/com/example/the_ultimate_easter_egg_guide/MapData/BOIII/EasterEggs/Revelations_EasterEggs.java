@@ -434,96 +434,6 @@ public class Revelations_EasterEggs
             ;
 
 
-    public static final EasterEgg GuardOfFafnir =
-            new EasterEgg("Guard of Fafnir")
-
-                    .addStep(new EasterEggStep("Collect the Dragon Head")
-                            .addSubStep(new EasterEggStep("Search the Origins wall to the left of the Spawn jump pad.").addImage())
-                            .addSubStep(new EasterEggStep("Search the box beside the KRM-262 in Origins.").addImage())
-                            .addSubStep(new EasterEggStep("Search the chair beside the lower Origins door.").addImage())
-                    )
-
-                    .addStep(new EasterEggStep("Collect the Dragon Heart")
-                            .addSubStep(new EasterEggStep("Search the counter on the upper floor of Verrückt.").addImage())
-                            .addSubStep(new EasterEggStep("Search beside the Zetsubou No Shima-style test tubes.").addImage())
-                            .addSubStep(new EasterEggStep("Search the chair immediately after climbing the Verrückt staircase.").addImage())
-                    )
-
-                    .addStep(new EasterEggStep("Collect the Dragon Mouth and Build the Shield")
-                            .addSubStep(new EasterEggStep("Activate anti-gravity in the Der Eisendrache Undercroft."))
-                            .addSubStep(new EasterEggStep("Search the wall above the former Wolf Bow soul area.").addImage())
-                            .addSubStep(new EasterEggStep("Search the wall panels above the Pyramid.").addImage())
-                            .addSubStep(new EasterEggStep("Search the wall between the Pyramid and Primis statue room.").addImage())
-                            .addSubStep(new EasterEggStep("Take all three pieces to the crafting table upstairs in Nacht der Untoten."))
-                            .addSubStep(new EasterEggStep("Build and collect the Guard of Fafnir.").addImage())
-                    )
-            ;
-
-
-    public static final EasterEgg ApothiconServantUpgrade =
-            new EasterEgg(
-                    "Apothicon Servant Upgrade (Estoom-oth)",
-                    "Upgrades the Apothicon Servant into Estoom-oth with increased ammunition and stronger singularities."
-            )
-
-                    .addStep(new EasterEggStep("Prepare the Apothicon Servant")
-                            .addSubStep(new EasterEggStep("Override all four Corruption Engines and unlock Pack-A-Punch."))
-                            .addSubStep(new EasterEggStep("Obtain the Apothicon Servant from the Mystery Box."))
-                    )
-
-                    .addStep(new EasterEggStep("Shoot the Spawn Element 115 Cube")
-                            .addSubStep(new EasterEggStep("From Spawn, shoot the floating blue Element 115 cube above the House or Corruption Engine using the Apothicon Servant.").addImage())
-                    )
-
-                    .addStep(new EasterEggStep("Shoot the Shangri-La and Mob of the Dead Cubes")
-                            .addSubStep(new EasterEggStep("Shoot the cube floating above the Shangri-La temple staircase.").addImage())
-                            .addSubStep(new EasterEggStep("Shoot the cube above the Mob of the Dead Corruption Engine in front of the blue sun.").addImage())
-                    )
-
-                    .addStep(new EasterEggStep("Shoot the Two Verrückt Cubes")
-                            .addSubStep(new EasterEggStep("Shoot the cube above the Mob of the Dead jump-pad landing area in Verrückt.").addImage())
-                            .addSubStep(new EasterEggStep("Shoot the cube floating to the right of the Verrückt Corruption Engine portal.").addImage())
-                            .addSubStep(new EasterEggStep("Each successful cube disappears and briefly distorts the player's screen."))
-                    )
-
-                    .addStep(new EasterEggStep("Upgrade the Apothicon Servant")
-                            .addSubStep(new EasterEggStep("Confirm that the collected Element 115 cubes have appeared around the Pack-A-Punch Machine.").addImage())
-                            .addSubStep(new EasterEggStep("Place the Apothicon Servant into Pack-A-Punch for 5,000 points."))
-                            .addSubStep(new EasterEggStep("Collect Estoom-oth from the machine.").addImage())
-                    )
-            ;
-
-
-    public static final EasterEgg PackAPunch =
-            new EasterEgg("Pack-a-Punch (Revelations)")
-
-                    .addStep(new EasterEggStep("Override the Four Corruption Engines")
-                            .addSubStep(new EasterEggStep("Activate the Spawn Corruption Engine for 500 points and survive the override.").addImage())
-                            .addSubStep(new EasterEggStep("Activate the Der Eisendrache Corruption Engine for 500 points.").addImage())
-                            .addSubStep(new EasterEggStep("Activate the Mob of the Dead Corruption Engine for 500 points.").addImage())
-                            .addSubStep(new EasterEggStep("Activate the Verrückt Corruption Engine for 500 points.").addImage())
-                            .addSubStep(new EasterEggStep("Each completed override activates power in that section and opens a portal to Nacht der Untoten."))
-                    )
-
-                    .addStep(new EasterEggStep("Trap the Giant Apothicon")
-                            .addSubStep(new EasterEggStep("Go to the upper floor of Nacht der Untoten and locate the terminal displaying the four Corruption Engines.").addImage())
-                            .addSubStep(new EasterEggStep("Wait for the Giant Apothicon to fly in front of the terminal."))
-                            .addSubStep(new EasterEggStep("Activate the terminal to fire the Tesla beams and trap the creature."))
-                    )
-
-                    .addStep(new EasterEggStep("Enter the Giant Apothicon")
-                            .addSubStep(new EasterEggStep("Approach the trapped Giant Apothicon's open mouth from Nacht der Untoten.").addImage())
-                            .addSubStep(new EasterEggStep("Walk into its mouth to be swallowed and transported into its body."))
-                    )
-
-                    .addStep(new EasterEggStep("Release Pack-A-Punch")
-                            .addSubStep(new EasterEggStep("Locate Pack-A-Punch hanging above the main stomach chamber.").addImage())
-                            .addSubStep(new EasterEggStep("Shoot each of the three glowing yellow tendons holding the machine."))
-                            .addSubStep(new EasterEggStep("Pack-A-Punch will fall into the lower alcove and remain usable for the rest of the match.").addImage())
-                    )
-            ;
-
-
     public static final List<EasterEgg> Revelations_MainQuests = Arrays.asList(
             ForTheGoodOfAll
     );
@@ -543,9 +453,5 @@ public class Revelations_EasterEggs
             ApothiconMask
     );
 
-    public static final List<Procedure> Revelations_Buildables = Arrays.asList(
-            GuardOfFafnir,
-            ApothiconServantUpgrade,
-            PackAPunch
-    );
+
 }

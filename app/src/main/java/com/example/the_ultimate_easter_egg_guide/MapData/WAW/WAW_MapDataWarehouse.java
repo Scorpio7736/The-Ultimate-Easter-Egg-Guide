@@ -6,7 +6,7 @@ import com.example.the_ultimate_easter_egg_guide.MapData.WAW.EasterEggs.ShiNo_Ea
 import com.example.the_ultimate_easter_egg_guide.MapData.WAW.EasterEggs.Verruckt_EasterEggs;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapData;
 
-public class WAW_EggWarehouse
+public class WAW_MapDataWarehouse
 {
     public static final MapData Nacht = new MapData(
             null,

@@ -321,114 +321,7 @@ public class GorodKrovi_EasterEggs
             ;
 
 
-    public static final EasterEgg GuardOfFafnir =
-            new EasterEgg("Guard of Fafnir")
 
-                    .addStep(new EasterEggStep("Collect the Department Store Shield Part")
-                            .addSubStep(new EasterEggStep("Search the route between the Department Store, Jugger-Nog, and the Operations Bunker."))
-                            .addSubStep(new EasterEggStep("The part can appear on the chair beside Jugger-Nog, on the truck door below Jugger-Nog, or on the beds near the Operations Bunker entrance.").addImage())
-                    )
-
-                    .addStep(new EasterEggStep("Collect the Infirmary and Armory Shield Parts")
-                            .addSubStep(new EasterEggStep("Search the Infirmary route above the Operations Bunker for the second shield part."))
-                            .addSubStep(new EasterEggStep("Possible locations include the ground beside the staircase, the nearby beds, or the wall beside Stamin-Up.").addImage())
-                            .addSubStep(new EasterEggStep("Search the Armory for the final shield part."))
-                            .addSubStep(new EasterEggStep("Possible locations include the wall beside a Wunderfizz location, beside the crashed subway entrance, or on the upper Armory wall.").addImage())
-                    )
-
-                    .addStep(new EasterEggStep("Build the Guard of Fafnir")
-                            .addSubStep(new EasterEggStep("Take all three shield parts to the crafting table in the underground Operations Bunker."))
-                            .addSubStep(new EasterEggStep("Build and collect the Guard of Fafnir.").addImage())
-                            .addSubStep(new EasterEggStep("The shield blocks Dragon fire, protects the player's back, performs melee attacks, and fires green fireballs."))
-                    )
-            ;
-
-
-    public static final EasterEgg GauntletOfSiegfried =
-            new EasterEgg("Gauntlet of Siegfried")
-
-                    .addStep(new EasterEggStep("Collect and Heat the Dragon Egg")
-                            .addSubStep(new EasterEggStep("Ride a Dragon to the Hatchery and enter its basement."))
-                            .addSubStep(new EasterEggStep("Shoot the green Dragon Egg from the rafters beside the sewer exit and collect it.").addImage())
-                            .addSubStep(new EasterEggStep("Place the Egg inside a Dragon nest near the Infirmary, Armory, Dragon Command, or Belinski Square.").addImage())
-                            .addSubStep(new EasterEggStep("Allow a Dragon to breathe fire over the area or call a Dragon Strike onto the nest."))
-                            .addSubStep(new EasterEggStep("Wait for the Egg to cool during the remainder of the current round and the following full round, then collect it."))
-                    )
-
-                    .addStep(new EasterEggStep("Complete the Dragon Egg Challenges")
-                            .addSubStep(new EasterEggStep("Place the cooled Dragon Egg into your challenge grave in Belinski Square."))
-                            .addSubStep(new EasterEggStep("Complete the three displayed challenges: kill Napalm Zombies, obtain penetrating multikills, and obtain melee kills.").addImage())
-                            .addSubStep(new EasterEggStep("Return to the challenge grave after completing all three requirements and retrieve the Egg."))
-                    )
-
-                    .addStep(new EasterEggStep("Incubate the Dragon Egg")
-                            .addSubStep(new EasterEggStep("Return to the Hatchery basement and place the Egg inside the central incubator.").addImage())
-                            .addSubStep(new EasterEggStep("Survive the lockdown while killing zombies near the incubator to charge the Egg."))
-                            .addSubStep(new EasterEggStep("Finish the current round and one additional full round after S.O.P.H.I.A. announces that incubation is complete."))
-                            .addSubStep(new EasterEggStep("Collect the fully incubated Dragon Egg."))
-                    )
-
-                    .addStep(new EasterEggStep("Collect the Gauntlet of Siegfried")
-                            .addSubStep(new EasterEggStep("Return the incubated Dragon Egg to your challenge grave in Belinski Square."))
-                            .addSubStep(new EasterEggStep("Interact with the completed challenge marker and collect the Gauntlet of Siegfried.").addImage())
-                            .addSubStep(new EasterEggStep("The Gauntlet provides the 115 Punch, a flamethrower attack, and the ability to deploy a Dragon Whelp."))
-                    )
-            ;
-
-
-    public static final EasterEgg DragonStrike =
-            new EasterEgg("Dragon Strike")
-
-                    .addStep(new EasterEggStep("Begin the Hatchery Lockdown")
-                            .addSubStep(new EasterEggStep("Build the Dragon Network Controller and ride a Dragon to the Hatchery."))
-                            .addSubStep(new EasterEggStep("Go to the upper Pack-A-Punch floor and interact with the crystal console in the center of the room.").addImage())
-                            .addSubStep(new EasterEggStep("Every player in the Hatchery must interact with the console to begin the lockdown."))
-                    )
-
-                    .addStep(new EasterEggStep("Survive and Collect the Dragon Strike")
-                            .addSubStep(new EasterEggStep("Survive four waves of zombies and Russian Manglers."))
-                            .addSubStep(new EasterEggStep("Use the mounted MG42s and Pack-A-Punch area for additional firepower."))
-                            .addSubStep(new EasterEggStep("After completing the final wave, return to the opened console and collect the Dragon Strike Controller.").addImage())
-                            .addSubStep(new EasterEggStep("The Dragon Strike marks an area for a Dragon bombardment and attracts nearby zombies before the strike lands."))
-                    )
-            ;
-
-
-    public static final EasterEgg DragonNetworkController =
-            new EasterEgg("Dragon Network Controller")
-
-                    .addStep(new EasterEggStep("Activate S.O.P.H.I.A.")
-                            .addSubStep(new EasterEggStep("Turn on the power inside Dragon Command.").addImage())
-                            .addSubStep(new EasterEggStep("Interact with the button beneath S.O.P.H.I.A.'s central console."))
-                            .addSubStep(new EasterEggStep("Zombies can now begin dropping colored Code Cylinders."))
-                    )
-
-                    .addStep(new EasterEggStep("Complete the Dragon Command Groph Module")
-                            .addSubStep(new EasterEggStep("Collect the Dragon Command Code Cylinder from a defeated zombie."))
-                            .addSubStep(new EasterEggStep("Insert it into the matching console inside Dragon Command.").addImage())
-                            .addSubStep(new EasterEggStep("Follow the green beam to the fallen Groph Pod and defend it until it opens."))
-                            .addSubStep(new EasterEggStep("Collect the Dragon Network Controller component from the pod."))
-                    )
-
-                    .addStep(new EasterEggStep("Complete the Supply Depot Groph Module")
-                            .addSubStep(new EasterEggStep("Collect the Supply Depot Code Cylinder and insert it into the Supply Depot console.").addImage())
-                            .addSubStep(new EasterEggStep("Follow the green beam and defend the Groph Pod until it opens."))
-                            .addSubStep(new EasterEggStep("Collect the second Dragon Network Controller component."))
-                    )
-
-                    .addStep(new EasterEggStep("Complete the Tank Factory Groph Module")
-                            .addSubStep(new EasterEggStep("Collect the Tank Factory Code Cylinder and insert it into the Tank Factory console.").addImage())
-                            .addSubStep(new EasterEggStep("Follow the green beam and defend the Groph Pod until it opens."))
-                            .addSubStep(new EasterEggStep("Collect the final Dragon Network Controller component."))
-                    )
-
-                    .addStep(new EasterEggStep("Assemble and Use the Controller")
-                            .addSubStep(new EasterEggStep("Take the three components to the Dragon Network console inside the Operations Bunker.").addImage())
-                            .addSubStep(new EasterEggStep("Install all three components to activate the Dragon transportation network."))
-                            .addSubStep(new EasterEggStep("Use a controller at Dragon Command, the Supply Depot, or the Tank Factory to summon a Dragon."))
-                            .addSubStep(new EasterEggStep("Ride the Dragon to the Hatchery and Pack-A-Punch area.").addImage())
-                    )
-            ;
 
     public static final List<EasterEgg> GorodKrovi_MainQuests = Arrays.asList(
         LoveAndWar
@@ -447,10 +340,5 @@ public class GorodKrovi_EasterEggs
 
     );
 
-    public static final List<Procedure> GorodKrovi_Buildables = Arrays.asList(
-        GuardOfFafnir,
-        GauntletOfSiegfried,
-        DragonStrike,
-        DragonNetworkController
-    );
+
 }

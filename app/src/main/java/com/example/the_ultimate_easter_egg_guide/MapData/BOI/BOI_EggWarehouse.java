@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOI;
 
 import static com.example.the_ultimate_easter_egg_guide.MapData.BOI.EasterEggs.KinoDerToten_EasterEggs.KinoDerToten_sideQuests;
 
+import com.example.the_ultimate_easter_egg_guide.MapData.BOI.Buildables.Five_Buildables;
 import com.example.the_ultimate_easter_egg_guide.MapData.BOI.EasterEggs.Ascension_EasterEggs;
 import com.example.the_ultimate_easter_egg_guide.MapData.BOI.EasterEggs.COTD_EasterEggs;
 import com.example.the_ultimate_easter_egg_guide.MapData.BOI.EasterEggs.DerReise_EasterEggs;
@@ -16,7 +17,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.Maps.MapData;
 public class BOI_EggWarehouse
 {
     public static final MapData KinoDerToten = new MapData(null, KinoDerToten_sideQuests, null);
-    public static final MapData Five = new MapData(null, Five_EasterEggs.Five_SideQuests, Five_EasterEggs.Five_Buildables);
+    public static final MapData Five = new MapData(null, Five_EasterEggs.Five_SideQuests, Five_Buildables.Five_Buildables);
     public static final MapData Ascension = new MapData(Ascension_EasterEggs.Ascension_MainQuests, Ascension_EasterEggs.Ascension_SideQuests, null);
     public static final MapData CallOfTheDead = new MapData(COTD_EasterEggs.COTD_MainQuests, COTD_EasterEggs.COTD_SideQuests, null);
     public static final MapData ShangriLa = new MapData(ShangriLa_EasterEggs.ShangriLa_MainQuests, ShangriLa_EasterEggs.ShangriLa_SideQuests, null);

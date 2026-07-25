@@ -47,10 +47,7 @@ public class Five_EasterEggs
 
     public static final EasterEgg RedPhones = new EasterEgg("The Red Phones");
 
-    public static final EasterEgg Traps = new EasterEgg("Traps");
-    public static final List<Procedure> Five_Buildables = Arrays.asList(
-        Traps
-    );
+
     public static final List<EasterEgg> Five_SideQuests = Arrays.asList(
         WontBackDown,
         RedPhones
