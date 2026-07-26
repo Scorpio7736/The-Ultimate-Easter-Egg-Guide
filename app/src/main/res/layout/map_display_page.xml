@@ -142,6 +142,7 @@
 
             <!-- Grid Options -->
             <GridLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alignmentMode="alignMargins"
@@ -285,8 +286,8 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
-                    android:clickable="false"
-                    android:focusable="false"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardBackgroundColor="#CC000000"
                     app:cardCornerRadius="12dp"
                     app:strokeColor="@color/divider_dark"
@@ -308,15 +309,17 @@
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
-                        <TextView
+                        <ImageView
                             android:id="@+id/glitches_count"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/nz_font"
-                            android:gravity="center"
-                            android:text="0"
-                            android:textColor="#ff0000"
-                            android:textSize="24sp" />
+                            android:layout_width="40dp"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:padding="6dp"
+                            android:contentDescription="Locked"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/ic_lock"
+                            app:tint="#FF0000" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 

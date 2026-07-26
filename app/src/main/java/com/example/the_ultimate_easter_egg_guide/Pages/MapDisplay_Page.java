@@ -128,7 +128,8 @@ public class MapDisplay_Page extends PageController_BaseClass {
             }
         });
 
-        // Storyline button functionality removed as per request
+        findViewById(R.id.option_Glitches).setOnClickListener(v -> 
+            Toast.makeText(this, "Glitches coming soon!", Toast.LENGTH_SHORT).show());
 
         // Navigation bar settings button removed, handled by base class
     }
