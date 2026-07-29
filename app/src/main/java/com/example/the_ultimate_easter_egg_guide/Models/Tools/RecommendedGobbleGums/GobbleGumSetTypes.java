@@ -2,10 +2,18 @@ package com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobble
 
 public enum GobbleGumSetTypes
 {
-    Test,
-    STANDARD,
-    NO_MEGA,
-    CLASSIC_ONLY,
-    MEGA_ONLY,
-    WHIMSICAL_ONLY
+    Test("Test"),
+    STANDARD("Standard"),
+    NO_MEGA("No Mega"),
+    CLASSIC_ONLY("Classic Only"),
+    MEGA_ONLY("Mega Only"),
+    WHIMSICAL_ONLY("Whimsical Only"),
+
+    ;
+    public final String displayName;
+
+    GobbleGumSetTypes(String displayName)
+    {
+        this.displayName = displayName;
+    }
 }

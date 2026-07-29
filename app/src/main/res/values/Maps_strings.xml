@@ -26,55 +26,55 @@
     <string name="boiii_Origins_mapdescription">Witness the origins of Group 935, as an ancient evil is unleashed upon the battlefields of World War 1.</string>
 
     <!-- Placeholders for other maps to follow schema -->
-    <string name="test_TestingMap1_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="test_TestingMap2_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="test_TestingMap3_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="test_TestingMap4_mapdescription">@string/general_placeholder_mapdescription</string>
+    <string name="test_TestingMap1_mapdescription">Map description coming soon...</string>
+    <string name="test_TestingMap2_mapdescription">Map description coming soon...</string>
+    <string name="test_TestingMap3_mapdescription">Map description coming soon...</string>
+    <string name="test_TestingMap4_mapdescription">Map description coming soon...</string>
 
-    <string name="boi_KinoDerToten_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boi_Five_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boi_Ascension_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boi_CallOfTheDead_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boi_ShangriLa_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boi_Moon_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boi_NachtDerUntoten_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boi_Verruckt_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boi_ShiNoNuma_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boi_DerReise_mapdescription">@string/general_placeholder_mapdescription</string>
+    <string name="boi_KinoDerToten_mapdescription">Map description coming soon...</string>
+    <string name="boi_Five_mapdescription">Map description coming soon...</string>
+    <string name="boi_Ascension_mapdescription">Map description coming soon...</string>
+    <string name="boi_CallOfTheDead_mapdescription">Map description coming soon...</string>
+    <string name="boi_ShangriLa_mapdescription">Map description coming soon...</string>
+    <string name="boi_Moon_mapdescription">Map description coming soon...</string>
+    <string name="boi_NachtDerUntoten_mapdescription">Map description coming soon...</string>
+    <string name="boi_Verruckt_mapdescription">Map description coming soon...</string>
+    <string name="boi_ShiNoNuma_mapdescription">Map description coming soon...</string>
+    <string name="boi_DerReise_mapdescription">Map description coming soon...</string>
 
-    <string name="boii_Tranzit_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boii_Town_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boii_Farm_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boii_BusDepot_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boii_Nuketown_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boii_DieRise_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boii_MobOfTheDead_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boii_Buried_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boii_Origins_mapdescription">@string/general_placeholder_mapdescription</string>
+    <string name="boii_Tranzit_mapdescription">Map description coming soon...</string>
+    <string name="boii_Town_mapdescription">Map description coming soon...</string>
+    <string name="boii_Farm_mapdescription">Map description coming soon...</string>
+    <string name="boii_BusDepot_mapdescription">Map description coming soon...</string>
+    <string name="boii_Nuketown_mapdescription">battle hordes of Zombies in the beloved 1960s nuclear neighborhood with Call of Duty®: Black Ops II: Nuketown Zombies.</string>
+    <string name="boii_DieRise_mapdescription">Die Rise, bringing a terrifying new twist that will turn your undead world upside down.</string>
+    <string name="boii_MobOfTheDead_mapdescription">Mob of the Dead, Treyarch\'s most terrifying Zombies experience to date. Top Hollywood talent rounds out a cast of four Prohibition-era gangsters that are forced to fend off hordes of the undead while imprisoned on San Francisco\'s notorious Alcatraz Island. While guard towers and new weapons offer tactical advantages, survival offers an unprecedented new challenge for these four lost souls.</string>
+    <string name="boii_Buried_mapdescription">Map description coming soon...</string>
+    <string name="boii_Origins_mapdescription">Map description coming soon...</string>
 
-    <string name="boiv_DeadOfTheNight_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boiv_AncientEvil_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boiv_AlphaOmega_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boiv_TagDerToten_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boiv_BloodOfTheDead_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boiv_Classified_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boiv_VoyageOfDespair_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="boiv_IX_mapdescription">@string/general_placeholder_mapdescription</string>
+    <string name="boiv_DeadOfTheNight_mapdescription">Map description coming soon...</string>
+    <string name="boiv_AncientEvil_mapdescription">Map description coming soon...</string>
+    <string name="boiv_AlphaOmega_mapdescription">Map description coming soon...</string>
+    <string name="boiv_TagDerToten_mapdescription">Map description coming soon...</string>
+    <string name="boiv_BloodOfTheDead_mapdescription">Map description coming soon...</string>
+    <string name="boiv_Classified_mapdescription">Map description coming soon...</string>
+    <string name="boiv_VoyageOfDespair_mapdescription">Map description coming soon...</string>
+    <string name="boiv_IX_mapdescription">Map description coming soon...</string>
 
-    <string name="bocw_DieMaschine_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bocw_FirebaseZ_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bocw_MauerDerToten_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bocw_Forsaken_mapdescription">@string/general_placeholder_mapdescription</string>
+    <string name="bocw_DieMaschine_mapdescription">Map description coming soon...</string>
+    <string name="bocw_FirebaseZ_mapdescription">Map description coming soon...</string>
+    <string name="bocw_MauerDerToten_mapdescription">Map description coming soon...</string>
+    <string name="bocw_Forsaken_mapdescription">Map description coming soon...</string>
 
-    <string name="bovi_LibertyFalls_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bovi_Terminus_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bovi_CitadelleDesMorts_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bovi_ShatteredVeil_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bovi_TheTomb_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bovi_Reckoning_mapdescription">@string/general_placeholder_mapdescription</string>
+    <string name="bovi_LibertyFalls_mapdescription">Map description coming soon...</string>
+    <string name="bovi_Terminus_mapdescription">Map description coming soon...</string>
+    <string name="bovi_CitadelleDesMorts_mapdescription">Map description coming soon...</string>
+    <string name="bovi_ShatteredVeil_mapdescription">Map description coming soon...</string>
+    <string name="bovi_TheTomb_mapdescription">Map description coming soon...</string>
+    <string name="bovi_Reckoning_mapdescription">Map description coming soon...</string>
 
-    <string name="bovii_AshesOfTheDamned_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bovii_AstraMalorum_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bovii_ParadoxJunction_mapdescription">@string/general_placeholder_mapdescription</string>
-    <string name="bovii_Totenreich_mapdescription">@string/general_placeholder_mapdescription</string>
+    <string name="bovii_AshesOfTheDamned_mapdescription">Map description coming soon...</string>
+    <string name="bovii_AstraMalorum_mapdescription">Map description coming soon...</string>
+    <string name="bovii_ParadoxJunction_mapdescription">Map description coming soon...</string>
+    <string name="bovii_Totenreich_mapdescription">Map description coming soon...</string>
 </resources>

@@ -8,7 +8,7 @@ import com.example.the_ultimate_easter_egg_guide.R;
 public enum GobbleGums
 {
 
-    TEST("TEST GUM", R.drawable.default_test_image_4, Games.Test, GobbleGumTypes.TEST, GobbleGumColors.TEST),
+    TEST("TEST GUM", R.drawable.default_test_gum1, Games.Test, GobbleGumTypes.TEST, GobbleGumColors.TEST),
 
     ALWAYS_DONE_SWIFTLY("Always Done Swiftly", R.drawable.alwaysdoneswiftly_pfp, Games.Black_Ops_III, GobbleGumTypes.Classic, GobbleGumColors.BLUE),
     ARMS_GRACE("Arms Grace", R.drawable.armsgrace_pfp, Games.Black_Ops_III, GobbleGumTypes.Classic, GobbleGumColors.ORANGE),
