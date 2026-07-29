@@ -5,7 +5,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobbleG
 import com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobbleGums.GobbleGumTypes;
 import com.example.the_ultimate_easter_egg_guide.R;
 
-public enum GobbleGums_boiii
+public enum GobbleGums
 {
 
     TEST("TEST GUM", R.drawable.default_test_image_4, Games.Test, GobbleGumTypes.TEST, GobbleGumColors.TEST),
@@ -83,7 +83,7 @@ public enum GobbleGums_boiii
     public final Games game;
     public final GobbleGumTypes gumType;
     public final GobbleGumColors gumColor;
-    GobbleGums_boiii(String gumName, int gumCover, Games game, GobbleGumTypes gumType, GobbleGumColors gumColor)
+    GobbleGums(String gumName, int gumCover, Games game, GobbleGumTypes gumType, GobbleGumColors gumColor)
     {
         this.gumName = gumName;
         this.gumCover = gumCover;

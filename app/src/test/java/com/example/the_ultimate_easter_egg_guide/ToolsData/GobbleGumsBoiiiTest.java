@@ -14,7 +14,7 @@ public class GobbleGumsBoiiiTest {
 
     @Test
     public void testEnumInitialization() {
-        for (GobbleGums_boiii gum : GobbleGums_boiii.values()) {
+        for (GobbleGums gum : GobbleGums.values()) {
             assertNotNull("Gum name should not be null for " + gum.name(), gum.gumName);
             assertTrue("Gum name should not be empty for " + gum.name(), !gum.gumName.isEmpty());
             assertTrue("Gum cover should be a valid resource ID for " + gum.name(), gum.gumCover != 0);
@@ -27,14 +27,14 @@ public class GobbleGumsBoiiiTest {
     @Test
     public void testSpecificGumData() {
         // Test Test
-        GobbleGums_boiii Test = GobbleGums_boiii.TEST;
+        GobbleGums Test = GobbleGums.TEST;
         assertEquals("TEST GUM", Test.gumName);
         assertEquals(Games.Test, Test.game);
         assertEquals(GobbleGumTypes.TEST, Test.gumType);
         assertEquals(GobbleGumColors.TEST, Test.gumColor);
 
         // Test Alchemical Antithesis
-        GobbleGums_boiii alchemical = GobbleGums_boiii.ALCHEMICAL_ANTITHESIS;
+        GobbleGums alchemical = GobbleGums.ALCHEMICAL_ANTITHESIS;
         assertEquals("Alchemical Antithesis", alchemical.gumName);
         assertEquals(Games.Black_Ops_III, alchemical.game);
         assertEquals(GobbleGumTypes.Classic, alchemical.gumType);

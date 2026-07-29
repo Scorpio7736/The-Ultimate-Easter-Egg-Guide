@@ -31,7 +31,7 @@ import com.example.the_ultimate_easter_egg_guide.StorylineData.CreaturesData.Fri
 import com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData.Items;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.MapsData.StorylineMaps;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.OrganizationsData.Organizations;
-import com.example.the_ultimate_easter_egg_guide.ToolsData.GobbleGums_boiii;
+import com.example.the_ultimate_easter_egg_guide.ToolsData.GobbleGums;
 
 import org.junit.AfterClass;
 import org.junit.FixMethodOrder;
@@ -466,7 +466,7 @@ public class MasterAuditTest {
         List<GumAuditResult> failures = new ArrayList<>();
         int totalGumsChecked = 0;
 
-        for (GobbleGums_boiii gum : GobbleGums_boiii.values()) {
+        for (GobbleGums gum : GobbleGums.values()) {
 
             if (gum.game == Games.Test
                     || gum.name().equalsIgnoreCase("TEST")) {
