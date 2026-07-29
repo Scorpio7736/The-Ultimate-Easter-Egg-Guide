@@ -1,9 +1,8 @@
 package com.example.the_ultimate_easter_egg_guide.MapData.BOII.Buildables;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.Buildable;
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.Buildable;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.BuildableStep;
-import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
+import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,13 +21,18 @@ public class MOTD_Buildables
                     .addSubStep(new BuildableStep("When the charged Hell's Retriever hits a skull, it will return to you with the skull attached.")))
             .addStep(new BuildableStep("Skull 1")
                     .addSubStep(new BuildableStep("In the cell block just outside the library in the spawn area."))
-                    .addSubStep(new BuildableStep("The skull is inside a cell with a toilet.")))
+                    .addSubStep(new BuildableStep("The skull is inside a cell with a toilet. Glitch spot to collect first skull above the Hell's Retriever spawn."))
+                    .addImage(R.drawable.boii_motd_skull1_main)
+                    .addImage()
+            )
             .addStep(new BuildableStep("Skull 2")
                     .addSubStep(new BuildableStep("On the roof, back left when coming onto the roof."))
                     .addSubStep(new BuildableStep("The skull is sitting on an unreachable corner of the roof.")))
             .addStep(new BuildableStep("Skull 3")
                     .addSubStep(new BuildableStep("On the docks, across the water on another dock."))
-                    .addSubStep(new BuildableStep("Look near the third pillar from the left, close to the possible Mystery Box spawn.")))
+                    .addSubStep(new BuildableStep("Look near the third pillar from the left, close to the possible Mystery Box spawn."))
+                    .addImage(R.drawable.boii_motd_skull3)
+            )
             .addStep(new BuildableStep("Skull 4")
                     .addSubStep(new BuildableStep("Above Juggernog near the docks."))
                     .addSubStep(new BuildableStep("Look up at the lamppost on the hill."))
@@ -47,7 +51,9 @@ public class MOTD_Buildables
                     .addSubStep(new BuildableStep("Feed six zombies to each of the three dog heads around the map."))
                     .addSubStep(new BuildableStep("Each head must be fed six zombies. When a head is complete, it will recede into the wall and the Dog icon on the wall will glow.")))
             .addStep(new BuildableStep("Dog Head 1")
-                    .addSubStep(new BuildableStep("In the Broadway cell block, located near the B23R.")))
+                    .addSubStep(new BuildableStep("In the Broadway cell block, located near the B23R."))
+                    .addImage(R.drawable.boii_motd_dog1)
+            )
             .addStep(new BuildableStep("Dog Head 2")
                     .addSubStep(new BuildableStep("In the infirmary, adjacent to the Afterlife power box.")))
             .addStep(new BuildableStep("Dog Head 3")
@@ -87,7 +93,9 @@ public class MOTD_Buildables
                     .addSubStep(new BuildableStep("To the left of the Mystery Box spawn on the floor in the Warden's Office."))
                     .addSubStep(new BuildableStep("To the left of the fireplace, to the left of Speed Cola in the Warden's Office.")))
             .addStep(new BuildableStep("Find the Case")
-                    .addSubStep(new BuildableStep("Near the library through the C-D gate, sitting on a table near the jail cell."))
+                    .addSubStep(new BuildableStep("Near the library through the C-D gate, sitting on a table near the jail cell.")
+                            .addImage(R.drawable.boii_motd_acidgat_case1)
+                    )
                     .addSubStep(new BuildableStep("Under the staircase in the hallway leading to the Warden's Office, also known as Michigan Avenue."))
                     .addSubStep(new BuildableStep("Near the top of the stairs from the laundromat, across from the Afterlife switch, on the floor.")))
             .addStep(new BuildableStep("Find the Acid Bottle")

@@ -3,6 +3,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOII.EasterEggs;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
+import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.Arrays;
 import java.util.List;
@@ -93,7 +94,9 @@ public class MOTD_EasterEggs {
     );
     public static final EasterEgg RustyCage = new EasterEgg("Rusty Cage")
             .addStep(new EasterEggStep("Find the First Bottle")
-                    .addSubStep(new EasterEggStep("Find the first bottle on a bookshelf in the library near the spawn area.")))
+                    .addSubStep(new EasterEggStep("Find the first bottle on a bookshelf in the library near the spawn area."))
+                            .addImage(R.drawable.boii_motd_bottle1)
+                    )
             .addStep(new EasterEggStep("Find the Second Bottle")
                     .addSubStep(new EasterEggStep("Find the second bottle in the infirmary, near one of the baths filled with blood.")))
             .addStep(new EasterEggStep("Find the Third Bottle")

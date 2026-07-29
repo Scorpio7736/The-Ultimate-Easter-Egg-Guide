@@ -2,6 +2,7 @@ package com.example.the_ultimate_easter_egg_guide.MapData.BOII.EasterEggs;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEgg;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.EasterEggStep;
+import com.example.the_ultimate_easter_egg_guide.R;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +19,7 @@ public class Nuketown_EasterEggs
                             .addSubStep(new EasterEggStep(
                                             "Look through the bus windows and interact with the teddy bear sitting on one of the rear seats."
                                     )
-                                            .addImage()
+                                            .addImage(R.drawable.boii_nuketown_bear1)
                             )
                     )
 

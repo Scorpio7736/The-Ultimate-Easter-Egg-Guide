@@ -23,8 +23,6 @@ public class GuideApplication extends Application {
 
         NotificationHelper.createNotificationChannel(this);
 
-        MusicManager.getInstance(this).playMusic();
-
         // Skip WorkManager initialization in Robolectric tests to avoid IllegalStateException
         if (isRobolectric()) {
             return;
