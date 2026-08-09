@@ -9,6 +9,9 @@ import java.util.List;
 public enum PlayerGumSets
 {
     TEST_SET("Test Set", Maps.Test_TestingMap1, GobbleGumSetTypes.Test, new GobbleGumSet(GobbleGums.TEST, GobbleGums.TEST, GobbleGums.TEST, GobbleGums.TEST, GobbleGums.TEST)),
+    NACHT_SET("Nacht der Untoten", Maps.WAW_Nacht_Der_Untoten, GobbleGumSetTypes.CLASSIC_ONLY, new GobbleGumSet()),
+
+
     ;
 
     public final String setName;

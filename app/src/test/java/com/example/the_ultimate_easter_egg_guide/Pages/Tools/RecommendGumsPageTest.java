@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 import android.widget.Spinner;
 
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.test.core.app.ActivityScenario;
 
 import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass;
@@ -20,6 +21,17 @@ import org.robolectric.annotation.Config;
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = 33)
 public class RecommendGumsPageTest {
+
+    @Test
+    public void testActivityLaunches() {
+        try (ActivityScenario<RecommendGums_ToolPage> scenario = ActivityScenario.launch(RecommendGums_ToolPage.class)) {
+            scenario.onActivity(activity -> {
+                assertNotNull(activity);
+                assertNotNull(activity.findViewById(R.id.set_type_spinner));
+                assertNotNull(activity.findViewById(R.id.gums_recycler_view));
+            });
+        }
+    }
 
     @Test
     public void testSelectorFiltering() {
@@ -42,6 +54,26 @@ public class RecommendGumsPageTest {
                         assertFalse("Production mode should not show Test option", 
                                 spinner.getAdapter().getItem(i).toString().equalsIgnoreCase("Test"));
                     }
+                }
+            });
+        }
+    }
+
+    @Test
+    public void testDataLoading() {
+        try (ActivityScenario<RecommendGums_ToolPage> scenario = ActivityScenario.launch(RecommendGums_ToolPage.class)) {
+            scenario.onActivity(activity -> {
+                RecyclerView rv = activity.findViewById(R.id.gums_recycler_view);
+                Spinner spinner = activity.findViewById(R.id.set_type_spinner);
+                
+                if (PageController_BaseClass.ENABLE_TESTING) {
+                    // Test Set is selected by default in Dev Mode
+                    assertTrue(rv.getAdapter().getItemCount() >= 1);
+                } else {
+                    // Select Standard (assuming index 0 in production)
+                    spinner.setSelection(0);
+                    // Standard has 0 sets currently, so count is 0
+                    assertEquals(0, rv.getAdapter().getItemCount());
                 }
             });
         }

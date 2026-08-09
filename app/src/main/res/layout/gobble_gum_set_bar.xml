@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gobble_gum_set_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_gobble_gum_set_bar"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:weightSum="5">
+
+    <include
+        android:id="@+id/gum_1"
+        layout="@layout/gobble_gum_unit" />
+
+    <include
+        android:id="@+id/gum_2"
+        layout="@layout/gobble_gum_unit" />
+
+    <include
+        android:id="@+id/gum_3"
+        layout="@layout/gobble_gum_unit" />
+
+    <include
+        android:id="@+id/gum_4"
+        layout="@layout/gobble_gum_unit" />
+
+    <include
+        android:id="@+id/gum_5"
+        layout="@layout/gobble_gum_unit" />
+
+</LinearLayout>

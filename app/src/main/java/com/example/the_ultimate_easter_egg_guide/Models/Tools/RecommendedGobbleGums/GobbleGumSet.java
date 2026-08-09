@@ -19,4 +19,13 @@ public class GobbleGumSet
         this.gum5 = gum5;
     }
 
+    public GobbleGumSet()
+    {
+        this.gum1 = GobbleGums.ALWAYS_DONE_SWIFTLY;
+        this.gum2 = GobbleGums.ARMS_GRACE;
+        this.gum3 = GobbleGums.COAGULANT;
+        this.gum4 = GobbleGums.IN_PLAIN_SIGHT;
+        this.gum5 = GobbleGums.STOCK_OPTION;
+    }
+
 }

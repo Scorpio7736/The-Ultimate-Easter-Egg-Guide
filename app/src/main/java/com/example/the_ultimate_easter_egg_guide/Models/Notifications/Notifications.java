@@ -1,23 +1,23 @@
 package com.example.the_ultimate_easter_egg_guide.Models.Notifications;
 
-import java.sql.Time;
-
 public enum Notifications
 {
-    TEST(NotificationType.TEST,"TEST NOTIFICATION", "THIS IS A TEST TO ENSURE NOTIFICATION SYSTEM WORKS", new Time(12, 0, 0)),
-    STANDARD_REMINDER(NotificationType.DAILY,"You know what time it is!", "", new Time(13, 15, 0)),
+    TEST(NotificationType.TEST,"TEST NOTIFICATION", "THIS IS A TEST TO ENSURE NOTIFICATION SYSTEM WORKS", 12, 0),
+    STANDARD_REMINDER(NotificationType.DAILY,"You know what time it is!", "", 13, 15),
 
     ;
 
-    public NotificationType notificationType;
-    public String notificationTitle;
-    public String notificationMsg;
-    public Time soundoffHour;
-    Notifications(NotificationType notificationType, String notificationTitle, String notificationMsg, Time soundoffHour)
+    public final NotificationType notificationType;
+    public final String notificationTitle;
+    public final String notificationMsg;
+    public final int hour;
+    public final int minute;
+    Notifications(NotificationType notificationType, String notificationTitle, String notificationMsg, int hour, int minute)
     {
         this.notificationType = notificationType;
         this.notificationTitle = notificationTitle;
         this.notificationMsg = notificationMsg;
-        this.soundoffHour = soundoffHour;
+        this.hour = hour;
+        this.minute = minute;
     }
 }

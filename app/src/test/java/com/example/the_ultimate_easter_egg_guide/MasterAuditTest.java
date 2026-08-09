@@ -11,6 +11,7 @@ import com.example.the_ultimate_easter_egg_guide.Models.PageController_BaseClass
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.Procedure;
 import com.example.the_ultimate_easter_egg_guide.Models.Maps.ProcedureStep;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.IStorylineItems;
+import com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobbleGums.GobbleGumSetTypes;
 import com.example.the_ultimate_easter_egg_guide.Pages.AboutMe_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.ContactUs_PAGE;
 import com.example.the_ultimate_easter_egg_guide.Pages.EggDisplay_Page;
@@ -32,6 +33,7 @@ import com.example.the_ultimate_easter_egg_guide.StorylineData.ItemsData.Items;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.MapsData.StorylineMaps;
 import com.example.the_ultimate_easter_egg_guide.StorylineData.OrganizationsData.Organizations;
 import com.example.the_ultimate_easter_egg_guide.ToolsData.GobbleGums;
+import com.example.the_ultimate_easter_egg_guide.ToolsData.PlayerGumSets;
 
 import org.junit.AfterClass;
 import org.junit.FixMethodOrder;
@@ -926,6 +928,119 @@ public class MasterAuditTest {
         fullReport.append(sb).append("\n");
     }
 
+    @Test
+    public void audit8_RecommendedGums() {
+
+        List<RecommendedGumsAuditResult> failures = new ArrayList<>();
+        int combinationsChecked = 0;
+
+        for (Maps map : Maps.values()) {
+
+            if (map.gameName != Games.Black_Ops_III) {
+                continue;
+            }
+
+            for (GobbleGumSetTypes type : GobbleGumSetTypes.values()) {
+
+                if (type == GobbleGumSetTypes.Test) {
+                    continue;
+                }
+
+                combinationsChecked++;
+
+                boolean found = false;
+                for (PlayerGumSets set : PlayerGumSets.values()) {
+                    if (set.map == map && set.setType == type) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    failures.add(new RecommendedGumsAuditResult(
+                            map.mapName,
+                            type.displayName,
+                            "MISSING SET"
+                    ));
+                }
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        appendAuditHeader(sb, "RECOMMENDED GUMS AUDIT");
+        appendAuditSummary(
+                sb,
+                "BOIII Combinations Checked",
+                combinationsChecked,
+                failures.size()
+        );
+
+        if (!failures.isEmpty()) {
+
+            int maxMap = "Map".length();
+            int maxType = "Set Type".length();
+            int maxStatus = "Status".length();
+
+            for (RecommendedGumsAuditResult result : failures) {
+                maxMap = Math.max(maxMap, result.mapName.length());
+                maxType = Math.max(maxType, result.setTypeName.length());
+                maxStatus = Math.max(maxStatus, result.status.length());
+            }
+
+            int[] widths = {
+                    maxMap,
+                    maxType,
+                    maxStatus
+            };
+
+            String separator = buildTableSeparator(widths);
+
+            sb.append(separator);
+            appendTableRow(
+                    sb,
+                    widths,
+                    new String[]{"Map", "Set Type", "Status"},
+                    null
+            );
+            sb.append(separator);
+
+            for (RecommendedGumsAuditResult result : failures) {
+                appendTableRow(
+                        sb,
+                        widths,
+                        new String[]{
+                                result.mapName,
+                                result.setTypeName,
+                                result.status
+                        },
+                        new String[]{
+                                ANSI_PURPLE,
+                                ANSI_BLUE,
+                                ANSI_YELLOW
+                        }
+                );
+            }
+
+            sb.append(separator);
+
+            appendWarning(
+                    sb,
+                    failures.size(),
+                    "recommended gum set is missing for a BOIII map.",
+                    "recommended gum sets are missing for BOIII maps."
+            );
+
+        } else {
+            appendPass(
+                    sb,
+                    "All BOIII maps have complete recommended gum sets."
+            );
+        }
+
+        fullReport.append(sb).append("\n");
+    }
+
     private List<Procedure> getAllEasterEggs(Maps map) {
 
         List<Procedure> allEggs = new ArrayList<>();
@@ -1374,6 +1489,23 @@ public class MasterAuditTest {
             this.egg = egg;
             this.step = step;
             this.issue = issue;
+        }
+    }
+
+    private static class RecommendedGumsAuditResult {
+
+        final String mapName;
+        final String setTypeName;
+        final String status;
+
+        RecommendedGumsAuditResult(
+                String mapName,
+                String setTypeName,
+                String status
+        ) {
+            this.mapName = mapName;
+            this.setTypeName = setTypeName;
+            this.status = status;
         }
     }
 }

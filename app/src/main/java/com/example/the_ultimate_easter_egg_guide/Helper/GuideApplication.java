@@ -53,13 +53,10 @@ public class GuideApplication extends Application {
         Calendar calendar = Calendar.getInstance();
         long now = calendar.getTimeInMillis();
 
-        // Get target time from enum
-        Calendar target = Calendar.getInstance();
-        target.setTime(notification.soundoffHour);
-        
-        calendar.set(Calendar.HOUR_OF_DAY, target.get(Calendar.HOUR_OF_DAY));
-        calendar.set(Calendar.MINUTE, target.get(Calendar.MINUTE));
-        calendar.set(Calendar.SECOND, target.get(Calendar.SECOND));
+        // Use new hour/minute fields directly
+        calendar.set(Calendar.HOUR_OF_DAY, notification.hour);
+        calendar.set(Calendar.MINUTE, notification.minute);
+        calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
 
         if (calendar.getTimeInMillis() <= now) {
@@ -80,7 +77,7 @@ public class GuideApplication extends Application {
 
         WorkManager.getInstance(this).enqueueUniquePeriodicWork(
                 "prod_notification_" + notification.name(),
-                ExistingPeriodicWorkPolicy.KEEP,
+                ExistingPeriodicWorkPolicy.REPLACE, // Always replace to pick up latest code/time changes
                 workRequest);
     }
 
