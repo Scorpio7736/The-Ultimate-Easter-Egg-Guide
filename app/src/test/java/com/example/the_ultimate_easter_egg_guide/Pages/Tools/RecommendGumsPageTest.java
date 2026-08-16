@@ -70,10 +70,10 @@ public class RecommendGumsPageTest {
                     // Test Set is selected by default in Dev Mode
                     assertTrue(rv.getAdapter().getItemCount() >= 1);
                 } else {
-                    // Select Standard (assuming index 0 in production)
+                    // Select "Classic Only" (now index 0 in production after removing Standard)
                     spinner.setSelection(0);
-                    // Standard has 0 sets currently, so count is 0
-                    assertEquals(0, rv.getAdapter().getItemCount());
+                    // Classic Only currently has 6 sets defined in PlayerGumSets
+                    assertEquals(6, rv.getAdapter().getItemCount());
                 }
             });
         }

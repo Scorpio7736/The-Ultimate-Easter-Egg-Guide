@@ -25,6 +25,8 @@ public class RecommendGums_ToolPage extends PageController_BaseClass {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recommend_gums_tool_page);
 
+        enableConstructionBlur();
+
         RecyclerView recyclerView = findViewById(R.id.gums_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new GumSetAdapter();

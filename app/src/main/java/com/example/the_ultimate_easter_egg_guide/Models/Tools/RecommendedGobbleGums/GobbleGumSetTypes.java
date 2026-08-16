@@ -3,9 +3,8 @@ package com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobble
 public enum GobbleGumSetTypes
 {
     Test("Test"),
-    STANDARD("Standard"),
-    NO_MEGA("No Mega"),
     CLASSIC_ONLY("Classic Only"),
+    NO_MEGA("No Mega"),
     MEGA_ONLY("Mega Only"),
     WHIMSICAL_ONLY("Whimsical Only"),
 
