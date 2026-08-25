@@ -35,9 +35,11 @@
             android:textSize="14sp"
             android:alpha="0.8" />
 
-        <include
-            android:id="@+id/gum_set_bar"
-            layout="@layout/gobble_gum_set_bar" />
+        <LinearLayout
+            android:id="@+id/gum_bars_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

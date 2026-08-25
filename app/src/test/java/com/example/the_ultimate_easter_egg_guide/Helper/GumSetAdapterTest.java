@@ -1,14 +1,10 @@
 package com.example.the_ultimate_easter_egg_guide.Helper;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import android.content.Context;
 import android.view.ContextThemeWrapper;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.test.core.app.ApplicationProvider;
 
@@ -39,20 +35,33 @@ public class GumSetAdapterTest {
 
     @Test
     public void testItemCount() {
-        adapter.setGumSets(Collections.singletonList(PlayerGumSets.TEST_SET));
+        adapter.setGumSets(Collections.singletonList(PlayerGumSets.TEST_SET_1_PLAYER));
         assertEquals(1, adapter.getItemCount());
     }
 
     @Test
-    public void testOnBindViewHolder() {
+    public void testOnBindViewHolder_Solo() {
         LinearLayout parent = new LinearLayout(context);
         GumSetAdapter.ViewHolder holder = adapter.onCreateViewHolder(parent, 0);
 
-        adapter.setGumSets(Collections.singletonList(PlayerGumSets.TEST_SET));
+        adapter.setGumSets(Collections.singletonList(PlayerGumSets.TEST_SET_1_PLAYER));
         adapter.onBindViewHolder(holder, 0);
 
-        assertEquals("Test Set", holder.setName.getText().toString());
-        // Map name should be "Testing Map 1" for TEST_SET
-        assertEquals("Testing Map 1", holder.mapName.getText().toString());
+        assertEquals("Test Set - 1 Player", holder.setName.getText().toString());
+        // Verify one bar is added
+        assertEquals(1, holder.gumBarsContainer.getChildCount());
+    }
+
+    @Test
+    public void testOnBindViewHolder_MultiPlayer() {
+        LinearLayout parent = new LinearLayout(context);
+        GumSetAdapter.ViewHolder holder = adapter.onCreateViewHolder(parent, 0);
+
+        adapter.setGumSets(Collections.singletonList(PlayerGumSets.TEST_SET_2_PLAYER));
+        adapter.onBindViewHolder(holder, 0);
+
+        assertEquals("Test Set - 2 Players", holder.setName.getText().toString());
+        // Verify 2 bars + 2 labels = 4 children
+        assertEquals(4, holder.gumBarsContainer.getChildCount());
     }
 }

@@ -28,6 +28,7 @@ public class RecommendGumsPageTest {
             scenario.onActivity(activity -> {
                 assertNotNull(activity);
                 assertNotNull(activity.findViewById(R.id.set_type_spinner));
+                assertNotNull(activity.findViewById(R.id.player_count_spinner));
                 assertNotNull(activity.findViewById(R.id.gums_recycler_view));
             });
         }
@@ -72,8 +73,8 @@ public class RecommendGumsPageTest {
                 } else {
                     // Select "Classic Only" (now index 0 in production after removing Standard)
                     spinner.setSelection(0);
-                    // Classic Only currently has 6 sets defined in PlayerGumSets
-                    assertEquals(6, rv.getAdapter().getItemCount());
+                    // Classic Only currently has 5 sets defined in PlayerGumSets
+                    assertEquals(5, rv.getAdapter().getItemCount());
                 }
             });
         }

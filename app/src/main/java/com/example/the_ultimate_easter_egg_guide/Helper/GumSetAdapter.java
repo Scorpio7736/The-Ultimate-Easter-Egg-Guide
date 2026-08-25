@@ -4,9 +4,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobbleGums.GobbleGumSet;
@@ -39,11 +41,38 @@ public class GumSetAdapter extends RecyclerView.Adapter<GumSetAdapter.ViewHolder
         holder.setName.setText(set.setName);
         holder.mapName.setText(set.map != null ? set.map.mapName : "All Maps");
 
-        bindGumToUnit(holder.gum1, set.gums.gum1);
-        bindGumToUnit(holder.gum2, set.gums.gum2);
-        bindGumToUnit(holder.gum3, set.gums.gum3);
-        bindGumToUnit(holder.gum4, set.gums.gum4);
-        bindGumToUnit(holder.gum5, set.gums.gum5);
+        holder.gumBarsContainer.removeAllViews();
+        LayoutInflater inflater = LayoutInflater.from(holder.itemView.getContext());
+
+        for (int i = 0; i < set.playerCount; i++) {
+            // Add Player Label if more than 1 player
+            if (set.playerCount > 1) {
+                TextView playerLabel = new TextView(holder.itemView.getContext());
+                playerLabel.setText(String.format(java.util.Locale.getDefault(), "Player %d", (i + 1)));
+                playerLabel.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.text_secondary));
+                playerLabel.setTextSize(12);
+                playerLabel.setPadding(4, 8, 0, 4);
+                holder.gumBarsContainer.addView(playerLabel);
+            }
+
+            // Inflate and populate the bar
+            View barView = inflater.inflate(R.layout.gobble_gum_set_bar, holder.gumBarsContainer, false);
+            
+            // If we have specific gum sets for this player, use them. 
+            // Otherwise, repeat the first set (graceful handling if gumSets.size < playerCount).
+            GobbleGumSet playerGums = (i < set.gumSets.size()) ? set.gumSets.get(i) : set.gumSets.get(0);
+            
+            populateBar(barView, playerGums);
+            holder.gumBarsContainer.addView(barView);
+        }
+    }
+
+    private void populateBar(View barView, GobbleGumSet set) {
+        bindGumToUnit(barView.findViewById(R.id.gum_1), set.gum1);
+        bindGumToUnit(barView.findViewById(R.id.gum_2), set.gum2);
+        bindGumToUnit(barView.findViewById(R.id.gum_3), set.gum3);
+        bindGumToUnit(barView.findViewById(R.id.gum_4), set.gum4);
+        bindGumToUnit(barView.findViewById(R.id.gum_5), set.gum5);
     }
 
     private void bindGumToUnit(View unitView, GobbleGums gum) {
@@ -63,19 +92,13 @@ public class GumSetAdapter extends RecyclerView.Adapter<GumSetAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         final TextView setName;
         final TextView mapName;
-        final View gum1, gum2, gum3, gum4, gum5;
+        final LinearLayout gumBarsContainer;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             setName = itemView.findViewById(R.id.set_name_text);
             mapName = itemView.findViewById(R.id.map_name_text);
-            
-            View bar = itemView.findViewById(R.id.gum_set_bar);
-            gum1 = bar.findViewById(R.id.gum_1);
-            gum2 = bar.findViewById(R.id.gum_2);
-            gum3 = bar.findViewById(R.id.gum_3);
-            gum4 = bar.findViewById(R.id.gum_4);
-            gum5 = bar.findViewById(R.id.gum_5);
+            gumBarsContainer = itemView.findViewById(R.id.gum_bars_container);
         }
     }
 }

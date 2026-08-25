@@ -4,9 +4,8 @@ public enum GobbleGumSetTypes
 {
     Test("Test"),
     CLASSIC_ONLY("Classic Only"),
-    NO_MEGA("No Mega"),
-    MEGA_ONLY("Mega Only"),
-    WHIMSICAL_ONLY("Whimsical Only"),
+    MEGA("Mega and Below"),
+    WHIMSICAL("Whimsical and Fun"),
 
     ;
     public final String displayName;

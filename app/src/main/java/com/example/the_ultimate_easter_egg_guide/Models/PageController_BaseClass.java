@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.the_ultimate_easter_egg_guide.Helper.PageTransitionManager;
 import com.example.the_ultimate_easter_egg_guide.Models.Storyline.ItemGroups;
 import com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobbleGums.GobbleGumSetTypes;
+import com.example.the_ultimate_easter_egg_guide.Models.Tools.RecommendedGobbleGums.PlayerCount;
 import com.example.the_ultimate_easter_egg_guide.R;
 import com.google.android.material.card.MaterialCardView;
 
@@ -109,6 +110,8 @@ public abstract class PageController_BaseClass extends AppCompatActivity {
                             if (constant == GobbleGumSetTypes.Test) continue;
                         }
                         displayName = ((GobbleGumSetTypes) constant).displayName;
+                    } else if (constant instanceof PlayerCount) {
+                        displayName = ((PlayerCount) constant).displayName;
                     }
                     displayNames.add(displayName);
                     filteredConstants.add(constant);
@@ -181,6 +184,15 @@ public abstract class PageController_BaseClass extends AppCompatActivity {
             // Fallback: Dim the background for older versions
             overlay.setBackgroundColor(0x99000000); 
         }
+
+        // Add prison bars image on top of the blur
+        ImageView prisonBars = new ImageView(this);
+        prisonBars.setLayoutParams(new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        prisonBars.setImageResource(R.drawable.prisonbars_blur);
+        prisonBars.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        overlay.addView(prisonBars);
 
         // Create the "Video Box"
         MaterialCardView videoBox = new MaterialCardView(this);
