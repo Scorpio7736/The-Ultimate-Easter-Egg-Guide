@@ -6,7 +6,7 @@ import static org.robolectric.Shadows.shadowOf;
 
 import android.content.Intent;
 import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.VideoView;
 
 import androidx.test.core.app.ActivityScenario;
 
@@ -29,8 +29,8 @@ public class HomePageTest {
         try (ActivityScenario<Home_PAGE> scenario = ActivityScenario.launch(Home_PAGE.class)) {
             scenario.onActivity(activity -> {
                 assertNotNull(activity);
-                ImageView slideshow = activity.findViewById(R.id.slideshow_image);
-                assertNotNull(slideshow);
+                VideoView homeVideo = activity.findViewById(R.id.home_video_view);
+                assertNotNull(homeVideo);
             });
         }
     }

@@ -2,39 +2,22 @@ package com.example.the_ultimate_easter_egg_guide.Pages.Navigation;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.VideoView;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.splashscreen.SplashScreen;
 
-import com.example.the_ultimate_easter_egg_guide.MapData.MapsWarehouse;
-import com.example.the_ultimate_easter_egg_guide.Models.Images.ImageID;
 import com.example.the_ultimate_easter_egg_guide.Models.NavPageController_BaseClass;
 import com.example.the_ultimate_easter_egg_guide.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Home_PAGE extends NavPageController_BaseClass {
 
-    private ImageView slideshowImage;
-    private final List<Integer> slideshowImages = new ArrayList<>();
-    private int currentImageIndex = 0;
-    
-    private final Handler sliderHandler = new Handler(Looper.getMainLooper());
-    private final Runnable sliderRunnable = new Runnable() {
-        @Override
-        public void run() {
-            transitionToNextImage();
-            sliderHandler.postDelayed(this, 4000); // Trigger transition every 4 seconds
-        }
-    };
+    private VideoView homeVideoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +26,7 @@ public class Home_PAGE extends NavPageController_BaseClass {
         setContentView(R.layout.home_page);
 
         setupBaseNavigation();
-        setupSlideshow();
+        setupHomeVideo();
         requestNotificationPermission();
     }
 
@@ -55,54 +38,50 @@ public class Home_PAGE extends NavPageController_BaseClass {
         }
     }
 
-    private void setupSlideshow() {
-        slideshowImage = findViewById(R.id.slideshow_image);
+    private void setupHomeVideo() {
+        homeVideoView = findViewById(R.id.home_video_view);
+        
+        String path = "android.resource://" + getPackageName() + "/" + R.raw.home_trailer;
+        homeVideoView.setVideoURI(Uri.parse(path));
+        
+        homeVideoView.setOnPreparedListener(mp -> {
+            mp.setLooping(true);
+            mp.setVolume(0f, 0f); // Mute the video
+            
+            // Scaling logic to "center crop" the video so it fills the slot
+            float videoWidth = mp.getVideoWidth();
+            float videoHeight = mp.getVideoHeight();
+            float videoAspectRatio = videoWidth / videoHeight;
 
-        // Populate slideshow with all map covers
-        for (ImageID id : MapsWarehouse.All_Images) {
-            slideshowImages.add(id.GetImageID());
-        }
+            float viewWidth = homeVideoView.getWidth();
+            float viewHeight = homeVideoView.getHeight();
+            float viewAspectRatio = viewWidth / viewHeight;
 
-        if (!slideshowImages.isEmpty()) {
-            slideshowImage.setImageResource(slideshowImages.get(0));
-            if (!isUnderConstructionEnabled) {
-                sliderHandler.postDelayed(sliderRunnable, 4000);
+            if (videoAspectRatio > viewAspectRatio) {
+                homeVideoView.setScaleX(videoAspectRatio / viewAspectRatio);
+            } else {
+                homeVideoView.setScaleY(viewAspectRatio / videoAspectRatio);
             }
-        }
-    }
-
-    private void transitionToNextImage() {
-        // Fade out to black (background of container)
-        slideshowImage.animate()
-            .alpha(0f)
-            .setDuration(500)
-            .withEndAction(() -> {
-                // Change image while invisible
-                currentImageIndex = (currentImageIndex + 1) % slideshowImages.size();
-                slideshowImage.setImageResource(slideshowImages.get(currentImageIndex));
-                
-                // Fade back in
-                slideshowImage.animate()
-                    .alpha(1f)
-                    .setDuration(500)
-                    .start();
-            })
-            .start();
+            
+            homeVideoView.start();
+        });
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        sliderHandler.removeCallbacks(sliderRunnable);
+        if (homeVideoView != null && homeVideoView.isPlaying()) {
+            homeVideoView.pause();
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         if (isUnderConstructionEnabled) return;
-
-        if (!slideshowImages.isEmpty()) {
-            sliderHandler.postDelayed(sliderRunnable, 4000);
+        
+        if (homeVideoView != null) {
+            homeVideoView.start();
         }
     }
 
