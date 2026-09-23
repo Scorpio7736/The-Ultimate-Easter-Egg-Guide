@@ -30,6 +30,9 @@ import java.util.List;
 
 public abstract class PageController_BaseClass extends AppCompatActivity {
     
+    public static final String PREFS_NAME = "AppPrefs";
+    public static final String KEY_LAST_MAP_ID = "LastMapId";
+
     // Ensure this is false for production
     public static final boolean ENABLE_TESTING = false;
     protected boolean isUnderConstructionEnabled = false;

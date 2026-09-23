@@ -56,6 +56,12 @@ public class MapDisplay_Page extends PageController_BaseClass {
             }
 
             if (selectedMap != null) {
+                // Save as last viewed map
+                getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
+                        .edit()
+                        .putString(KEY_LAST_MAP_ID, selectedMap.name())
+                        .apply();
+
                 // Set text and images
                 mapTitle.setText(selectedMap.mapName);
                 mapCoverImage.setImageResource(selectedMap.mapCover);

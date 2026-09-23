@@ -10,7 +10,7 @@ The `StorylineData` directory is a comprehensive, contract-driven lore database.
 Every data point in this directory must implement the `IStorylineItems` interface. This ensures that regardless of whether an object is a "Demon" or a "Ray Gun", the UI layer knows exactly how to retrieve its:
 - **`GetImage()`**: The drawable resource ID for the profile picture.
 - **`GetDisplayName()`**: The user-friendly name.
-- **`GetGroup()`**: The category constant used for header grouping (e.g., *Primis* characters or *Wonder Weapon* items).
+- **`GetGroup()`**: The category constant used for header grouping (e.g., `Player_CharacterGroups.Primis`).
 
 ### 2. Enum-Based Persistence
 The data is stored in specialized **Enums** rather than a traditional SQLite or JSON database.
@@ -33,16 +33,16 @@ The warehouse is categorized into six high-level domains:
 
 ---
 
-## 🔍 Linking & Filtering Logic
+## 🔍 Filtering & Rendering Logic
 
-### Game Context Mapping
-Every entry contains a `List<Games> gamesList`. This allows the **`StorylineSelection_PAGE`** to perform cross-game filtering. For example, selecting "Black Ops II" in the UI will instantly filter the hundreds of storyline entries down to only those that appeared in that title.
-
-### Grouping Hierarchy
-Entries are linked to Group enums (e.g., `Player_CharacterGroups`). These are used by the `StorylineCharacterAdapter` to automatically insert stylized headers into the `RecyclerView`, ensuring the lore is always presented in an organized, searchable manner.
+### `StorylineSelection_PAGE` Integration
+The Storyline page uses a dual-spinner system (Category and Game Filter).
+1. **Category Selection**: Determines which Enum class to load (e.g., `StorylineItems.PlayerCharacter` -> `Player_Characters.class`).
+2. **Game Filtering**: Every entry contains a `List<Games> gamesList`. The `StorylineCharacterAdapter` iterates through the enum and filters items that appear in the selected game.
+3. **Grouping**: The adapter uses `GetGroup()` to determine where to insert stylized headers (e.g., "Primis", "Ultimis") using `TYPE_HEADER` view types.
 
 ### Dynamic URL Generation
-Most entries include a `fandomPath` string. The enum's internal logic automatically prepends the official Fandom base URL, enabling one-click navigation from the app to the deep-lore wiki pages for every character and item.
+Most entries include a `fandomPath` string. The enum's internal logic automatically prepends the official Fandom base URL, enabling one-click navigation via `Intent.ACTION_VIEW` to deep-lore wiki pages.
 
 ---
 

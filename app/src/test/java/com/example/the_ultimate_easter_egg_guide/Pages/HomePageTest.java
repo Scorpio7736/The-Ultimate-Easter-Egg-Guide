@@ -29,8 +29,11 @@ public class HomePageTest {
         try (ActivityScenario<Home_PAGE> scenario = ActivityScenario.launch(Home_PAGE.class)) {
             scenario.onActivity(activity -> {
                 assertNotNull(activity);
-                VideoView homeVideo = activity.findViewById(R.id.home_video_view);
-                assertNotNull(homeVideo);
+                assertNotNull(activity.findViewById(R.id.home_video_view));
+                assertNotNull(activity.findViewById(R.id.button1));
+                assertNotNull(activity.findViewById(R.id.button2));
+                assertNotNull(activity.findViewById(R.id.button3));
+                assertNotNull(activity.findViewById(R.id.button4));
             });
         }
     }
