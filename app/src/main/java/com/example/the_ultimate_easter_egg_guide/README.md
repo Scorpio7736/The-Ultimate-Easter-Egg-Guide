@@ -1,8 +1,12 @@
 # The Easter Egg Guide
 
+
+---
+
 **Current Version:** 0.5.1
 **Version Date:** September 22, 2026
 **Last Updated:** September 22, 2026
+**Version Name:** Pre-Alpha-Omega
 
 ---
 
